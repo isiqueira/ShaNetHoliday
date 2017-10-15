@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F2F409B-CFF5-4B37-B75F-2DCEE39F3299}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ID3iHoliday.Countries</RootNamespace>
+    <AssemblyName>ID3iHoliday.Countries</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AD.cs" />
+    <Compile Include="FR.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AG.cs" />
+    <Compile Include="Todo\AI.cs" />
+    <Compile Include="Todo\AL.cs" />
+    <Compile Include="Todo\AM.cs" />
+    <Compile Include="Todo\AO.cs" />
+    <Compile Include="Todo\AR.cs" />
+    <Compile Include="Todo\AS.cs" />
+    <Compile Include="Todo\AT.cs" />
+    <Compile Include="Todo\AU.cs" />
+    <Compile Include="Todo\AW.cs" />
+    <Compile Include="Todo\AX.cs" />
+    <Compile Include="Todo\AZ.cs" />
+    <Compile Include="Todo\BA.cs" />
+    <Compile Include="Todo\BB.cs" />
+    <Compile Include="Todo\BE.cs" />
+    <Compile Include="Todo\BG.cs" />
+    <Compile Include="Todo\BI.cs" />
+    <Compile Include="Todo\BL.cs" />
+    <Compile Include="Todo\BO.cs" />
+    <Compile Include="Todo\BQ.cs" />
+    <Compile Include="Todo\BR.cs" />
+    <Compile Include="Todo\BS.cs" />
+    <Compile Include="Todo\BW.cs" />
+    <Compile Include="Todo\BY.cs" />
+    <Compile Include="Todo\BZ.cs" />
+    <Compile Include="Todo\CA.cs" />
+    <Compile Include="Todo\CC.cs" />
+    <Compile Include="Todo\CD.cs" />
+    <Compile Include="Todo\CF.cs" />
+    <Compile Include="Todo\CG.cs" />
+    <Compile Include="Todo\CH.cs" />
+    <Compile Include="Todo\CL.cs" />
+    <Compile Include="Todo\CM.cs" />
+    <Compile Include="Todo\CN.cs" />
+    <Compile Include="Todo\CO.cs" />
+    <Compile Include="Todo\CR.cs" />
+    <Compile Include="Todo\CU.cs" />
+    <Compile Include="Todo\CY.cs" />
+    <Compile Include="Todo\CZ.cs" />
+    <Compile Include="Todo\DE.cs" />
+    <Compile Include="Todo\DK.cs" />
+    <Compile Include="Todo\DO.cs" />
+    <Compile Include="Todo\EC.cs" />
+    <Compile Include="Todo\EE.cs" />
+    <Compile Include="Todo\ES.cs" />
+    <Compile Include="Todo\ET.cs" />
+    <Compile Include="Todo\FI.cs" />
+    <Compile Include="Todo\FO.cs" />
+    <Compile Include="Todo\GA.cs" />
+    <Compile Include="Todo\GB.cs" />
+    <Compile Include="Todo\GD.cs" />
+    <Compile Include="Todo\GG.cs" />
+    <Compile Include="Todo\GQ.cs" />
+    <Compile Include="Todo\GR.cs" />
+    <Compile Include="Todo\GT.cs" />
+    <Compile Include="Todo\GU.cs" />
+    <Compile Include="Todo\GY.cs" />
+    <Compile Include="Todo\HN.cs" />
+    <Compile Include="Todo\HR.cs" />
+    <Compile Include="Todo\HT.cs" />
+    <Compile Include="Todo\HU.cs" />
+    <Compile Include="Todo\IE.cs" />
+    <Compile Include="Todo\IM.cs" />
+    <Compile Include="Todo\IS.cs" />
+    <Compile Include="Todo\IT.cs" />
+    <Compile Include="Todo\JE.cs" />
+    <Compile Include="Todo\JM.cs" />
+    <Compile Include="Todo\JP.cs" />
+    <Compile Include="Todo\KE.cs" />
+    <Compile Include="Todo\KR.cs" />
+    <Compile Include="Todo\LI.cs" />
+    <Compile Include="Todo\LT.cs" />
+    <Compile Include="Todo\LU.cs" />
+    <Compile Include="Todo\LV.cs" />
+    <Compile Include="Todo\MC.cs" />
+    <Compile Include="Todo\ME.cs" />
+    <Compile Include="Todo\MG.cs" />
+    <Compile Include="Todo\MT.cs" />
+    <Compile Include="Todo\MW.cs" />
+    <Compile Include="Todo\MX.cs" />
+    <Compile Include="Todo\MZ.cs" />
+    <Compile Include="Todo\NA.cs" />
+    <Compile Include="Todo\NI.cs" />
+    <Compile Include="Todo\NL.cs" />
+    <Compile Include="Todo\NO.cs" />
+    <Compile Include="Todo\NZ.cs" />
+    <Compile Include="Todo\PA.cs" />
+    <Compile Include="Todo\PE.cs" />
+    <Compile Include="Todo\PL.cs" />
+    <Compile Include="Todo\PT.cs" />
+    <Compile Include="Todo\PY.cs" />
+    <Compile Include="Todo\RO.cs" />
+    <Compile Include="Todo\RU.cs" />
+    <Compile Include="Todo\RW.cs" />
+    <Compile Include="Todo\SE.cs" />
+    <Compile Include="Todo\SO.cs" />
+    <Compile Include="Todo\SS.cs" />
+    <Compile Include="Todo\SV.cs" />
+    <Compile Include="Todo\TG.cs" />
+    <Compile Include="Todo\TR.cs" />
+    <Compile Include="Todo\TZ.cs" />
+    <Compile Include="Todo\UG.cs" />
+    <Compile Include="Todo\US.cs" />
+    <Compile Include="Todo\UY.cs" />
+    <Compile Include="Todo\VE.cs" />
+    <Compile Include="Todo\VN.cs" />
+    <Compile Include="Todo\ZA.cs" />
+    <Compile Include="Todo\ZM.cs" />
+    <Compile Include="Todo\ZW.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore.csproj">
+      <Project>{BA32AABF-4D61-4AD3-A50F-715758867194}</Project>
+      <Name>ID3iCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ID3iDate\ID3iDate\ID3iDate.csproj">
+      <Project>{4620F291-CCC3-4120-A0D7-FD3A37B2952B}</Project>
+      <Name>ID3iDate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ID3iHoliday.Core\ID3iHoliday.Core.csproj">
+      <Project>{2DA2895E-CA5C-440F-93B1-E8A8C50CF738}</Project>
+      <Name>ID3iHoliday.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj">
+      <Project>{C7C2D758-46D9-4840-9AF9-DFDD85C94178}</Project>
+      <Name>ID3iHoliday.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ID3iHoliday.Syntax\ID3iHoliday.Syntax.csproj">
+      <Project>{A515221B-59BF-4471-82E8-3BDB5DB1E4AE}</Project>
+      <Name>ID3iHoliday.Syntax</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

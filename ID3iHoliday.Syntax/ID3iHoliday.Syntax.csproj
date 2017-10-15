@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A515221B-59BF-4471-82E8-3BDB5DB1E4AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ID3iHoliday.Syntax</RootNamespace>
+    <AssemblyName>ID3iHoliday.Syntax</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blocs\After.cs" />
+    <Compile Include="Blocs\Before.cs" />
+    <Compile Include="Blocs\Day.cs" />
+    <Compile Include="Blocs\Duration.cs" />
+    <Compile Include="Blocs\Every.cs" />
+    <Compile Include="Blocs\EveryElement.cs" />
+    <Compile Include="Blocs\If.cs" />
+    <Compile Include="Blocs\In.cs" />
+    <Compile Include="Blocs\InYear.cs" />
+    <Compile Include="Blocs\Next.cs" />
+    <Compile Include="Blocs\Or.cs" />
+    <Compile Include="Blocs\Previous.cs" />
+    <Compile Include="Blocs\SinceElement.cs" />
+    <Compile Include="Blocs\Start.cs" />
+    <Compile Include="Blocs\Then.cs" />
+    <Compile Include="Composition\Catholic.cs" />
+    <Compile Include="Composition\Christianism.cs" />
+    <Compile Include="Composition\Date.cs" />
+    <Compile Include="Composition\EasterDay.cs" />
+    <Compile Include="Composition\ExpressionTree.cs" />
+    <Compile Include="Composition\Movable.cs" />
+    <Compile Include="Composition\MovableFromMovable.cs" />
+    <Compile Include="Composition\Move.cs" />
+    <Compile Include="Composition\Observe.cs" />
+    <Compile Include="Composition\Orthodox.cs" />
+    <Compile Include="Composition\Substitute.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Parsers\Parser.Shared.cs" />
+    <Compile Include="Parsers\ParserDate.cs" />
+    <Compile Include="Parsers\ParserEaster.cs" />
+    <Compile Include="Parsers\ParserMovable.cs" />
+    <Compile Include="Parsers\ParserMovableFromMovable.cs" />
+    <Compile Include="Parsers\ParserMove.cs" />
+    <Compile Include="Parsers\ParserObserve.cs" />
+    <Compile Include="Parsers\ParserSubstitute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore.csproj">
+      <Project>{ba32aabf-4d61-4ad3-a50f-715758867194}</Project>
+      <Name>ID3iCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ID3iDate\ID3iDate\ID3iDate.csproj">
+      <Project>{4620F291-CCC3-4120-A0D7-FD3A37B2952B}</Project>
+      <Name>ID3iDate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ID3iRegex\ID3iRegex\ID3iRegex.csproj">
+      <Project>{59684D18-ED50-4A68-87F7-0BF011B0D9C7}</Project>
+      <Name>ID3iRegex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ID3iHoliday.Core\ID3iHoliday.Core.csproj">
+      <Project>{2DA2895E-CA5C-440F-93B1-E8A8C50CF738}</Project>
+      <Name>ID3iHoliday.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
