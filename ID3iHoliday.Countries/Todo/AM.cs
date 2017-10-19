@@ -10,5 +10,11 @@ using static ID3iHoliday.Models.RuleType;
 using static ID3iHoliday.Models.Rule.SpecificDayKey;
 namespace ID3iHoliday.Countries
 {
-    public class AM : Country { }
+    public class AM : Country
+    {
+        public AM()
+        {
+
+        }
+    }
 }
