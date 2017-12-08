@@ -10,7 +10,6 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
-using static ID3iHoliday.Models.Rule.SpecificDayKey;
 
 namespace ID3iHoliday.Countries
 {
@@ -20,7 +19,7 @@ namespace ID3iHoliday.Countries
         {
             Code = "AD";
             Alpha3Code = "AND";
-            Names = new Dictionary<Langue, string>() { { Langue.CA, "Andorra" }, { Langue.ES, "Andorra" }, { Langue.EN, "Andorra" } };
+            Names = NamesBuilder.Make.Add(Langue.CA, "Andorra").Add(Langue.ES, "Andorra").Add(Langue.EN, "Andorra").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.CA, Langue.ES };
             Rules = new ListRule()
@@ -28,45 +27,104 @@ namespace ID3iHoliday.Countries
                 Langues = Langues,
                 Container =
                 {
-                    Rule.Jan01,
-                    Rule.Jan06,
                     new Rule()
                     {
-                        SpecDayKey = ConstitutionDayKey,
-                        Expression  = ExpressionTree.Date.Fix(On.March.The3rd)
+                        Expression = ExpressionTree.Date.Fix(On.January.The1st),
+                        Names = NamesBuilder.Make
+                                    .Add(Langue.ES, "Año Nuevo")
+                                    .Add(Langue.CA, "Any nou").AsDictionary()
                     },
-                    Rule.May01,
-                    Rule.Aug15,
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.January.The6th),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Día de los Reyes Magos").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression  = ExpressionTree.Date.Fix(On.March.The3rd),
+                        Names = NamesBuilder.Make
+                                    .Add(Langue.ES, "Día de la Constitución")
+                                    .Add(Langue.CA, "Dia de la Constitució").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.May.The1st),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Fiesta del trabajo").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.August.The15th),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Asunción").AsDictionary()
+                    },
                     new Rule()
                     {
                         Expression = ExpressionTree.Date.Fix(On.September.The8th),
-                        Names = new Dictionary<Langue, string>()
-                        {
-                            { Langue.EN, "Our Lady of Meritxell" }, { Langue.ES, "Nuestra Sra. De Meritxell" }, { Langue.CA, "Mare de Déu de Meritxell" }
-                        }
+                        Names = NamesBuilder.Make
+                                    .Add(Langue.ES, "Nuestra Sra. De Meritxell")
+                                    .Add(Langue.CA, "Mare de Déu de Meritxell").AsDictionary()
                     },
-                    Rule.Nov01,
-                    Rule.Dec08,
                     new Rule()
                     {
-                        SpecDayKey = Rule.Dec24.SpecDayKey,
-                        Expression = Rule.Dec24.Expression,
+                        Expression = ExpressionTree.Date.Fix(On.November.The1st),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Todos los Santos").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The8th),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "La inmaculada concepción").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The24th),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Nochebuena").AsDictionary(),
                         Type = Bank
                     },
-                    Rule.Dec25,
-                    Rule.Dec26,
-                    Rule.CarnivalTuesday,
                     new Rule()
                     {
-                        SpecDayKey = MaundyThrusdayKey,
+                        Expression = ExpressionTree.Date.Fix(On.December.The25th),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Navidad").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The26th),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "San Esteban").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.CarnivalTuesday,
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Carnaval").AsDictionary()
+                    },
+                    new Rule()
+                    {
                         Expression = ExpressionTree.Date.Catholic.MaundyThursday.Start("14:00"),
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Jueves Santo").AsDictionary(),
                         Type = Bank
                     },
-                    Rule.GoodFriday,
-                    Rule.Easter,
-                    Rule.EasterMonday,
-                    Rule.Pentecost,
-                    Rule.WhitMonday
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.GoodFriday,
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Viernes Santo").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.Easter,
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Pascua").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.EasterMonday,
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Lunes de Pascua").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.Pentecost,
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Pentecostés").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.WhitMonday,
+                        Names = NamesBuilder.Make.Add(Langue.ES, "Lunes de Pentecostés").AsDictionary()
+                    }
                 }
             };
             States = new ListState()
@@ -81,10 +139,7 @@ namespace ID3iHoliday.Countries
             public AD_07()
             {
                 Code = "07";
-                Names = new Dictionary<Langue, string>()
-                {
-                    { Langue.ES, "Andorra la Vella" }
-                };
+                Names = NamesBuilder.Make.Add(Langue.ES, "Andorra la Vella").AsDictionary();
                 Rules = new ListRule()
                 {
                     Langues = Langues,
@@ -93,17 +148,17 @@ namespace ID3iHoliday.Countries
                         new Rule()
                         {
                             Expression = ExpressionTree.Date.Movable(First, Saturday).In(August),
-                            Names = new Dictionary<Langue, string>() { { Langue.ES, "Andorra La Vella Festival" } }
+                            Names = NamesBuilder.Make.Add(Langue.ES, "Andorra La Vella Festival").AsDictionary()
                         },
                         new Rule()
                         {
                             Expression = ExpressionTree.Date.MovableFromMovable(First, Sunday).After(First, Saturday).In(August),
-                            Names = new Dictionary<Langue, string>() { { Langue.ES, "Andorra La Vella Festival" } }
+                            Names = NamesBuilder.Make.Add(Langue.ES, "Andorra La Vella Festival").AsDictionary()
                         },
                         new Rule()
                         {
                             Expression = ExpressionTree.Date.MovableFromMovable(First, Monday).After(First, Saturday).In(August),
-                            Names = new Dictionary<Langue, string>() { { Langue.ES, "Andorra La Vella Festival" } }
+                            Names = NamesBuilder.Make.Add(Langue.ES, "Andorra La Vella Festival").AsDictionary()
                         }
                     }
                 };

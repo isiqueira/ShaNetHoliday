@@ -29,24 +29,5 @@ namespace ID3iHoliday.Models
         }
     }
 
-    public class ListRule : BaseList<Rule>
-    {
-        protected override void OnAddedItem(Rule item)
-        {
-            item.Langues = Langues;
-            if (item.Langues != null && item.Names.Count == 0)
-                item.Names = item.GetNames();
-            base.OnAddedItem(item);
-        }
-        public void Init()
-        {
-            ForEach(x =>
-            {
-                if (x.Langues == null || x.Langues.Count == 0)
-                    x.Langues = Langues;
-                if (x.Names == null || x.Names.Count == 0)
-                    x.Names = x.GetNames();
-            });
-        }
-    }
+    public class ListRule : BaseList<Rule> { }
 }

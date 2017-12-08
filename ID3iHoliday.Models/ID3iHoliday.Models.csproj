@@ -49,8 +49,6 @@
     <Compile Include="LongWeekEnd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rule.cs" />
-    <Compile Include="Rule.Generic.cs" />
-    <Compile Include="Rule.Names.cs" />
     <Compile Include="SpecificDay.cs" />
   </ItemGroup>
   <ItemGroup>
