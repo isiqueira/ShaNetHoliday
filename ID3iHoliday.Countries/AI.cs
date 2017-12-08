@@ -1,23 +1,35 @@
-﻿using ID3iHoliday.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ID3iHoliday.Models;
+using ID3iHoliday.Syntax;
 
 using static System.DayOfWeek;
+using static ID3iHoliday.Syntax.Count;
+using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
-using ID3iHoliday.Syntax;
 
 namespace ID3iHoliday.Countries
 {
-    public class AG : Country
+    public class NamesBuilder
     {
-        public AG()
+        internal Dictionary<Langue, string> Names { get; set; } = new Dictionary<Langue, string>();
+        public static NamesBuilder Make => new NamesBuilder();
+        public NamesBuilder Add(Langue langue, string name)
         {
-            Code = "AG";
-            Alpha3Code = "ATG";
-            Names = NamesBuilder.Make.Add(Langue.EN, "Antigua & Barbuda").AsDictionary();
+            Names.AddIfNotContainsKey(langue, name);
+            return this;
+        }
+        public Dictionary<Langue, string> AsDictionary() => Names;
+    }
+
+
+    public class AI : Country
+    {
+        public AI()
+        {
+            Code = "AI";
+            Alpha3Code = "AIA";
+            Names = NamesBuilder.Make.Add(Langue.EN, "Anguilla").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.EN };
             Rules = new ListRule()
@@ -27,9 +39,13 @@ namespace ID3iHoliday.Countries
                 {
                     new Rule()
                     {
-                        Expression = ExpressionTree.Observe.Fix(On.January.The1st).If(Sunday).Then.Next(Monday),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "New Year's Day").AsDictionary(),
-                        Substitute = true
+                        Expression = ExpressionTree.Date.Fix(On.January.The1st),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "New Year's Day").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.March.The2nd),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "James Ronald Webster Day").AsDictionary()
                     },
                     new Rule()
                     {
@@ -54,6 +70,11 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
+                        Expression = ExpressionTree.Date.Fix(On.May.The30th),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Anguilla Day").AsDictionary()
+                    },
+                    new Rule()
+                    {
                         Expression = ExpressionTree.Date.Catholic.Pentecost,
                         Names = NamesBuilder.Make.Add(Langue.EN, "Pentecost").AsDictionary(),
                         Type = Observance
@@ -65,23 +86,28 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.August.The1st),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "J'Ouvert Morning").AsDictionary()
+                        Expression = ExpressionTree.Date.Movable(Second, Monday).In(June),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Celebration of the Birthday of Her Majesty the Queen").AsDictionary()
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.August.The2nd),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "Last Lap").AsDictionary()
+                        Expression = ExpressionTree.Date.Movable(First, Monday).In(August),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "August Monday").AsDictionary()
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Move.Fix(On.November.The11th).If(Saturday).Then.Next(Monday).Or.If(Sunday).Then.Next(Monday),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "Independance Day").AsDictionary()
+                        Expression = ExpressionTree.Date.Movable(First, Thursday).In(August),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "August Thursday").AsDictionary()
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The9th),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "V.C Bird Day").AsDictionary()
+                        Expression = ExpressionTree.Date.Movable(First, Friday).In(August),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Constitution Day").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The19th),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "National Heroes and Heroines Day").AsDictionary()
                     },
                     new Rule()
                     {
@@ -91,38 +117,12 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression=  ExpressionTree.Observe.Fix(On.December.The26th).If(Sunday).Then.Next(Monday),
+                        Expression = ExpressionTree.Observe.Fix(On.December.The26th).If(Sunday).Then.Next(Monday),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Boxing Day").AsDictionary(),
                         Substitute = true
                     }
                 }
             };
-            States = new ListState()
-            {
-                Langues = Langues,
-                Container = { new AG_10() }
-            }.Initialize(x => x.Init());
-        }
-        internal class AG_10 : State
-        {
-            public AG_10()
-            {
-                Code = "10";
-                Names = NamesBuilder.Make.Add(Langue.EN, "Barbuda").AsDictionary();
-                Rules = new ListRule()
-                {
-                    Langues = Langues,
-                    Container =
-                    {
-                        new Rule()
-                        {
-                            Expression = ExpressionTree.Date.Catholic.CarnivalTuesday.Duration("P4D"),
-                            Names = NamesBuilder.Make.Add(Langue.EN, "Caribana").AsDictionary(),
-                            Type = Observance
-                        }
-                    }
-                };
-            }
         }
     }
 }

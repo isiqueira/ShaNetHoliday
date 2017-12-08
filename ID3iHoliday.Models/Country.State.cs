@@ -24,7 +24,6 @@ namespace ID3iHoliday.Models
             ForEach(x =>
             {
                 x.Rules.Langues = Langues;
-                x.Rules.Init();
                 x.Regions.IfNotNull(y =>
                 {
                     y.Langues = Langues;

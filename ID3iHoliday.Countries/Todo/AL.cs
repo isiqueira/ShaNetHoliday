@@ -7,7 +7,6 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
-using static ID3iHoliday.Models.Rule.SpecificDayKey;
 
 namespace ID3iHoliday.Countries
 {

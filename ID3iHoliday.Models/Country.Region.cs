@@ -16,11 +16,7 @@ namespace ID3iHoliday.Models
         }
         public void Init()
         {
-            ForEach(x =>
-            {
-                x.Rules.Langues = Langues;
-                x.Rules.Init();
-            });
+            ForEach(x => { x.Rules.Langues = Langues; });
         }
     }
 }
