@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ALModule.cs" />
+    <Compile Include="AXModule.cs" />
+    <Compile Include="ATModule.cs" />
     <Compile Include="AIModule.cs" />
     <Compile Include="ADModule.cs" />
     <Compile Include="AGModule.cs" />
