@@ -10,19 +10,6 @@ using static ID3iHoliday.Models.RuleType;
 
 namespace ID3iHoliday.Countries
 {
-    public class NamesBuilder
-    {
-        internal Dictionary<Langue, string> Names { get; set; } = new Dictionary<Langue, string>();
-        public static NamesBuilder Make => new NamesBuilder();
-        public NamesBuilder Add(Langue langue, string name)
-        {
-            Names.AddIfNotContainsKey(langue, name);
-            return this;
-        }
-        public Dictionary<Langue, string> AsDictionary() => Names;
-    }
-
-
     public class AI : Country
     {
         public AI()
