@@ -42,10 +42,11 @@
   <ItemGroup>
     <Compile Include="AD.cs" />
     <Compile Include="FR.cs" />
+    <Compile Include="NamesBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AG.cs" />
     <Compile Include="AI.cs" />
-    <Compile Include="Todo\AL.cs" />
+    <Compile Include="AL.cs" />
     <Compile Include="Todo\AM.cs" />
     <Compile Include="Todo\AO.cs" />
     <Compile Include="Todo\AR.cs" />
@@ -53,7 +54,7 @@
     <Compile Include="AT.cs" />
     <Compile Include="Todo\AU.cs" />
     <Compile Include="Todo\AW.cs" />
-    <Compile Include="Todo\AX.cs" />
+    <Compile Include="AX.cs" />
     <Compile Include="Todo\AZ.cs" />
     <Compile Include="Todo\BA.cs" />
     <Compile Include="Todo\BB.cs" />
