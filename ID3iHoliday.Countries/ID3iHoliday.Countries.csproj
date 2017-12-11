@@ -67,7 +67,7 @@
     <Compile Include="Todo\BR.cs" />
     <Compile Include="Todo\BS.cs" />
     <Compile Include="Todo\BW.cs" />
-    <Compile Include="Todo\BY.cs" />
+    <Compile Include="BY.cs" />
     <Compile Include="Todo\BZ.cs" />
     <Compile Include="Todo\CA.cs" />
     <Compile Include="Todo\CC.cs" />

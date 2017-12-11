@@ -12,12 +12,16 @@ namespace ID3iHoliday.Engine.Standard
     {
         public static HolidaySystem Instance { get; } = new HolidaySystem();
         private HolidaySystem()
-        {
-            CountriesAvailable.Add(new FR());
+        {            
             CountriesAvailable.Add(new AD());
             CountriesAvailable.Add(new AG());
             CountriesAvailable.Add(new AI());
+            CountriesAvailable.Add(new AL());
             CountriesAvailable.Add(new AT());
+            CountriesAvailable.Add(new AX());
+            CountriesAvailable.Add(new BE());
+            CountriesAvailable.Add(new BY());
+            CountriesAvailable.Add(new FR());
         }
     }
 }
