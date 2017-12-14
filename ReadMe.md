@@ -5,6 +5,10 @@
 | ID3iRegex | [![Build status](https://ci.appveyor.com/api/projects/status/m1bdir11jmhd29yc?svg=true)](https://ci.appveyor.com/project/Shaenn/id3iregex-7x0ek) |
 | ID3iHoliday | [![Build status](https://ci.appveyor.com/api/projects/status/n4vrppmsghwxvbg7?svg=true)](https://ci.appveyor.com/project/Shaenn/id3iholiday-d4l66) |
 
+### Version
+---
+[![GitHub Release](https://img.shields.io/github/release/Shaenn/ID3iHoliday.svg?style=flat-square)](https://github.com/Shaenn/ID3iHoliday/releases)
+
 # ID3iHoliday
 
 ID3iHoliday is a Holiday Framework calculation for .Net
