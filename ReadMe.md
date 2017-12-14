@@ -11,7 +11,7 @@
 
 # ID3iHoliday
 
-ID3iHoliday is a Holiday Framework calculation for .Net
+ID3iHoliday is a Holiday Framework calculation for .Net.
 
 ### Assemblies
 * ID3iHoliday.Core contains base class for building expression and parsing. 
