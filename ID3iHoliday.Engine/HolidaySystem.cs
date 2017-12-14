@@ -19,11 +19,11 @@ namespace ID3iHoliday.Engine
         public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All)
         {
             if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, type);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, regionCode, type);
             else if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty())
                 return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, type);
             else
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, regionCode, type);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, type);
         }
 
         public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, RuleType type = RuleType.All)

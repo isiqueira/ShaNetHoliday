@@ -28,7 +28,7 @@ namespace ID3iHoliday.Models
             {
                 stateObj.Rules.ForEach(x =>
                 {
-                    if (x.Key.IsNotNullOrEmpty() && x.IsEnable)
+                    if (x.Key.IsNotNullOrEmpty() && !x.IsEnable)
                         rules.RemoveAll(y => y.Key == x.Key);
                     else
                         rules.Add(x);
@@ -38,7 +38,7 @@ namespace ID3iHoliday.Models
                 {
                     regionObj.Rules.ForEach(x =>
                     {
-                        if (x.Key.IsNotNullOrEmpty() && x.IsEnable)
+                        if (x.Key.IsNotNullOrEmpty() && !x.IsEnable)
                             rules.RemoveAll(y => y.Key == x.Key);
                         else
                             rules.Add(x);
