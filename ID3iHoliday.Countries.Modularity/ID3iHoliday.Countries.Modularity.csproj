@@ -41,7 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAModule.cs" />
+    <Compile Include="EEModule.cs" />
+    <Compile Include="DKModule.cs" />
+    <Compile Include="CZModule.cs" />
+    <Compile Include="CYModule.cs" />
+    <Compile Include="BGModule.cs" />
     <Compile Include="BEModule.cs" />
+    <Compile Include="FIModule.cs" />
+    <Compile Include="HRModule.cs" />
     <Compile Include="BYModule.cs" />
     <Compile Include="ALModule.cs" />
     <Compile Include="AXModule.cs" />

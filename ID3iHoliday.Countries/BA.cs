@@ -20,7 +20,7 @@ namespace ID3iHoliday.Countries
         {
             Code = "BA";
             Alpha3Code = "BIH";
-            Names = NamesBuilder.Make.Add(Langue.EN, "Bosnia and Herzegovina").Add(Langue.BS, "").Add(Langue.SR, "").Add(Langue.HR, "").AsDictionary();
+            Names = NamesBuilder.Make.Add(Langue.EN, "Bosnia and Herzegovina").Add(Langue.BS, "Bosna i Hercegovina").Add(Langue.SR, "Боснa и Херцеговина").Add(Langue.HR, "Bosna i Hercegovina").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.BS, Langue.HR, Langue.SR };
             Rules = new ListRule()

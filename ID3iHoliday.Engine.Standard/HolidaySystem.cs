@@ -21,8 +21,15 @@ namespace ID3iHoliday.Engine.Standard
             CountriesAvailable.Add(new AX());
             CountriesAvailable.Add(new BA());
             CountriesAvailable.Add(new BE());
+            CountriesAvailable.Add(new BG());
             CountriesAvailable.Add(new BY());
+            CountriesAvailable.Add(new CY());
+            CountriesAvailable.Add(new CZ());
+            CountriesAvailable.Add(new DK());
+            CountriesAvailable.Add(new EE());
+            CountriesAvailable.Add(new FI());
             CountriesAvailable.Add(new FR());
+            CountriesAvailable.Add(new HR());
         }
     }
 }
