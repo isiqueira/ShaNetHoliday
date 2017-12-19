@@ -83,7 +83,7 @@
     <Compile Include="Todo\CU.cs" />
     <Compile Include="CY.cs" />
     <Compile Include="CZ.cs" />
-    <Compile Include="Todo\DE.cs" />
+    <Compile Include="DE.cs" />
     <Compile Include="DK.cs" />
     <Compile Include="Todo\DO.cs" />
     <Compile Include="Todo\EC.cs" />

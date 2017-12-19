@@ -19,39 +19,38 @@ namespace ID3iHoliday.Models
         public IEnumerable<SpecificDay> Get(int year, RuleType type)
             => Get(year, null, null, type);
         public IEnumerable<SpecificDay> Get(int year, string state, RuleType type)
-            =>Get(year, state, null, type);
+            => Get(year, state, null, type);
         public IEnumerable<SpecificDay> Get(int year, string stateCode, string regionCode, RuleType type)
         {
-            List<Rule> rules = new List<Rule>(Rules);
-            var stateObj = States.FirstOrDefault(x => x.Code == stateCode);
-            if (stateObj != null)
-            {
-                stateObj.Rules.ForEach(x =>
-                {
-                    if (x.Key.IsNotNullOrEmpty() && !x.IsEnable)
-                        rules.RemoveAll(y => y.Key == x.Key);
-                    else
-                        rules.Add(x);
-                });
-                var regionObj = stateObj.Regions.FirstOrDefault(x => x.Code == regionCode);
-                if (regionObj != null)
-                {
-                    regionObj.Rules.ForEach(x =>
-                    {
-                        if (x.Key.IsNotNullOrEmpty() && !x.IsEnable)
-                            rules.RemoveAll(y => y.Key == x.Key);
-                        else
-                            rules.Add(x);
-                    });
-                }
-            }
+            List<Rule> rules = new List<Rule>(Rules.Select(x => x.Clone() as Rule));
 
-            Func<Rule, bool> ruleSelector = x => true;
-            if (type != All)
-                ruleSelector = x => x.Type == type;
+            void CheckRule(Rule rule)
+            {
+                if (rule.Key.IsNotNullOrEmpty() && !rule.IsEnable)
+                    rules.RemoveAll(x => x.Key == rule.Key);
+                else if (rule.Key.IsNotNullOrEmpty() && !rule.Overrides.HasFlag(Overrides.None))
+                {
+                    var baseRule = rules.FirstOrDefault(x => x.Key == rule.Key);
+                    if (rule.Overrides.HasFlag(Overrides.Expression))
+                        baseRule.Expression = rule.Expression;
+                    if (rule.Overrides.HasFlag(Overrides.Type))
+                        baseRule.Type = rule.Type;
+                    if (rule.Overrides.HasFlag(Overrides.Note))
+                        baseRule.Note = rule.Note;
+                }
+                else
+                    rules.Add(rule);
+            };
+
+            States.FirstOrDefault(x => x.Code == stateCode)?.IfNotNull(x =>
+            {
+                x.Rules.ForEach(y => CheckRule(y));
+                x.Regions.FirstOrDefault(y => y.Code == regionCode)?.Rules.ForEach(y => CheckRule(y));
+            });
 
             List<SpecificDay> lst = new List<SpecificDay>();
-            rules.Where(x => ruleSelector(x)).ForEach(x => x.Parse(year, lst));
+            rules.ConditionnalWhere(() => type == All, x => true, x => x.Type == type).ForEach(x => x.Parse(year, lst));
+
             return lst.OrderBy(x => x.Date);
         }
     }

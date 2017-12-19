@@ -1,16 +1,22 @@
 ﻿using ID3iHoliday.Core.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using static ID3iHoliday.Models.RuleType;
 
 namespace ID3iHoliday.Models
 {
-    public partial class Rule
+    [Flags]
+    public enum Overrides
     {
+        None = 1,
+        Expression = 2,
+        Type = Expression << 1,
+        Note = Type << 1
+    }
+    public partial class Rule : ICloneable
+    {
+        public Overrides Overrides { get; set; } = Overrides.None;
         public string Key { get; set; }
         public ExpressionElement Expression { get; set; }
         public Dictionary<Langue, string> Names { get; set; } = new Dictionary<Langue, string>();
@@ -27,6 +33,8 @@ namespace ID3iHoliday.Models
             if (result.DateToRemove != null)
                 specificDays.RemoveAll(x => x.Date == result.DateToRemove);
         }
+
+        public object Clone() => MemberwiseClone() as Rule;
     }
 
     public class ListRule : BaseList<Rule> { }

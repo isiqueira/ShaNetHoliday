@@ -48,8 +48,9 @@ namespace ID3iHoliday.Syntax
                 public ThenDay(ExpressionElement parent, string value) : base(parent) { Value = value; }
             }
         }
-        public class SpecificDay : FixDay
+        public class SpecificDay : SpecificDayBase
         {
+            protected override ParserBase Parser => new ParserDate();
             public SpecificDay(ExpressionElement parent, DateTime value) : base(parent, value) { }
         }
     }

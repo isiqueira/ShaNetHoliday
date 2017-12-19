@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAModule.cs" />
+    <Compile Include="DEModule.cs" />
     <Compile Include="EEModule.cs" />
     <Compile Include="DKModule.cs" />
     <Compile Include="CZModule.cs" />
