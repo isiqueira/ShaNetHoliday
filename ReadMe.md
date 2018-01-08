@@ -34,6 +34,10 @@ Currently the following type with their meaning are supported
 | Optional | Majority of people take a day offices |
 | Observance | Optional festivity, no paid day off |
 
+### Grammar
+In order to construct specific day a grammar is available.
+See : https://shaenn.github.io/ID3iHoliday/Grammar.xhtml
+
 ### Example :
 #### Get All supported countries
 ```cs
