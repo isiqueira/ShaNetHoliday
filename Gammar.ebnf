@@ -1,0 +1,37 @@
+/* extracted from http://www.bottlecaps.de/rr/ui on Mon Jan 8, 2018, 11:40 (UTC+01)
+ */
+ExpressionTreeGrammar ::= ExpressionTree'.'
+(
+|Substitute'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'
+|Move'.'Fix'(''DateTimeValue'')''.'
+  (
+  If'('Days')''.'Then'.'(Previous|Next)'('Days')'
+  |(If'('Days')''.'Then'.'(Previous|Next)'('Days')''.'Or'.')+
+  )
+|Observe'.'Fix'(''DateTimeValue'')''.'
+  (
+  If'('Days')''.'Then'.'(Previous|Next)'('Days')'
+  |(If'('Days')''.'Then'.'(Previous|Next)'('Days')''.'Or'.')+
+  )
+|Date'.'
+  (
+  |Specific'(''DateTimeValue'')'
+  |Fix'(''DateTimeValue'')''.'
+    (
+    Start'(''StringValue'')'(('.'Duration'(''StringValue'')')?|('.'If'('Days')''.'Then'(''StringValue'')')?)
+    |Duration'(''StringValue'')'
+    |In'('YearType')'
+    |Every'(''NumberValue'')''.'Year'.'Since'(''NumberValue'')'
+    )?
+  |Catholic'.'(Christianism|CustomDay'(''StringValue'')')(('.'Start'(''StringValue'')'('.'Duration'(''StringValue'')')?)?|('.'Duration'(''StringValue'')')?)?
+  |Orthodox'.'(Christianism|CustomDay'(''StringValue'')')(('.'Start'(''StringValue'')'('.'Duration'(''StringValue'')')?)?|('.'Duration'(''StringValue'')')?)?
+  |Movable'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')(('.'In'('YearType')')?|('.'Every'(''NumberValue'')''.'Year'.'Since'(''NumberValue'')'))?
+  |MovableFromMovable'('Count',' Days')''.'(Before|After)'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')(('.'In'('YearType')')?|('.'Every'(''NumberValue'')''.'Year'.'Since'(''NumberValue'')'))?
+  )
+)
+
+Days ::= ('Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|'Saturday'|'Sunday')
+YearType ::= ('Even'|'Odd'|'Leap'|'NonLeap')
+Count ::= ('First'|'Second'|'Third'|'Fourth'|'Fifth'|'Sixth')
+Month ::= ('January'|'February'|'March'|'April'|'May'|'June'|'July'|'August'|'September'|'October'|'November'|'December')
+Christianism ::=('CarnivalMonday'|'CarnivalTuesday'|'AshWednesday'|'PalmSunday'|'MaundyThursday'|'GoodFriday'|'HolySaturday'|'Easter'|'EasterMonday'|'AscensionDay'|'Pentecost'|'WhitMonday'|'CorpusChristi')
