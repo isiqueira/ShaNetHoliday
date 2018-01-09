@@ -35,8 +35,7 @@ Currently the following type with their meaning are supported
 | Observance | Optional festivity, no paid day off |
 
 ### Grammar
-In order to construct specific day a grammar is available.
-Full diagram : https://shaenn.github.io/ID3iHoliday/Grammar/Grammar.xhtml
+In order to construct specific day a grammar is available. 
 
 #### Substitute a holiday if date falls on a certain weekday
 Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Substitute.xhtml
@@ -63,6 +62,10 @@ Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Movable.xhtml
 #### Move to a different weekday from a changed fixed Date
 Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/MovableFromMovable.xhtml
 
+#### Full diagram
+https://shaenn.github.io/ID3iHoliday/Grammar/Grammar.xhtml 
+
+---
 ### Example :
 #### Get All supported countries
 ```cs
