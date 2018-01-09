@@ -1,0 +1,11 @@
+/* extracted from http://www.bottlecaps.de/rr/ui on Mon Jan 8, 2018, 11:40 (UTC+01)
+ */
+ExpressionTreeGrammar ::= ExpressionTree'.'Date'.'Fix'(''DateTimeValue'')''.'
+    (
+    Start'(''StringValue'')'(('.'Duration'(''StringValue'')')?|('.'If'('Days')''.'Then'(''StringValue'')')?)
+    |Duration'(''StringValue'')'
+    |In'('YearType')'
+    |Every'(''NumberValue'')''.'Year'.'Since'(''NumberValue'')'
+    )?
+Days ::= ('Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|'Saturday'|'Sunday')
+YearType ::= ('Even'|'Odd'|'Leap'|'NonLeap')
