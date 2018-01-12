@@ -10,6 +10,7 @@ using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
 using ID3iHoliday.Syntax;
+using ID3iCore;
 
 #warning penser au reste des jours orthodox et musulmans.
 namespace ID3iHoliday.Countries

@@ -1,4 +1,5 @@
-﻿using ID3iHoliday.Core.Parsers;
+﻿using ID3iCore;
+using ID3iHoliday.Core.Parsers;
 using ID3iRegex;
 using System;
 using System.Text.RegularExpressions;

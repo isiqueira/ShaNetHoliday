@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using ID3iRegex;
 using ID3iHoliday.Core.Parsers;
+using ID3iCore;
 
 namespace ID3iHoliday.Syntax.Parsers
 {

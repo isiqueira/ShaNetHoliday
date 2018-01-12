@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using ID3iHoliday.Core.Parsers;
 
 using static ID3iHoliday.Syntax.Year;
+using ID3iCore;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
