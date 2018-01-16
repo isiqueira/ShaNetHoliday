@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
-    public class Then : ExpressionElement
-    {
-        protected override string Token => "THEN";
-        public Then(ExpressionElement parent) : base(parent) { }
-    }
+    ///// <summary>
+    ///// Elément d'expression <see cref="Then"/>.
+    ///// </summary>
+    //public class Then : ExpressionElement
+    //{
+    //    /// <summary>
+    //    /// Token de l'élément.
+    //    /// </summary>
+    //    protected override string Token => "THEN";
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="Then"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    public Then(ExpressionElement parent) : base(parent) { }
+    //}
 }

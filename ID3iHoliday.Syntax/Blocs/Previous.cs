@@ -7,10 +7,21 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
-    public class Previous : ExpressionElement
-    {
-        protected override string Token => $"PREVIOUS {Day.ToString().ToUpper()}";
-        public DayOfWeek Day { get; set; }
-        public Previous(ExpressionElement parent, DayOfWeek day) : base(parent) { Day = day; }
-    }
+    ///// <summary>
+    ///// Elément d'expression <see cref="Previous"/>.
+    ///// </summary>
+    //public class Previous : ExpressionElement
+    //{
+    //    /// <summary>
+    //    /// Token de l'élément.
+    //    /// </summary>
+    //    protected override string Token => $"PREVIOUS {Day.ToString().ToUpper()}";
+    //    internal DayOfWeek Day { get; set; }
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="Previous"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    /// <param name="day">Jour particulier.</param>
+    //    public Previous(ExpressionElement parent, DayOfWeek day) : base(parent) { Day = day; }
+    //}
 }

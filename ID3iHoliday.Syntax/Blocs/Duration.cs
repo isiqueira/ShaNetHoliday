@@ -7,10 +7,21 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
-    public class Duration : ExpressionElement
-    {
-        protected override string Token => Value;
-        internal string Value { get; set; }
-        public Duration(ExpressionElement parent, string value) : base(parent) { Value = value; }
-    }
+    ///// <summary>
+    ///// Elément d'expression <see cref="Duration"/>.
+    ///// </summary>
+    //public class Duration : ExpressionElement
+    //{
+    //    /// <summary>
+    //    /// Token de l'élément.
+    //    /// </summary>
+    //    protected override string Token => Value;
+    //    internal string Value { get; set; }
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="Duration"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    /// <param name="value">Durée.</param>
+    //    public Duration(ExpressionElement parent, string value) : base(parent) { Value = value; }
+    //}
 }

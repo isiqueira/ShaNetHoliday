@@ -51,7 +51,7 @@ namespace ID3iHoliday.Countries
                 },
                 new Rule()
                 {
-                    Expression = ExpressionTree.Date.Catholic.CarnivalTuesday.Start("14:00"),
+                    Expression = ExpressionTree.Date.Catholic.CarnivalTuesday.StartAt("14:00"),
                     Names = NamesBuilder.Make.Add(Langue.DE, "Faschingsdienstag").AsDictionary(),
                     Type = Bank
                 },
@@ -158,7 +158,7 @@ namespace ID3iHoliday.Countries
                 },
                 new Rule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The24th).Start("14:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt("14:00"),
                     Names = NamesBuilder.Make.Add(Langue.DE, "Heiliger Abend").AsDictionary(),
                     Type = Bank,
                     Note ="Pour l'instant aucun pattern ne supporte : DATE 12-24 14:00 IF SUNDAY THEN 00:00"
@@ -176,7 +176,7 @@ namespace ID3iHoliday.Countries
                 new Rule()
                 {
                     Key = "DEC31",
-                    Expression = ExpressionTree.Date.Fix(On.December.The31st).Start("14:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("14:00"),
                     Names = NamesBuilder.Make.Add(Langue.DE, "Silvester").AsDictionary(),
                     Type = Bank,
                     Note = "Pour l'instant aucun pattern ne supporte : DATE 12-31 14:00 IF SUNDAY THEN 00:00"

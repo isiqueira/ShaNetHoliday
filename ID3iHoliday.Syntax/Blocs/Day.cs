@@ -7,15 +7,37 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
-    public class FixDayBase: ExpressionElement
-    {
-        protected override string Token => Value.ToString("MM-dd");
-        internal DateTime Value { get; }
-        public FixDayBase(ExpressionElement parent, DateTime value) : base(parent) { Value = value; }
-    }
-    public class SpecificDayBase : FixDayBase
-    {
-        protected override string Token => Value.ToString("yyyy-MM-dd");
-        public SpecificDayBase(ExpressionElement parent, DateTime date) : base(parent, date) { }
-    }
+    ///// <summary>
+    ///// Elément d'expression <see cref="FixDayBase"/>.
+    ///// </summary>
+    //public class FixDayBase : ExpressionElement
+    //{
+    //    /// <summary>
+    //    /// Token de l'élément.
+    //    /// </summary>
+    //    protected override string Token => Value.ToString("MM-dd");
+    //    internal DateTime Value { get; }
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="FixDayBase"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    /// <param name="value">Date.</param>
+    //    public FixDayBase(ExpressionElement parent, DateTime value) : base(parent) { Value = value; }
+    //}
+    ///// <summary>
+    ///// Elément d'expression <see cref="SpecificDayBase"/>.
+    ///// </summary>
+    //public class SpecificDayBase : FixDayBase
+    //{
+    //    /// <summary>
+    //    /// Token de l'élément.
+    //    /// </summary>
+    //    protected override string Token => Value.ToString("yyyy-MM-dd");
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="SpecificDayBase"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    /// <param name="value">Date.</param>
+    //    public SpecificDayBase(ExpressionElement parent, DateTime date) : base(parent, date) { }
+    //}
 }

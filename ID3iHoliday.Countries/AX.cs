@@ -10,6 +10,7 @@ using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
 using ID3iHoliday.Syntax;
+using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
@@ -97,7 +98,7 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The24th).Start("12:00"),
+                        Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt("12:00"),
                         Names = NamesBuilder.Make.Add(Langue.SV, "Julafton").AsDictionary(),
                         Type = Bank
                     },
@@ -113,7 +114,7 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The31st).Start("12:00"),
+                        Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("12:00"),
                         Names = NamesBuilder.Make.Add(Langue.SV, "Nyårsafton").AsDictionary(),
                         Type = Bank
                     }

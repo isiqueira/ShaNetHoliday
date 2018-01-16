@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
-    public class Or : ExpressionElement
-    {
-        protected override string Token => "";
-        public Or(ExpressionElement parent) : base(parent) { }
-    }
+    ///// <summary>
+    ///// Elément d'expression <see cref="Or"/>.
+    ///// </summary>
+    //public class Or : ExpressionElement
+    //{
+    //    /// <summary>
+    //    /// Token de l'élément.
+    //    /// </summary>
+    //    protected override string Token => "";
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="Or"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    public Or(ExpressionElement parent) : base(parent) { }
+    //}
 }

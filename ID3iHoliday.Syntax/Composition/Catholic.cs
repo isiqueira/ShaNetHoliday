@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
+    /// <summary>
+    /// Elément d'expression <see cref="Catholic"/>.
+    /// </summary>
     public class Catholic : Christianism
     {
+        /// <summary>
+        /// Token de l'élément.
+        /// </summary>
         protected override string Token => "CATHOLIC";
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="Catholic"/>.
+        /// </summary>
+        /// <param name="parent">Elément parent.</param>
         public Catholic(ExpressionElement parent) : base(parent) { }
     }
 }

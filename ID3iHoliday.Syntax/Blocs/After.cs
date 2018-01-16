@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
-    public class After : ExpressionElement
-    {
-        public After(ExpressionElement parent) : base(parent) { }
-    }
+    ///// <summary>
+    ///// Elément d'expression <see cref="After"/>.
+    ///// </summary>
+    //public class After : ExpressionElement
+    //{
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="After"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    public After(ExpressionElement parent) : base(parent) { }
+    //}
 }

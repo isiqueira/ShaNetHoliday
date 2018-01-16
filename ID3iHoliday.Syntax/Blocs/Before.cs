@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax
 {
-    public class Before : ExpressionElement
-    {
-        public Before(ExpressionElement parent) : base(parent) { }
-    }
+    ///// <summary>
+    ///// Elément d'expression <see cref="Before"/>.
+    ///// </summary>
+    //public class Before : ExpressionElement
+    //{
+    //    /// <summary>
+    //    /// Initialise une nouvelle instance de la classe <see cref="Before"/>.
+    //    /// </summary>
+    //    /// <param name="parent">Elément parent.</param>
+    //    public Before(ExpressionElement parent) : base(parent) { }
+    //}
 }

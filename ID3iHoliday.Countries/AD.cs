@@ -11,6 +11,7 @@ using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
 using ID3iCore;
+using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
@@ -97,7 +98,7 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Catholic.MaundyThursday.Start("14:00"),
+                        Expression = ExpressionTree.Date.Catholic.MaundyThursday.StartAt("14:00"),
                         Names = NamesBuilder.Make.Add(Langue.ES, "Jueves Santo").AsDictionary(),
                         Type = Bank
                     },
