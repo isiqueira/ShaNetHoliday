@@ -14,8 +14,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Denmark.
+    /// </summary>
     public class DK : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="DK"/>.
+        /// </summary>
         public DK()
         {
             Code = "DK";

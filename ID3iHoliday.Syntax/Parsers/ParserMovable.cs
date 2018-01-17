@@ -9,8 +9,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
+    /// <summary>
+    /// Parser pour une expression de type movable.
+    /// </summary>
     public class ParserMovable : ParserBase
     {
+        /// <summary>
+        /// Pattern complet de ce parser.
+        /// </summary>
         public Pattern Pattern =>
             Pattern.With
                 .StartOfLine
@@ -24,6 +30,12 @@ namespace ID3iHoliday.Syntax.Parsers
                 .Include(Parser.PatternMonths)
                 .Include(Parser.PatternYearType)
                 .EndOfLine;
+        /// <summary>
+        /// Méthode de parsing d'une expression.
+        /// </summary>
+        /// <param name="expression">Expression à parser.</param>
+        /// <param name="year">Année.</param>
+        /// <returns>Un <see cref="ParserResult"/> correspondant.</returns>
         public override ParserResult Parse(string expression, int year)
         {
             ParserResult result = new ParserResult();

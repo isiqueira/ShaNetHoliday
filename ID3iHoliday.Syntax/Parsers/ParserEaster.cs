@@ -7,9 +7,12 @@ using System.Text.RegularExpressions;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
+    /// <summary>
+    /// Parser pour une expression de type religieuse.
+    /// </summary>
     public class ParserEaster : ParserBase
     {
-        public static DateTime CatholicEasterSunday(int year)
+        internal static DateTime CatholicEasterSunday(int year)
         {
             var g = year % 19;
             var c = year / 100;
@@ -27,7 +30,7 @@ namespace ID3iHoliday.Syntax.Parsers
 
             return new DateTime(year, month, day);
         }
-        public static DateTime OrthodoxEasterSunday(int year)
+        internal static DateTime OrthodoxEasterSunday(int year)
         {
             var a = year % 19;
             var b = year % 7;
@@ -43,6 +46,9 @@ namespace ID3iHoliday.Syntax.Parsers
 
             return new DateTime(year, month, day);
         }
+        /// <summary>
+        /// Pattern complet de ce parser.
+        /// </summary>
         public Pattern Pattern =>
             Pattern.With
                 .StartOfLine
@@ -54,6 +60,12 @@ namespace ID3iHoliday.Syntax.Parsers
                 .NamedGroup("Number", Pattern.With.Digit.Repeat.Between(0, 2)).Repeat.Optional
                 .Include(Parser.PatternDuration)
                 .EndOfLine;
+        /// <summary>
+        /// Méthode de parsing d'une expression.
+        /// </summary>
+        /// <param name="expression">Expression à parser.</param>
+        /// <param name="year">Année.</param>
+        /// <returns>Un <see cref="ParserResult"/> correspondant.</returns>
         public override ParserResult Parse(string expression, int year)
         {
             ParserResult result = new ParserResult();

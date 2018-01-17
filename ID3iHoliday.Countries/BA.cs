@@ -16,8 +16,14 @@ using ID3iDate;
 #warning penser au reste des jours orthodox et musulmans.
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Bosnia and Herzegovina.
+    /// </summary>
     public class BA : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="BA"/>.
+        /// </summary>
         public BA()
         {
             Code = "BA";

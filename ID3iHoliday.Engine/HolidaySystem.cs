@@ -9,15 +9,44 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Engine
 {
-
+    /// <summary>
+    /// Wrapper de base pour la récupération de données particulières dans l'environnement des jours particuliers.
+    /// </summary>
     public partial class HolidaySystem : IHolidaySystem
     {
+        /// <summary>
+        /// Liste des pays disponible.
+        /// </summary>
         public List<Country> CountriesAvailable { get; set; } = new List<Country>();
 
+        /// <summary>
+        /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All)
             => All(year, countryCode, null, null, type);
+        /// <summary>
+        /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All)
             => All(year, countryCode, stateCode, null, type);
+        /// <summary>
+        /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <param name="regionCode">Région.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All)
         {
             if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
@@ -28,10 +57,37 @@ namespace ID3iHoliday.Engine
                 return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, type);
         }
 
+        /// <summary>
+        /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
+        /// </summary>
+        /// <param name="startDate">Date de début.</param>
+        /// <param name="endDate">Date de fin.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, RuleType type = RuleType.All)
             => Between(startDate, endDate, countryCode, null, null, type);
+        /// <summary>
+        /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
+        /// </summary>
+        /// <param name="startDate">Date de début.</param>
+        /// <param name="endDate">Date de fin.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, string stateCode, RuleType type = RuleType.All)
             => Between(startDate, endDate, countryCode, stateCode, null, type);
+        /// <summary>
+        /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
+        /// </summary>
+        /// <param name="startDate">Date de début.</param>
+        /// <param name="endDate">Date de fin.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <param name="regionCode">Région.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All)
         {
             if (startDate.IsAfter(endDate))
@@ -55,20 +111,65 @@ namespace ID3iHoliday.Engine
             }
         }
 
+        /// <summary>
+        /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
+        /// </summary>
+        /// <param name="date">Date à trouver.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
         public SpecificDay Single(DateTime date, string countryCode, RuleType type = RuleType.Public)
             => Single(date, countryCode, null, null, type);
+        /// <summary>
+        /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
+        /// </summary>
+        /// <param name="date">Date à trouver.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
         public SpecificDay Single(DateTime date, string countryCode, string stateCode, RuleType type = RuleType.Public)
             => Single(date, countryCode, stateCode, null, type);
+        /// <summary>
+        /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
+        /// </summary>
+        /// <param name="date">Date à trouver.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <param name="regionCode">Région.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
         public SpecificDay Single(DateTime date, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.Public)
         {
             var items = All(date.Year, countryCode, stateCode, regionCode, type);
             return items.Where(x => x.Type == type).FirstOrDefault(x => x.Date.Date == date.Date);
         }
 
+        /// <summary>
+        /// Méthode qui permet de trouver tous les longs week-ends pour une année.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
         public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode)
             => LongWeekEnds(year, countryCode, null, null);
+        /// <summary>
+        /// Méthode qui permet de trouver tous les longs week-ends pour une année.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
         public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode, string stateCode)
             => LongWeekEnds(year, countryCode, stateCode, null);
+        /// <summary>
+        /// Méthode qui permet de trouver tous les longs week-ends pour une année.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="countryCode">Pays.</param>
+        /// <param name="stateCode">Etat.</param>
+        /// <param name="regionCode">Région.</param>
+        /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
         public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode, string stateCode, string regionCode)
         {
             var specificDays = All(year, countryCode, stateCode, regionCode, RuleType.Public);

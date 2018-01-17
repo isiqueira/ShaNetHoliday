@@ -9,17 +9,51 @@ using static ID3iHoliday.Models.RuleType;
 
 namespace ID3iHoliday.Models
 {
+    /// <summary>
+    /// Représentation d'un pays.
+    /// </summary>
     public class Country : GeographicElementBase
     {
+        /// <summary>
+        /// Code alphanumérique sur 3 caractères
+        /// </summary>
+        /// <remarks>https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3</remarks>
         public string Alpha3Code { get; set; }
+        /// <summary>
+        /// Jours non travaillés.
+        /// </summary>
         public List<DayOfWeek> DaysOff { get; set; } = new List<DayOfWeek>();
 
+        /// <summary>
+        /// Liste des états du pays.
+        /// </summary>
         public ListState States { get; set; } = new ListState();
 
+        /// <summary>
+        /// Méthode qui permet de récupérer les jours pour une année en particulier par rapport à un type de règle.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste de tous les jours particulier.</returns>
         public IEnumerable<SpecificDay> Get(int year, RuleType type)
             => Get(year, null, null, type);
+        /// <summary>
+        /// Méthode qui permet de récupérer les jours pour une année en particulier par rapport à un type de règle.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="state">Etat particulier</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste de tous les jours particulier.</returns>
         public IEnumerable<SpecificDay> Get(int year, string state, RuleType type)
             => Get(year, state, null, type);
+        /// <summary>
+        /// Méthode qui permet de récupérer les jours pour une année en particulier par rapport à un type de règle.
+        /// </summary>
+        /// <param name="year">Année souhaitée.</param>
+        /// <param name="stateCode">Etat particulier.</param>
+        /// <param name="regionCode">Région particulière.</param>
+        /// <param name="type">Type de règle.</param>
+        /// <returns>Une liste de tous les jours particulier.</returns>
         public IEnumerable<SpecificDay> Get(int year, string stateCode, string regionCode, RuleType type)
         {
             List<Rule> rules = new List<Rule>(Rules.Select(x => x.Clone() as Rule));

@@ -15,13 +15,19 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Austria.
+    /// </summary>
     public class AT : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AT"/>.
+        /// </summary>
         public AT()
         {
             Code = "AT";
             Alpha3Code = "AUT";
-            Names = NamesBuilder.Make.Add(Langue.DE_AT, "Österreich").Add(Langue.EN, "Austria").AsDictionary();
+            Names = NamesBuilder.Make.Add(Langue.EN, "Austria").Add(Langue.DE_AT, "Österreich").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.DE_AT, Langue.DE };
             Rules = new ListRule()

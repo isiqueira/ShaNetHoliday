@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
+    /// <summary>
+    /// Classe de définition des patterns.
+    /// </summary>
     public static class Parser
     {
+        /// <summary>
+        /// Pattern pour la durée.
+        /// </summary>
         public static Pattern PatternDuration =>
             Pattern.With
                 .AtomicGroup(
@@ -23,7 +29,9 @@ namespace ID3iHoliday.Syntax.Parsers
                 .AtomicGroup(
                     Pattern.With.Literal("P")
                     .NamedGroup("DurationDays", Pattern.With.Digit.Repeat.OneOrMore).Literal("D")).Repeat.Optional;
-
+        /// <summary>
+        /// Pattern pour le type d'année.
+        /// </summary>
         public static Pattern PatternYearType =>
             Pattern.With
                 .AtomicGroup(
@@ -31,7 +39,9 @@ namespace ID3iHoliday.Syntax.Parsers
                     .NamedGroup("YearType",
                         Pattern.With.Choice(Pattern.With.Literal("EVEN"), Pattern.With.Literal("ODD"), Pattern.With.Literal("LEAP"), Pattern.With.Literal("NONLEAP")))
                     .Whitespace.Literal("YEARS")).Repeat.Optional;
-
+        /// <summary>
+        /// Pattern pour la récurrence.
+        /// </summary>
         public static Pattern PatternYearRecurs =>
             Pattern.With
                 .AtomicGroup(
@@ -39,7 +49,9 @@ namespace ID3iHoliday.Syntax.Parsers
                     .NamedGroup("RepeatYear", Pattern.With.Digit)
                     .Whitespace.Literal("YEARS").Whitespace.Literal("SINCE").Whitespace
                     .NamedGroup("RepeatStartYear", Pattern.With.Set(Pattern.With.Literal("0-9")).Repeat.Exactly(4))).Repeat.Optional;
-
+        /// <summary>
+        /// Pattern pour une date dans un mois.
+        /// </summary>
         public static Pattern PatternMonths =>
             Pattern.With
                 .AtomicGroup(
@@ -71,20 +83,28 @@ namespace ID3iHoliday.Syntax.Parsers
                                     Pattern.With.Set(Pattern.With.Literal("1-2")).Set(Pattern.With.Literal("0-9")),
                                     Pattern.With.Literal("30")))
                         ));
-
+        /// <summary>
+        /// Pattern pour l'adjectif numéral.
+        /// </summary>
         public static Pattern PatternNumber =>
             Pattern.With.Choice(
                 Pattern.With.Literal("FIRST"), Pattern.With.Literal("SECOND"), Pattern.With.Literal("THIRD"),
                 Pattern.With.Literal("FOURTH"), Pattern.With.Literal("FIFTH"), Pattern.With.Literal("SIXTH"));
-
+        /// <summary>
+        /// Pattern pour le jour particulier.
+        /// </summary>
         public static Pattern PatternDay =>
             Pattern.With.Choice(
                 Pattern.With.Literal("MONDAY"), Pattern.With.Literal("TUESDAY"), Pattern.With.Literal("WEDNESDAY"),
                  Pattern.With.Literal("THURSDAY"), Pattern.With.Literal("FRIDAY"), Pattern.With.Literal("SATURDAY"), Pattern.With.Literal("SUNDAY"));
-
+        /// <summary>
+        /// Pattern pour le type d'action Before/After.
+        /// </summary>
         public static Pattern PatternActionBeforeAfter =>
             Pattern.With.Choice(Pattern.With.Literal("BEFORE"), Pattern.With.Literal("AFTER"));
-
+        /// <summary>
+        /// Pattern pour le type d'action Previous/Next.
+        /// </summary>
         public static Pattern PatternActionNextPrevious =>
             Pattern.With.Choice(Pattern.With.Literal("NEXT"), Pattern.With.Literal("PREVIOUS"));
     }

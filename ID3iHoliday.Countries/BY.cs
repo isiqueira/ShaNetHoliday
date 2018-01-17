@@ -15,13 +15,19 @@ using ID3iDate;
 namespace ID3iHoliday.Countries
 {
 #warning Ici il faudra penser à ajouter le noël orthodox par rapport au calendrier julian.
+    /// <summary>
+    /// Définition pour Belarus.
+    /// </summary>
     public class BY : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="BY"/>.
+        /// </summary>
         public BY()
         {
             Code = "BY";
             Alpha3Code = "BLR";
-            Names = NamesBuilder.Make.Add(Langue.BE, "Рэспубліка Беларусь").Add(Langue.RU, "Республика Беларусь").AsDictionary();
+            Names = NamesBuilder.Make.Add(Langue.EN, "Belarus").Add(Langue.BE, "Рэспубліка Беларусь").Add(Langue.RU, "Республика Беларусь").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.BE, Langue.RU };
             Rules = new ListRule()

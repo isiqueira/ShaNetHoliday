@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ID3iHoliday.Core.Parsers;
-using ID3iHoliday.Syntax.Tests;
 
 namespace ID3iHoliday.Syntax
 {
@@ -83,6 +82,7 @@ namespace ID3iHoliday.Syntax
         /// <summary>
         /// Expression pour un <see cref="EasterDayComposition"/> personalisé par rapport au dimanche de Pâques..
         /// </summary>
+        /// <param name="value">Expression du jour particulier.</param>
         /// <returns>Le <see cref="EasterDayComposition"/> correspondant.</returns>
         public EasterDayComposition CustomDay(string value) => new EasterDayComposition(this, value);
         /// <summary>

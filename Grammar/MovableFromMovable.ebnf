@@ -1,6 +1,10 @@
 /* extracted from http://www.bottlecaps.de/rr/ui on Mon Jan 8, 2018, 11:40 (UTC+01)
  */
-ExpressionTreeGrammar ::= ExpressionTree'.'MovableFromMovable'('Count',' Days')''.'(Before|After)'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')(('.'In'('YearType')')?|('.'Every'(''NumberValue'')''.'Year'.'Since'(''NumberValue'')'))?
+ExpressionTreeGrammar ::= ExpressionTree'.'MovableFromMovable'('Count',' Days')''.'(Before|After)'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')
+(
+'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+|'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+)?
 
 Days ::= ('Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|'Saturday'|'Sunday')
 YearType ::= ('Even'|'Odd'|'Leap'|'NonLeap')

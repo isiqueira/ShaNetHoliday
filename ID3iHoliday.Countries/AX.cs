@@ -14,13 +14,19 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Åland Islands.
+    /// </summary>
     public class AX : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AX"/>.
+        /// </summary>
         public AX()
         {
             Code = "AX";
             Alpha3Code = "ALA";
-            Names = NamesBuilder.Make.Add(Langue.SV, "Landskapet Åland").Add(Langue.EN, "Åland Islands").AsDictionary();
+            Names = NamesBuilder.Make.Add(Langue.EN, "Åland Islands").Add(Langue.SV, "Landskapet Åland").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.SV };
             Rules = new ListRule()

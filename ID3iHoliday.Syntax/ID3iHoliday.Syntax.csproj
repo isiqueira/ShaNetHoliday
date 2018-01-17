@@ -41,14 +41,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composition\AfterComposition.cs" />
+    <Compile Include="Composition\AfterMovableComposition.cs" />
+    <Compile Include="Composition\BeforeComposition.cs" />
+    <Compile Include="Composition\BeforeMovableComposition.cs" />
     <Compile Include="Composition\Catholic.cs" />
     <Compile Include="Composition\Christianism.cs" />
-    <Compile Include="Composition\Date.cs" />
-    <Compile Include="Composition\EasterDay.cs" />
+    <Compile Include="Composition\DateComposition.cs" />
+    <Compile Include="Composition\DayComposition.cs" />
+    <Compile Include="Composition\DurationComposition.cs" />
+    <Compile Include="Composition\EasterDayComposition.cs" />
+    <Compile Include="Composition\EveryComposition.cs" />
     <Compile Include="Composition\ExpressionTree.cs" />
-    <Compile Include="Composition\Movable.cs" />
-    <Compile Include="Composition\MovableFromMovable.cs" />
+    <Compile Include="Composition\IfComposition.cs" />
+    <Compile Include="Composition\IfDayComposition.cs" />
+    <Compile Include="Composition\InYearComposition.cs" />
+    <Compile Include="Composition\MovableComposition.cs" />
+    <Compile Include="Composition\MovableFromMovableComposition.cs" />
+    <Compile Include="Composition\MoveComposition.cs" />
+    <Compile Include="Composition\NextComposition.cs" />
+    <Compile Include="Composition\ObserveComposition.cs" />
+    <Compile Include="Composition\OrComposition.cs" />
     <Compile Include="Composition\Orthodox.cs" />
+    <Compile Include="Composition\PreviousComposition.cs" />
+    <Compile Include="Composition\SimpleDayComposition.cs" />
+    <Compile Include="Composition\SinceComposition.cs" />
+    <Compile Include="Composition\SpecificDayComposition.cs" />
+    <Compile Include="Composition\StartComposition.cs" />
+    <Compile Include="Composition\SubstituteComposition.cs" />
+    <Compile Include="Composition\ThenActionComposition.cs" />
+    <Compile Include="Composition\ThenStartComposition.cs" />
+    <Compile Include="Composition\YearComposition.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="Parsers\Parser.Shared.cs" />
     <Compile Include="Parsers\ParserDate.cs" />
@@ -79,8 +102,6 @@
       <Name>ID3iHoliday.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Blocs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

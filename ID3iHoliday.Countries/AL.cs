@@ -11,14 +11,20 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Albania.
+    /// </summary>
     public class AL : Country
     {
 #warning attention ici il faut penser aux jours fériés dans le calendrier islamic
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AL"/>.
+        /// </summary>
         public AL()
         {
             Code = "AL";
             Alpha3Code = "ALB";
-            Names = NamesBuilder.Make.Add(Langue.SQ, "Shqipëri").Add(Langue.EN, "Albania").AsDictionary();
+            Names = NamesBuilder.Make.Add(Langue.EN, "Albania").Add(Langue.SQ, "Shqipëri").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.SQ };
             Rules = new ListRule()

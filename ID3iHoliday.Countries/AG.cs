@@ -13,8 +13,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Antigua &amp; Barbuda.
+    /// </summary>
     public class AG : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AG"/>.
+        /// </summary>
         public AG()
         {
             Code = "AG";

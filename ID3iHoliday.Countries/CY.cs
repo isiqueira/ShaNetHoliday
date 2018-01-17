@@ -14,8 +14,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Cyprus.
+    /// </summary>
     public class CY : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="CY"/>.
+        /// </summary>
         public CY()
         {
             Code = "CY";

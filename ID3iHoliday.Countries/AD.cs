@@ -15,13 +15,19 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Andorra.
+    /// </summary>
     public class AD : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AD"/>.
+        /// </summary>
         public AD()
         {
             Code = "AD";
             Alpha3Code = "AND";
-            Names = NamesBuilder.Make.Add(Langue.CA, "Andorra").Add(Langue.ES, "Andorra").Add(Langue.EN, "Andorra").AsDictionary();
+            Names = NamesBuilder.Make.Add(Langue.EN, "Andorra").Add(Langue.ES, "Andorra").Add(Langue.CA, "Andorra").AsDictionary();
             DaysOff = new List<DayOfWeek>() { Sunday };
             Langues = new List<Langue>() { Langue.CA, Langue.ES };
             Rules = new ListRule()

@@ -15,8 +15,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Belgique.
+    /// </summary>
     public class BE : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="BE"/>.
+        /// </summary>
         public BE()
         {
             Code = "BE";

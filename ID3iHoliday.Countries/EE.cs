@@ -14,8 +14,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Estonia.
+    /// </summary>
     public class EE : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="EE"/>.
+        /// </summary>
         public EE()
         {
             Code = "EE";

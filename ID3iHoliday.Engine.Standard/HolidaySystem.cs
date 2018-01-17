@@ -8,8 +8,15 @@ using ID3iHoliday.Countries;
 
 namespace ID3iHoliday.Engine.Standard
 {
+    /// <summary>
+    /// Wrapper pour la récupération de données particulières dans l'environnement des jours particuliers.
+    /// </summary>
+    /// <remarks>Ce wrapper inclu déjà tous les pays possible et est founit avec son singleton.</remarks>
     public class HolidaySystem : Engine.HolidaySystem
     {
+        /// <summary>
+        /// Singleton.
+        /// </summary>
         public static HolidaySystem Instance { get; } = new HolidaySystem();
         private HolidaySystem()
         {            

@@ -15,8 +15,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Croatia.
+    /// </summary>
     public class HR : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="HR"/>.
+        /// </summary>
         public HR()
         {
             Code = "HR";

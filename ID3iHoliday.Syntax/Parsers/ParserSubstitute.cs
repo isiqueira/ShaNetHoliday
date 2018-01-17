@@ -6,8 +6,14 @@ using System.Text.RegularExpressions;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
+    /// <summary>
+    /// Parser pour une expression de type substitution.
+    /// </summary>
     public class ParserSubstitute : ParserBase
     {
+        /// <summary>
+        /// Pattern complet de ce parser.
+        /// </summary>
         public Pattern Pattern =>
             Pattern.With
                 .StartOfLine
@@ -20,6 +26,12 @@ namespace ID3iHoliday.Syntax.Parsers
                     .Whitespace
                     .NamedGroup("NewValue", Parser.PatternDay)
                 .EndOfLine;
+        /// <summary>
+        /// Méthode de parsing d'une expression.
+        /// </summary>
+        /// <param name="expression">Expression à parser.</param>
+        /// <param name="year">Année.</param>
+        /// <returns>Un <see cref="ParserResult"/> correspondant.</returns>
         public override ParserResult Parse(string expression, int year)
         {
             ParserResult result = new ParserResult();

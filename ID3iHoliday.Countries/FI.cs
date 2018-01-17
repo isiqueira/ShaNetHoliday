@@ -14,8 +14,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Finland.
+    /// </summary>
     public class FI : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="FI"/>.
+        /// </summary>
         public FI()
         {
             Code = "FI";

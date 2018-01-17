@@ -11,8 +11,14 @@ using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Anguilla.
+    /// </summary>
     public class AI : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AI"/>.
+        /// </summary>
         public AI()
         {
             Code = "AI";
