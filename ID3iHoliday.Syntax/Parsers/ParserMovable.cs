@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using ID3iHoliday.Core.Parsers;
 using ID3iCore;
 using ID3iDate;
-using static ID3iHoliday.Syntax.Year;
+using static ID3iHoliday.Syntax.YearType;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
@@ -27,6 +27,8 @@ namespace ID3iHoliday.Syntax.Parsers
                 .NamedGroup("ExpectedAction", Parser.PatternActionBeforeAfter)
                 .Whitespace
                 .Include(Parser.PatternMonths)
+                .AtomicGroup(Pattern.With.Whitespace.Literal("THEN")).Repeat.Optional
+                .Include(Parser.PatternStartAndDuration)
                 .Include(Parser.PatternYearType)
                 .Include(Parser.PatternYearRecurs)
                 .EndOfLine;
@@ -59,10 +61,13 @@ namespace ID3iHoliday.Syntax.Parsers
                 else if (match.Groups["ExpectedAction"].Value == "AFTER")
                     date = date.NextOrThis((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["Expected"].Value, true)).WeekAfter((int)(Count)Enum.Parse(typeof(Count), match.Groups["ExpectedNumber"].Value, true));
 
+                if (match.Groups["StartHours"].Value.IsNotNullOrEmpty() && match.Groups["StartMinutes"].Value.IsNotNullOrEmpty())
+                    date = date.SetTime(Int32.Parse(match.Groups["StartHours"].Value), Int32.Parse(match.Groups["StartMinutes"].Value));
+
                 bool isYearTypeOk = false;
                 if (match.Groups["YearType"].Value.IsNotNullOrEmpty())
                 {
-                    switch ((Year)Enum.Parse(typeof(Year), match.Groups["YearType"].Value, true))
+                    switch ((YearType)Enum.Parse(typeof(Year), match.Groups["YearType"].Value, true))
                     {
                         case Even:
                             if (date.Year % 2 == 0)
@@ -93,7 +98,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 {
                     var numberYear = Int32.Parse(match.Groups["RepeatYear"].Value);
                     var startYear = Int32.Parse(match.Groups["RepeatStartYear"].Value);
-                    if (((date.Year - startYear) % numberYear) == 0)
+                    if (date.Year >= startYear && ((date.Year - startYear) % numberYear) == 0)
                         isYearRecursOk = true;
                 }
                 else

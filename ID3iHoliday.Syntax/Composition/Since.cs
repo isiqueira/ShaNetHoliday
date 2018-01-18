@@ -10,7 +10,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour gérer le début d'application de l'expression.
     /// </summary>
-    public class SinceComposition : ExpressionElement
+    public class Since : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,10 +18,10 @@ namespace ID3iHoliday.Syntax
         protected override string Token => $"SINCE {Year}";
         internal int Year { get; set; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="SinceComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="Since"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="year">Année de départ.</param>
-        public SinceComposition(ExpressionElement parent, int year) : base(parent) => Year = year;
+        public Since(ExpressionElement parent, int year) : base(parent) => Year = year;
     }
 }

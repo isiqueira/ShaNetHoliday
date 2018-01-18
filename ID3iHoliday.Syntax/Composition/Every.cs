@@ -10,7 +10,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour gérer la récurrence selon un nombre de périodes.
     /// </summary>
-    public class EveryComposition : ExpressionElement
+    public class Every : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,14 +18,14 @@ namespace ID3iHoliday.Syntax
         protected override string Token => $"EVERY {Number}";
         internal int Number { get; set; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="EveryComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="Every"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="number">Nombre de périodes.</param>
-        public EveryComposition(ExpressionElement parent, int number) : base(parent) => Number = number;
+        public Every(ExpressionElement parent, int number) : base(parent) => Number = number;
         /// <summary>
         /// Elément de syntax pour le récurrence par nombre d'années.
         /// </summary>
-        public YearComposition Year => new YearComposition(this);
+        public Year Year => new Year(this);
     }
 }

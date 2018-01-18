@@ -10,7 +10,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour changer l'heure.
     /// </summary>
-    public class ThenStartComposition : ExpressionElement
+    public class ThenStart : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,22 +18,22 @@ namespace ID3iHoliday.Syntax
         protected override string Token => $"THEN {Value}";
         internal string Value { get; set; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="ThenStartComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="ThenStart"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="value">Heure de début.</param>
-        public ThenStartComposition(ExpressionElement parent, string value) : base(parent) => Value = value;
+        public ThenStart(ExpressionElement parent, string value) : base(parent) => Value = value;
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de période.</param>
-        /// <returns>L'élément de syntax <see cref="EveryComposition"/> pour ajouter d'autres comportements.</returns>
-        public EveryComposition Every(int number) => new EveryComposition(this, number);
+        /// <returns>L'élément de syntax <see cref="Syntax.Every"/> pour ajouter d'autres comportements.</returns>
+        public Every Every(int number) => new Every(this, number);
         /// <summary>
         /// Elément de syntax pour gérer le type d'année pris en charge.
         /// </summary>
         /// <param name="year">Type de l'année.</param>
-        /// <returns>L'élément de syntax <see cref="InYearComposition"/> pour ajouter d'autres comportements.</returns>
-        public InYearComposition In(Year year) => new InYearComposition(this, year);
+        /// <returns>L'élément de syntax <see cref="InYear"/> pour ajouter d'autres comportements.</returns>
+        public InYear In(YearType year) => new InYear(this, year);
     }
 }

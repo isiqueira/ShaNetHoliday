@@ -14,18 +14,18 @@ namespace ID3iHoliday.Syntax
         /// <summary>
         /// Racine pour les expressions de date.
         /// </summary>
-        public static DateComposition Date => new DateComposition();
+        public static Date Date => new Date();
         /// <summary>
         /// Racine pour les expressions de déplacement.
         /// </summary>
-        public static MoveComposition Move => new MoveComposition();
+        public static Move Move => new Move();
         /// <summary>
         /// Racine pour les expressions d'observation.
         /// </summary>
-        public static ObserveComposition Observe => new ObserveComposition();
+        public static Observe Observe => new Observe();
         /// <summary>
         /// Racine pour les expressions de substitution.
         /// </summary>
-        public static SubstituteComposition Substitute => new SubstituteComposition();
+        public static Substitute Substitute => new Substitute();
     }
 }

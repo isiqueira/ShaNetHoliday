@@ -39,7 +39,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Enumération pour le type d'année.
     /// </summary>
-    public enum Year
+    public enum YearType
     {
         /// <summary>
         /// Année pair.

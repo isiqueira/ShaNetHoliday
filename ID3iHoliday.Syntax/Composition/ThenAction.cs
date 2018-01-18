@@ -10,28 +10,28 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax qui permet de choisir l'action à réaliser.
     /// </summary>
-    public class ThenActionComposition : ExpressionElement
+    public class ThenAction : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
         /// </summary>
         protected override string Token => "THEN";
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="ThenActionComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="ThenAction"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
-        public ThenActionComposition(ExpressionElement parent) : base(parent) { }
+        public ThenAction(ExpressionElement parent) : base(parent) { }
         /// <summary>
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste avant.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier à retourner.</param>
-        /// <returns>L'élément de syntax <see cref="PreviousComposition"/> pour ajouter d'autres comportements.</returns>
-        public PreviousComposition Previous(DayOfWeek dayOfWeek) => new PreviousComposition(this, dayOfWeek);
+        /// <returns>L'élément de syntax <see cref="Syntax.Previous"/> pour ajouter d'autres comportements.</returns>
+        public Previous Previous(DayOfWeek dayOfWeek) => new Previous(this, dayOfWeek);
         /// <summary>
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste après.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier à retourner.</param>
-        /// <returns>L'élément de syntax <see cref="NextComposition"/> pour ajouter d'autres comportements.</returns>
-        public NextComposition Next(DayOfWeek dayOfWeek) => new NextComposition(this, dayOfWeek);
+        /// <returns>L'élément de syntax <see cref="Syntax.Next"/> pour ajouter d'autres comportements.</returns>
+        public Next Next(DayOfWeek dayOfWeek) => new Next(this, dayOfWeek);
     }
 }

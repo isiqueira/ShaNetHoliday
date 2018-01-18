@@ -78,9 +78,8 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.July.The3rd),
+                        Expression = ExpressionTree.Date.Fix(On.July.The3rd).Since(1996),
                         Names = NamesBuilder.Make.Add(Langue.BE, "Дзень Незалежнасцi").AsDictionary(),
-                        Note = "Faire en sorte de faire commencer ce jour férié depuis 1996"
                     },
                     new Rule()
                     {

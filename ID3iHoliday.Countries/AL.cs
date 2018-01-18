@@ -114,10 +114,9 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Observe.Fix(On.October.The19th).If(Sunday).Then.Next(Monday),
+                        Expression = ExpressionTree.Observe.Fix(On.October.The19th).If(Sunday).Then.Next(Monday).Since(2004),
                         Names = NamesBuilder.Make.Add(Langue.SQ, "Dita e Nënë Terezës").AsDictionary(),
                         Substitute = true,
-                        Note = "Faire commencer ce jour férié à partir de 2004"
                     },
                     new Rule()
                     {
@@ -139,10 +138,9 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Observe.Fix(On.December.The8th).If(Sunday).Then.Next(Monday),
+                        Expression = ExpressionTree.Observe.Fix(On.December.The8th).If(Sunday).Then.Next(Monday).Since(2010),
                         Names = NamesBuilder.Make.Add(Langue.SQ, "Dita Kombëtare e Rinisë").AsDictionary(),
                         Substitute = true,
-                        Note = "Faire commencer ce jour férié à partir de 2010"
                     },
                     new Rule()
                     {

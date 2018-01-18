@@ -120,9 +120,8 @@ namespace ID3iHoliday.Countries
                 },
                 new Rule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("14:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("14:00").UntilMidnight.If(Sunday).ThenStartAt("00:00"),
                     Names = NamesBuilder.Make.Add(Langue.FI, "Uudenvuodenaatto").AsDictionary(),
-                    Note = "Pour l'instant aucun pattern ne supporte : DATE 12-31 14:00 IF SUNDAY THEN 00:00",
                     Type = Bank
                 }
             };

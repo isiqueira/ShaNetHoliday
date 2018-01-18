@@ -10,7 +10,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour indiquer que c'est avant une date précise.
     /// </summary>
-    public class BeforeComposition : ExpressionElement
+    public class Before : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,22 +18,28 @@ namespace ID3iHoliday.Syntax
         protected override string Token => $"BEFORE {Value}";
         internal string Value { get; set; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="BeforeComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="Before"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="value">Date.</param>
-        public BeforeComposition(ExpressionElement parent, string value) : base(parent) => Value = value;
+        public Before(ExpressionElement parent, string value) : base(parent) => Value = value;
+        /// <summary>
+        /// Elément de syntax pour changer l'heure.
+        /// </summary>
+        /// <param name="value">Nouvelle heure.</param>
+        /// <returns>L'élément de syntax <see cref="ThenStart"/> pour ajouter d'autres comportements.</returns>
+        public ThenStart ThenStartAt(string value) => new ThenStart(this, value);
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de période.</param>
-        /// <returns>L'élément de syntax <see cref="EveryComposition"/> pour ajouter d'autres comportements.</returns>
-        public EveryComposition Every(int number) => new EveryComposition(this, number);
+        /// <returns>L'élément de syntax <see cref="Syntax.Every"/> pour ajouter d'autres comportements.</returns>
+        public Every Every(int number) => new Every(this, number);
         /// <summary>
         /// Elément de syntax pour gérer le type d'année pris en charge.
         /// </summary>
         /// <param name="year">Type de l'année.</param>
-        /// <returns>L'élément de syntax <see cref="InYearComposition"/> pour ajouter d'autres comportements.</returns>
-        public InYearComposition In(Year year) => new InYearComposition(this, year);
+        /// <returns>L'élément de syntax <see cref="InYear"/> pour ajouter d'autres comportements.</returns>
+        public InYear In(YearType year) => new InYear(this, year);
     }
 }

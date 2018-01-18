@@ -12,7 +12,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour définir la date après laquelle le jour sera trouvé.
     /// </summary>
-    public class AfterMovableComposition : MovableComposition
+    public class AfterMovable : Movable
     {
         /// <summary>
         /// Token de l'élément.
@@ -23,11 +23,11 @@ namespace ID3iHoliday.Syntax
         /// </summary>
         protected override ParserBase Parser => new ParserMovableFromMovable();
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="AfterMovableComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="AfterMovable"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="count">Adjectif numéral pour la position du jour.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public AfterMovableComposition(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent, count, dayOfWeek) { }
+        public AfterMovable(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent, count, dayOfWeek) { }
     }
 }

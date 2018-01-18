@@ -10,30 +10,30 @@ using System.Threading.Tasks;
 namespace ID3iHoliday.Syntax
 {
     /// <summary>
-    /// Elément de syntax pour mettre en place une date fixe dans n'importe quelle année.
+    /// Elément de syntax pour mettre en place une date fixe dans une année en particulier.
     /// </summary>
-    public class DayComposition : ExpressionElement
+    public class SpecificDay : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
         /// </summary>
-        protected override string Token => DateTime.ToString("MM-dd");
+        protected override string Token => DateTime.ToString("yyyy-MM-dd");
         /// <summary>
         /// <see cref="ParserDate"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserDate();
         internal DateTime DateTime { get; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="DayComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="SpecificDay"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dateTime">Date.</param>
-        public DayComposition(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
+        public SpecificDay(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
         /// <summary>
         /// Elément de syntax pour indiquer l'heure de début.
         /// </summary>
         /// <param name="value">L'heure de début au format HH:mm</param>
-        /// <returns>L'élément de syntax <see cref="StartComposition"/> pour ajouter d'autres comportements.</returns>
-        public StartComposition StartAt(string value) => new StartComposition(this, value);
+        /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
+        public Start StartAt(string value) => new Start(this, value);
     }
 }

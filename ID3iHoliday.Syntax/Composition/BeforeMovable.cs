@@ -12,7 +12,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour définir la date avant laquelle le jour sera trouvé.
     /// </summary>
-    public class BeforeMovableComposition : MovableComposition
+    public class BeforeMovable : Movable
     {
         /// <summary>
         /// Token de l'élément.
@@ -23,11 +23,11 @@ namespace ID3iHoliday.Syntax
         /// </summary>
         protected override ParserBase Parser => new ParserMovableFromMovable();
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="BeforeMovableComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="BeforeMovable"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="count">Adjectif numéral pour la position du jour.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public BeforeMovableComposition(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent, count, dayOfWeek) { }
+        public BeforeMovable(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent, count, dayOfWeek) { }
     }
 }

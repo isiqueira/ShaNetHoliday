@@ -3,6 +3,7 @@ using System;
 using System.Text.RegularExpressions;
 using ID3iHoliday.Core.Parsers;
 using ID3iDate;
+using ID3iCore;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
@@ -26,6 +27,7 @@ namespace ID3iHoliday.Syntax.Parsers
                     .NamedGroup("Action", Parser.PatternActionNextPrevious)
                     .Whitespace
                     .NamedGroup("NewValue", Parser.PatternDay)).Repeat.OneOrMore
+                .Include(Parser.PatternYearRecurs)
                 .EndOfLine;
 
         /// <summary>
@@ -50,18 +52,36 @@ namespace ID3iHoliday.Syntax.Parsers
             var match = regex.Match(expression);
             if (match.Success)
             {
-                var realDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
-                result.DatesToAdd.Add(realDate);
+                var observedDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
+                var newDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));                
                 for (int i = 0; i < match.Groups["Or"].Captures.Count; i++)
                 {
-                    if (realDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)
+                    if (observedDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)
                     {
                         if (match.Groups["Action"].Captures[i].Value == "NEXT")
-                            result.DatesToAdd.Add(realDate.Next((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true)));
+                            newDate = observedDate.Next((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true));
                         else if (match.Groups["Action"].Captures[i].Value == "PREVIOUS")
-                            result.DatesToAdd.Add(realDate.Previous((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true)));
+                            newDate = observedDate.Previous((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true));
                     }
+                }                
+
+                bool isYearRecursOk = false;
+                if (match.Groups["RepeatYear"].Value.IsNotNullOrEmpty() && match.Groups["RepeatStartYear"].Value.IsNotNullOrEmpty())
+                {
+                    var numberYear = Int32.Parse(match.Groups["RepeatYear"].Value);
+                    var startYear = Int32.Parse(match.Groups["RepeatStartYear"].Value);
+                    if (newDate.Year >= startYear && ((newDate.Year - startYear) % numberYear) == 0)
+                        isYearRecursOk = true;
                 }
+                else
+                    isYearRecursOk = true;
+
+                if (isYearRecursOk)
+                {
+                    result.DatesToAdd.Add(observedDate);
+                    if (observedDate != newDate)
+                        result.DatesToAdd.Add(newDate);
+                }                    
             }
             return result;
         }

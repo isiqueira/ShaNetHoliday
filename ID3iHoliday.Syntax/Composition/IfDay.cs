@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace ID3iHoliday.Syntax
 {
     /// <summary>
-    /// Elément de syntax pour changer l'heure de début selon le jour.
+    /// Elément de syntax pour déplacer le jour à un autre si il tombe un certain jour.
     /// </summary>
-    public class IfComposition : ExpressionElement
+    public class IfDay : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,16 +18,14 @@ namespace ID3iHoliday.Syntax
         protected override string Token => $"IF {DayOfWeek.ToString().ToUpper()}";
         internal DayOfWeek DayOfWeek { get; set; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="IfComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="IfDay"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public IfComposition(ExpressionElement parent, DayOfWeek dayOfWeek) : base(parent) => DayOfWeek = dayOfWeek;
+        public IfDay(ExpressionElement parent, DayOfWeek dayOfWeek) : base(parent) => DayOfWeek = dayOfWeek;
         /// <summary>
-        /// Elément de syntax pour changer l'heure.
+        /// Elément de syntax <see cref="ThenAction"/> pour choisir l'action à réaliser.
         /// </summary>
-        /// <param name="value">Nouvelle heure.</param>
-        /// <returns>L'élément de syntax <see cref="ThenStartComposition"/> pour ajouter d'autres comportements.</returns>
-        public ThenStartComposition ThenStartAt(string value) => new ThenStartComposition(this, value);
+        public ThenAction Then => new ThenAction(this);
     }
 }

@@ -10,7 +10,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour la définition d'un jour en rapport avec le dimanche de Pâques.
     /// </summary>
-    public class EasterDayComposition : ExpressionElement
+    public class EasterDay : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,21 +18,21 @@ namespace ID3iHoliday.Syntax
         protected override string Token => Value;
         internal string Value { get; set; }
         /// <summary>
-        /// Initialise une nouvelle classe de <see cref="EasterDayComposition"/>.
+        /// Initialise une nouvelle classe de <see cref="EasterDay"/>.
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="value"></param>
-        public EasterDayComposition(ExpressionElement parent, string value) : base(parent) => Value = value;
+        public EasterDay(ExpressionElement parent, string value) : base(parent) => Value = value;
         /// <summary>
         /// Elément de syntax pour indiquer l'heure de début.
         /// </summary>
         /// <param name="value">L'heure de début au format HH:mm</param>
-        /// <returns>L'élément de syntax <see cref="StartComposition"/> pour ajouter d'autres comportements.</returns>
-        public StartComposition StartAt(string value) => new StartComposition(this, value);
+        /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
+        public Start StartAt(string value) => new Start(this, value);
         /// <summary>
         /// Elément de syntax pour indiquer que l'heure de début est à minuit.
         /// </summary>
-        /// <returns>L'élément de syntax <see cref="StartComposition"/> pour ajouter d'autres comportements.</returns>
-        public StartComposition StartAtMidnight => new StartComposition(this, "00:00");
+        /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
+        public Start StartAtMidnight => new Start(this, "00:00");
     }
 }

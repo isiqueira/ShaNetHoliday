@@ -88,9 +88,8 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Movable(Third, Friday).After("06-01"),
+                        Expression = ExpressionTree.Date.Movable(Third, Friday).After("06-01").ThenStartAt("12:00"),
                         Names = NamesBuilder.Make.Add(Langue.SV, "Midsommarafton").AsDictionary(),
-                        Note ="Faire commencer ce jour à midi."
                     },
                     new Rule()
                     {

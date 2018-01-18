@@ -120,9 +120,8 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt("14:00"),
+                        Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt("14:00").UntilMidnight.If(Sunday).ThenStartAt("00:00"),
                         Names = NamesBuilder.Make.Add(Langue.DE, "Heiliger Abend").AsDictionary(),
-                        Note = "Pour l'instant aucun pattern n'a été fait pour interpréter : DATE 12-24 14:00 IF SUNDAY 00:00",
                         Type = Bank
                     },
                     new Rule()
@@ -141,9 +140,8 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("14:00"),
+                        Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("14:00").UntilMidnight.If(Sunday).ThenStartAt("00:00"),
                         Names = NamesBuilder.Make.Add(Langue.DE, "Silvester").AsDictionary(),
-                        Note = "Pour l'instant aucun pattern n'a été fait pour interpréter : DATE 12-31 14:00 IF SUNDAY 00:00",
                         Type = Bank
                     },
                 }

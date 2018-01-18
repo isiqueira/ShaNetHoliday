@@ -12,7 +12,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour changer au jour de la semaine spécifié à partir d'une date fixe déjà changée.
     /// </summary>
-    public class MovableFromMovableComposition : ExpressionElement
+    public class MovableFromMovable : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -25,12 +25,12 @@ namespace ID3iHoliday.Syntax
         internal Count Count { get; set; }
         internal DayOfWeek Day { get; set; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="MovableFromMovableComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="MovableFromMovable"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="count">Adjectif numéral pour la position du jour.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public MovableFromMovableComposition(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent)
+        public MovableFromMovable(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent)
         {
             Count = count;
             Day = dayOfWeek;
@@ -40,14 +40,14 @@ namespace ID3iHoliday.Syntax
         /// </summary>
         /// <param name="count">Adjectif numéral pour la position du jour.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        /// <returns>L'élément de syntax <see cref="BeforeMovableComposition"/> pour ajouter d'autres comportements.</returns>
-        public BeforeMovableComposition Before(Count count, DayOfWeek dayOfWeek) => new BeforeMovableComposition(this, count, dayOfWeek);
+        /// <returns>L'élément de syntax <see cref="BeforeMovable"/> pour ajouter d'autres comportements.</returns>
+        public BeforeMovable Before(Count count, DayOfWeek dayOfWeek) => new BeforeMovable(this, count, dayOfWeek);
         /// <summary>
         /// Elément de syntax pour définir la date après laquelle le jour sera trouvé.
         /// </summary>
         /// <param name="count">Adjectif numéral pour la position du jour.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        /// <returns>L'élément de syntax <see cref="BeforeMovableComposition"/> pour ajouter d'autres comportements.</returns>
-        public AfterMovableComposition After(Count count, DayOfWeek dayOfWeek) => new AfterMovableComposition(this, count, dayOfWeek);
+        /// <returns>L'élément de syntax <see cref="BeforeMovable"/> pour ajouter d'autres comportements.</returns>
+        public AfterMovable After(Count count, DayOfWeek dayOfWeek) => new AfterMovable(this, count, dayOfWeek);
     }
 }

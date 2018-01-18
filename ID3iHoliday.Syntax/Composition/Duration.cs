@@ -10,7 +10,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour gérer la durée.
     /// </summary>
-    public class DurationComposition : ExpressionElement
+    public class Duration : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,28 +18,28 @@ namespace ID3iHoliday.Syntax
         protected override string Token => $"{Value}";
         internal string Value { get; set; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="DurationComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="Duration"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="value">Durée.</param>
-        public DurationComposition(ExpressionElement parent, string value) : base(parent) => Value = value;
+        public Duration(ExpressionElement parent, string value) : base(parent) => Value = value;
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de période.</param>
-        /// <returns>L'élément de syntax <see cref="EveryComposition"/> pour ajouter d'autres comportements.</returns>
-        public EveryComposition Every(int number) => new EveryComposition(this, number);
+        /// <returns>L'élément de syntax <see cref="Syntax.Every"/> pour ajouter d'autres comportements.</returns>
+        public Every Every(int number) => new Every(this, number);
         /// <summary>
         /// Elément de syntax pour gérer le type d'année pris en charge.
         /// </summary>
         /// <param name="year">Type de l'année.</param>
-        /// <returns>L'élément de syntax <see cref="InYearComposition"/> pour ajouter d'autres comportements.</returns>
-        public InYearComposition In(Year year) => new InYearComposition(this, year);
+        /// <returns>L'élément de syntax <see cref="InYear"/> pour ajouter d'autres comportements.</returns>
+        public InYear In(YearType year) => new InYear(this, year);
         /// <summary>
         /// Elément de syntax pour changer l'heure de début selon le jour.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        /// <returns>L'élément de syntax <see cref="IfComposition"/> pour ajouter d'autres comportements.</returns>
-        public IfComposition If(DayOfWeek dayOfWeek) => new IfComposition(this, dayOfWeek);
+        /// <returns>L'élément de syntax <see cref="Syntax.If"/> pour ajouter d'autres comportements.</returns>
+        public If If(DayOfWeek dayOfWeek) => new If(this, dayOfWeek);
     }
 }

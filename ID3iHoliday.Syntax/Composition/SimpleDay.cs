@@ -10,7 +10,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Elément de syntax pour mettre en place une date fixe dans n'importe qu'elle année.
     /// </summary>
-    public class SimpleDayComposition : ExpressionElement
+    public class SimpleDay : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -18,16 +18,16 @@ namespace ID3iHoliday.Syntax
         protected override string Token => DateTime.ToString("MM-dd");
         internal DateTime DateTime { get; }
         /// <summary>
-        /// Initialise une nouvelle instance de la classe <see cref="SimpleDayComposition"/>.
+        /// Initialise une nouvelle instance de la classe <see cref="SimpleDay"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dateTime">Date.</param>
-        public SimpleDayComposition(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
+        public SimpleDay(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
         /// <summary>
         /// Elément de syntax pour déplacer le jour à un autre si il tombe un certain jour.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        /// <returns>L'élément de syntax <see cref="IfDayComposition"/> pour ajouter d'autres comportements.</returns>
-        public IfDayComposition If(DayOfWeek dayOfWeek) => new IfDayComposition(this, dayOfWeek);
+        /// <returns>L'élément de syntax <see cref="IfDay"/> pour ajouter d'autres comportements.</returns>
+        public IfDay If(DayOfWeek dayOfWeek) => new IfDay(this, dayOfWeek);
     }
 }

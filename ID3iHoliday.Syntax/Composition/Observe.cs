@@ -12,7 +12,7 @@ namespace ID3iHoliday.Syntax
     /// <summary>
     /// Syntax pour la création d'une expression d'observation de date supplémentaire.
     /// </summary>
-    public class ObserveComposition : ExpressionElement
+    public class Observe : ExpressionElement
     {
         /// <summary>
         /// Token de l'élément.
@@ -23,14 +23,14 @@ namespace ID3iHoliday.Syntax
         /// </summary>
         protected override ParserBase Parser => new ParserObserve();
         /// <summary>
-        /// Intialise une nouvelle instance de la classe <see cref="ObserveComposition"/>.
+        /// Intialise une nouvelle instance de la classe <see cref="Observe"/>.
         /// </summary>
-        public ObserveComposition() : base(null) { }
+        public Observe() : base(null) { }
         /// <summary>
         /// Elément de syntax pour mettre en place une date fixe dans n'importe qu'elle année.
         /// </summary>
         /// <param name="dateTime">Date.</param>
-        /// <returns>L'élément de syntax <see cref="SimpleDayComposition"/> pour ajouter d'autres comportements.</returns>
-        public SimpleDayComposition Fix(DateTime dateTime) => new SimpleDayComposition(this, dateTime);
+        /// <returns>L'élément de syntax <see cref="SimpleDay"/> pour ajouter d'autres comportements.</returns>
+        public SimpleDay Fix(DateTime dateTime) => new SimpleDay(this, dateTime);
     }
 }

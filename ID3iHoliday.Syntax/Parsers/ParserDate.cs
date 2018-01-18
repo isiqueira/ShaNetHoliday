@@ -4,7 +4,7 @@ using ID3iRegex;
 using ID3iHoliday.Core.Parsers;
 using ID3iCore;
 using ID3iDate;
-using static ID3iHoliday.Syntax.Year;
+using static ID3iHoliday.Syntax.YearType;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
@@ -65,7 +65,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 bool isYearTypeOk = false;
                 if (match.Groups["YearType"].Value.IsNotNullOrEmpty())
                 {
-                    switch ((Year)Enum.Parse(typeof(Year), match.Groups["YearType"].Value, true))
+                    switch ((YearType)Enum.Parse(typeof(Year), match.Groups["YearType"].Value, true))
                     {
                         case Even:
                             if (date.Year % 2 == 0)
@@ -96,13 +96,13 @@ namespace ID3iHoliday.Syntax.Parsers
                 {
                     var numberYear = Int32.Parse(match.Groups["RepeatYear"].Value);
                     var startYear = Int32.Parse(match.Groups["RepeatStartYear"].Value);
-                    if (((date.Year - startYear) % numberYear) == 0)
+                    if (date.Year >= startYear && ((date.Year - startYear) % numberYear) == 0)
                         isYearRecursOk = true;
                 }
                 else
                     isYearRecursOk = true;
 
-                if (isYearTypeOk && isYearRecursOk)
+                if (isYearTypeOk && isYearRecursOk && date.Year == year)
                 {
                     result.DatesToAdd.Add(date);
                     if (match.Groups["DurationDays"].Value.IsNotNullOrEmpty())
