@@ -4,6 +4,7 @@ using ID3iHoliday.Core.Parsers;
 using ID3iRegex;
 using System;
 using System.Text.RegularExpressions;
+using static ID3iHoliday.Syntax.Year;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
@@ -58,8 +59,21 @@ namespace ID3iHoliday.Syntax.Parsers
                 .Whitespace.Literal("EASTER")
                 .AtomicGroup(Pattern.With.Whitespace.NamedGroup("Symbol", Pattern.With.Choice(Pattern.With.Literal("+"), Pattern.With.Literal("-")))).Repeat.Optional
                 .NamedGroup("Number", Pattern.With.Digit.Repeat.Between(0, 2)).Repeat.Optional
-                .Include(Parser.PatternDuration)
+                .Include(Parser.PatternStartAndDuration)
+                .Include(Parser.PatternIfDayThenStartAt)
+                .Include(Parser.PatternYearType)
+                .Include(Parser.PatternYearRecurs)
                 .EndOfLine;
+
+        /// <summary>
+        /// Méthode qui permet de déterminer si une expression peut être interpréter par le parser.
+        /// </summary>
+        /// <param name="expression">Expression à tester.</param>
+        /// <returns>
+        /// <see langword="true"/> si l'expression match le pattern, <see langword="false"/> sinon.
+        /// </returns>
+        public override bool IsMatch(string expression) => new Regex(Pattern.ToString()).IsMatch(expression);
+
         /// <summary>
         /// Méthode de parsing d'une expression.
         /// </summary>
@@ -87,15 +101,64 @@ namespace ID3iHoliday.Syntax.Parsers
                     else if (symbol == "-")
                         date = number.Days().Before(date);
                 }
-                if (match.Groups["StartHours"].Value.IsNotNullOrEmpty() && match.Groups["StartMinutes"].Value.IsNotNullOrEmpty())
-                    date = date.At(Int32.Parse(match.Groups["StartHours"].Value), Int32.Parse(match.Groups["StartMinutes"].Value));
-                result.DatesToAdd.Add(date);
 
-                if (match.Groups["DurationDays"].Value.IsNotNullOrEmpty())
+                if (match.Groups["StartHours"].Value.IsNotNullOrEmpty() && match.Groups["StartMinutes"].Value.IsNotNullOrEmpty())
+                    date = date.SetTime(Int32.Parse(match.Groups["StartHours"].Value), Int32.Parse(match.Groups["StartMinutes"].Value));
+
+                if (match.Groups["Expected"].Value.IsNotNullOrEmpty())
+                    if (date.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Value)
+                        if (match.Groups["NewHours"].Value.IsNotNullOrEmpty() && match.Groups["NewMinutes"].Value.IsNotNullOrEmpty())
+                            date = date.SetTime(Int32.Parse(match.Groups["NewHours"].Value), Int32.Parse(match.Groups["NewMinutes"].Value));
+
+                bool isYearTypeOk = false;
+                if (match.Groups["YearType"].Value.IsNotNullOrEmpty())
                 {
-                    int number = Int32.Parse(match.Groups["DurationDays"].Value);
-                    for (int i = 1; i < number; i++)
-                        result.DatesToAdd.Add(i.Days().After(date.Midnight()));
+                    switch ((Year)Enum.Parse(typeof(Year), match.Groups["YearType"].Value, true))
+                    {
+                        case Even:
+                            if (date.Year % 2 == 0)
+                                isYearTypeOk = true;
+                            break;
+                        case Odd:
+                            if (date.Year % 2 != 0)
+                                isYearTypeOk = true;
+                            break;
+                        case Leap:
+                            if (DateTime.IsLeapYear(date.Year))
+                                isYearTypeOk = true;
+                            break;
+                        case NonLeap:
+                            if (!DateTime.IsLeapYear(date.Year))
+                                isYearTypeOk = true;
+                            break;
+                        default:
+                            isYearTypeOk = false;
+                            break;
+                    }
+                }
+                else
+                    isYearTypeOk = true;
+
+                bool isYearRecursOk = false;
+                if (match.Groups["RepeatYear"].Value.IsNotNullOrEmpty() && match.Groups["RepeatStartYear"].Value.IsNotNullOrEmpty())
+                {
+                    var numberYear = Int32.Parse(match.Groups["RepeatYear"].Value);
+                    var startYear = Int32.Parse(match.Groups["RepeatStartYear"].Value);
+                    if (((date.Year - startYear) % numberYear) == 0)
+                        isYearRecursOk = true;
+                }
+                else
+                    isYearRecursOk = true;
+
+                if (isYearTypeOk && isYearRecursOk)
+                {
+                    result.DatesToAdd.Add(date);
+                    if (match.Groups["DurationDays"].Value.IsNotNullOrEmpty())
+                    {
+                        int number = Int32.Parse(match.Groups["DurationDays"].Value);
+                        for (int i = 1; i < number; i++)
+                            result.DatesToAdd.Add(i.Days().After(date.Midnight()));
+                    }
                 }
             }
             return result;

@@ -19,7 +19,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 .StartOfLine
                 .Literal("OBSERVE").Whitespace
                 .Include(Parser.PatternMonths)
-                .NamedGroup("A",
+                .NamedGroup("Or",
                     Pattern.With.Whitespace.Literal("IF").Whitespace
                     .NamedGroup("Expected", Parser.PatternDay)
                     .Whitespace.Literal("THEN").Whitespace
@@ -27,6 +27,16 @@ namespace ID3iHoliday.Syntax.Parsers
                     .Whitespace
                     .NamedGroup("NewValue", Parser.PatternDay)).Repeat.OneOrMore
                 .EndOfLine;
+
+        /// <summary>
+        /// Méthode qui permet de déterminer si une expression peut être interpréter par le parser.
+        /// </summary>
+        /// <param name="expression">Expression à tester.</param>
+        /// <returns>
+        /// <see langword="true"/> si l'expression match le pattern, <see langword="false"/> sinon.
+        /// </returns>
+        public override bool IsMatch(string expression) => new Regex(Pattern.ToString()).IsMatch(expression);
+
         /// <summary>
         /// Méthode de parsing d'une expression.
         /// </summary>
@@ -42,7 +52,7 @@ namespace ID3iHoliday.Syntax.Parsers
             {
                 var realDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
                 result.DatesToAdd.Add(realDate);
-                for (int i = 0; i < match.Groups["A"].Captures.Count; i++)
+                for (int i = 0; i < match.Groups["Or"].Captures.Count; i++)
                 {
                     if (realDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)
                     {

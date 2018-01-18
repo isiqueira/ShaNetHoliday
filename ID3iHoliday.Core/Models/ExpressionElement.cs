@@ -44,5 +44,12 @@ namespace ID3iHoliday.Core.Models
         /// <param name="year">Année souhaitée.</param>
         /// <returns>Le <see cref="ParserResult"/> correspondant.</returns>
         public ParserResult Parse(int year) => Parser.Parse(Expression, year);
+        /// <summary>
+        /// Méthode qui permet de déterminer si l'expression peut être interpréter par le parser.
+        /// </summary>
+        /// <returns>
+        /// <see langword="true"/> si l'expression match le pattern, <see langword="false"/> sinon.
+        /// </returns>
+        public bool IsMatch => Parser.IsMatch(Expression);
     }
 }

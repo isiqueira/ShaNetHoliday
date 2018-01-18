@@ -52,7 +52,7 @@
     <Compile Include="Composition\DurationComposition.cs" />
     <Compile Include="Composition\EasterDayComposition.cs" />
     <Compile Include="Composition\EveryComposition.cs" />
-    <Compile Include="Composition\ExpressionTree.cs" />
+    <Compile Include="ExpressionTree.cs" />
     <Compile Include="Composition\IfComposition.cs" />
     <Compile Include="Composition\IfDayComposition.cs" />
     <Compile Include="Composition\InYearComposition.cs" />

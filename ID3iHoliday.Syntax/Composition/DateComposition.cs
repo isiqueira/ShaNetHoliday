@@ -13,6 +13,10 @@ namespace ID3iHoliday.Syntax
     public class DateComposition : ExpressionElement
     {
         /// <summary>
+        /// Token de l'élément.
+        /// </summary>
+        protected override string Token { get; set; } = "DATE";
+        /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="DateComposition"/>.
         /// </summary>
         public DateComposition() : base(null) { }

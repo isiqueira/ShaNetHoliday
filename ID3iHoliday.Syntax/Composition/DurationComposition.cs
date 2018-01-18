@@ -15,7 +15,7 @@ namespace ID3iHoliday.Syntax
         /// <summary>
         /// Token de l'élément.
         /// </summary>
-        protected override string Token => Value;
+        protected override string Token => $"{Value}";
         internal string Value { get; set; }
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="DurationComposition"/>.

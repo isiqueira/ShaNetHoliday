@@ -13,22 +13,52 @@ namespace ID3iHoliday.Syntax.Parsers
     public static class Parser
     {
         /// <summary>
-        /// Pattern pour la durée.
+        /// Pattern pour l'heure de début et la durée.
         /// </summary>
-        public static Pattern PatternDuration =>
+        public static Pattern PatternStartAndDuration =>
             Pattern.With
                 .AtomicGroup(
                     Pattern.With.Whitespace
-                        .NamedGroup("StartHours",
-                            Pattern.With.Choice(
-                                Pattern.With.Literal("0").Set(Pattern.With.Literal("0-9")),
-                                Pattern.With.Literal("1").Set(Pattern.With.Literal("0-9")),
-                                Pattern.With.Literal("2").Set(Pattern.With.Literal("0-3")))).Literal(":")
-                    .NamedGroup("StartMinutes", Pattern.With.Set(Pattern.With.Literal("0-5")).Set(Pattern.With.Literal("0-9")))).Repeat.Optional
+                    .Include(PatternStartHours)).Repeat.Optional
                 .Whitespace.Repeat.Optional
                 .AtomicGroup(
                     Pattern.With.Literal("P")
                     .NamedGroup("DurationDays", Pattern.With.Digit.Repeat.OneOrMore).Literal("D")).Repeat.Optional;
+        /// <summary>
+        /// Pattern pour l'heure de début.
+        /// </summary>
+        public static Pattern PatternStartHours =>
+            Pattern.With
+                .NamedGroup("StartHours",
+                    Pattern.With.Choice(
+                        Pattern.With.Literal("0").Set(Pattern.With.Literal("0-9")),
+                        Pattern.With.Literal("1").Set(Pattern.With.Literal("0-9")),
+                        Pattern.With.Literal("2").Set(Pattern.With.Literal("0-3")))).Literal(":")
+                .NamedGroup("StartMinutes", Pattern.With.Set(Pattern.With.Literal("0-5")).Set(Pattern.With.Literal("0-9")));
+        /// <summary>
+        /// Pattern Si jour particulier alors autre heure de début.
+        /// </summary>
+        public static Pattern PatternIfDayThenStartAt =>
+            Pattern.With
+                .AtomicGroup(
+                    Pattern.With.Whitespace
+                    .Literal("IF").Whitespace
+                    .NamedGroup("Expected", PatternDay).Whitespace
+                    .Literal("THEN").Whitespace
+                    .Include(PatternNewHours)
+                ).Repeat.Optional;
+        /// <summary>
+        /// Pattern pour la nouvelle heure de début.
+        /// </summary>
+        public static Pattern PatternNewHours =>
+              Pattern.With
+                .NamedGroup("NewHours",
+                    Pattern.With.Choice(
+                        Pattern.With.Literal("0").Set(Pattern.With.Literal("0-9")),
+                        Pattern.With.Literal("1").Set(Pattern.With.Literal("0-9")),
+                        Pattern.With.Literal("2").Set(Pattern.With.Literal("0-3")))).Literal(":")
+                .NamedGroup("NewMinutes", Pattern.With.Set(Pattern.With.Literal("0-5")).Set(Pattern.With.Literal("0-9")));
+
         /// <summary>
         /// Pattern pour le type d'année.
         /// </summary>
@@ -47,7 +77,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 .AtomicGroup(
                     Pattern.With.Whitespace.Literal("EVERY").Whitespace
                     .NamedGroup("RepeatYear", Pattern.With.Digit)
-                    .Whitespace.Literal("YEARS").Whitespace.Literal("SINCE").Whitespace
+                    .Whitespace.Literal("YEAR").Whitespace.Literal("SINCE").Whitespace
                     .NamedGroup("RepeatStartYear", Pattern.With.Set(Pattern.With.Literal("0-9")).Repeat.Exactly(4))).Repeat.Optional;
         /// <summary>
         /// Pattern pour une date dans un mois.

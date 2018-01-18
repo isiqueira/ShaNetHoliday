@@ -1,4 +1,6 @@
 ﻿using ID3iHoliday.Core.Models;
+using ID3iHoliday.Core.Parsers;
+using ID3iHoliday.Syntax.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,10 @@ namespace ID3iHoliday.Syntax
         /// Token de l'élément.
         /// </summary>
         protected override string Token => DateTime.ToString("MM-dd");
+        /// <summary>
+        /// <see cref="ParserDate"/> associé à l'élément.
+        /// </summary>
+        protected override ParserBase Parser => new ParserDate();
         internal DateTime DateTime { get; }
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="DayComposition"/>.

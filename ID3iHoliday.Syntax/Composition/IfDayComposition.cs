@@ -26,6 +26,6 @@ namespace ID3iHoliday.Syntax
         /// <summary>
         /// Elément de syntax <see cref="ThenActionComposition"/> pour choisir l'action à réaliser.
         /// </summary>
-        public ThenActionComposition Then { get; set; }
+        public ThenActionComposition Then => new ThenActionComposition(this);
     }
 }

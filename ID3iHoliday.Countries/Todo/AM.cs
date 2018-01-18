@@ -11,9 +11,5 @@ namespace ID3iHoliday.Countries
 {
     public class AM : Country
     {
-        public AM()
-        {
-
-        }
     }
 }

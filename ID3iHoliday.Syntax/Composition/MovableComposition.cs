@@ -35,7 +35,7 @@ namespace ID3iHoliday.Syntax
         public MovableComposition(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent)
         {
             Count = count;
-            Day = Day;
+            Day = dayOfWeek;
         }
         /// <summary>
         /// Elément de syntax pour indiquer que c'est avant une date précise.

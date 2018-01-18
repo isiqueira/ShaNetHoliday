@@ -19,13 +19,24 @@ namespace ID3iHoliday.Syntax.Parsers
                 .StartOfLine
                 .Literal("SUBSTITUTE").Whitespace
                 .Include(Parser.PatternMonths)
-                .Whitespace.Literal("IF").Whitespace
+                .NamedGroup("Or",
+                    Pattern.With.Whitespace.Literal("IF").Whitespace
                     .NamedGroup("Expected", Parser.PatternDay)
                     .Whitespace.Literal("THEN").Whitespace
                     .NamedGroup("Action", Parser.PatternActionNextPrevious)
                     .Whitespace
-                    .NamedGroup("NewValue", Parser.PatternDay)
+                    .NamedGroup("NewValue", Parser.PatternDay)).Repeat.OneOrMore
                 .EndOfLine;
+
+        /// <summary>
+        /// Méthode qui permet de déterminer si une expression peut être interpréter par le parser.
+        /// </summary>
+        /// <param name="expression">Expression à tester.</param>
+        /// <returns>
+        /// <see langword="true"/> si l'expression match le pattern, <see langword="false"/> sinon.
+        /// </returns>
+        public override bool IsMatch(string expression) => new Regex(Pattern.ToString()).IsMatch(expression);
+
         /// <summary>
         /// Méthode de parsing d'une expression.
         /// </summary>
@@ -40,12 +51,16 @@ namespace ID3iHoliday.Syntax.Parsers
             if (match.Success)
             {
                 var realDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
-                if (realDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Value)
+
+                for (int i = 0; i < match.Groups["Or"].Captures.Count; i++)
                 {
-                    if (match.Groups["Action"].Value == "NEXT")
-                        result.DatesToAdd.Add(realDate.Next((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Value, true)));
-                    else if (match.Groups["Action"].Value == "PREVIOUS")
-                        result.DatesToAdd.Add(realDate.Previous((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Value, true)));
+                    if (realDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)
+                    {
+                        if (match.Groups["Action"].Value == "NEXT")
+                            result.DatesToAdd.Add(realDate.Next((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true)));
+                        else if (match.Groups["Action"].Value == "PREVIOUS")
+                            result.DatesToAdd.Add(realDate.Previous((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true)));
+                    }
                 }
                 result.DateToRemove = realDate;
             }
