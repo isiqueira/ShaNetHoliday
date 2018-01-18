@@ -2,9 +2,9 @@
  */
 ExpressionTreeGrammar ::= ExpressionTree'.'
 (
-|Substitute'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*
-|Move'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*
-|Observe'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*
+|Substitute'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+|Move'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+|Observe'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
 |Date'.'
   (
   |Specific'(''DateTimeValue'')'
@@ -81,12 +81,22 @@ ExpressionTreeGrammar ::= ExpressionTree'.'
    )?
   |Movable'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')
    (
-   '.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+   '.'ThenStartAt'(''StringValue'')'
+    (
+    |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
    )?
   |MovableFromMovable'('Count',' Days')''.'(Before|After)'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')
    (
-   '.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+   '.'ThenStartAt'(''StringValue'')'
+    (
+    |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
    )?
   )

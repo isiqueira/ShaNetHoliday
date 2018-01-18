@@ -2,7 +2,12 @@
  */
 ExpressionTreeGrammar ::= ExpressionTree'.'MovableFromMovable'('Count',' Days')''.'(Before|After)'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')
 (
-'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+'.'ThenStartAt'(''StringValue'')'
+ (
+ |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+ |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+ )?
+|'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
 |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
 )?
 
