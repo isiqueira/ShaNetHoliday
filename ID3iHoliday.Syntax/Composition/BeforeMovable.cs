@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément de syntax pour définir la date avant laquelle le jour sera trouvé.

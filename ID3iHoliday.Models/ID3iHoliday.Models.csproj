@@ -42,13 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseList.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Country.Region.cs" />
     <Compile Include="Country.State.cs" />
-    <Compile Include="Enumerations.cs" />
+    <Compile Include="RuleType.cs" />
     <Compile Include="GeographicElementBase.cs" />
     <Compile Include="IHolidaySystem.cs" />
+    <Compile Include="Langue.cs" />
+    <Compile Include="ListRegion.cs" />
+    <Compile Include="ListRule.cs" />
+    <Compile Include="ListState.cs" />
     <Compile Include="LongWeekEnd.cs" />
+    <Compile Include="Overrides.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="SpecificDay.cs" />

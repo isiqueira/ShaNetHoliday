@@ -67,7 +67,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 bool isYearTypeOk = false;
                 if (match.Groups["YearType"].Value.IsNotNullOrEmpty())
                 {
-                    switch ((YearType)Enum.Parse(typeof(Year), match.Groups["YearType"].Value, true))
+                    switch ((YearType)Enum.Parse(typeof(YearType), match.Groups["YearType"].Value, true))
                     {
                         case Even:
                             if (date.Year % 2 == 0)

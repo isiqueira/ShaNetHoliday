@@ -53,6 +53,7 @@
     <Compile Include="Composition\Duration.cs" />
     <Compile Include="Composition\EasterDay.cs" />
     <Compile Include="Composition\Every.cs" />
+    <Compile Include="Count.cs" />
     <Compile Include="ExpressionTree.cs" />
     <Compile Include="Composition\If.cs" />
     <Compile Include="Composition\IfDay.cs" />
@@ -73,8 +74,8 @@
     <Compile Include="Composition\ThenAction.cs" />
     <Compile Include="Composition\ThenStart.cs" />
     <Compile Include="Composition\Year.cs" />
-    <Compile Include="Enumerations.cs" />
-    <Compile Include="Parsers\Parser.Shared.cs" />
+    <Compile Include="Month.cs" />
+    <Compile Include="Parsers\Parser.cs" />
     <Compile Include="Parsers\ParserDate.cs" />
     <Compile Include="Parsers\ParserEaster.cs" />
     <Compile Include="Parsers\ParserMovable.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Parsers\ParserSubstitute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\Interfaces.cs" />
+    <Compile Include="YearType.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore.csproj">

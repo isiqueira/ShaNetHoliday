@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément de syntax pour le récurrence par nombre d'années.
@@ -25,7 +25,7 @@ namespace ID3iHoliday.Syntax
         /// Elément de syntax pour gérer le début d'application de l'expression.
         /// </summary>
         /// <param name="year">Année de départ.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.Since"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Since"/> pour ajouter d'autres comportements.</returns>
         public Since Since(int year) => new Since(this, year);
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément de syntax qui permet de chaîner les tests de jours.

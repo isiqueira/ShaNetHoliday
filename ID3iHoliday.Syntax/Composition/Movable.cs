@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 using static ID3iHoliday.Syntax.Month;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément de syntax pour changer au jour de la semaine spécifié.
@@ -41,13 +41,13 @@ namespace ID3iHoliday.Syntax
         /// Elément de syntax pour indiquer que c'est avant une date précise.
         /// </summary>
         /// <param name="value">Date avant laquelle le jour doit se trouver.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.Before"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Before"/> pour ajouter d'autres comportements.</returns>
         public Before Before(string value) => new Before(this, value);
         /// <summary>
         /// Elément de syntax pour indiquer que c'est avant le début du mois.
         /// </summary>
         /// <param name="month">Mois avant lequel le jour doit se trouver.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.Before"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Before"/> pour ajouter d'autres comportements.</returns>
         public Before Before(Month month)
         {
             switch (month)
@@ -84,13 +84,13 @@ namespace ID3iHoliday.Syntax
         /// Elément de syntax pour indiquer que c'est après une date précise.
         /// </summary>
         /// <param name="value">Date après laquelle le jour doit se trouver.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.After"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.After"/> pour ajouter d'autres comportements.</returns>
         public After After(string value) => new After(this, value);
         /// <summary>
         /// Elément de syntax pour indiquer que c'est ap^rès le début du mois.
         /// </summary>
         /// <param name="month">Mois à partir duquel le jour doit se trouver.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.After"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.After"/> pour ajouter d'autres comportements.</returns>
         public After In(Month month)
         {
             switch (month)

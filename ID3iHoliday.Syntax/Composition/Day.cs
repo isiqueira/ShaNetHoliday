@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément de syntax pour mettre en place une date fixe dans n'importe quelle année.
@@ -40,7 +40,7 @@ namespace ID3iHoliday.Syntax
         /// Elément de syntax pour gérer le début d'application de l'expression.
         /// </summary>
         /// <param name="year">Année de départ.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.Since"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Since"/> pour ajouter d'autres comportements.</returns>
         public Since Since(int year) => StartAt("00:00").UntilMidnight.Every(1).Year.Since(year);
     }
 }

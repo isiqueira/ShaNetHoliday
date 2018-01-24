@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément de syntax qui permet de choisir l'action à réaliser.
@@ -25,13 +25,13 @@ namespace ID3iHoliday.Syntax
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste avant.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier à retourner.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.Previous"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Previous"/> pour ajouter d'autres comportements.</returns>
         public Previous Previous(DayOfWeek dayOfWeek) => new Previous(this, dayOfWeek);
         /// <summary>
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste après.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier à retourner.</param>
-        /// <returns>L'élément de syntax <see cref="Syntax.Next"/> pour ajouter d'autres comportements.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Next"/> pour ajouter d'autres comportements.</returns>
         public Next Next(DayOfWeek dayOfWeek) => new Next(this, dayOfWeek);
     }
 }

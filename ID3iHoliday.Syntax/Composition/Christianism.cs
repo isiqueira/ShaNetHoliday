@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ID3iHoliday.Core.Parsers;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément d'expression <see cref="Christianism"/>.

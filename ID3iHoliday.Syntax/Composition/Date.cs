@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Syntax pour la création d'une expression de date.
@@ -35,12 +35,12 @@ namespace ID3iHoliday.Syntax
         /// <summary>
         /// Elément de syntax pour les dates calculées par rapport au dimanche de Pâques dans la religion catholique.
         /// </summary>
-        /// <returns>L'élément de syntax <see cref="Syntax.Catholic"/>.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Catholic"/>.</returns>
         public Catholic Catholic => new Catholic(this);
         /// <summary>
         /// Elément de syntax pour les dates calculées par rapport au dimanche de Pâques dans la religion othodoxe.
         /// </summary>
-        /// <returns>L'élément de syntax <see cref="Syntax.Orthodox"/>.</returns>
+        /// <returns>L'élément de syntax <see cref="Composition.Orthodox"/>.</returns>
         public Orthodox Orthodox => new Orthodox(this);
         /// <summary>
         /// Elément de syntax pour changer au jour de la semaine spécifié.

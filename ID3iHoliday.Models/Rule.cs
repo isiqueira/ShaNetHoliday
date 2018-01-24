@@ -5,30 +5,7 @@ using System.Collections.Generic;
 using static ID3iHoliday.Models.RuleType;
 
 namespace ID3iHoliday.Models
-{
-    /// <summary>
-    /// Enumération pour indiquer quelle partie d'une règle est à surcharger.
-    /// </summary>
-    [Flags]
-    public enum Overrides
-    {
-        /// <summary>
-        /// Rien.
-        /// </summary>
-        None = 1,
-        /// <summary>
-        /// L'expression.
-        /// </summary>
-        Expression = 2,
-        /// <summary>
-        /// Le type.
-        /// </summary>
-        Type = Expression << 1,
-        /// <summary>
-        /// La note.
-        /// </summary>
-        Note = Type << 1
-    }
+{   
     /// <summary>
     /// Représentation d'une règle.
     /// </summary>
@@ -90,10 +67,5 @@ namespace ID3iHoliday.Models
         /// </summary>
         /// <returns>Copie superficielle du <see cref="Rule"/> actuel.</returns>
         public object Clone() => MemberwiseClone() as Rule;
-    }
-
-    /// <summary>
-    /// Liste des règles.
-    /// </summary>
-    public class ListRule : BaseList<Rule> { }
+    }    
 }

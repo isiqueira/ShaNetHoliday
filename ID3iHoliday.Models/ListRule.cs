@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ID3iHoliday.Models
 {
     /// <summary>
-    /// Réprésentation d'une région.
+    /// Liste des règles.
     /// </summary>
-    public class Region : GeographicElementBase { }    
+    public class ListRule : BaseList<Rule> { }
 }
