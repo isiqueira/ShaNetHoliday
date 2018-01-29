@@ -27,6 +27,10 @@ namespace ID3iHoliday.Models
         /// <summary>
         /// La note.
         /// </summary>
-        Note = Type << 1
+        Note = Type << 1,
+        /// <summary>
+        /// L'état.
+        /// </summary>
+        IsEnable = Note << 1
     }
 }

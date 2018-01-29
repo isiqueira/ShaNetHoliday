@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISModule.cs" />
+    <Compile Include="GRModule.cs" />
+    <Compile Include="HUModule.cs" />
     <Compile Include="BAModule.cs" />
     <Compile Include="DEModule.cs" />
     <Compile Include="EEModule.cs" />

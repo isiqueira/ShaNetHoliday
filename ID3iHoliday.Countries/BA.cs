@@ -187,7 +187,8 @@ namespace ID3iHoliday.Countries
                             new Rule()
                             {
                                 Key = "NOV25",
-                                IsEnable = false
+                                IsEnable = false,
+                                Overrides = Overrides.IsEnable
                             }
                         }
                     };

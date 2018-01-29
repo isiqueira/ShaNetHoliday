@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,82 +16,90 @@ namespace ID3iHoliday.Models
         /// <summary>
         /// French.
         /// </summary>
-        FR,
+        [Description("French")] FR,
         /// <summary>
         /// English.
         /// </summary>
-        EN,
+        [Description("English")] EN,
         /// <summary>
         /// Belarusian.
         /// </summary>
-        BE,
+        [Description("Belarusian")] BE,
         /// <summary>
         /// Bulgarian.
         /// </summary>
-        BG,
+        [Description("Bulgarian")] BG,
         /// <summary>
         /// Bosnian.
         /// </summary>
-        BS,
+        [Description("Bosnian")] BS,
         /// <summary>
         /// Catalan.
         /// </summary>
-        CA,
+        [Description("Catalan")] CA,
         /// <summary>
         /// Czech.
         /// </summary>
-        CZ,
+        [Description("Czech")] CZ,
         /// <summary>
         /// Greek.
         /// </summary>
-        EL,
+        [Description("Greek")] EL,
         /// <summary>
         /// Spanish.
         /// </summary>
-        ES,
+        [Description("Spanish")] ES,
         /// <summary>
         /// Estonian.
         /// </summary>
-        ET,
+        [Description("Estonian")] ET,
         /// <summary>
         /// Danish.
         /// </summary>
-        DA,
+        [Description("Danish")] DA,
         /// <summary>
         /// German.
         /// </summary>
-        DE,
+        [Description("German")] DE,
         /// <summary>
         /// German - Austria.
         /// </summary>
-        DE_AT,
+        [Description("German - Austria")] DE_AT,
         /// <summary>
         /// Finnish.
         /// </summary>
-        FI,
+        [Description("Finnish")] FI,
         /// <summary>
         /// Croatian.
         /// </summary>
-        HR,
+        [Description("Croatian")] HR,
+        /// <summary>
+        /// Hungarian.
+        /// </summary>
+        [Description("Hungarian")] HU,
+        /// <summary>
+        /// Icelandic.
+        /// </summary>
+        [Description("Icelandic")] IS,
         /// <summary>
         /// Dutch.
         /// </summary>
-        NL,
+        [Description("Dutch")] NL,
         /// <summary>
         /// Russian.
         /// </summary>
-        RU,
+        [Description("Russian")] RU,
         /// <summary>
         /// Albanian.
         /// </summary>
-        SQ,
+        [Description("Albanian")] SQ,
         /// <summary>
         /// Serbian.
         /// </summary>
-        SR,
+        [Description("Serbian")] SR,
         /// <summary>
         /// Swedish.
         /// </summary>
-        SV
+        [Description("Swedish")] SV
     }
 }

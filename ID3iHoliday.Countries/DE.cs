@@ -1,4 +1,7 @@
-﻿using ID3iHoliday.Models;
+﻿using ID3iCore;
+using ID3iDate;
+using ID3iHoliday.Models;
+using ID3iHoliday.Syntax;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +12,6 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
-using ID3iHoliday.Syntax;
-using ID3iCore;
-using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
@@ -221,6 +221,7 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
+                        Key = "OCT31",
                         Expression = ExpressionTree.Date.Fix(On.October.The31st),
                         Overrides = Overrides.Expression
                     }
