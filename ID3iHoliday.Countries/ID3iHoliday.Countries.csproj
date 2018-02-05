@@ -11,7 +11,8 @@
     <AssemblyName>ID3iHoliday.Countries</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-  <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids></PropertyGroup>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -107,8 +108,8 @@
     <Compile Include="HR.cs" />
     <Compile Include="Todo\HT.cs" />
     <Compile Include="HU.cs" />
-    <Compile Include="Todo\IE.cs" />
-    <Compile Include="Todo\IM.cs" />
+    <Compile Include="IE.cs" />
+    <Compile Include="IM.cs" />
     <Compile Include="IS.cs" />
     <Compile Include="Todo\IT.cs" />
     <Compile Include="Todo\JE.cs" />

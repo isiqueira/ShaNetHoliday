@@ -1,5 +1,4 @@
-﻿using ID3iCore;
-using ID3iDate;
+﻿using ID3iDate;
 using ID3iHoliday.Models;
 using ID3iHoliday.Syntax;
 using System;

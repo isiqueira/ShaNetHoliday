@@ -40,6 +40,8 @@ namespace ID3iHoliday.Engine.Standard
             CountriesAvailable.Add(new GR());
             CountriesAvailable.Add(new HR());
             CountriesAvailable.Add(new HU());
+            CountriesAvailable.Add(new IE());
+            CountriesAvailable.Add(new IM());
             CountriesAvailable.Add(new IS());
         }
     }
