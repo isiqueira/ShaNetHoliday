@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="IEModule.cs" />
     <Compile Include="IMModule.cs" />
+    <Compile Include="XKModule.cs" />
+    <Compile Include="ITModule.cs" />
     <Compile Include="ISModule.cs" />
     <Compile Include="GRModule.cs" />
     <Compile Include="HUModule.cs" />

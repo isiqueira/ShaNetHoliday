@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ID3iHoliday.Countries
 {
-    public class IT : Country
+    public class UA : Country
     {
     }
 }

@@ -111,7 +111,7 @@
     <Compile Include="IE.cs" />
     <Compile Include="IM.cs" />
     <Compile Include="IS.cs" />
-    <Compile Include="Todo\IT.cs" />
+    <Compile Include="IT.cs" />
     <Compile Include="Todo\JE.cs" />
     <Compile Include="Todo\JM.cs" />
     <Compile Include="Todo\JP.cs" />
@@ -148,11 +148,14 @@
     <Compile Include="Todo\TG.cs" />
     <Compile Include="Todo\TR.cs" />
     <Compile Include="Todo\TZ.cs" />
+    <Compile Include="Todo\UA.cs" />
     <Compile Include="Todo\UG.cs" />
     <Compile Include="Todo\US.cs" />
     <Compile Include="Todo\UY.cs" />
+    <Compile Include="Todo\VA.cs" />
     <Compile Include="Todo\VE.cs" />
     <Compile Include="Todo\VN.cs" />
+    <Compile Include="XK.cs" />
     <Compile Include="Todo\ZA.cs" />
     <Compile Include="Todo\ZM.cs" />
     <Compile Include="Todo\ZW.cs" />
