@@ -104,7 +104,11 @@ namespace ID3iHoliday.Countries
                     Names = NamesBuilder.Make.Add(Langue.IT, "Festa Nazionale 2011").AsDictionary()
                 }
             };
-            States = new ListState { new IT_32() }.Initialize(x => x.Init());
+            States = new ListState
+            {
+                Langues = Langues,
+                Container = { new IT_32() }
+            }.Initialize(x => x.Init());
         }
 
         internal class IT_32 : State

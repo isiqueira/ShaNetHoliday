@@ -112,7 +112,7 @@
     <Compile Include="IM.cs" />
     <Compile Include="IS.cs" />
     <Compile Include="IT.cs" />
-    <Compile Include="Todo\JE.cs" />
+    <Compile Include="JE.cs" />
     <Compile Include="Todo\JM.cs" />
     <Compile Include="Todo\JP.cs" />
     <Compile Include="Todo\KE.cs" />
@@ -120,7 +120,7 @@
     <Compile Include="Todo\LI.cs" />
     <Compile Include="Todo\LT.cs" />
     <Compile Include="Todo\LU.cs" />
-    <Compile Include="Todo\LV.cs" />
+    <Compile Include="LV.cs" />
     <Compile Include="Todo\MC.cs" />
     <Compile Include="Todo\ME.cs" />
     <Compile Include="Todo\MG.cs" />

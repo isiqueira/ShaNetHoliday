@@ -1,4 +1,6 @@
-﻿using ID3iHoliday.Models;
+﻿using ID3iDate;
+using ID3iHoliday.Models;
+using ID3iHoliday.Syntax;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +11,22 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
-using ID3iHoliday.Syntax;
-using ID3iDate;
 
 namespace ID3iHoliday.Countries
 {
     /// <summary>
-    /// Définition pour Isle of Man.
+    /// Définition pour Jersey.
     /// </summary>
-    public class IM : Country
+    public class JE : Country
     {
         /// <summary>
-        /// Initialise une nouvelle instance pour la classe <see cref="IM"/>.
+        /// Initialise une nouvelle instance pour la classe <see cref="JE"/>.
         /// </summary>
-        public IM()
+        public JE()
         {
-            Code = "IM";
-            Alpha3Code = "IMN";
-            Names = NamesBuilder.Make.Add(Langue.EN, "Isle of Man").AsDictionary();
+            Code = "JE";
+            Alpha3Code = "JEY";
+            Names = NamesBuilder.Make.Add(Langue.EN, "Jersey").AsDictionary();
             DaysOff.Add(Sunday);
             Langues.Add(Langue.EN);
             Rules = new ListRule()
@@ -49,7 +49,12 @@ namespace ID3iHoliday.Countries
                 new Rule()
                 {
                     Expression = ExpressionTree.Date.Movable(First, Monday).In(May),
-                    Names = NamesBuilder.Make.Add(Langue.EN, "Labour Day").AsDictionary()
+                    Names = NamesBuilder.Make.Add(Langue.EN, "Early May Bank Holiday").AsDictionary()
+                },
+                new Rule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.May.The9th),
+                    Names = NamesBuilder.Make.Add(Langue.EN, "Liberation Day").AsDictionary()
                 },
                 new Rule()
                 {
@@ -58,18 +63,8 @@ namespace ID3iHoliday.Countries
                 },
                 new Rule()
                 {
-                    Expression = ExpressionTree.Date.Movable(Second, Friday).In(June),
-                    Names = NamesBuilder.Make.Add(Langue.EN, "Tourist Trophy, Senior Race Day").AsDictionary()
-                },
-                new Rule()
-                {
-                    Expression = ExpressionTree.Date.Fix(On.July.The5th),
-                    Names = NamesBuilder.Make.Add(Langue.EN, "Tynwald Day").AsDictionary()
-                },
-                new Rule()
-                {
                     Expression = ExpressionTree.Date.Movable(First, Monday).Before(September),
-                    Names = NamesBuilder.Make.Add(Langue.EN, "Late Summer Bank Holiday").AsDictionary()
+                    Names = NamesBuilder.Make.Add(Langue.EN, "Summer Bank Holiday").AsDictionary()
                 },
                 new Rule()
                 {

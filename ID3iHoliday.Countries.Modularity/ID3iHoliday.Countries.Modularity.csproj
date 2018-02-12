@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LVModule.cs" />
+    <Compile Include="JEModule.cs" />
     <Compile Include="IEModule.cs" />
     <Compile Include="IMModule.cs" />
     <Compile Include="XKModule.cs" />
