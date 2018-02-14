@@ -86,6 +86,10 @@ namespace ID3iHoliday.Models
         /// </summary>
         [Description("Italian")] IT,
         /// <summary>
+        /// Lithuanian.
+        /// </summary>
+        [Description("Lithuanian")] LT,
+        /// <summary>
         /// Latvian.
         /// </summary>
         [Description("Latvian")] LV,
