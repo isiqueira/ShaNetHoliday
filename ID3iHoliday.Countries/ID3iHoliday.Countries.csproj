@@ -119,7 +119,7 @@
     <Compile Include="Todo\KR.cs" />
     <Compile Include="LI.cs" />
     <Compile Include="LT.cs" />
-    <Compile Include="Todo\LU.cs" />
+    <Compile Include="LU.cs" />
     <Compile Include="LV.cs" />
     <Compile Include="Todo\MC.cs" />
     <Compile Include="Todo\ME.cs" />

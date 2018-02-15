@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="LIModule.cs" />
     <Compile Include="LTModule.cs" />
+    <Compile Include="LUModule.cs" />
     <Compile Include="LVModule.cs" />
     <Compile Include="JEModule.cs" />
     <Compile Include="IEModule.cs" />
