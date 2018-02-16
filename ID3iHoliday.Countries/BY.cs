@@ -12,9 +12,9 @@ using static ID3iHoliday.Models.RuleType;
 using ID3iHoliday.Syntax;
 using ID3iDate;
 
+#warning Penser aux jours fériés dans les autres types de calendriers.
 namespace ID3iHoliday.Countries
 {
-#warning Ici il faudra penser à ajouter le noël orthodox par rapport au calendrier julian.
     /// <summary>
     /// Définition pour Belarus.
     /// </summary>

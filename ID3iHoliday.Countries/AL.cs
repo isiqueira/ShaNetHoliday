@@ -9,7 +9,7 @@ using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
 
-
+#warning Penser aux jours fériés dans les autres types de calendriers.
 namespace ID3iHoliday.Countries
 {
     /// <summary>
@@ -17,7 +17,6 @@ namespace ID3iHoliday.Countries
     /// </summary>
     public class AL : Country
     {
-#warning attention ici il faut penser aux jours fériés dans le calendrier islamic
         /// <summary>
         /// Initialise une nouvelle instance pour la classe <see cref="AL"/>.
         /// </summary>

@@ -13,7 +13,7 @@ using ID3iHoliday.Syntax;
 using ID3iCore;
 using ID3iDate;
 
-#warning penser au reste des jours orthodox et musulmans.
+#warning Penser aux jours fériés dans les autres types de calendriers.
 namespace ID3iHoliday.Countries
 {
     /// <summary>
