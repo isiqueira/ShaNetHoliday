@@ -1,6 +1,0 @@
-/* extracted from http://www.bottlecaps.de/rr/ui on Mon Jan 8, 2018, 11:40 (UTC+01)
- */
-ExpressionTreeGrammar ::= ExpressionTree'.'Observe'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*
-('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
-
-Days ::= ('Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|'Saturday'|'Sunday')
