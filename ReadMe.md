@@ -37,33 +37,15 @@ Currently the following type with their meaning are supported
 ### Grammar
 In order to construct specific day a grammar is available. 
 
-#### Substitute a holiday if date falls on a certain weekday
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Substitute.xhtml
-
-#### Observe the holiday as well as on a substitute day, if date falls on a certain weekday
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Observe.xhtml
-
-#### Move to different weekday if date falls on a certain weekday
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Move.xhtml
-
-#### Fixed day for a given year
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Specific.xhtml
-
-#### Fixed day in a year
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Fix.xhtml
-
-#### Movable Date based on Easter
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Catholic.xhtml
-
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Orthodox.xhtml
-
-#### Move to different weekday from a given fixed Date
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/Movable.xhtml
-
-#### Move to a different weekday from a changed fixed Date
-Grammar : https://shaenn.github.io/ID3iHoliday/Grammar/MovableFromMovable.xhtml
-
-#### Full diagram
+#### Substitute a holiday if date falls on a certain weekday.
+#### Observe the holiday as well as on a substitute day, if date falls on a certain weekday.
+#### Move to different weekday if date falls on a certain weekday.
+#### Fixed day for a given year.
+#### Fixed day in a year.
+#### Movable Date based on Easter.
+#### Move to different weekday from a given fixed Date.
+#### Move to a different weekday from a changed fixed Date.
+### Full diagram
 https://shaenn.github.io/ID3iHoliday/Grammar/Grammar.xhtml 
 
 ---
