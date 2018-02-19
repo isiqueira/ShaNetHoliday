@@ -124,7 +124,7 @@
     <Compile Include="Todo\MC.cs" />
     <Compile Include="Todo\ME.cs" />
     <Compile Include="Todo\MG.cs" />
-    <Compile Include="Todo\MT.cs" />
+    <Compile Include="MT.cs" />
     <Compile Include="Todo\MW.cs" />
     <Compile Include="MK.cs" />
     <Compile Include="Todo\MZ.cs" />

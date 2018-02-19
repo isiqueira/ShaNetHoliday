@@ -98,6 +98,10 @@ namespace ID3iHoliday.Models
         /// </summary>
         [Description("Macedonian")] MK,
         /// <summary>
+        /// Maltese.
+        /// </summary>
+        [Description("Maltese")] MT,
+        /// <summary>
         /// Dutch.
         /// </summary>
         [Description("Dutch")] NL,
