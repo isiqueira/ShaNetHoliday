@@ -106,6 +106,10 @@ namespace ID3iHoliday.Models
         /// </summary>
         [Description("Dutch")] NL,
         /// <summary>
+        /// Romanian.
+        /// </summary>
+        [Description("Romanian")] RO,
+        /// <summary>
         /// Russian.
         /// </summary>
         [Description("Russian")] RU,
