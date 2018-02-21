@@ -122,7 +122,7 @@
     <Compile Include="LT.cs" />
     <Compile Include="LU.cs" />
     <Compile Include="LV.cs" />
-    <Compile Include="Todo\MC.cs" />
+    <Compile Include="MC.cs" />
     <Compile Include="Todo\ME.cs" />
     <Compile Include="Todo\MG.cs" />
     <Compile Include="MT.cs" />

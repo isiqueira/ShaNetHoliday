@@ -47,6 +47,7 @@
     <Compile Include="LTModule.cs" />
     <Compile Include="LUModule.cs" />
     <Compile Include="MDModule.cs" />
+    <Compile Include="MCModule.cs" />
     <Compile Include="MTModule.cs" />
     <Compile Include="MKModule.cs" />
     <Compile Include="LVModule.cs" />
