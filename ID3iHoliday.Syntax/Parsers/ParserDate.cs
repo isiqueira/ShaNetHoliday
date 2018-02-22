@@ -26,6 +26,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 .Include(Parser.PatternIfDayThenStartAt)
                 .Include(Parser.PatternYearType)
                 .Include(Parser.PatternYearRecurs)
+                .Include(Parser.PatternCalendar)
                 .EndOfLine;
 
         /// <summary>
@@ -50,7 +51,9 @@ namespace ID3iHoliday.Syntax.Parsers
             var match = regex.Match(expression);
             if (match.Success)
             {
-                var date = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
+                Enum.TryParse(match.Groups["Calendar"].Value, true, out Calendar calType);
+
+                var date = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), Parser.GetCalendar(calType));
                 if (match.Groups["year"].Value.IsNotNullOrEmpty())
                     date = date.SetYear(Int32.Parse(match.Groups["year"].Value));
 
@@ -102,7 +105,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 else
                     isYearRecursOk = true;
 
-                if (isYearTypeOk && isYearRecursOk && date.Year == year)
+                if (isYearTypeOk && isYearRecursOk && (match.Groups["year"].Value.IsNotNullOrEmpty() ? date.Year == year : true))
                 {
                     result.DatesToAdd.Add(date);
                     if (match.Groups["DurationDays"].Value.IsNotNullOrEmpty())

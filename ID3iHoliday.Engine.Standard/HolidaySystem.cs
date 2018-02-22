@@ -51,6 +51,7 @@ namespace ID3iHoliday.Engine.Standard
             CountriesAvailable.Add(new LV());
             CountriesAvailable.Add(new MC());
             CountriesAvailable.Add(new MD());
+            CountriesAvailable.Add(new ME());
             CountriesAvailable.Add(new MK());
             CountriesAvailable.Add(new MT());
             CountriesAvailable.Add(new XK());

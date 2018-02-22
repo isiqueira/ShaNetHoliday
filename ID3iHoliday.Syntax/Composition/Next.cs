@@ -39,5 +39,12 @@ namespace ID3iHoliday.Syntax.Composition
         /// <param name="year">Année de départ.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Since"/> pour ajouter d'autres comportements.</returns>
         public Since Since(int year) => Every(1).Year.Since(year);
+
+        /// <summary>
+        /// Elément de syntax pour gérer le calendrier à utiliser pour interpréter la date.
+        /// </summary>
+        /// <param name="calendar">Calendrier à utiliser.</param>
+        /// <returns>L'élément de syntax <see cref="Composition.Over"/> pour ajouter d'autres comportements.</returns>
+        public Over Over(Calendar calendar) => new Over(this, calendar);
     }
 }

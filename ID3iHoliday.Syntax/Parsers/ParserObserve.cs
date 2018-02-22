@@ -28,6 +28,7 @@ namespace ID3iHoliday.Syntax.Parsers
                     .Whitespace
                     .NamedGroup("NewValue", Parser.PatternDay)).Repeat.OneOrMore
                 .Include(Parser.PatternYearRecurs)
+                .Include(Parser.PatternCalendar)
                 .EndOfLine;
 
         /// <summary>
@@ -52,8 +53,10 @@ namespace ID3iHoliday.Syntax.Parsers
             var match = regex.Match(expression);
             if (match.Success)
             {
-                var observedDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
-                var newDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));                
+                Enum.TryParse(match.Groups["Calendar"].Value, true, out Calendar calType);
+
+                var observedDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), Parser.GetCalendar(calType));
+                var newDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), Parser.GetCalendar(calType));                
                 for (int i = 0; i < match.Groups["Or"].Captures.Count; i++)
                 {
                     if (observedDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)

@@ -1,9 +1,12 @@
 ﻿using ID3iRegex;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using static ID3iHoliday.Syntax.Calendar;
 
 namespace ID3iHoliday.Syntax.Parsers
 {
@@ -12,6 +15,24 @@ namespace ID3iHoliday.Syntax.Parsers
     /// </summary>
     public static class Parser
     {
+        /// <summary>
+        /// Méthode qui permet de récupérer un <see cref="System.Globalization.Calendar"/> par rapport au type spécifié.
+        /// </summary>
+        /// <param name="calendar">Type du calendrier souhaité.</param>
+        /// <returns>Le <see cref="System.Globalization.Calendar"/> correspondant.</returns>
+        public static System.Globalization.Calendar GetCalendar(Calendar calendar)
+        {
+            switch (calendar)
+            {
+                case Gregorian:
+                    return new GregorianCalendar();
+                case Julian:
+                    return new JulianCalendar();
+                default:
+                    return new GregorianCalendar();
+            }
+        }
+
         /// <summary>
         /// Pattern pour l'heure de début et la durée.
         /// </summary>
@@ -69,6 +90,21 @@ namespace ID3iHoliday.Syntax.Parsers
                     .NamedGroup("YearType",
                         Pattern.With.Choice(Pattern.With.Literal("EVEN"), Pattern.With.Literal("ODD"), Pattern.With.Literal("LEAP"), Pattern.With.Literal("NONLEAP")))
                     .Whitespace.Literal("YEARS")).Repeat.Optional;
+
+        /// <summary>
+        /// Pattern pour le type de calendrier.
+        /// </summary>
+        public static Pattern PatternCalendar =>
+            Pattern.With
+                .AtomicGroup(
+                    Pattern.With.Whitespace.Literal("OVER").Whitespace
+                    .NamedGroup("Calendar",
+                        Pattern.With.Choice(
+                            Pattern.With.Literal("JULIAN"), Pattern.With.Literal("")
+                        )
+                    )
+                ).Repeat.Optional;
+
         /// <summary>
         /// Pattern pour la récurrence.
         /// </summary>

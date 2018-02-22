@@ -9,6 +9,7 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
+using static ID3iHoliday.Syntax.Calendar;
 using ID3iHoliday.Syntax;
 using ID3iCore;
 using ID3iDate;
@@ -44,6 +45,15 @@ namespace ID3iHoliday.Countries
                                     .Add(Langue.HR, "Nova godina")
                                     .Add(Langue.SR, "Нова година").AsDictionary(),
                         Substitute = true
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.January.The1st).Over(Julian),
+                        Names = NamesBuilder.Make
+                                    .Add(Langue.BS, "Pravoslavni novogodišnji dan")
+                                    .Add(Langue.HR, "Pravoslavna Nova Godina")
+                                    .Add(Langue.SR, "Православна Нова година").AsDictionary(),
+                        Note = "Orthodox"
                     },
                     new Rule()
                     {
@@ -99,6 +109,12 @@ namespace ID3iHoliday.Countries
                     },
                     new Rule()
                     {
+                        Expression = ExpressionTree.Date.Fix(On.August.The15th).Over(Julian),
+                        Names = NamesBuilder.Make.Add(Langue.HR, "Velika Gospa").AsDictionary(),
+                        Note = "Orthodox"
+                    },
+                    new Rule()
+                    {
                         Expression = ExpressionTree.Date.Fix(On.November.The1st),
                         Names = NamesBuilder.Make
                                     .Add(Langue.BS, "Dita e të gjithë Shenjtorëve")
@@ -117,6 +133,15 @@ namespace ID3iHoliday.Countries
                                     .Add(Langue.BS, "Božić")
                                     .Add(Langue.HR, "Božić")
                                     .Add(Langue.SR, "Католички Божић").AsDictionary()
+                    },
+                    new Rule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The25th).Over(Julian),
+                        Names = NamesBuilder.Make
+                                    .Add(Langue.BS, "Božić")
+                                    .Add(Langue.HR, "Božić")
+                                    .Add(Langue.SR, "Католички Божић").AsDictionary(),
+                        Note = "Orthodox"
                     },
                     new Rule()
                     {

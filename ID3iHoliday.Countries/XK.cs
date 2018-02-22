@@ -11,6 +11,7 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
+using static ID3iHoliday.Syntax.Calendar;
 
 #warning Penser aux jours fériés dans les autres types de calendriers.
 namespace ID3iHoliday.Countries
@@ -77,6 +78,12 @@ namespace ID3iHoliday.Countries
                     Expression = ExpressionTree.Date.Fix(On.December.The25th),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Krishtlindja")
                                              .Add(Langue.SR, "Католички Божић").AsDictionary()
+                },
+                new Rule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.December.The25th).Over(Julian),
+                    Names = NamesBuilder.Make.Add(Langue.SQ, "Krishtlindjet Ortodokse")
+                                             .Add(Langue.SR, "Божић").AsDictionary()
                 }
             };
         }
