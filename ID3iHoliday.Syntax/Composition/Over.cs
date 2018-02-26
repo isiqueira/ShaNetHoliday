@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ID3iHoliday.Syntax.Composition
 {
     /// <summary>
-    /// Elément de syntax pour changer l'heure de début selon le jour.
+    /// Elément de syntax pour gérer le calendrier à utiliser pour interpréter la date.
     /// </summary>
     public class Over : ExpressionElement
     {
