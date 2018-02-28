@@ -136,7 +136,7 @@
     <Compile Include="Todo\NZ.cs" />
     <Compile Include="Todo\PA.cs" />
     <Compile Include="Todo\PE.cs" />
-    <Compile Include="Todo\PL.cs" />
+    <Compile Include="PL.cs" />
     <Compile Include="Todo\PT.cs" />
     <Compile Include="Todo\PY.cs" />
     <Compile Include="Todo\RO.cs" />
