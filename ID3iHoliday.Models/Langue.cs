@@ -114,6 +114,10 @@ namespace ID3iHoliday.Models
         /// </summary>
         [Description("Polish")] PL,
         /// <summary>
+        /// Portuguese.
+        /// </summary>
+        [Description("Portuguese")] PT,
+        /// <summary>
         /// Romanian.
         /// </summary>
         [Description("Romanian")] RO,
