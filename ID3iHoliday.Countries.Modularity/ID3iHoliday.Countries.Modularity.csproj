@@ -49,6 +49,7 @@
     <Compile Include="MDModule.cs" />
     <Compile Include="MCModule.cs" />
     <Compile Include="MEModule.cs" />
+    <Compile Include="RUModule.cs" />
     <Compile Include="ROModule.cs" />
     <Compile Include="PTModule.cs" />
     <Compile Include="PLModule.cs" />

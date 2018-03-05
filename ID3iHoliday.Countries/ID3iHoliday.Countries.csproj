@@ -140,7 +140,7 @@
     <Compile Include="PT.cs" />
     <Compile Include="Todo\PY.cs" />
     <Compile Include="RO.cs" />
-    <Compile Include="Todo\RU.cs" />
+    <Compile Include="RU.cs" />
     <Compile Include="Todo\RW.cs" />
     <Compile Include="Todo\SE.cs" />
     <Compile Include="Todo\SO.cs" />
