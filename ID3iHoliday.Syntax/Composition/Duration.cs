@@ -45,8 +45,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Elément de syntax pour gérer le calendrier à utiliser pour interpréter la date.
         /// </summary>
-        /// <param name="calendar">Calendrier à utiliser.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Over"/> pour ajouter d'autres comportements.</returns>
-        public Over Over(Calendar calendar) => new Over(this, calendar);
+        public Over Over => new Over(this);
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 using static System.DayOfWeek;
 using static ID3iHoliday.Models.RuleType;
-using static ID3iHoliday.Syntax.Calendar;
+using static ID3iHoliday.Models.Calendar;
 
 #warning Penser aux jours fériés dans les autres types de calendriers.
 namespace ID3iHoliday.Countries
@@ -113,28 +113,28 @@ namespace ID3iHoliday.Countries
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The24th).Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.December.The24th).Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.MK, "Бадник").AsDictionary(),
                     Type = Optional,
                     Note = "Orthodox believers"
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.January.The6th).Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.January.The6th).Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.MK, "Богојавление").AsDictionary(),
                     Type = Optional,
                     Note = "Orthodox believers"
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.August.The15th).Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.August.The15th).Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.MK, "Успение на Пресвета Богородица").AsDictionary(),
                     Type = Optional,
                     Note = "Orthodox believers"
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Observe.Fix(On.December.The25th).If(Sunday).Then.Next(Monday).Over(Julian),
+                    Expression = ExpressionTree.Observe.Fix(On.December.The25th).If(Sunday).Then.Next(Monday).Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.MK, "Успение на Пресвета Богородица").AsDictionary(),
                     Substitute = true
                 },
@@ -203,7 +203,7 @@ namespace ID3iHoliday.Countries
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).Over(Hijri),
+                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.MK, "Курбан Бајрам").AsDictionary(),
                     Type = Optional,
                     Note = "Muslim believers"

@@ -1,5 +1,4 @@
 ﻿using ID3iCore;
-using ID3iHoliday.Syntax;
 using System;
 using System.Collections.Generic;
 using System.Linq;

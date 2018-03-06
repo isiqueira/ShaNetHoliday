@@ -51,9 +51,7 @@ namespace ID3iHoliday.Syntax.Parsers
             var match = regex.Match(expression);
             if (match.Success)
             {
-                Enum.TryParse(match.Groups["Calendar"].Value, true, out Calendar calType);
-
-                var date = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), Parser.GetCalendar(calType));
+                var date = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), Parser.GetCalendar(match.Groups["Calendar"].Value));
                 if (match.Groups["year"].Value.IsNotNullOrEmpty())
                     date = date.SetYear(Int32.Parse(match.Groups["year"].Value));
 

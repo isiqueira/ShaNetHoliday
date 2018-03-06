@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calendar.cs" />
     <Compile Include="Composition\After.cs" />
     <Compile Include="Composition\AfterMovable.cs" />
     <Compile Include="Composition\Before.cs" />

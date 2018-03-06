@@ -12,7 +12,7 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
-using static ID3iHoliday.Syntax.Calendar;
+using static ID3iHoliday.Models.Calendar;
 
 namespace ID3iHoliday.Countries
 {
@@ -98,7 +98,7 @@ namespace ID3iHoliday.Countries
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The25th).StartAt("00:00").Duration("P2D").Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.December.The25th).StartAt("00:00").Duration("P2D").Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.RO, "Craciun pe Rit Vechi").AsDictionary()
                 }
             };

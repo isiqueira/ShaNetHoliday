@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using static System.DayOfWeek;
-using static ID3iHoliday.Syntax.Calendar;
+using static ID3iHoliday.Models.Calendar;
 
 namespace ID3iHoliday.Countries
 {
@@ -33,22 +33,22 @@ namespace ID3iHoliday.Countries
             {
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Muharram.The1st).Over(Hijri),
+                    Expression = ExpressionTree.Date.Fix(On.Muharram.The1st).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Nova hidžretska godina").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.RabiAlAwwal.The12th).Over(Hijri),
+                    Expression = ExpressionTree.Date.Fix(On.RabiAlAwwal.The12th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Mevlud").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).StartAt("00:00").Duration("P4D").Over(Hijri),
+                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).StartAt("00:00").Duration("P4D").Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Kurbanski bajram").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).StartAt("00:00").Duration("P3D").Over(Hijri),
+                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).StartAt("00:00").Duration("P3D").Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Ramazanski bajram").AsDictionary()
                 },
                 new GregorianRule()
@@ -62,7 +62,7 @@ namespace ID3iHoliday.Countries
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.January.The1st).Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.January.The1st).Over.Julian(),
                     Names = NamesBuilder.Make
                                 .Add(Langue.BS, "Pravoslavni novogodišnji dan")
                                 .Add(Langue.HR, "Pravoslavna Nova Godina")
@@ -123,7 +123,7 @@ namespace ID3iHoliday.Countries
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.August.The15th).Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.August.The15th).Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.HR, "Velika Gospa").AsDictionary(),
                     Note = "Orthodox"
                 },
@@ -150,7 +150,7 @@ namespace ID3iHoliday.Countries
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The25th).Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.December.The25th).Over.Julian(),
                     Names = NamesBuilder.Make
                                 .Add(Langue.BS, "Božić")
                                 .Add(Langue.HR, "Božić")

@@ -6,8 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using static ID3iHoliday.Syntax.Calendar;
-
 namespace ID3iHoliday.Syntax.Parsers
 {
     /// <summary>
@@ -20,15 +18,15 @@ namespace ID3iHoliday.Syntax.Parsers
         /// </summary>
         /// <param name="calendar">Type du calendrier souhaité.</param>
         /// <returns>Le <see cref="System.Globalization.Calendar"/> correspondant.</returns>
-        public static System.Globalization.Calendar GetCalendar(Calendar calendar)
+        public static System.Globalization.Calendar GetCalendar(string calendar)
         {
-            switch (calendar)
+            switch (calendar?.ToUpper())
             {
-                case Gregorian:
+                case "GREGORIAN":
                     return new GregorianCalendar();
-                case Julian:
+                case "JULIAN":
                     return new JulianCalendar();
-                case Hijri:
+                case "HIJRI":
                     return new HijriCalendar();
                 default:
                     return new GregorianCalendar();

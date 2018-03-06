@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using static System.DayOfWeek;
-using static ID3iHoliday.Syntax.Calendar;
+using static ID3iHoliday.Models.Calendar;
 
 namespace ID3iHoliday.Countries
 {
@@ -78,19 +78,19 @@ namespace ID3iHoliday.Countries
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The25th).Over(Julian),
+                    Expression = ExpressionTree.Date.Fix(On.December.The25th).Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Krishtlindjet Ortodokse")
                                              .Add(Langue.SR, "Божић").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).Over(Hijri),
+                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Fitër Bajrami")
                                              .Add(Langue.SR, "Рамазански Бајрам").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).Over(Hijri),
+                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Kurban Bajrami")
                                              .Add(Langue.SR, "Курбански Бајрам").AsDictionary()
                 }

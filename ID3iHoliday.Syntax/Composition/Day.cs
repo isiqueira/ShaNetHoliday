@@ -44,10 +44,9 @@ namespace ID3iHoliday.Syntax.Composition
         public Since Since(int year) => StartAt("00:00").UntilMidnight.Every(1).Year.Since(year);
 
         /// <summary>
-        /// Elément de syntax pour gérer le calendrier à utiliser pour interpréter la date.
+        /// Elément de syntax pour affecter le calendrier à utiliser pour interpréter la date.
         /// </summary>
-        /// <param name="calendar">Calendrier à utiliser.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Over"/> pour ajouter d'autres comportements.</returns>
-        public Over Over(Calendar calendar) => new Over(this, calendar);
+        public Over Over => new Over(this);
     }
 }
