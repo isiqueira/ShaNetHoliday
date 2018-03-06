@@ -120,7 +120,7 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Catholic.CarnivalTuesday.StartAtMidnight.Duration("P4D"),
+                        Expression = ExpressionTree.Date.Catholic.CarnivalTuesday.StartAtMidnight.Duration.P4D(),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Caribana").AsDictionary(),
                         Type = Observance
                     }

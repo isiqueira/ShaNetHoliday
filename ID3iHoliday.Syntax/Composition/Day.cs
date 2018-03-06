@@ -37,11 +37,31 @@ namespace ID3iHoliday.Syntax.Composition
         public Start StartAt(string value) => new Start(this, value);
 
         /// <summary>
+        /// Elément de syntax pour indiquer que l'heure de début est midi.
+        /// </summary>
+        /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
+        public Start StartAtNoon => new Start(this, "12:00");
+        /// <summary>
+        /// Elément de syntax pour indiquer que l'heure de début est 13h.
+        /// </summary>
+        /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
+        public Start StartAt1PM => new Start(this, "13:00");
+        /// <summary>
+        /// Elément de syntax pour indiquer que l'heure de début est 14h.
+        /// </summary>
+        /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
+        public Start StartAt2PM => new Start(this, "14:00");
+        /// <summary>
+        /// Elément de syntax pour indiquer que l'heure de début est minuit.
+        /// </summary>
+        /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
+        public Start StartAtMidnight => new Start(this, "00:00");
+        /// <summary>
         /// Elément de syntax pour gérer le début d'application de l'expression.
         /// </summary>
         /// <param name="year">Année de départ.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Since"/> pour ajouter d'autres comportements.</returns>
-        public Since Since(int year) => StartAt("00:00").UntilMidnight.Every(1).Year.Since(year);
+        public Since Since(int year) => StartAtMidnight.UntilMidnight.Every(1).Year.Since(year);
 
         /// <summary>
         /// Elément de syntax pour affecter le calendrier à utiliser pour interpréter la date.

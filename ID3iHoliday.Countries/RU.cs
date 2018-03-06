@@ -37,7 +37,7 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.January.The2nd).StartAt("00:00").Duration("P5D"),
+                    Expression = ExpressionTree.Date.Fix(On.January.The2nd).StartAtMidnight.Duration.P5D(),
                     Names = NamesBuilder.Make.Add(Langue.RU, "Новогодние каникулы").AsDictionary()
                 },
                 new JulianRule()

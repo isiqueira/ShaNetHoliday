@@ -208,7 +208,7 @@ namespace ID3iHoliday.Countries
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).StartAt("00:00").Duration("P3D").Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).StartAtMidnight.Duration.P3D().Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.HR, "Ramazanski bajram")
                                              .Add(Langue.SR, "Рамазански Бајрам")
                                              .Add(Langue.BS, "Ramazanski bajram")
@@ -216,7 +216,7 @@ namespace ID3iHoliday.Countries
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).StartAt("00:00").Duration("P3D").Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).StartAtMidnight.Duration.P3D().Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.HR, "Kurban-bajram")
                                              .Add(Langue.SR, "Курбански Бајрам")
                                              .Add(Langue.BS, "Kurbanski bajram")

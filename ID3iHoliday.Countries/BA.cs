@@ -43,12 +43,12 @@ namespace ID3iHoliday.Countries
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).StartAt("00:00").Duration("P4D").Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).StartAtMidnight.Duration.P4D().Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Kurbanski bajram").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).StartAt("00:00").Duration("P3D").Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).StartAtMidnight.Duration.P3D().Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Ramazanski bajram").AsDictionary()
                 },
                 new GregorianRule()

@@ -36,15 +36,14 @@ namespace ID3iHoliday.Syntax.Composition
         /// <returns>L'élément de syntax <see cref="InYear"/> pour ajouter d'autres comportements.</returns>
         public InYear In(YearType year) => new InYear(this, year);
         /// <summary>
-        /// Elément de syntax pour gérer la durée.
-        /// </summary>
-        /// <param name="value">Durée.</param>
-        /// <returns>L'élément de syntax <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
-        public Duration Duration(string value) => new Duration(this, value);
-        /// <summary>
         /// Elément de syntax pour indiquer que la durée est de 1 jour.
         /// </summary>
         /// <returns>L'élément de syntax <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
-        public Duration UntilMidnight => Duration("P1D");
+        public Duration UntilMidnight => Duration.Spec("P1D");
+        /// <summary>
+        /// Elément de syntax pour gérer la durée.
+        /// </summary>
+        /// <returns>L'élément de syntax <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
+        public Duration Duration => new Duration(this);
     }
 }

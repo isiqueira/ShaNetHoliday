@@ -98,7 +98,7 @@ namespace ID3iHoliday.Countries
                 },
                 new JulianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The25th).StartAt("00:00").Duration("P2D").Over.Julian(),
+                    Expression = ExpressionTree.Date.Fix(On.December.The25th).StartAtMidnight.Duration.P2D().Over.Julian(),
                     Names = NamesBuilder.Make.Add(Langue.RO, "Craciun pe Rit Vechi").AsDictionary()
                 }
             };

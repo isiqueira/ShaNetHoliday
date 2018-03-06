@@ -17,12 +17,58 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         protected override string Token => $"{Value}";
         internal string Value { get; set; }
+
+        /// <summary>
+        /// Indique que la durée est de 5 jours.
+        /// </summary>
+        /// <returns>L'élément <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
+        public Duration P5D()
+        {
+            Value = nameof(P5D);
+            return this;
+        }
+        /// <summary>
+        /// Indique que la durée est de 5 jours.
+        /// </summary>
+        /// <returns>L'élément <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
+        public Duration P4D()
+        {
+            Value = nameof(P4D);
+            return this;
+        }
+        /// <summary>
+        /// Indique que la durée est de 5 jours.
+        /// </summary>
+        /// <returns>L'élément <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
+        public Duration P3D()
+        {
+            Value = nameof(P3D);
+            return this;
+        }
+        /// <summary>
+        /// Indique que la durée est de 5 jours.
+        /// </summary>
+        /// <returns>L'élément <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
+        public Duration P2D()
+        {
+            Value = nameof(P2D);
+            return this;
+        }
+        /// <summary>
+        /// Indique que la durée est personalisée.
+        /// </summary>
+        /// <returns>L'élément <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
+        public Duration Spec(string value)
+        {
+            Value = value;
+            return this;
+        }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Duration"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
-        /// <param name="value">Durée.</param>
-        public Duration(ExpressionElement parent, string value) : base(parent) => Value = value;
+        public Duration(ExpressionElement parent) : base(parent) { }
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>

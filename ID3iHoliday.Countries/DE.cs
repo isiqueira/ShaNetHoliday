@@ -166,7 +166,7 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt("14:00").UntilMidnight.If(Sunday).ThenStartAt("00:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt2PM.UntilMidnight.If(Sunday).ThenStartAtMidnight,
                     Names = NamesBuilder.Make.Add(Langue.DE, "Heiliger Abend").AsDictionary(),
                     Type = Bank,
                 },
@@ -183,7 +183,7 @@ namespace ID3iHoliday.Countries
                 new GregorianRule()
                 {
                     Key = "DEC31",
-                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("14:00").UntilMidnight.If(Sunday).ThenStartAt("00:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt2PM.UntilMidnight.If(Sunday).ThenStartAtMidnight,
                     Names = NamesBuilder.Make.Add(Langue.DE, "Silvester").AsDictionary(),
                     Type = Bank,
                 },

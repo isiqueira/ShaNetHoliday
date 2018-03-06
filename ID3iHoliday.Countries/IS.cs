@@ -166,7 +166,7 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt("13:00").UntilMidnight.If(Sunday).ThenStartAt("00:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt1PM.UntilMidnight.If(Sunday).ThenStartAtMidnight,
                     Names = NamesBuilder.Make.Add(Langue.IS, "Aðfangadagur").AsDictionary()
                 },
                 new GregorianRule()
@@ -181,7 +181,7 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("13:00").UntilMidnight.If(Sunday).ThenStartAt("00:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt1PM.UntilMidnight.If(Sunday).ThenStartAtMidnight,
                     Names = NamesBuilder.Make.Add(Langue.IS, "Gamlársdagur").AsDictionary()
                 }
             };

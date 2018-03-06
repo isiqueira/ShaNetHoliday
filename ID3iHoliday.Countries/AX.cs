@@ -101,7 +101,7 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAt("12:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The24th).StartAtNoon,
                     Names = NamesBuilder.Make.Add(Langue.SV, "Julafton").AsDictionary(),
                     Type = Bank
                 },
@@ -117,7 +117,7 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAt("12:00"),
+                    Expression = ExpressionTree.Date.Fix(On.December.The31st).StartAtNoon,
                     Names = NamesBuilder.Make.Add(Langue.SV, "Nyårsafton").AsDictionary(),
                     Type = Bank
                 }
