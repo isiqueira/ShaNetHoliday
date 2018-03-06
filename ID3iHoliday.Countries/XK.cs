@@ -8,12 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using static System.DayOfWeek;
-using static ID3iHoliday.Syntax.Count;
-using static ID3iHoliday.Syntax.Month;
-using static ID3iHoliday.Models.RuleType;
 using static ID3iHoliday.Syntax.Calendar;
 
-#warning Penser aux jours fériés dans les autres types de calendriers.
 namespace ID3iHoliday.Countries
 {
     /// <summary>
@@ -31,59 +27,72 @@ namespace ID3iHoliday.Countries
             Names = NamesBuilder.Make.Add(Langue.EN, "Kosovo").Add(Langue.SQ, "Republika e Kosovës").Add(Langue.SR, "Република Косово").AsDictionary();
             DaysOff.Add(Sunday);
             Langues = new List<Langue>() { Langue.SQ, Langue.SR };
+            SupportedCalendar = new List<Calendar>() { Gregorian, Julian };
             Rules = new ListRule()
             {
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.January.The1st),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Viti i Ri")
                                              .Add(Langue.SR, "Нова година").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.February.The17th),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Dita e Pavarësisë")
                                              .Add(Langue.SR, "Дан независности").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.April.The9th),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Dita e Kushtetutës").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Catholic.Easter,
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Pashkët Katolike")
                                              .Add(Langue.SR, "Католички Васкрс").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Orthodox.Easter,
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Pashkët Ortodokse")
                                              .Add(Langue.SR, "Васкрс").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.May.The1st),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Dita Ndërkombëtare e Punonjësve")
                                              .Add(Langue.SR, "Празник рада").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.May.The9th),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Dita e Evropës").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.December.The25th),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Krishtlindja")
                                              .Add(Langue.SR, "Католички Божић").AsDictionary()
                 },
-                new Rule()
+                new JulianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.December.The25th).Over(Julian),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Krishtlindjet Ortodokse")
                                              .Add(Langue.SR, "Божић").AsDictionary()
+                },
+                new HijriRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).Over(Hijri),
+                    Names = NamesBuilder.Make.Add(Langue.SQ, "Fitër Bajrami")
+                                             .Add(Langue.SR, "Рамазански Бајрам").AsDictionary()
+                },
+                new HijriRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).Over(Hijri),
+                    Names = NamesBuilder.Make.Add(Langue.SQ, "Kurban Bajrami")
+                                             .Add(Langue.SR, "Курбански Бајрам").AsDictionary()
                 }
             };
         }

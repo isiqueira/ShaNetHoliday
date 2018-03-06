@@ -18,6 +18,10 @@ namespace ID3iHoliday.Syntax
         /// <summary>
         /// <see cref="System.Globalization.JulianCalendar"/>.
         /// </summary>
-        Julian = 1
+        Julian = 1,
+        /// <summary>
+        /// <see cref="System.Globalization.HijriCalendar"/>.
+        /// </summary>
+        Hijri = 2
     }
 }

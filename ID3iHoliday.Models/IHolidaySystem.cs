@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ID3iHoliday.Syntax;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,9 @@ namespace ID3iHoliday.Models
         /// <param name="year">Année souhaitée.</param>
         /// <param name="countryCode">Pays.</param>
         /// <param name="type">Type de règle.</param>
+        /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All);
+        IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -30,8 +32,9 @@ namespace ID3iHoliday.Models
         /// <param name="countryCode">Pays.</param>
         /// <param name="stateCode">Etat.</param>
         /// <param name="type">Type de règle.</param>
+        /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All);
+        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -40,8 +43,9 @@ namespace ID3iHoliday.Models
         /// <param name="stateCode">Etat.</param>
         /// <param name="regionCode">Région.</param>
         /// <param name="type">Type de règle.</param>
+        /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All);
+        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian);
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.

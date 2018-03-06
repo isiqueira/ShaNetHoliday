@@ -11,6 +11,7 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
+using static ID3iHoliday.Syntax.Calendar;
 
 namespace ID3iHoliday.Countries
 {
@@ -29,76 +30,77 @@ namespace ID3iHoliday.Countries
             Names = NamesBuilder.Make.Add(Langue.EN, "Lithuania").Add(Langue.LT, "Lietuva").AsDictionary();
             DaysOff.Add(Sunday);
             Langues.Add(Langue.LT);
+            SupportedCalendar.Add(Gregorian);
             Rules = new ListRule()
             {
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.January.The1st),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Naujieji metai").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.February.The16th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Lietuvos valstybės atkūrimo diena").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.March.The11th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Lietuvos nepriklausomybės atkūrimo diena").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Catholic.Easter,
                     Names = NamesBuilder.Make.Add(Langue.LT, "Velykos").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.May.The1st),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Tarptautinė darbo diena").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Movable(First, Sunday).In(May),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Motinos diena").AsDictionary(),
                     Type = Observance
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Movable(First, Sunday).In(June),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Tėvo diena").AsDictionary(),
                     Type = Observance
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.June.The24th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Joninės, Rasos").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.July.The6th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Valstybės diena").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.August.The15th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Žolinė").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.November.The1st),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Visų šventųjų diena").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.December.The24th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Šv. Kūčios").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.December.The25th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "Šv. Kalėdos").AsDictionary()
                 },
-                new Rule()
+                new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.December.The26th),
                     Names = NamesBuilder.Make.Add(Langue.LT, "2. Kalėdų diena").AsDictionary()

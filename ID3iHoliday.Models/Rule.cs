@@ -1,15 +1,48 @@
 ﻿using ID3iHoliday.Core.Models;
+using ID3iHoliday.Syntax;
 using System;
 using System.Collections.Generic;
 
 using static ID3iHoliday.Models.RuleType;
 
 namespace ID3iHoliday.Models
-{   
+{
+    /// <summary>
+    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.GregorianCalendar"/>.
+    /// </summary>
+    public class GregorianRule : Rule
+    {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="GregorianRule"/>.
+        /// </summary>
+        public GregorianRule() : base() => Calendar = Calendar.Gregorian;
+    }
+    /// <summary>
+    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.JulianCalendar"/>.
+    /// </summary>
+    public class JulianRule : Rule
+    {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="JulianRule"/>.
+        /// </summary>
+        public JulianRule() : base() => Calendar = Calendar.Julian;
+    }
+    /// <summary>
+    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.HijriCalendar"/>.
+    /// </summary>
+    public class HijriRule : Rule
+    {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="HijriRule"/>.
+        /// </summary>
+        public HijriRule() : base() => Calendar = Calendar.Hijri;
+    }
+
+
     /// <summary>
     /// Représentation d'une règle.
     /// </summary>
-    public partial class Rule : ICloneable
+    public abstract class Rule : ICloneable
     {
         /// <summary>
         /// Eléments à surcharger.
@@ -48,6 +81,11 @@ namespace ID3iHoliday.Models
         /// </summary>
         /// <returns>Chaîne qui représente l'objet actuel.</returns>
         public override string ToString() => Expression.Expression;
+
+        /// <summary>
+        /// Type de calendrier de la règle.
+        /// </summary>
+        public Calendar Calendar { get; set; } = Calendar.Gregorian;
 
         /// <summary>
         /// Méthode qui permet de parser l'expression de cette règle pour une année..

@@ -11,7 +11,8 @@
     <AssemblyName>ID3iHoliday.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-  <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids></PropertyGroup>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -57,6 +58,10 @@
     <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj">
       <Project>{C7C2D758-46D9-4840-9AF9-DFDD85C94178}</Project>
       <Name>ID3iHoliday.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ID3iHoliday.Syntax\ID3iHoliday.Syntax.csproj">
+      <Project>{A515221B-59BF-4471-82E8-3BDB5DB1E4AE}</Project>
+      <Name>ID3iHoliday.Syntax</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

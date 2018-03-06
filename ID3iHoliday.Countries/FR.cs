@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ID3iCore;
+using ID3iDate;
+using System;
 using System.Collections.Generic;
 using ID3iHoliday.Models;
 using ID3iHoliday.Syntax;
@@ -7,8 +9,7 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Syntax.Count;
 using static ID3iHoliday.Syntax.Month;
 using static ID3iHoliday.Models.RuleType;
-using ID3iCore;
-using ID3iDate;
+using static ID3iHoliday.Syntax.Calendar;
 
 namespace ID3iHoliday.Countries
 {
@@ -25,79 +26,76 @@ namespace ID3iHoliday.Countries
             Code = "FR";
             Alpha3Code = "FRA";
             Names = NamesBuilder.Make.Add(Langue.EN, "France").Add(Langue.FR, "France").AsDictionary();
-            DaysOff = new List<DayOfWeek>() { Sunday };
-            Langues = new List<Langue>() { Langue.FR };
+            DaysOff.Add(Sunday);
+            Langues.Add(Langue.FR);
+            SupportedCalendar.Add(Gregorian);
             Rules = new ListRule()
             {
-                Langues = Langues,
-                Container =
+                new GregorianRule()
                 {
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.January.The1st),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Jour de l'an").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Catholic.EasterMonday,
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Lundi de pâques").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.May.The1st),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Fête du travail").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.May.The8th),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Fête de la Victoire 1945").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Catholic.AscensionDay,
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Ascension").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Catholic.Pentecost,
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Pentecôte").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Catholic.WhitMonday,
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Lundi de Pentecôte").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression =  ExpressionTree.Date.Movable(First, Sunday).Before(June),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Fête des mères").AsDictionary(),
-                        Type = Observance,
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.July.The14th),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Fête nationale").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.August.The15th),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Assomption").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.November.The1st),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Toussaint").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.November.The11th),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Armistice 1918").AsDictionary()
-                    },
-                    new Rule()
-                    {
-                        Expression = ExpressionTree.Date.Fix(On.December.The25th),
-                        Names = NamesBuilder.Make.Add(Langue.FR, "Noël").AsDictionary()
-                    }
+                    Expression = ExpressionTree.Date.Fix(On.January.The1st),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Jour de l'an").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Catholic.EasterMonday,
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Lundi de pâques").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.May.The1st),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Fête du travail").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.May.The8th),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Fête de la Victoire 1945").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Catholic.AscensionDay,
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Ascension").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Catholic.Pentecost,
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Pentecôte").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Catholic.WhitMonday,
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Lundi de Pentecôte").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression =  ExpressionTree.Date.Movable(First, Sunday).Before(June),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Fête des mères").AsDictionary(),
+                    Type = Observance,
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.July.The14th),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Fête nationale").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.August.The15th),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Assomption").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.November.The1st),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Toussaint").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.November.The11th),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Armistice 1918").AsDictionary()
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(On.December.The25th),
+                    Names = NamesBuilder.Make.Add(Langue.FR, "Noël").AsDictionary()
                 }
             };
             States = new ListState()
@@ -115,20 +113,16 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département du Bas-Rhin").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
-                        {
-                            new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
-                            },
-                            new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Fix(On.December.The26th),
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Lendemain de Noël").AsDictionary()
-                            }
-                        }
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.GoodFriday,
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The26th),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Lendemain de Noël").AsDictionary()
+                    }
                 };
             }
         }
@@ -140,20 +134,16 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département du Haut-Rhin").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
-                        {
-                            new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
-                            },
-                            new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Fix(On.December.The26th),
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Lendemain de Noël").AsDictionary()
-                            }
-                        }
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.GoodFriday,
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The26th),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Lendemain de Noël").AsDictionary()
+                    }
                 };
             }
         }
@@ -165,20 +155,16 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département Moselle").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
-                        {
-                            new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
-                            },
-                            new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Fix(On.December.The26th),
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Lendemain de Noël").AsDictionary()
-                            }
-                        }
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Catholic.GoodFriday,
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.December.The26th),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Lendemain de Noël").AsDictionary()
+                    }
                 };
             }
         }
@@ -190,14 +176,10 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Mayotte").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
+                    new GregorianRule()
                     {
-                        new Rule()
-                        {
-                            Expression = ExpressionTree.Date.Fix(On.April.The27th),
-                            Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
-                        }
+                        Expression = ExpressionTree.Date.Fix(On.April.The27th),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
                     }
                 };
             }
@@ -210,19 +192,15 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Martinique").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
+                    new GregorianRule()
                     {
-                        new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
-                            },
-                        new Rule()
-                        {
-                            Expression = ExpressionTree.Date.Fix(On.May.The22nd),
-                            Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
-                        }
+                        Expression = ExpressionTree.Date.Catholic.GoodFriday,
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.May.The22nd),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
                     }
                 };
             }
@@ -235,19 +213,15 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Guadeloupe").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
+                    new GregorianRule()
                     {
-                        new Rule()
-                            {
-                                Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                                Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
-                            },
-                        new Rule()
-                        {
-                            Expression = ExpressionTree.Date.Fix(On.May.The27th),
-                            Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
-                        }
+                        Expression = ExpressionTree.Date.Catholic.GoodFriday,
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Vendredi saint").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.May.The27th),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
                     }
                 };
             }
@@ -260,14 +234,10 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Guyane").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
+                    new GregorianRule()
                     {
-                        new Rule()
-                        {
-                            Expression = ExpressionTree.Date.Fix(On.June.The10th),
-                            Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
-                        }
+                        Expression = ExpressionTree.Date.Fix(On.June.The10th),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
                     }
                 };
             }
@@ -280,14 +250,10 @@ namespace ID3iHoliday.Countries
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer La Réunion").AsDictionary();
                 Rules = new ListRule()
                 {
-                    Langues = Langues,
-                    Container =
+                    new GregorianRule()
                     {
-                        new Rule()
-                        {
-                            Expression = ExpressionTree.Date.Fix(On.December.The20th),
-                            Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
-                        }
+                        Expression = ExpressionTree.Date.Fix(On.December.The20th),
+                        Names = NamesBuilder.Make.Add(Langue.FR, "Abolition de l'esclavage").AsDictionary()
                     }
                 };
             }

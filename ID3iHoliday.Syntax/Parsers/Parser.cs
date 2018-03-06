@@ -28,6 +28,8 @@ namespace ID3iHoliday.Syntax.Parsers
                     return new GregorianCalendar();
                 case Julian:
                     return new JulianCalendar();
+                case Hijri:
+                    return new HijriCalendar();
                 default:
                     return new GregorianCalendar();
             }
@@ -100,7 +102,7 @@ namespace ID3iHoliday.Syntax.Parsers
                     Pattern.With.Whitespace.Literal("OVER").Whitespace
                     .NamedGroup("Calendar",
                         Pattern.With.Choice(
-                            Pattern.With.Literal("JULIAN"), Pattern.With.Literal("")
+                            Pattern.With.Literal("JULIAN"), Pattern.With.Literal("HIJRI"), Pattern.With.Literal("")
                         )
                     )
                 ).Repeat.Optional;

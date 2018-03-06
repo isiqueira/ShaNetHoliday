@@ -1,6 +1,7 @@
 ﻿using ID3iCore;
 using ID3iDate;
 using ID3iHoliday.Models;
+using ID3iHoliday.Syntax;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,10 @@ namespace ID3iHoliday.Engine
         /// <param name="year">Année souhaitée.</param>
         /// <param name="countryCode">Pays.</param>
         /// <param name="type">Type de règle.</param>
+        /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All)
-            => All(year, countryCode, null, null, type);
+        public IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian)
+            => All(year, countryCode, null, null, type, calendar);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -35,9 +37,10 @@ namespace ID3iHoliday.Engine
         /// <param name="countryCode">Pays.</param>
         /// <param name="stateCode">Etat.</param>
         /// <param name="type">Type de règle.</param>
+        /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All)
-            => All(year, countryCode, stateCode, null, type);
+        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian)
+            => All(year, countryCode, stateCode, null, type, calendar);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -46,15 +49,16 @@ namespace ID3iHoliday.Engine
         /// <param name="stateCode">Etat.</param>
         /// <param name="regionCode">Région.</param>
         /// <param name="type">Type de règle.</param>
+        /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All)
+        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian)
         {
             if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, regionCode, type);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, regionCode, type, calendar);
             else if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty())
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, type);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, type, calendar);
             else
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, type);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, type, calendar);
         }
 
         /// <summary>
