@@ -51,6 +51,7 @@
     <Compile Include="AG.cs" />
     <Compile Include="AI.cs" />
     <Compile Include="AL.cs" />
+    <Compile Include="RS.cs" />
     <Compile Include="SM.cs" />
     <Compile Include="Todo\AM.cs" />
     <Compile Include="Todo\AO.cs" />
