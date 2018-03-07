@@ -1,17 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B79AC695-E873-4637-9D52-52BECE6D493D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ID3iHoliday.Engine.Standard</RootNamespace>
-    <AssemblyName>ID3iHoliday.Engine.Standard</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids></PropertyGroup>
+    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ID3iHoliday.Engine.Standard</PackageId>
+    <Version>1.0.7</Version>
+    <Authors>Shaenn</Authors>
+    <Company>Shaenn</Company>
+    <Description>Calculate Public Holidays for a given year, translation native. Country States and Regions support. Supports 43 countries.</Description>
+    <PackageLicenseUrl>https://github.com/Shaenn/ID3iHoliday/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -32,32 +37,8 @@
     <DocumentationFile>bin\Release\ID3iHoliday.Engine.Standard.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <ProjectReference Include="..\ID3iHoliday.Countries\ID3iHoliday.Countries.csproj" />
+    <ProjectReference Include="..\ID3iHoliday.Engine\ID3iHoliday.Engine.csproj" />
+    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="HolidaySystem.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ID3iHoliday.Countries\ID3iHoliday.Countries.csproj">
-      <Project>{6F2F409B-CFF5-4B37-B75F-2DCEE39F3299}</Project>
-      <Name>ID3iHoliday.Countries</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Engine\ID3iHoliday.Engine.csproj">
-      <Project>{1ae7bed4-722e-4695-a5e7-ffcbb004c55e}</Project>
-      <Name>ID3iHoliday.Engine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj">
-      <Project>{c7c2d758-46d9-4840-9af9-dfdd85c94178}</Project>
-      <Name>ID3iHoliday.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
