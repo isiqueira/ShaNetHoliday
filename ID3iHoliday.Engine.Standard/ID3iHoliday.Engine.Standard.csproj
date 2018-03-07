@@ -8,7 +8,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>ID3iHoliday.Engine.Standard</PackageId>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <Authors>Shaenn</Authors>
     <Company>Shaenn</Company>
     <Description>Calculate Public Holidays for a given year, translation native. Country States and Regions support. Supports 43 countries.</Description>
@@ -16,6 +16,7 @@
     <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>Public-Holiday PublicHoliday Bank-Holiday BanHoliday Andorra Antigua &amp; Barbuda Anguilla Albania Austria Åland Islands Bosnia and Herzegovina Belgique Bulgaria Belarus Cyprus Czech Republic Germany Denmark Estonia Finland France Greece Croatia Hungary Ireland Isle of Man Iceland Italia Jersey Lichtenstein Lithuania Luxembourg Latvia Monaco Moldova Montenegro Macedonia Malta Netherlands Norway Poland Portugal Romania Serbia Russia San Marino Kosovo.</PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
