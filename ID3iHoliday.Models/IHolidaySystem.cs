@@ -23,7 +23,7 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian);
+        IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -33,7 +33,7 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian);
+        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -44,7 +44,7 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian);
+        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All);
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.

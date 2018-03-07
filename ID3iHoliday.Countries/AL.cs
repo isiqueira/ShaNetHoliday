@@ -152,12 +152,12 @@ namespace ID3iHoliday.Countries
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(OnM.Shawwal.The1st).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Fitër Bajrami").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(OnM.DhuAlHijjah.The10th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.SQ, "Kurban Bajrami").AsDictionary()
                 }
             };

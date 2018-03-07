@@ -11,7 +11,6 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Models.RuleType;
 using static ID3iHoliday.Models.Calendar;
 
-#warning Penser aux jours fériés dans les autres types de calendriers.
 namespace ID3iHoliday.Countries
 {
     /// <summary>
@@ -203,10 +202,17 @@ namespace ID3iHoliday.Countries
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(OnM.DhuAlHijjah.The10th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.MK, "Курбан Бајрам").AsDictionary(),
                     Type = Optional,
                     Note = "Muslim believers"
+                },
+                new HebrewRule()
+                {
+                    Expression = ExpressionTree.Date.Fix(OnH.Tishrei.The10th).Over.Hebrew(),
+                    Names = NamesBuilder.Make.Add(Langue.MK, "Јом Кипур").AsDictionary(),
+                    Type = Optional,
+                    Note = "Jewish believers"
                 }
             };
         }

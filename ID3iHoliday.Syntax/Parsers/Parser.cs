@@ -14,11 +14,11 @@ namespace ID3iHoliday.Syntax.Parsers
     public static class Parser
     {
         /// <summary>
-        /// Méthode qui permet de récupérer un <see cref="System.Globalization.Calendar"/> par rapport au type spécifié.
+        /// Méthode qui permet de récupérer un <see cref="Calendar"/> par rapport au type spécifié.
         /// </summary>
         /// <param name="calendar">Type du calendrier souhaité.</param>
-        /// <returns>Le <see cref="System.Globalization.Calendar"/> correspondant.</returns>
-        public static System.Globalization.Calendar GetCalendar(string calendar)
+        /// <returns>Le <see cref="Calendar"/> correspondant.</returns>
+        public static Calendar GetCalendar(string calendar)
         {
             switch (calendar?.ToUpper())
             {
@@ -28,6 +28,8 @@ namespace ID3iHoliday.Syntax.Parsers
                     return new JulianCalendar();
                 case "HIJRI":
                     return new HijriCalendar();
+                case "HEBREW":
+                    return new HebrewCalendar();
                 default:
                     return new GregorianCalendar();
             }
@@ -100,7 +102,7 @@ namespace ID3iHoliday.Syntax.Parsers
                     Pattern.With.Whitespace.Literal("OVER").Whitespace
                     .NamedGroup("Calendar",
                         Pattern.With.Choice(
-                            Pattern.With.Literal("JULIAN"), Pattern.With.Literal("HIJRI"), Pattern.With.Literal("")
+                            Pattern.With.Literal("JULIAN"), Pattern.With.Literal("HIJRI"), Pattern.With.Literal("HEBREW"), Pattern.With.Literal("")
                         )
                     )
                 ).Repeat.Optional;

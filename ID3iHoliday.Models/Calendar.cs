@@ -12,6 +12,10 @@ namespace ID3iHoliday.Models
     public enum Calendar
     {
         /// <summary>
+        /// Tous les calendriers.
+        /// </summary>
+        All = -1,
+        /// <summary>
         /// <see cref="System.Globalization.GregorianCalendar"/>.
         /// </summary>
         Gregorian = 0,
@@ -22,6 +26,10 @@ namespace ID3iHoliday.Models
         /// <summary>
         /// <see cref="System.Globalization.HijriCalendar"/>.
         /// </summary>
-        Hijri = 2
+        Hijri = 2,
+        /// <summary>
+        /// <see cref="System.Globalization.HebrewCalendar"/>.
+        /// </summary>
+        Hebrew = 3
     }
 }

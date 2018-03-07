@@ -36,6 +36,16 @@ namespace ID3iHoliday.Models
         /// </summary>
         public HijriRule() : base() => Calendar = Calendar.Hijri;
     }
+    /// <summary>
+    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.HebrewCalendar"/>.
+    /// </summary>
+    public class HebrewRule : Rule
+    {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="HebrewRule"/>.
+        /// </summary>
+        public HebrewRule() : base() => Calendar = Calendar.Hijri;
+    }
 
 
     /// <summary>

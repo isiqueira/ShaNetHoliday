@@ -27,7 +27,7 @@ namespace ID3iHoliday.Engine
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian)
+        public IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
             => All(year, countryCode, null, null, type, calendar);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
@@ -38,7 +38,7 @@ namespace ID3iHoliday.Engine
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian)
+        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
             => All(year, countryCode, stateCode, null, type, calendar);
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
@@ -50,7 +50,7 @@ namespace ID3iHoliday.Engine
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.Gregorian)
+        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
         {
             if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
                 return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, regionCode, type, calendar);

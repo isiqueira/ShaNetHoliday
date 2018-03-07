@@ -21,6 +21,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Affecte le calendrier <see cref="System.Globalization.GregorianCalendar"/> à cette expression.
         /// </summary>
+        /// <returns>L'expression.</returns>
         public ExpressionElement Gregorian()
         {
             Calendar = nameof(Gregorian);
@@ -29,6 +30,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Affecte le calendrier <see cref="System.Globalization.JulianCalendar"/> à cette expression.
         /// </summary>
+        /// <returns>L'expression.</returns>
         public ExpressionElement Julian()
         {
             Calendar = nameof(Julian);
@@ -37,9 +39,19 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Affecte le calendrier <see cref="System.Globalization.HijriCalendar"/> à cette expression.
         /// </summary>
+        /// <returns>L'expression.</returns>
         public ExpressionElement Hijri()
         {
             Calendar = nameof(Hijri);
+            return this;
+        }
+        /// <summary>
+        /// Affecte le calendrier <see cref="System.Globalization.HebrewCalendar"/> à cette expression.
+        /// </summary>
+        /// <returns>L'expression.</returns>
+        public ExpressionElement Hebrew()
+        {
+            Calendar = nameof(Hebrew);
             return this;
         }
 

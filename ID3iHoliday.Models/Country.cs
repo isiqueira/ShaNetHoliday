@@ -64,7 +64,7 @@ namespace ID3iHoliday.Models
         /// <returns>Une liste de tous les jours particulier.</returns>
         public IEnumerable<SpecificDay> Get(int year, string stateCode, string regionCode, RuleType type, Calendar calendar)
         {
-            List<Rule> rules = new List<Rule>(Rules.Where(x => x.Calendar == calendar).Select(x => x.Clone() as Rule));
+            List<Rule> rules = new List<Rule>(Rules.Select(x => x.Clone() as Rule));
 
             void CheckRule(Rule rule)
             {
@@ -86,12 +86,15 @@ namespace ID3iHoliday.Models
 
             States.FirstOrDefault(x => x.Code == stateCode)?.IfNotNull(x =>
             {
-                x.Rules.Where(y => y.Calendar == calendar).ForEach(y => CheckRule(y));
-                x.Regions.FirstOrDefault(y => y.Code == regionCode)?.Rules.Where(y => y.Calendar == calendar).ForEach(y => CheckRule(y));
+                x.Rules.ForEach(y => CheckRule(y));
+                x.Regions.FirstOrDefault(y => y.Code == regionCode)?.Rules.ForEach(y => CheckRule(y));
             });
 
             List<SpecificDay> lst = new List<SpecificDay>();
-            rules.ConditionnalWhere(() => type == All, x => true, x => x.Type == type).ForEach(x => x.Parse(year, lst));
+            rules
+                .ConditionnalWhere(() => type == All, x => true, x => x.Type == type)
+                .ConditionnalWhere(() => calendar == Calendar.All, x => true, x => x.Calendar == calendar)
+                .ForEach(x => x.Parse(year, lst));
 
             return lst.OrderBy(x => x.Date);
         }

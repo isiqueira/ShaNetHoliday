@@ -33,22 +33,22 @@ namespace ID3iHoliday.Countries
             {
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Muharram.The1st).Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(OnM.Muharram.The1st).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Nova hidžretska godina").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.RabiAlAwwal.The12th).Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(OnM.RabiAlAwwal.The12th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Mevlud").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.DhuAlHijjah.The10th).StartAtMidnight.Duration.P4D().Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(OnM.DhuAlHijjah.The10th).StartAtMidnight.Duration.P4D().Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Kurbanski bajram").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(On.Shawwal.The1st).StartAtMidnight.Duration.P3D().Over.Hijri(),
+                    Expression = ExpressionTree.Date.Fix(OnM.Shawwal.The1st).StartAtMidnight.Duration.P3D().Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.BS, "Ramazanski bajram").AsDictionary()
                 },
                 new GregorianRule()

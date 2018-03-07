@@ -57,6 +57,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Indique que la durée est personalisée.
         /// </summary>
+        /// <param name="value">Durée.</param>
         /// <returns>L'élément <see cref="Composition.Duration"/> pour ajouter d'autres comportements.</returns>
         public Duration Spec(string value)
         {
