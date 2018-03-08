@@ -9,6 +9,11 @@
 ---
 [![GitHub Release](https://img.shields.io/github/release/Shaenn/ID3iHoliday.svg?style=flat-square)](https://github.com/Shaenn/ID3iHoliday/releases)
 
+### NuGet
+---
+[![NuGet](https://img.shields.io/nuget/v/ID3iHoliday.Engine.Standard.svg)](https://www.nuget.org/packages/ID3iHoliday.Engine.Standard/)
+[![NuGet](https://img.shields.io/nuget/dt/ID3iHoliday.Engine.Standard.svg)](https://www.nuget.org/packages/ID3iHoliday.Engine.Standard/)
+
 # ID3iHoliday
 
 ID3iHoliday is a Holiday Framework calculation for .Net.
