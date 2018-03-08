@@ -50,6 +50,7 @@
     <Compile Include="MCModule.cs" />
     <Compile Include="MEModule.cs" />
     <Compile Include="RSModule.cs" />
+    <Compile Include="SKModule.cs" />
     <Compile Include="SMModule.cs" />
     <Compile Include="RUModule.cs" />
     <Compile Include="ROModule.cs" />
