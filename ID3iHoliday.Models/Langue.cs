@@ -130,6 +130,10 @@ namespace ID3iHoliday.Models
         /// </summary>
         [Description("Slovak")] SK,
         /// <summary>
+        /// Slovenian.
+        /// </summary>
+        [Description("Slovenian")] SL,
+        /// <summary>
         /// Albanian.
         /// </summary>
         [Description("Albanian")] SQ,

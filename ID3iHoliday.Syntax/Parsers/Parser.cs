@@ -116,7 +116,9 @@ namespace ID3iHoliday.Syntax.Parsers
                     Pattern.With.Whitespace.Literal("EVERY").Whitespace
                     .NamedGroup("RepeatYear", Pattern.With.Digit)
                     .Whitespace.Literal("YEAR").Whitespace.Literal("SINCE").Whitespace
-                    .NamedGroup("RepeatStartYear", Pattern.With.Set(Pattern.With.Literal("0-9")).Repeat.Exactly(4))).Repeat.Optional;
+                    .NamedGroup("RepeatStartYear", Pattern.With.Set(Pattern.With.Literal("0-9")).Repeat.Exactly(4))
+                    .AtomicGroup(Pattern.With.Whitespace.Literal("TO").Whitespace.NamedGroup("RepeatEndYear", Pattern.With.Set(Pattern.With.Literal("0-9")).Repeat.Exactly(4))).Repeat.Optional
+                ).Repeat.Optional;
         /// <summary>
         /// Pattern pour une date dans un mois.
         /// </summary>
