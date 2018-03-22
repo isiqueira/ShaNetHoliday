@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CHModule.cs" />
+    <Compile Include="ESModule.cs" />
+    <Compile Include="GBModule.cs" />
     <Compile Include="LIModule.cs" />
     <Compile Include="LTModule.cs" />
     <Compile Include="LUModule.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="MCModule.cs" />
     <Compile Include="MEModule.cs" />
     <Compile Include="RSModule.cs" />
+    <Compile Include="SEModule.cs" />
     <Compile Include="SIModule.cs" />
     <Compile Include="SKModule.cs" />
     <Compile Include="SMModule.cs" />
@@ -65,6 +69,8 @@
     <Compile Include="JEModule.cs" />
     <Compile Include="IEModule.cs" />
     <Compile Include="IMModule.cs" />
+    <Compile Include="VAModule.cs" />
+    <Compile Include="UAModule.cs" />
     <Compile Include="XKModule.cs" />
     <Compile Include="ITModule.cs" />
     <Compile Include="ISModule.cs" />

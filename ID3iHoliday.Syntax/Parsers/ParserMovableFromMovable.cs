@@ -75,6 +75,10 @@ namespace ID3iHoliday.Syntax.Parsers
                 if (match.Groups["StartHours"].Value.IsNotNullOrEmpty() && match.Groups["StartMinutes"].Value.IsNotNullOrEmpty())
                     date = date.SetTime(Int32.Parse(match.Groups["StartHours"].Value), Int32.Parse(match.Groups["StartMinutes"].Value));
 
+                if (match.Groups["RepeatEndYear"].Value.IsNotNullOrEmpty())
+                    if (date.Year > Int32.Parse(match.Groups["RepeatEndYear"].Value))
+                        return result;
+
                 bool isYearTypeOk = false;
                 if (match.Groups["YearType"].Value.IsNotNullOrEmpty())
                 {

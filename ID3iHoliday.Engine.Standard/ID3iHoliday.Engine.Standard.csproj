@@ -8,17 +8,18 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>ID3iHoliday.Engine.Standard</PackageId>
-    <Version>1.0.11</Version>
+    <Version>1.0.12</Version>
     <Authors>Shaenn</Authors>
     <Company>Shaenn</Company>
-    <Description>Calculate Public Holidays for a given year, translation native. Country States and Regions support. Supports 45 countries.</Description>
+    <Description>Calculate Public Holidays for a given year, translation native. Country States and Regions support. Supports 51 countries.</Description>
     <PackageLicenseUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageTags>Public-Holiday PublicHoliday Bank-Holiday BanHoliday Andorra Antigua &amp; Barbuda Anguilla Albania Austria Åland Islands Bosnia and Herzegovina Belgique Bulgaria Belarus Cyprus Czech Republic Germany Denmark Estonia Finland France Greece Croatia Hungary Ireland Isle of Man Iceland Italia Jersey Lichtenstein Lithuania Luxembourg Latvia Monaco Moldova Montenegro Macedonia Malta Netherlands Norway Poland Portugal Romania Serbia Russia San Marino Kosovo Slovakia Slovenia</PackageTags>
+    <PackageTags>Public-Holiday PublicHoliday Bank-Holiday BanHoliday Andorra Antigua &amp; Barbuda Anguilla Albania Austria Åland Islands Bosnia and Herzegovina Belgique Bulgaria Belarus Cyprus Czech Republic Germany Denmark Estonia Finland France Greece Croatia Hungary Ireland Isle of Man Iceland Italia Jersey Lichtenstein Lithuania Luxembourg Latvia Monaco Moldova Montenegro Macedonia Malta Netherlands Norway Poland Portugal Romania Serbia Russia San Marino Kosovo Slovakia Slovenia Spain Sweden Switzerland Ukraine VaticanCity UnitedKingdom Europa</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
-    <PackageReleaseNotes>Add Slovenia.</PackageReleaseNotes>
+    <PackageReleaseNotes>Add Spain, Sweden, Switzerland, Ukraine, Vatican City and United Kingdom.
+Countries of Europa done.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -30,13 +30,16 @@ namespace ID3iHoliday.Engine.Standard
             CountriesAvailable.Add(new BE());
             CountriesAvailable.Add(new BG());
             CountriesAvailable.Add(new BY());
+            CountriesAvailable.Add(new CH());
             CountriesAvailable.Add(new CY());
             CountriesAvailable.Add(new CZ());
             CountriesAvailable.Add(new DE());
             CountriesAvailable.Add(new DK());
             CountriesAvailable.Add(new EE());
+            CountriesAvailable.Add(new ES());
             CountriesAvailable.Add(new FI());
             CountriesAvailable.Add(new FR());
+            CountriesAvailable.Add(new GB());
             CountriesAvailable.Add(new GR());
             CountriesAvailable.Add(new HR());
             CountriesAvailable.Add(new HU());
@@ -61,9 +64,12 @@ namespace ID3iHoliday.Engine.Standard
             CountriesAvailable.Add(new RO());
             CountriesAvailable.Add(new RS());
             CountriesAvailable.Add(new RU());
+            CountriesAvailable.Add(new SE());
             CountriesAvailable.Add(new SI());
             CountriesAvailable.Add(new SK());
             CountriesAvailable.Add(new SM());
+            CountriesAvailable.Add(new UA());
+            CountriesAvailable.Add(new VA());
             CountriesAvailable.Add(new XK());
         }
     }

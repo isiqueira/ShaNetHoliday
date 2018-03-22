@@ -15,7 +15,7 @@
     <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
-    <Version>1.0.11</Version>
+    <Version>1.0.12</Version>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

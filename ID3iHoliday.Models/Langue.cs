@@ -144,6 +144,10 @@ namespace ID3iHoliday.Models
         /// <summary>
         /// Swedish.
         /// </summary>
-        [Description("Swedish")] SV
+        [Description("Swedish")] SV,
+        /// <summary>
+        /// Ukrainian.
+        /// </summary>
+        [Description("Ukrainian")] UK
     }
 }
