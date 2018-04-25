@@ -53,7 +53,10 @@ namespace ID3iHoliday.Syntax.Parsers
             {
                 var calendar = Parser.GetCalendar(match.Groups["Calendar"].Value);
 
-                var date = new DateTime(calendar.GetYear(DateTime.Today), Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);
+                if (!(calendar is System.Globalization.GregorianCalendar))
+                    year = calendar.GetYear(DateTime.Today);
+
+                var date = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);
                 if (match.Groups["year"].Value.IsNotNullOrEmpty())
                     date = date.SetYear(Int32.Parse(match.Groups["year"].Value));
 

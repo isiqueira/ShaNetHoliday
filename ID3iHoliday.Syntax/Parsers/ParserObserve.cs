@@ -55,8 +55,11 @@ namespace ID3iHoliday.Syntax.Parsers
             {
                 var calendar = Parser.GetCalendar(match.Groups["Calendar"].Value);
 
-                var observedDate = new DateTime(calendar.GetYear(DateTime.Today), Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);
-                var newDate = new DateTime(calendar.GetYear(DateTime.Today), Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);                
+                if (!(calendar is System.Globalization.GregorianCalendar))
+                    year = calendar.GetYear(DateTime.Today);
+
+                var observedDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);
+                var newDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);                
                 for (int i = 0; i < match.Groups["Or"].Captures.Count; i++)
                 {
                     if (observedDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)
