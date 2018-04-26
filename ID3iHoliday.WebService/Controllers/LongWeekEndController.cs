@@ -1,6 +1,5 @@
 ﻿using ID3iHoliday.Engine.Standard;
-using ID3iHoliday.Models;
-using ID3iHoliday.WebService.Models;
+using ID3iHoliday.WebService.Divers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +16,7 @@ namespace ID3iHoliday.WebService.Controllers
         [Route("{year:int}")]
         public IHttpActionResult Get(int year, string ccode, string scode = null, string rcode = null)
         {
-            return Ok(Transform(HolidaySystem.Instance.LongWeekEnds(year, ccode, scode, rcode)));
-        }
-        private IEnumerable<LongWeekEndModel> Transform(IEnumerable<LongWeekEnd> longWeekends)
-        {
-            return longWeekends?.Select(x => new LongWeekEndModel(x.StartDate, x.EndDate, x.HasBridge, x.ToString()));
-        }
+            return Ok(HolidaySystem.Instance.LongWeekEnds(year, ccode, scode, rcode).Transform());
+        }        
     }
 }

@@ -11,6 +11,7 @@ namespace ID3iHoliday.Models
     /// </summary>
     public class ListRegion : BaseList<Region>
     {
+        public GeographicElementBase Parent { get; set; }
         /// <summary>
         /// Se produit à l'ajout d'une région.
         /// </summary>
@@ -25,7 +26,11 @@ namespace ID3iHoliday.Models
         /// </summary>
         public void Init()
         {
-            ForEach(x => { x.Rules.Langues = Langues; });
+            ForEach(x => 
+            {
+                x.Parent = Parent;
+                x.Rules.Langues = Langues;
+            });
         }
     }
 }

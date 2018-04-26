@@ -107,6 +107,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new GB_ALD(), new GB_ENG(), new GB_NIR(), new GB_SCT(), new GB_WLS() }
             }.Initialize(x => x.Init());
@@ -115,7 +116,7 @@ namespace ID3iHoliday.Countries
         {
             public GB_ALD()
             {
-                Code = "ALD";
+                Code = "GB-ALD";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Alderney").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -131,7 +132,7 @@ namespace ID3iHoliday.Countries
         {
             public GB_ENG()
             {
-                Code = "ENG";
+                Code = "GB-ENG";
                 Names = NamesBuilder.Make.Add(Langue.EN, "England").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -147,7 +148,7 @@ namespace ID3iHoliday.Countries
         {
             public GB_NIR()
             {
-                Code = "NIR";
+                Code = "GB-NIR";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Northern Ireland").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -180,7 +181,7 @@ namespace ID3iHoliday.Countries
         {
             public GB_SCT()
             {
-                Code = "SCT";
+                Code = "GB-SCT";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Scottland").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -219,7 +220,7 @@ namespace ID3iHoliday.Countries
         {
             public GB_WLS()
             {
-                Code = "WLS";
+                Code = "GB-WLS";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Wales").AsDictionary();
                 Rules = new ListRule()
                 {

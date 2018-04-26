@@ -108,6 +108,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new IT_32() }
             }.Initialize(x => x.Init());
@@ -117,7 +118,7 @@ namespace ID3iHoliday.Countries
         {
             public IT_32()
             {
-                Code = "32";
+                Code = "IT-32";
                 Names = NamesBuilder.Make.Add(Langue.IT, "Südtirol, Alto Adige").AsDictionary();
                 Rules = new ListRule()
                 {

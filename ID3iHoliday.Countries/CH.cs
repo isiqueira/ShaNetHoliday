@@ -106,6 +106,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new CH_BE(), new CH_LU(), new CH_RU(), new CH_SZ(), new CH_OW(), new CH_NW(), new CH_GL(), new CH_ZG(),
                               new CH_FR(), new CH_SO(), new CH_BL(), new CH_AI(), new CH_SG(), new CH_GR(), new CH_AG(), new CH_TG(),
@@ -116,7 +117,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_BE()
             {
-                Code = "BE";
+                Code = "CH-BE";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Bern").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -132,7 +133,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_LU()
             {
-                Code = "LU";
+                Code = "CH-LU";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Luzern").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -170,7 +171,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_RU()
             {
-                Code = "RU";
+                Code = "CH-RU";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Uri").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -215,7 +216,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_SZ()
             {
-                Code = "SZ";
+                Code = "CH-SZ";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Schwyz").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -260,7 +261,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_OW()
             {
-                Code = "OW";
+                Code = "CH-OW";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Obwalden").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -292,7 +293,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_NW()
             {
-                Code = "NW";
+                Code = "CH-NW";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Nidwalden").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -323,7 +324,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_GL()
             {
-                Code = "GL";
+                Code = "CH-GL";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Glarus").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -348,7 +349,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_ZG()
             {
-                Code = "ZG";
+                Code = "CH-ZG";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Zug").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -386,7 +387,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_FR()
             {
-                Code = "FR";
+                Code = "CH-FR";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Freiburg").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -418,7 +419,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_SO()
             {
-                Code = "SO";
+                Code = "CH-SO";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Solothurn").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -450,7 +451,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_BL()
             {
-                Code = "BL";
+                Code = "CH-BL";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Basel-Landschaft").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -468,7 +469,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_AI()
             {
-                Code = "AI";
+                Code = "CH-AI";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Appenzell Innerrhoden").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -500,7 +501,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_SG()
             {
-                Code = "SG";
+                Code = "CH-SG";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton St. Gallen").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -525,7 +526,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_GR()
             {
-                Code = "GR";
+                Code = "CH-GR";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Graubünden").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -570,7 +571,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_AG()
             {
-                Code = "AG";
+                Code = "CH-AG";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Aargau").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -607,7 +608,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_TG()
             {
-                Code = "TG";
+                Code = "CH-TG";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Thurgau").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -623,7 +624,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_TI()
             {
-                Code = "TI";
+                Code = "CH-TI";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Tessin").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -680,7 +681,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_VD()
             {
-                Code = "VD";
+                Code = "CH-VD";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Waadt").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -702,7 +703,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_VS()
             {
-                Code = "VS";
+                Code = "CH-VS";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Wallis").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -764,7 +765,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_NE()
             {
-                Code = "NE";
+                Code = "CH-NE";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Neuenburg").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -788,7 +789,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_GE()
             {
-                Code = "GE";
+                Code = "CH-GE";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Genf").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -805,7 +806,7 @@ namespace ID3iHoliday.Countries
         {
             public CH_JU()
             {
-                Code = "JU";
+                Code = "CH-JU";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kanton Jura").AsDictionary();
                 Rules = new ListRule()
                 {

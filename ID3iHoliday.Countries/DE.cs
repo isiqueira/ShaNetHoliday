@@ -196,6 +196,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new DE_BB(), new DE_BE(), new DE_BW(), new DE_BY(), new DE_HB(), new DE_HE(), new DE_MV(), new DE_NW(), new DE_RP(), new DE_SL(),
                                 new DE_SN(), new DE_ST(), new DE_TH() }
@@ -205,7 +206,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_BB()
             {
-                Code = "BB";
+                Code = "DE-BB";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Brandenburg").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -234,7 +235,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_BE()
             {
-                Code = "BE";
+                Code = "DE-BE";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Berlin").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -257,7 +258,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_BW()
             {
-                Code = "BW";
+                Code = "DE-BW";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Baden Würtemberg").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -297,7 +298,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_BY()
             {
-                Code = "BY";
+                Code = "DE-BY";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Bayern").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -338,6 +339,7 @@ namespace ID3iHoliday.Countries
                 };
                 Regions = new ListRegion()
                 {
+                    Parent = this,
                     Langues = Langues,
                     Container = { new DE_BY_A(), new DE_BY_EVANG() }
                 }.Initialize(x => x.Init());
@@ -346,7 +348,7 @@ namespace ID3iHoliday.Countries
             {
                 public DE_BY_A()
                 {
-                    Code = "A";
+                    Code = "DE-BY-A";
                     Names = NamesBuilder.Make.Add(Langue.DE, "Stadt Augsburg").AsDictionary();
                     Rules = new ListRule()
                     {
@@ -362,7 +364,7 @@ namespace ID3iHoliday.Countries
             {
                 public DE_BY_EVANG()
                 {
-                    Code = "EVANG";
+                    Code = "DE-BY-EVANG";
                     Names = NamesBuilder.Make.Add(Langue.DE, "Überwiegend evangelische Gemeinden").AsDictionary();
                     Rules = new ListRule()
                     {
@@ -380,7 +382,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_HB()
             {
-                Code = "HB";
+                Code = "DE-HB";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Hansestadt Bremen").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -397,7 +399,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_HE()
             {
-                Code = "HE";
+                Code = "DE-HE";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Hessen").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -419,7 +421,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_MV()
             {
-                Code = "MV";
+                Code = "DE-MV";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Mecklenburg Vorpommern").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -436,7 +438,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_NW()
             {
-                Code = "NW";
+                Code = "DE-NW";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Nordrhein-Westfalen").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -458,7 +460,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_RP()
             {
-                Code = "RP";
+                Code = "DE-RP";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Rheinland-Pfalz").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -480,7 +482,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_SL()
             {
-                Code = "SL";
+                Code = "DE-SL";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Saarland").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -507,7 +509,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_SN()
             {
-                Code = "SN";
+                Code = "DE-SN";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Sachsen").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -533,6 +535,7 @@ namespace ID3iHoliday.Countries
                 };
                 Regions = new ListRegion()
                 {
+                    Parent = this,
                     Langues = Langues,
                     Container = { new DE_SN_BZ() }
                 }.Initialize(x => x.Init());
@@ -541,7 +544,7 @@ namespace ID3iHoliday.Countries
             {
                 public DE_SN_BZ()
                 {
-                    Code = "BZ";
+                    Code = "DE-SN-BZ";
                     Names = NamesBuilder.Make.Add(Langue.DE, "Landkreis Bautzen").AsDictionary();
                     Rules = new ListRule()
                     {
@@ -560,7 +563,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_ST()
             {
-                Code = "ST";
+                Code = "DE-ST";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Sachsen-Anhalt").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -582,7 +585,7 @@ namespace ID3iHoliday.Countries
         {
             public DE_TH()
             {
-                Code = "TH";
+                Code = "DE-TH";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Thüringen").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -608,6 +611,7 @@ namespace ID3iHoliday.Countries
                 };
                 Regions = new ListRegion()
                 {
+                    Parent = this,
                     Langues = Langues,
                     Container = { new DE_TH_EIC(), new DE_TH_UH(), new DE_TH_WAK() }
                 }.Initialize(x => x.Init());
@@ -616,7 +620,7 @@ namespace ID3iHoliday.Countries
             {
                 public DE_TH_EIC()
                 {
-                    Code = "EIC";
+                    Code = "DE-TH-EIC";
                     Names = NamesBuilder.Make.Add(Langue.DE, "Landkreis Eichfeld").AsDictionary();
                     Rules = new ListRule()
                     {
@@ -633,7 +637,7 @@ namespace ID3iHoliday.Countries
             {
                 public DE_TH_UH()
                 {
-                    Code = "UH";
+                    Code = "DE-TH-UH";
                     Names = NamesBuilder.Make.Add(Langue.DE, "Unstrut-Hainich-Kreis").AsDictionary();
                     Rules = new ListRule()
                     {
@@ -651,7 +655,7 @@ namespace ID3iHoliday.Countries
             {
                 public DE_TH_WAK()
                 {
-                    Code = "WAK";
+                    Code = "DE-TH-WAK";
                     Names = NamesBuilder.Make.Add(Langue.DE, "Wartburgkreis").AsDictionary();
                     Rules = new ListRule()
                     {

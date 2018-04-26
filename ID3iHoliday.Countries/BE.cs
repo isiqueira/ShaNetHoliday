@@ -189,6 +189,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new BE_BRU(), new BE_DE(), new BE_VLG(), new BE_WAL() }
             }.Initialize(x => x.Init());
@@ -198,7 +199,7 @@ namespace ID3iHoliday.Countries
         {
             public BE_BRU()
             {
-                Code = "BRU";
+                Code = "BE-BRU";
                 Langues = new List<Langue>() { Langue.FR, Langue.NL };
                 Names = NamesBuilder.Make.Add(Langue.FR, "Bruxelles").AsDictionary();
                 Rules = new ListRule()
@@ -217,7 +218,7 @@ namespace ID3iHoliday.Countries
         {
             public BE_DE()
             {
-                Code = "DE";
+                Code = "BE-DE";
                 Langues.Add(Langue.DE);
                 Names = NamesBuilder.Make.Add(Langue.DE, "Deutschsprachige Gemeinschaft").AsDictionary();
                 Rules = new ListRule()
@@ -237,7 +238,7 @@ namespace ID3iHoliday.Countries
         {
             public BE_VLG()
             {
-                Code = "VLG";
+                Code = "BE-VLG";
                 Langues.Add(Langue.NL);
                 Names = NamesBuilder.Make.Add(Langue.NL, "Vlaamse Gemeenschap").AsDictionary();
                 Rules = new ListRule()
@@ -257,7 +258,7 @@ namespace ID3iHoliday.Countries
         {
             public BE_WAL()
             {
-                Code = "WAL";
+                Code = "BE-WAL";
                 Langues.Add(Langue.FR);
                 Names = NamesBuilder.Make.Add(Langue.FR, "Communauté française").AsDictionary();
                 Rules = new ListRule()

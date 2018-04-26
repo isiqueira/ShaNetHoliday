@@ -146,6 +146,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new AT_1(), new AT_2(), new AT_3(), new AT_4(), new AT_5(), new AT_6(), new AT_7(), new AT_8(), new AT_9() }
             }.Initialize(x => x.Init());
@@ -155,7 +156,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_1()
             {
-                Code = "1";
+                Code = "AT-1";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Burgenland").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -171,7 +172,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_2()
             {
-                Code = "2";
+                Code = "AT-2";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Kärnten").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -194,7 +195,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_3()
             {
-                Code = "3";
+                Code = "AT-3";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Niederösterreich").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -210,7 +211,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_4()
             {
-                Code = "4";
+                Code = "AT-4";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Oberösterreich").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -226,7 +227,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_5()
             {
-                Code = "5";
+                Code = "AT-5";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Land Salzburg").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -242,7 +243,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_6()
             {
-                Code = "6";
+                Code = "AT-6";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Steiermark").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -260,7 +261,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_7()
             {
-                Code = "7";
+                Code = "AT-7";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Tirol").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -278,7 +279,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_8()
             {
-                Code = "8";
+                Code = "AT-8";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Vorarlberg").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -296,7 +297,7 @@ namespace ID3iHoliday.Countries
         {
             public AT_9()
             {
-                Code = "9";
+                Code = "AT-9";
                 Names = NamesBuilder.Make.Add(Langue.DE, "Wien").AsDictionary();
                 Rules = new ListRule()
                 {

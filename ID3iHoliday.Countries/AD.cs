@@ -135,6 +135,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new AD_07() }
             }.Initialize(x => x.Init());
@@ -144,7 +145,7 @@ namespace ID3iHoliday.Countries
         {
             public AD_07()
             {
-                Code = "07";
+                Code = "AD-07";
                 Names = NamesBuilder.Make.Add(Langue.ES, "Andorra la Vella").AsDictionary();
                 Rules = new ListRule()
                 {

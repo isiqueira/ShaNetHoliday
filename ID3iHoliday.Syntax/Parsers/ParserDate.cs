@@ -54,7 +54,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 var calendar = Parser.GetCalendar(match.Groups["Calendar"].Value);
 
                 if (!(calendar is System.Globalization.GregorianCalendar))
-                    year = calendar.GetYear(DateTime.Today);
+                    year = calendar.GetYear(DateTime.Today.Of(year));
 
                 var date = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);
                 if (match.Groups["year"].Value.IsNotNullOrEmpty())

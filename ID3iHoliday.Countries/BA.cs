@@ -173,6 +173,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new BA_BIH(), new BA_BRC(), new BA_SRP() }
             }.Initialize(x => x.Init());
@@ -182,7 +183,7 @@ namespace ID3iHoliday.Countries
         {
             public BA_BIH()
             {
-                Code = "BIH";
+                Code = "BA-BIH";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Federation of Bosnia and Herzegovina").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -203,6 +204,7 @@ namespace ID3iHoliday.Countries
                 };
                 Regions = new ListRegion()
                 {
+                    Parent = this,
                     Langues = Langues,
                     Container = { new BA_BIH_W() }
                 }.Initialize(x => x.Init());
@@ -211,7 +213,7 @@ namespace ID3iHoliday.Countries
             {
                 public BA_BIH_W()
                 {
-                    Code = "W";
+                    Code = "BA-BIH-W";
                     Names = NamesBuilder.Make.Add(Langue.EN, "Western Herzegovina").AsDictionary();
                     Rules = new ListRule()
                     {
@@ -229,7 +231,7 @@ namespace ID3iHoliday.Countries
         {
             public BA_BRC()
             {
-                Code = "BRC";
+                Code = "BA-BRC";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Brčko District").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -245,7 +247,7 @@ namespace ID3iHoliday.Countries
         {
             public BA_SRP()
             {
-                Code = "SRP";
+                Code = "BA-SRP";
                 Names = NamesBuilder.Make.Add(Langue.BS, "Republika Srpska").AsDictionary();
                 Rules = new ListRule()
                 {

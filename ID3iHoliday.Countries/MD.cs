@@ -104,6 +104,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new MD_CA(), new MD_CU() }
             }.Initialize(x => x.Init());
@@ -113,7 +114,7 @@ namespace ID3iHoliday.Countries
         {
             public MD_CA()
             {
-                Code = "CA";
+                Code = "MD-CA";
                 Names = NamesBuilder.Make.Add(Langue.RO, "Cahul").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -129,7 +130,7 @@ namespace ID3iHoliday.Countries
         {
             public MD_CU()
             {
-                Code = "CU";
+                Code = "MD-CU";
                 Names = NamesBuilder.Make.Add(Langue.RO, "Chișinău").AsDictionary();
                 Rules = new ListRule()
                 {

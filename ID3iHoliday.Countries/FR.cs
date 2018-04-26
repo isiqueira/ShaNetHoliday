@@ -100,6 +100,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new FR_67(), new FR_68(), new FR_57(), new FR_YT(), new FR_MQ(), new FR_GP(), new FR_GF(), new FR_RE() }
             }.Initialize(x => x.Init());
@@ -109,7 +110,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_67()
             {
-                Code = "67";
+                Code = "FR-67";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département du Bas-Rhin").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -130,7 +131,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_68()
             {
-                Code = "68";
+                Code = "FR-68";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département du Haut-Rhin").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -151,7 +152,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_57()
             {
-                Code = "57";
+                Code = "FR-57";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département Moselle").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -172,7 +173,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_YT()
             {
-                Code = "YT";
+                Code = "FR-YT";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Mayotte").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -188,7 +189,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_MQ()
             {
-                Code = "MQ";
+                Code = "FR-MQ";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Martinique").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -209,7 +210,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_GP()
             {
-                Code = "GP";
+                Code = "FR-GP";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Guadeloupe").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -230,7 +231,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_GF()
             {
-                Code = "GF";
+                Code = "FR-GF";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer Guyane").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -246,7 +247,7 @@ namespace ID3iHoliday.Countries
         {
             public FR_RE()
             {
-                Code = "RE";
+                Code = "FR-RE";
                 Names = NamesBuilder.Make.Add(Langue.FR, "Département et région d'outre-mer La Réunion").AsDictionary();
                 Rules = new ListRule()
                 {

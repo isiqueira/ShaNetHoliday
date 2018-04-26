@@ -119,6 +119,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new HR_17(), new HR_19() }
             }.Initialize(x => x.Init());
@@ -128,7 +129,7 @@ namespace ID3iHoliday.Countries
         {
             public HR_17()
             {
-                Code = "17";
+                Code = "HR-17";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Split-Dalmatia").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -144,7 +145,7 @@ namespace ID3iHoliday.Countries
         {
             public HR_19()
             {
-                Code = "19";
+                Code = "HR-19";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Dubrovnik-Neretva").AsDictionary();
                 Rules = new ListRule()
                 {

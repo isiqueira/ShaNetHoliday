@@ -31,5 +31,7 @@ namespace ID3iHoliday.Models
         /// Liste des règles de l'élément.
         /// </summary>
         public ListRule Rules { get; set; } = new ListRule();
+
+        public GeographicElementBase Parent { get; set; }
     }   
 }

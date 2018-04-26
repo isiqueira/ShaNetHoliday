@@ -170,6 +170,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new ES_MD(), new ES_AN(), new ES_AR() }
             }.Initialize(x => x.Init());
@@ -179,7 +180,7 @@ namespace ID3iHoliday.Countries
         {
             public ES_MD()
             {
-                Code = "MD";
+                Code = "ES-MD";
                 Names = NamesBuilder.Make.Add(Langue.ES, "Comunidad de Madrid").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -200,7 +201,7 @@ namespace ID3iHoliday.Countries
         {
             public ES_AN()
             {
-                Code = "AN";
+                Code = "ES-AN";
                 Names = NamesBuilder.Make.Add(Langue.ES, "Andalucía").AsDictionary();
                 Rules = new ListRule()
                 {
@@ -216,7 +217,7 @@ namespace ID3iHoliday.Countries
         {
             public ES_AR()
             {
-                Code = "AR";
+                Code = "ES-AR";
                 Names = NamesBuilder.Make.Add(Langue.ES, "Aragón").AsDictionary();
                 Rules = new ListRule()
                 {

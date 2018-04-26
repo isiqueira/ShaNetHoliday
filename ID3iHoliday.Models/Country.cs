@@ -19,6 +19,7 @@ namespace ID3iHoliday.Models
         /// </summary>
         /// <remarks>https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3</remarks>
         public string Alpha3Code { get; set; }
+
         /// <summary>
         /// Jours non travaillés.
         /// </summary>

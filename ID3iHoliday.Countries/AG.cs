@@ -106,6 +106,7 @@ namespace ID3iHoliday.Countries
             };
             States = new ListState()
             {
+                Parent = this,
                 Langues = Langues,
                 Container = { new AG_10() }
             }.Initialize(x => x.Init());
@@ -114,7 +115,7 @@ namespace ID3iHoliday.Countries
         {
             public AG_10()
             {
-                Code = "10";
+                Code = "AG-10";
                 Names = NamesBuilder.Make.Add(Langue.EN, "Barbuda").AsDictionary();
                 Rules = new ListRule()
                 {

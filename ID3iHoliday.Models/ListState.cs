@@ -12,6 +12,7 @@ namespace ID3iHoliday.Models
     /// </summary>
     public class ListState : BaseList<State>
     {
+        public GeographicElementBase Parent { get; set; }
         /// <summary>
         /// Se produit à l'ajout d'un état.
         /// </summary>
@@ -28,6 +29,7 @@ namespace ID3iHoliday.Models
         {
             ForEach(x =>
             {
+                x.Parent = Parent;
                 x.Rules.Langues = Langues;
                 x.Regions.IfNotNull(y =>
                 {

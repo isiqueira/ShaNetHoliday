@@ -53,11 +53,11 @@ namespace ID3iHoliday.Engine
         public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
         {
             if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, regionCode, type, calendar);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode)?.Get(year, stateCode, regionCode, type, calendar);
             else if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty())
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, stateCode, type, calendar);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode)?.Get(year, stateCode, type, calendar);
             else
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode).Get(year, type, calendar);
+                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode)?.Get(year, type, calendar);
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace ID3iHoliday.Engine
         public SpecificDay Single(DateTime date, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.Public)
         {
             var items = All(date.Year, countryCode, stateCode, regionCode, type);
-            return items.Where(x => x.Type == type).FirstOrDefault(x => x.Date.Date == date.Date);
+            return items?.Where(x => x.Type == type)?.FirstOrDefault(x => x.Date.Date == date.Date);
         }
 
         /// <summary>

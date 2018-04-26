@@ -69,16 +69,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\DaysController.cs" />
     <Compile Include="Controllers\LongWeekEndController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
+    <Compile Include="Controllers\RuleController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Divers\Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\IIS - ID3i - Package.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,6 +126,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore.csproj">
+      <Project>{BA32AABF-4D61-4AD3-A50F-715758867194}</Project>
+      <Name>ID3iCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ID3iHoliday.Core\ID3iHoliday.Core.csproj">
+      <Project>{2DA2895E-CA5C-440F-93B1-E8A8C50CF738}</Project>
+      <Name>ID3iHoliday.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ID3iHoliday.Engine.Standard\ID3iHoliday.Engine.Standard.csproj">
       <Project>{b79ac695-e873-4637-9d52-52bece6d493d}</Project>
       <Name>ID3iHoliday.Engine.Standard</Name>
