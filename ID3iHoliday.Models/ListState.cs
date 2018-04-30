@@ -12,6 +12,9 @@ namespace ID3iHoliday.Models
     /// </summary>
     public class ListState : BaseList<State>
     {
+        /// <summary>
+        /// Elément parent.
+        /// </summary>
         public GeographicElementBase Parent { get; set; }
         /// <summary>
         /// Se produit à l'ajout d'un état.

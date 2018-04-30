@@ -8,10 +8,10 @@ using static ID3iHttpClient.Dynamic.Conv;
 
 namespace ID3iHoliday.WebService.Client
 {
-    public partial class Client
+    public partial class HolidayWrapper
     {
         public dynamic DynamicClient { get; set; }
-        public Client()
+        public HolidayWrapper()
         {
             Configuration.HolidayConfig.CheckConsistency();
 
@@ -51,7 +51,7 @@ namespace ID3iHoliday.WebService.Client
             => As<HttpStatusCode, CountryModelLight>(DynamicClient.Rules.Resource(code).Get().Result);
     }
 
-    public partial class Client
+    public partial class HolidayWrapper
     {
         public async Task<Either<HttpStatusCode, List<CountryModel>>> CountriesAsync()
             => As<HttpStatusCode, List<CountryModel>>(await DynamicClient.Countries.Get());

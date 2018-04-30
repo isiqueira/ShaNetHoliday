@@ -11,6 +11,9 @@ namespace ID3iHoliday.Models
     /// </summary>
     public class ListRegion : BaseList<Region>
     {
+        /// <summary>
+        /// Elément parent.
+        /// </summary>
         public GeographicElementBase Parent { get; set; }
         /// <summary>
         /// Se produit à l'ajout d'une région.
