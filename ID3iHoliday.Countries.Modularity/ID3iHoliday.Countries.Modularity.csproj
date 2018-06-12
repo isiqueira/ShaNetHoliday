@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAModule.cs" />
     <Compile Include="CHModule.cs" />
     <Compile Include="ESModule.cs" />
+    <Compile Include="GLModule.cs" />
     <Compile Include="GBModule.cs" />
+    <Compile Include="MXModule.cs" />
     <Compile Include="LIModule.cs" />
     <Compile Include="LTModule.cs" />
     <Compile Include="LUModule.cs" />
@@ -69,6 +72,7 @@
     <Compile Include="JEModule.cs" />
     <Compile Include="IEModule.cs" />
     <Compile Include="IMModule.cs" />
+    <Compile Include="USModule.cs" />
     <Compile Include="VAModule.cs" />
     <Compile Include="UAModule.cs" />
     <Compile Include="XKModule.cs" />
