@@ -164,7 +164,8 @@ namespace ID3iHoliday.Countries
                               new US_FL(), new US_GA(), new US_HI(), new US_ID(), new US_IL(), new US_IN(), new US_IA(), new US_KS(), new US_KY(),
                               new US_LA(), new US_ME(), new US_MD(), new US_MA(), new US_MI(), new US_MN(), new US_MS(), new US_MO(), new US_MT(),
                               new US_NE(), new US_NV(), new US_NH(), new US_NJ(), new US_NM(), new US_NY(), new US_NC(), new US_ND(), new US_OH(),
-                              new US_OK(), new US_OR(), new US_PA(), new US_RI(), new US_SC(), new US_SD(), new US_TN()}
+                              new US_OK(), new US_OR(), new US_PA(), new US_RI(), new US_SC(), new US_SD(), new US_TN(), new US_TX(), new US_UT(),
+                              new US_VT(), new US_VA(), new US_WA(), new US_WV(), new US_WI(), new US_WY()}
             }.Initialize(x => x.Init());
         }
         internal class US_AL : State
@@ -1209,6 +1210,206 @@ namespace ID3iHoliday.Countries
                         Overrides = Overrides.Type
                     }
                 };
+            }
+        }
+        internal class US_TX : State
+        {
+            public US_TX()
+            {
+                Code = "US-TX";
+                Names = NamesBuilder.Make.Add(Langue.EN, "Texas").AsDictionary();
+                Rules = new ListRule()
+                {
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.January.The1st),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Confederate Heroes Day").AsDictionary(),
+                        Type = Observance,
+                        Note = "state agencies are partially staffed"
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.March.The2nd),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Texas Independence Day").AsDictionary(),
+                        Type = Observance,
+                        Note = "state agencies are partially staffed"
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.March.The31st),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Cesar Chavez Day").AsDictionary(),
+                        Type = Observance
+                    },
+                     new GregorianRule()
+                     {
+                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
+                         Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary(),
+                         Type = Observance
+                     },
+                     new GregorianRule()
+                     {
+                         Expression = ExpressionTree.Date.Fix(On.April.The21st),
+                         Names = NamesBuilder.Make.Add(Langue.EN, "San Jacinto Day").AsDictionary(),
+                         Type = Observance,
+                         Note = "state agencies are partially staffed"
+                     },
+                     new GregorianRule()
+                     {
+                         Expression = ExpressionTree.Date.Fix(On.June.The19th),
+                         Names = NamesBuilder.Make.Add(Langue.EN, "Emancipation Day In Texas").AsDictionary(),
+                         Type = Observance,
+                         Note = "state agencies are partially staffed"
+                     },
+                     new GregorianRule()
+                     {
+                         Expression = ExpressionTree.Date.Fix(On.August.The27th),
+                         Names = NamesBuilder.Make.Add(Langue.EN, "Lyndon Baines Johnson Day").AsDictionary(),
+                         Type = Observance,
+                         Note = "state agencies are partially staffed"
+                     },
+                     new GregorianRule()
+                     {
+                         Key = "1FRIA4THUNOV",
+                         Type = Public, 
+                         Overrides = Overrides.Type,
+                     },
+                     new GregorianRule()
+                     {
+                         Key = "DEC24",
+                         Type = Public,
+                         Overrides = Overrides.Type
+                     },
+                     new GregorianRule()
+                     {
+                         Expression = ExpressionTree.Date.Fix(On.December.The26th),
+                         Names = NamesBuilder.Make.Add(Langue.EN, "Day after Christmas").AsDictionary()
+                     }
+                };
+            }
+        }
+        internal class US_UT : State
+        {
+            public US_UT()
+            {
+                Code = "US-UT";
+                Names = NamesBuilder.Make.Add(Langue.EN, "Utah").AsDictionary();
+                Rules = new ListRule()
+                {
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.July.The24th),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Pioneer Day").AsDictionary()
+                    }
+                };
+            }
+        }
+        internal class US_VT : State
+        {
+            public US_VT()
+            {
+                Code = "US-VT";
+                Names = NamesBuilder.Make.Add(Langue.EN, "Vermont").AsDictionary();
+                Rules = new ListRule()
+                {
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Movable(First, Tuesday).In(March),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Town Meeting Day").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Movable(Third, Monday).In(August),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Bennington Battle Da").AsDictionary()
+                    }
+                };
+            }
+        }
+        internal class US_VA : State
+        {
+            public US_VA()
+            {
+                Code = "US-VA";
+                Names = NamesBuilder.Make.Add(Langue.EN, "Virginia").AsDictionary();
+                Rules = new ListRule()
+                {
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.MovableFromMovable(First, Friday).Before(Third, Monday).In(January),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Lee–Jackson Day").AsDictionary()
+                    }
+                };
+            }
+        }
+        internal class US_WA : State
+        {
+            public US_WA()
+            {
+                Code = "US-WA";
+                Names = NamesBuilder.Make.Add(Langue.EN, "Washington").AsDictionary();
+                Rules = new ListRule();
+            }
+        }
+        internal class US_WV : State
+        {
+            public US_WV()
+            {
+                Code = "US-WV";
+                Names = NamesBuilder.Make.Add(Langue.EN, "West Virginia").AsDictionary();
+                Rules = new ListRule()
+                {
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.February.The15th),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Susan B. Anthony Day").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.June.The20th),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "West Virginia Day").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Key = "1FRIA4THUNOV",
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Day").AsDictionary(),
+                        Overrides = Overrides.Name
+                    }
+                };
+            }
+        }
+        internal class US_WI : State
+        {
+            public US_WI()
+            {
+                Code = "US-WI";
+                Names = NamesBuilder.Make.Add(Langue.EN, "Wisconsin").AsDictionary();
+                Rules = new ListRule()
+                {
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Fix(On.February.The15th),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Susan B. Anthony Day").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Expression = ExpressionTree.Date.Movable(Second, Tuesday).In(September),
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Primary Election Day").AsDictionary()
+                    },
+                    new GregorianRule()
+                    {
+                        Key = "ELECTIONDAY",
+                        Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November),
+                        Overrides = Overrides.Expression
+                    }
+                };
+            }
+        }
+        internal class US_WY : State
+        {
+            public US_WY()
+            {
+                Code = "US-WY";
+                Names = NamesBuilder.Make.Add(Langue.EN, "Wyoming").AsDictionary();
+                Rules = new ListRule();
             }
         }
     }
