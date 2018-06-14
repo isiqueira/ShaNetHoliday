@@ -6,16 +6,17 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Shaenn</Authors>
-    <Company>Shaenn</Company>
-    <PackageLicenseUrl>https://github.com/Shaenn/ID3iHoliday/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
-    <Description>Hold the different models for the holiday system.</Description>
-    <Version>1.0.12</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors></Authors>
+    <Company></Company>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <Description></Description>
+    <Version>1.0.0</Version>
+    <PackageId />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

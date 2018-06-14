@@ -6,16 +6,17 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <Authors>Shaenn</Authors>
-    <Company>Shaenn</Company>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Hold the logic of retrieve specific days.</Description>
-    <PackageLicenseUrl>https://github.com/Shaenn/ID3iHoliday/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
-    <Version>1.0.12</Version>
+    <Authors></Authors>
+    <Company></Company>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description></Description>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <Version>1.0.0</Version>
+    <PackageId />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
