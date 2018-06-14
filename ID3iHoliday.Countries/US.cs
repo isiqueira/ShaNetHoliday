@@ -339,7 +339,7 @@ namespace ID3iHoliday.Countries
             public US_CO()
             {
                 Code = "US-CO";
-                Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary();
+                Names = NamesBuilder.Make.Add(Langue.EN, "Colorado").AsDictionary();
                 Rules = new ListRule()
                 {
                     new GregorianRule()
@@ -361,13 +361,13 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The2nd),
+                        Expression = ExpressionTree.Date.Fix(On.February.The2nd),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Birthday").AsDictionary()
                     },
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     }
                 };
             }
@@ -395,7 +395,7 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     },
                     new GregorianRule()
                     {
@@ -489,8 +489,9 @@ namespace ID3iHoliday.Countries
                     {
                         Key = "DEC24",
                         Expression = ExpressionTree.Substitute.Fix(On.December.The24th).If(Wednesday).Then.Next(Friday),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "ashington's Birthday").AsDictionary(),
-                        Overrides = Overrides.Name | Overrides.Expression
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Washington's Birthday").AsDictionary(),
+                        Type = Public,
+                        Overrides = Overrides.Name | Overrides.Expression | Overrides.Type
                     }
                 };
             }
@@ -559,7 +560,7 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The2nd),
+                        Expression = ExpressionTree.Date.Fix(On.February.The2nd),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Birthday").AsDictionary()
                     },
                     new GregorianRule()
@@ -576,7 +577,8 @@ namespace ID3iHoliday.Countries
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November).In(Even),
-                        Overrides = Overrides.Expression
+                        Type = Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     }
                 };
             }
@@ -592,7 +594,7 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     },
                     new GregorianRule()
                     {
@@ -603,13 +605,15 @@ namespace ID3iHoliday.Countries
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November),
-                        Overrides = Overrides.Expression
+                        Type = Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     },
                     new GregorianRule()
                     {
                         Key = "1FRIA4THUNOV",
                         Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Birthday").AsDictionary(),
-                        Overrides = Overrides.Name
+                        Type = Public,
+                        Overrides = Overrides.Name | Overrides.Type
                     }
                 };
             }
@@ -624,7 +628,7 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The2nd),
+                        Expression = ExpressionTree.Date.Fix(On.February.The2nd),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Birthday").AsDictionary()
                     }
                 };
@@ -664,7 +668,7 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday.StartAt("14:00"),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     },
                     new GregorianRule()
                     {
@@ -692,13 +696,14 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     },
                     new GregorianRule()
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November).In(Even),
-                        Overrides = Overrides.Expression
+                        Type = RuleType.Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     },
                 };
                 Regions = new ListRegion()
@@ -758,7 +763,8 @@ namespace ID3iHoliday.Countries
                     {
                         Key = "1FRIA4THUNOV",
                         Names = NamesBuilder.Make.Add(Langue.EN, "Native American Heritage Day").AsDictionary(),
-                        Overrides = Overrides.Name
+                        Type = Public,
+                        Overrides = Overrides.Name | Overrides.Type
                     }
                 };
             }
@@ -831,7 +837,7 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Key = "3MONJAN",
+                        Key = "3MOJAN",
                         Names = NamesBuilder.Make.Add(Langue.EN, "Martin Luther King's and Robert E. Lee's Birthdays").AsDictionary(),
                         Overrides = Overrides.Name
                     },
@@ -864,14 +870,15 @@ namespace ID3iHoliday.Countries
             public US_MT()
             {
                 Code = "US-MT";
-                Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary();
+                Names = NamesBuilder.Make.Add(Langue.EN, "Montana").AsDictionary();
                 Rules = new ListRule()
                 {
                     new GregorianRule()
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November),
-                        Overrides = Overrides.Expression
+                        Type = RuleType.Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     },
                     new GregorianRule()
                     {
@@ -926,7 +933,9 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Key = "1FRIA4THUNOV",
-                        Names = NamesBuilder.Make.Add(Langue.EN, "Family Day").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Family Day").AsDictionary(),
+                        Type = RuleType.Public,
+                        Overrides = Overrides.Name | Overrides.Type
                     }
                 };
             }
@@ -942,12 +951,12 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Key = "2MOOCT", 
-                        Type = Optional,
+                        Type = Observance,
                         Overrides = Overrides.Type
                     },
                     new GregorianRule()
                     {
-                        Key = "3MONJAN",
+                        Key = "3MOJAN",
                         Names = NamesBuilder.Make.Add(Langue.EN, "Martin Luther King, Jr./ Civil Rights Day").AsDictionary(),
                         Overrides = Overrides.Name
                     },
@@ -955,7 +964,8 @@ namespace ID3iHoliday.Countries
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November).In(Even),
-                        Overrides = Overrides.Expression
+                        Type = Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     },
                     new GregorianRule()
                     {
@@ -976,19 +986,20 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The22nd),
+                        Expression = ExpressionTree.Date.Fix(On.February.The2nd),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Birthday").AsDictionary()
                     },
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     },
                     new GregorianRule()
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November),
-                        Overrides = Overrides.Expression
+                        Type = Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     }
                 };
             }
@@ -1003,7 +1014,7 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Key = "3MONFEB",
+                        Key = "3MOFEB",
                         IsEnable = false,
                         Overrides = Overrides.IsEnable
                     },
@@ -1026,19 +1037,20 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The2nd),
+                        Expression = ExpressionTree.Date.Fix(On.February.The2nd),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Birthday").AsDictionary()
                     },
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.December.The15th),
+                        Expression = ExpressionTree.Date.Fix(On.February.The15th),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Susan B. Anthony Day").AsDictionary()
                     },
                     new GregorianRule()
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November),
-                        Overrides = Overrides.Expression
+                        Type = Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     }
                 };
             }
@@ -1053,20 +1065,20 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Key = "3MONFEB",
+                        Key = "3MOFEB",
                         IsEnable = false,
                         Overrides = Overrides.IsEnable
                     },
                     new GregorianRule()
                     {
-                        Key = "2MONOCT",
+                        Key = "2MOOCT",
                         IsEnable = false,
                         Overrides = Overrides.IsEnable
                     },
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     },
                     new GregorianRule()
                     {
@@ -1079,7 +1091,8 @@ namespace ID3iHoliday.Countries
                         Key = "DEC24",
                         Expression = ExpressionTree.Observe.Fix(On.December.The24th).If(Friday).Then.Previous(Thursday).Or.If(Saturday).Then.Previous(Friday).Or.If(Sunday).Then.Previous(Friday),
                         Substitute = true,
-                        Overrides = Overrides.Expression
+                        Type = Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     }
                 };
             }
@@ -1112,7 +1125,7 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Key = "1FRI14THUNOV",
+                        Key = "1FRIA4THUNOV",
                         Type = Public,
                         Overrides = Overrides.Type
                     }
@@ -1176,7 +1189,7 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Fix(On.December.The26th),
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Boxing Day").AsDictionary()
                     }
                 };
             }
@@ -1201,7 +1214,7 @@ namespace ID3iHoliday.Countries
                     new GregorianRule()
                     {
                         Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                        Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary()
+                        Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary()
                     },
                     new GregorianRule()
                     {
@@ -1222,7 +1235,7 @@ namespace ID3iHoliday.Countries
                 {
                     new GregorianRule()
                     {
-                        Expression = ExpressionTree.Date.Fix(On.January.The1st),
+                        Expression = ExpressionTree.Date.Fix(On.January.The19th),
                         Names = NamesBuilder.Make.Add(Langue.EN, "Confederate Heroes Day").AsDictionary(),
                         Type = Observance,
                         Note = "state agencies are partially staffed"
@@ -1243,7 +1256,7 @@ namespace ID3iHoliday.Countries
                      new GregorianRule()
                      {
                          Expression = ExpressionTree.Date.Catholic.GoodFriday,
-                         Names = NamesBuilder.Make.Add(Langue.EN, "").AsDictionary(),
+                         Names = NamesBuilder.Make.Add(Langue.EN, "Good Friday").AsDictionary(),
                          Type = Observance
                      },
                      new GregorianRule()
@@ -1371,7 +1384,8 @@ namespace ID3iHoliday.Countries
                     {
                         Key = "1FRIA4THUNOV",
                         Names = NamesBuilder.Make.Add(Langue.EN, "Lincoln's Day").AsDictionary(),
-                        Overrides = Overrides.Name
+                        Type = Public,
+                        Overrides = Overrides.Name | Overrides.Type
                     }
                 };
             }
@@ -1398,7 +1412,8 @@ namespace ID3iHoliday.Countries
                     {
                         Key = "ELECTIONDAY",
                         Expression = ExpressionTree.Date.MovableFromMovable(First, Tuesday).After(First, Monday).In(November),
-                        Overrides = Overrides.Expression
+                        Type = Public,
+                        Overrides = Overrides.Expression | Overrides.Type
                     }
                 };
             }

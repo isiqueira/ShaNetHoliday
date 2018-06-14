@@ -80,6 +80,8 @@ namespace ID3iHoliday.Models
                         baseRule.Type = rule.Type;
                     if (rule.Overrides.HasFlag(Overrides.Note))
                         baseRule.Note = rule.Note;
+                    if (rule.Overrides.HasFlag(Overrides.Name))
+                        baseRule.Names = rule.Names;
                 }
                 else
                     rules.Add(rule);

@@ -82,7 +82,8 @@ namespace ID3iHoliday.Syntax.Parsers
 
                 if (isYearRecursOk)
                 {
-                    result.DateToRemove = substituteDate;
+                    if(substituteDate != newDate)
+                        result.DateToRemove = substituteDate;
                     result.DatesToAdd.Add(newDate);
                 }                    
             }
