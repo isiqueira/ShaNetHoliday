@@ -11,6 +11,11 @@ namespace ID3iHoliday.WebService
         {
             // Itinéraires de l'API Web
             config.MapHttpAttributeRoutes();
+
+            config.Routes.MapHttpRoute(
+                name: "BadRequest",
+                routeTemplate: "{*url}",
+                defaults: new { controller = "Error", action = "Handle400" });
         }
     }
 }

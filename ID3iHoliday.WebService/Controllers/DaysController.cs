@@ -4,8 +4,6 @@ using ID3iHoliday.WebService.Divers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
@@ -17,7 +15,14 @@ namespace ID3iHoliday.WebService.Controllers
         [Route("{year:int}")]
         public IHttpActionResult Get(int year, string ccode, string scode = null, string rcode = null, RuleType rule = RuleType.All, Calendar calendar = Calendar.All)
         {
-            return Ok(HolidaySystem.Instance.All(year, ccode, scode, rcode, rule, calendar).Transform());
+            try
+            {
+                return Ok(HolidaySystem.Instance.All(year, ccode, scode, rcode, rule, calendar).Transform());
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }            
         }        
     }
 }

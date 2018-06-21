@@ -71,6 +71,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\DaysController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LongWeekEndController.cs" />
     <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Controllers\RuleController.cs" />

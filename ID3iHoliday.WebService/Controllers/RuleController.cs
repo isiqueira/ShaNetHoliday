@@ -6,8 +6,6 @@ using ID3iHoliday.WebService.Models.Light;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
@@ -88,21 +86,35 @@ namespace ID3iHoliday.WebService.Controllers
         [HttpGet, Route("")]
         public IHttpActionResult Get()
         {
-            var lst = new List<CountryModelLight>();
-            HolidaySystem.Instance.CountriesAvailable.Where(x => x.Code != null).ToList().ForEach(x =>
+            try
             {
-                lst.Add(Get(x));
-            });
-            return Ok(lst);
+                var lst = new List<CountryModelLight>();
+                HolidaySystem.Instance.CountriesAvailable.Where(x => x.Code != null).ToList().ForEach(x =>
+                {
+                    lst.Add(Get(x));
+                });
+                return Ok(lst);
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }            
         }
 
         [HttpGet, Route("{code}")]
         public IHttpActionResult Get(string code)
         {
-            var result = HolidaySystem.Instance.CountriesAvailable.FirstOrDefault(x => x.Code == code);
-            if (result == null)
-                return NotFound();
-            return Ok(Get(result));
+            try
+            {
+                var result = HolidaySystem.Instance.CountriesAvailable.FirstOrDefault(x => x.Code == code);
+                if (result == null)
+                    return NotFound();
+                return Ok(Get(result));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
         }
     }
 }

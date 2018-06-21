@@ -3,8 +3,6 @@ using ID3iHoliday.WebService.Divers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
@@ -16,7 +14,14 @@ namespace ID3iHoliday.WebService.Controllers
         [Route("{year:int}")]
         public IHttpActionResult Get(int year, string ccode, string scode = null, string rcode = null)
         {
-            return Ok(HolidaySystem.Instance.LongWeekEnds(year, ccode, scode, rcode).Transform());
+            try
+            {
+                return Ok(HolidaySystem.Instance.LongWeekEnds(year, ccode, scode, rcode).Transform());
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }            
         }        
     }
 }
