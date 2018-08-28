@@ -68,6 +68,11 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
+                    Expression = ExpressionTree.Date.Catholic.HolySaturday,
+                    Names = NamesBuilder.Make.Add(Langue.NO, "Påskeaften").AsDictionary()
+                },
+                new GregorianRule()
+                {
                     Expression = ExpressionTree.Date.Catholic.Easter,
                     Names = NamesBuilder.Make.Add(Langue.NO, "Første påskedag").AsDictionary()
                 },
@@ -115,8 +120,32 @@ namespace ID3iHoliday.Countries
                 },
                 new GregorianRule()
                 {
+                    Expression = ExpressionTree.Date.Movable(Second, Sunday).In(November),
+                    Names = NamesBuilder.Make.Add(Langue.NO, "Farsdag").AsDictionary(),
+                    Type = Observance
+                },
+                new GregorianRule()
+                {
                     Expression = ExpressionTree.Date.Movable(Fourth, Sunday).Before("12-24"),
                     Names = NamesBuilder.Make.Add(Langue.NO, "Første søndag i advent").AsDictionary(),
+                    Type = Observance
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Movable(Third, Sunday).Before("12-24"),
+                    Names = NamesBuilder.Make.Add(Langue.NO, "Andre søndag i advent").AsDictionary(),
+                    Type = Observance
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Movable(Second, Sunday).Before("12-24"),
+                    Names = NamesBuilder.Make.Add(Langue.NO, "Tredje søndag i advent").AsDictionary(),
+                    Type = Observance
+                },
+                new GregorianRule()
+                {
+                    Expression = ExpressionTree.Date.Movable(First, Sunday).Before("12-24"),
+                    Names = NamesBuilder.Make.Add(Langue.NO, "Fjerde søndag i advent").AsDictionary(),
                     Type = Observance
                 },
                 new GregorianRule()
