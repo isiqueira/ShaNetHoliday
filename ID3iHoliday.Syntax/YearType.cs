@@ -15,14 +15,17 @@ namespace ID3iHoliday.Syntax
         /// Année pair.
         /// </summary>
         Even,
+
         /// <summary>
         /// Année impair.
         /// </summary>
         Odd,
+
         /// <summary>
         /// Année bisextile.
         /// </summary>
         Leap,
+
         /// <summary>
         /// Année non bisextile.
         /// </summary>

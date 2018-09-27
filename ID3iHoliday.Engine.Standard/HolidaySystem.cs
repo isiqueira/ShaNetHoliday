@@ -12,14 +12,14 @@ namespace ID3iHoliday.Engine.Standard
     /// Wrapper pour la récupération de données particulières dans l'environnement des jours particuliers.
     /// </summary>
     /// <remarks>Ce wrapper inclu déjà tous les pays possible et est founit avec son singleton.</remarks>
-    public class HolidaySystem : Engine.HolidaySystem
+    public sealed class HolidaySystem : Engine.HolidaySystem
     {
         /// <summary>
         /// Singleton.
         /// </summary>
         public static HolidaySystem Instance { get; } = new HolidaySystem();
         private HolidaySystem()
-        {            
+        {
             CountriesAvailable.Add(new AD());
             CountriesAvailable.Add(new AG());
             CountriesAvailable.Add(new AI());

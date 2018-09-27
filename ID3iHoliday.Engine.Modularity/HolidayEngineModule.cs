@@ -19,6 +19,7 @@ namespace ID3iHoliday.Engine.Modularity
         /// </summary>
         [Dependency]
         public IUnityContainer Container { get; set; }
+
         /// <summary>
         /// Initialise le module.
         /// </summary>

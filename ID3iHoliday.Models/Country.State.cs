@@ -16,5 +16,5 @@ namespace ID3iHoliday.Models
         /// Liste des régions de l'état.
         /// </summary>
         public ListRegion Regions { get; set; } = new ListRegion();
-    }  
+    }
 }

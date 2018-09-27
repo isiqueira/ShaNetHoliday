@@ -21,7 +21,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
-        }        
+            }
+        }
     }
 }

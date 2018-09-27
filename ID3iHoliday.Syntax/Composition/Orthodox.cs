@@ -16,6 +16,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => "ORTHODOX";
+
         /// <summary>
         /// Initilialise une nouvelle instance de la classe <see cref="Orthodox"/>.
         /// </summary>

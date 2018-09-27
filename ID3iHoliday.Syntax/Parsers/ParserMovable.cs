@@ -65,8 +65,12 @@ namespace ID3iHoliday.Syntax.Parsers
                     date = date.SetTime(Int32.Parse(match.Groups["StartHours"].Value), Int32.Parse(match.Groups["StartMinutes"].Value));
 
                 if (match.Groups["RepeatEndYear"].Value.IsNotNullOrEmpty())
+                {
                     if (date.Year > Int32.Parse(match.Groups["RepeatEndYear"].Value))
+                    {
                         return result;
+                    }
+                }
 
                 bool isYearTypeOk = false;
                 if (match.Groups["YearType"].Value.IsNotNullOrEmpty())
@@ -95,7 +99,9 @@ namespace ID3iHoliday.Syntax.Parsers
                     }
                 }
                 else
+                {
                     isYearTypeOk = true;
+                }
 
                 bool isYearRecursOk = false;
                 if (match.Groups["RepeatYear"].Value.IsNotNullOrEmpty() && match.Groups["RepeatStartYear"].Value.IsNotNullOrEmpty())
@@ -106,7 +112,9 @@ namespace ID3iHoliday.Syntax.Parsers
                         isYearRecursOk = true;
                 }
                 else
+                {
                     isYearRecursOk = true;
+                }
 
                 if (isYearTypeOk && isYearRecursOk)
                     result.DatesToAdd.Add(date);

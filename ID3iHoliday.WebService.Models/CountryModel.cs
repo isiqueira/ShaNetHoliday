@@ -9,6 +9,6 @@ namespace ID3iHoliday.WebService.Models
     public class CountryModel : GeographicElementModel
     {
         public string Alpha3Code { get; set; }
-        public List<StateModel> States { get; set; }        
+        public List<StateModel> States { get; set; }
     }
 }

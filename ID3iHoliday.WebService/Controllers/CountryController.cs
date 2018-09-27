@@ -21,7 +21,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
 
         [HttpGet, Route("{code}")]
@@ -37,7 +37,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
 
         [HttpGet]
@@ -54,7 +54,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
 
         [HttpGet]
@@ -71,7 +71,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
-        }    
+            }
+        }
     }
 }

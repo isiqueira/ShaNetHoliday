@@ -25,16 +25,17 @@ namespace ID3iHoliday.WebService.Client.Configuration
             }
         }
 
-        public static HolidayConfig Conf { get; private set; }
+        public static HolidayConfig Conf { get; }
 
         static HolidayConfig()
         {
             Conf = (HolidayConfig)ConfigurationManager.GetSection(nameof(HolidayConfig));
             if (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime)
                 Conf = new HolidayConfig();
-            if ((Conf == null || !Conf.ElementInformation.IsPresent) && System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Runtime)
+            if ((Conf?.ElementInformation.IsPresent != true) && System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Runtime)
                 throw new Exception($"La section de configuration {nameof(HolidayConfig)} n'a pas été trouvée.");
         }
+
         public static void CheckConsistency() { }
     }
 }

@@ -16,14 +16,17 @@ namespace ID3iHoliday.Models
         /// Date de début.
         /// </summary>
         public DateTime StartDate { get; set; }
+
         /// <summary>
         /// Date de fin.
         /// </summary>
         public DateTime EndDate { get; set; }
+
         /// <summary>
         /// Indication si un jour ouvré se trouve entre deux jours non ouvrés.
         /// </summary>
         public bool HasBridge { get; set; } = false;
+
         /// <summary>
         /// Retourne une chaîne qui représente l'objet actuel.
         /// </summary>

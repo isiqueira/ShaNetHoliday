@@ -16,14 +16,16 @@ namespace ID3iHoliday.Core.Models
         /// Token de l'élément.
         /// </summary>
         protected virtual string Token { get; set; }
+
         /// <summary>
         /// Expression de l'élément.
         /// </summary>
         public virtual string Expression => $@"{(Parent != null ?
-                                                $@"{(string.IsNullOrEmpty(Token) ?
-                                                        $"{Parent.Expression}"
-                                                        : $"{Parent.Expression} ")}"
+                                                (string.IsNullOrEmpty(Token) ?
+                                                        Parent.Expression
+                                                        : $"{Parent.Expression} ")
                                                 : "")}{Token}";
+
         /// <summary>
         /// Elément parent.
         /// </summary>
@@ -33,17 +35,20 @@ namespace ID3iHoliday.Core.Models
         /// Parser associé à l'élément.
         /// </summary>
         protected virtual ParserBase Parser => Parent.Parser;
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="ExpressionElement"/>.
         /// </summary>
         /// <param name="parent">Elément parent.</param>
-        public ExpressionElement(ExpressionElement parent) => Parent = parent;
+        protected ExpressionElement(ExpressionElement parent) => Parent = parent;
+
         /// <summary>
         /// Méthode qui permet de parser l'élément.
         /// </summary>
         /// <param name="year">Année souhaitée.</param>
         /// <returns>Le <see cref="ParserResult"/> correspondant.</returns>
         public ParserResult Parse(int year) => Parser.Parse(Expression, year);
+
         /// <summary>
         /// Méthode qui permet de déterminer si l'expression peut être interpréter par le parser.
         /// </summary>

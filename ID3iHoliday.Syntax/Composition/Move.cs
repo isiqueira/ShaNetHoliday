@@ -18,14 +18,17 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => "MOVE";
+
         /// <summary>
         /// <see cref="ParserMove"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserMove();
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Move"/>.
         /// </summary>
         public Move() : base(null) { }
+
         /// <summary>
         /// Elément de syntax pour mettre en place une date fixe dans n'importe qu'elle année.
         /// </summary>

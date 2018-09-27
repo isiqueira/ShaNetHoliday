@@ -15,6 +15,7 @@ namespace ID3iHoliday.Core.Parsers
         /// Dates correspondantes à l'expression.
         /// </summary>
         public List<DateTime> DatesToAdd { get; set; } = new List<DateTime>();
+
         /// <summary>
         /// Date à supprimée.
         /// </summary>

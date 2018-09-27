@@ -18,17 +18,20 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => DateTime.ToString("yyyy-MM-dd");
+
         /// <summary>
         /// <see cref="ParserDate"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserDate();
         internal DateTime DateTime { get; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="SpecificDay"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dateTime">Date.</param>
         public SpecificDay(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
+
         /// <summary>
         /// Elément de syntax pour indiquer l'heure de début.
         /// </summary>

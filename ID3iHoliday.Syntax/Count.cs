@@ -15,22 +15,27 @@ namespace ID3iHoliday.Syntax
         /// Le premier.
         /// </summary>
         First,
+
         /// <summary>
         /// Le second.
         /// </summary>
         Second,
+
         /// <summary>
         /// Le troisième.
         /// </summary>
         Third,
+
         /// <summary>
         /// Le quatrième.
         /// </summary>
         Fourth,
+
         /// <summary>
         /// Le cinquième.
         /// </summary>
         Fifth,
+
         /// <summary>
         /// Le sixième.
         /// </summary>

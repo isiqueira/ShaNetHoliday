@@ -23,27 +23,29 @@ namespace ID3iHoliday.WebService.Controllers
                 IsEnable = isEnable
             };
         }
+
         private RuleModelLight GetStateRule(Country country, Rule rule, RuleType ruleType, bool isEnable)
         {
-            var names = rule.Names.IsEmpty() ? country.Rules.FirstOrDefault(x => x.Key == rule.Key).Names : rule.Names;
-            var type = ruleType == RuleType.All ? country.Rules.FirstOrDefault(x => x.Key == rule.Key).Type : ruleType;
+            var names = rule.Names.IsEmpty() ? country.Rules.FirstOrDefault(x => x.Key == rule.Key)?.Names : rule.Names;
+            var type = ruleType == RuleType.All ? country.Rules.FirstOrDefault(x => x.Key == rule.Key)?.Type ?? RuleType.All : ruleType;
 
             if (rule.Overrides == Overrides.None)
                 return GetRule(rule.Expression, rule.Names, type, isEnable);
-            else if (rule.Overrides.HasFlag(Overrides.Expression))
+            else if ((rule.Overrides & Overrides.Expression) != 0)
                 return GetRule(rule.Expression, names, type, isEnable);
-            else if (rule.Overrides.HasFlag(Overrides.IsEnable))
-                return GetRule(country.Rules.FirstOrDefault(x => x.Key == rule.Key).Expression, country.Rules.FirstOrDefault(x => x.Key == rule.Key).Names, type, isEnable);
+            else if ((rule.Overrides & Overrides.IsEnable) != 0)
+                return GetRule(country.Rules.FirstOrDefault(x => x.Key == rule.Key)?.Expression, country.Rules.FirstOrDefault(x => x.Key == rule.Key)?.Names, type, isEnable);
             else
-                return GetRule(country.Rules.FirstOrDefault(x => x.Key == rule.Key).Expression, country.Rules.FirstOrDefault(x => x.Key == rule.Key).Names, type, isEnable);
+                return GetRule(country.Rules.FirstOrDefault(x => x.Key == rule.Key)?.Expression, country.Rules.FirstOrDefault(x => x.Key == rule.Key)?.Names, type, isEnable);
         }
+
         private RuleModelLight GetRegionRule(Country country, State state, Rule rule)
         {
             if (rule.Overrides == Overrides.None)
                 return GetRule(rule.Expression, rule.Names, rule.Type, rule.IsEnable);
-            else if (rule.Overrides.HasFlag(Overrides.Expression))
+            else if ((rule.Overrides & Overrides.Expression) != 0)
                 return GetStateRule(country, rule, rule.Type, rule.IsEnable);
-            else if (rule.Overrides.HasFlag(Overrides.IsEnable))
+            else if ((rule.Overrides & Overrides.IsEnable) != 0)
                 return GetStateRule(country, state.Rules.FirstOrDefault(x => x.Key == rule.Key), rule.Type, rule.IsEnable);
             else
                 return GetStateRule(country, state.Rules.FirstOrDefault(x => x.Key == rule.Key), rule.Type, rule.IsEnable);
@@ -55,7 +57,7 @@ namespace ID3iHoliday.WebService.Controllers
 
             if (country.Rules.IsNotNullAndNotEmpty())
                 countryModel.Rules = new List<RuleModelLight>();
-            country.Rules.ForEach(y => { countryModel.Rules.Add(GetRule(y.Expression, y.Names, y.Type, y.IsEnable)); });
+            country.Rules.ForEach(y => countryModel.Rules.Add(GetRule(y.Expression, y.Names, y.Type, y.IsEnable)));
 
             if (country.States.IsNotNullAndNotEmpty())
                 countryModel.States = new List<StateModelLight>();
@@ -65,7 +67,7 @@ namespace ID3iHoliday.WebService.Controllers
 
                 if (y.Rules.IsNotNullAndNotEmpty())
                     state.Rules = new List<RuleModelLight>();
-                y.Rules.ForEach(z => { state.Rules.Add(GetStateRule(country, z, z.Type, z.IsEnable)); });
+                y.Rules.ForEach(z => state.Rules.Add(GetStateRule(country, z, z.Type, z.IsEnable)));
 
                 if (y.Regions.IsNotNullAndNotEmpty())
                     state.Regions = new List<RegionModelLight>();
@@ -75,7 +77,7 @@ namespace ID3iHoliday.WebService.Controllers
 
                     if (z.Rules.IsNotNullAndNotEmpty())
                         region.Rules = new List<RuleModelLight>();
-                    z.Rules.ForEach(aa => { region.Rules.Add(GetRegionRule(country, y, aa)); });
+                    z.Rules.ForEach(aa => region.Rules.Add(GetRegionRule(country, y, aa)));
                     state.Regions.Add(region);
                 });
                 countryModel.States.Add(state);
@@ -89,16 +91,13 @@ namespace ID3iHoliday.WebService.Controllers
             try
             {
                 var lst = new List<CountryModelLight>();
-                HolidaySystem.Instance.CountriesAvailable.Where(x => x.Code != null).ToList().ForEach(x =>
-                {
-                    lst.Add(Get(x));
-                });
+                HolidaySystem.Instance.CountriesAvailable.Where(x => x.Code != null).ToList().ForEach(x => lst.Add(Get(x)));
                 return Ok(lst);
             }
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
 
         [HttpGet, Route("{code}")]

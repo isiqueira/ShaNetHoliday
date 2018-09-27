@@ -24,7 +24,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
 
         [HttpGet, Route("{code}/Regions")]
@@ -40,9 +40,9 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
-        } 
-        
+            }
+        }
+
         [HttpGet, Route("{code}/Days")]
         public IHttpActionResult Get2(string code, int year, RuleType rule = RuleType.All, Calendar calendar = Calendar.All)
         {
@@ -56,7 +56,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
     }
 }

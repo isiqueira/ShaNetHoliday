@@ -18,10 +18,12 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => $"BEFORE {Count.ToString().ToUpper()} {Day.ToString().ToUpper()}";
+
         /// <summary>
         /// <see cref="ParserMovableFromMovable"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserMovableFromMovable();
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="BeforeMovable"/>.
         /// </summary>

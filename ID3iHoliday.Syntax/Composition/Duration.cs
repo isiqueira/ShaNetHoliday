@@ -15,7 +15,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Token de l'élément.
         /// </summary>
-        protected override string Token => $"{Value}";
+        protected override string Token => Value;
         internal string Value { get; set; }
 
         /// <summary>
@@ -27,6 +27,7 @@ namespace ID3iHoliday.Syntax.Composition
             Value = nameof(P5D);
             return this;
         }
+
         /// <summary>
         /// Indique que la durée est de 5 jours.
         /// </summary>
@@ -36,6 +37,7 @@ namespace ID3iHoliday.Syntax.Composition
             Value = nameof(P4D);
             return this;
         }
+
         /// <summary>
         /// Indique que la durée est de 5 jours.
         /// </summary>
@@ -45,6 +47,7 @@ namespace ID3iHoliday.Syntax.Composition
             Value = nameof(P3D);
             return this;
         }
+
         /// <summary>
         /// Indique que la durée est de 5 jours.
         /// </summary>
@@ -54,6 +57,7 @@ namespace ID3iHoliday.Syntax.Composition
             Value = nameof(P2D);
             return this;
         }
+
         /// <summary>
         /// Indique que la durée est personalisée.
         /// </summary>
@@ -70,18 +74,21 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         public Duration(ExpressionElement parent) : base(parent) { }
+
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de période.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Every"/> pour ajouter d'autres comportements.</returns>
         public Every Every(int number) => new Every(this, number);
+
         /// <summary>
         /// Elément de syntax pour gérer le type d'année pris en charge.
         /// </summary>
         /// <param name="year">Type de l'année.</param>
         /// <returns>L'élément de syntax <see cref="InYear"/> pour ajouter d'autres comportements.</returns>
         public InYear In(YearType year) => new InYear(this, year);
+
         /// <summary>
         /// Elément de syntax pour changer l'heure de début selon le jour.
         /// </summary>

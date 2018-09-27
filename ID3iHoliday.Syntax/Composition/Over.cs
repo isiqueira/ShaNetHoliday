@@ -27,6 +27,7 @@ namespace ID3iHoliday.Syntax.Composition
             Calendar = nameof(Gregorian);
             return this;
         }
+
         /// <summary>
         /// Affecte le calendrier <see cref="System.Globalization.JulianCalendar"/> à cette expression.
         /// </summary>
@@ -36,6 +37,7 @@ namespace ID3iHoliday.Syntax.Composition
             Calendar = nameof(Julian);
             return this;
         }
+
         /// <summary>
         /// Affecte le calendrier <see cref="System.Globalization.HijriCalendar"/> à cette expression.
         /// </summary>
@@ -45,6 +47,7 @@ namespace ID3iHoliday.Syntax.Composition
             Calendar = nameof(Hijri);
             return this;
         }
+
         /// <summary>
         /// Affecte le calendrier <see cref="System.Globalization.HebrewCalendar"/> à cette expression.
         /// </summary>

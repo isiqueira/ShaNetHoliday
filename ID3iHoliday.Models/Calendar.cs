@@ -15,18 +15,22 @@ namespace ID3iHoliday.Models
         /// Tous les calendriers.
         /// </summary>
         All = -1,
+
         /// <summary>
         /// <see cref="System.Globalization.GregorianCalendar"/>.
         /// </summary>
         Gregorian = 0,
+
         /// <summary>
         /// <see cref="System.Globalization.JulianCalendar"/>.
         /// </summary>
         Julian = 1,
+
         /// <summary>
         /// <see cref="System.Globalization.HijriCalendar"/>.
         /// </summary>
         Hijri = 2,
+
         /// <summary>
         /// <see cref="System.Globalization.HebrewCalendar"/>.
         /// </summary>

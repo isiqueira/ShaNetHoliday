@@ -16,15 +16,18 @@ namespace ID3iHoliday.Models
         /// Liste des langues.
         /// </summary>
         public List<Langue> Langues { get; set; }
+
         /// <summary>
         /// Elle-même.
         /// </summary>
         public BaseList<T> Container => this;
+
         /// <summary>
         /// Se produit à l'ajout d'un élément.
         /// </summary>
         /// <param name="item">Elément ajouté.</param>
         protected virtual void OnAddedItem(T item) => base.Add(item);
+
         /// <summary>
         /// Méthode d'ajout d'un élément.
         /// </summary>

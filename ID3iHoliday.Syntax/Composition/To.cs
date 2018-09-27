@@ -17,6 +17,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         protected override string Token => $"TO {Year}";
         internal int Year { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Since"/>.
         /// </summary>

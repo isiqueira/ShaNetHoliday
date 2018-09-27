@@ -18,12 +18,14 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => $"MOVABLE² {Count.ToString().ToUpper()} {Day.ToString().ToUpper()}";
+
         /// <summary>
         /// <see cref="ParserMovableFromMovable"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserMovableFromMovable();
         internal Count Count { get; set; }
         internal DayOfWeek Day { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="MovableFromMovable"/>.
         /// </summary>
@@ -35,6 +37,7 @@ namespace ID3iHoliday.Syntax.Composition
             Count = count;
             Day = dayOfWeek;
         }
+
         /// <summary>
         /// Elément de syntax pour définir la date avant laquelle le jour sera trouvé.
         /// </summary>
@@ -42,6 +45,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <param name="dayOfWeek">Jour particulier.</param>
         /// <returns>L'élément de syntax <see cref="BeforeMovable"/> pour ajouter d'autres comportements.</returns>
         public BeforeMovable Before(Count count, DayOfWeek dayOfWeek) => new BeforeMovable(this, count, dayOfWeek);
+
         /// <summary>
         /// Elément de syntax pour définir la date après laquelle le jour sera trouvé.
         /// </summary>

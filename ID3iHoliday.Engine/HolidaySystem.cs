@@ -29,6 +29,7 @@ namespace ID3iHoliday.Engine
         /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
             => All(year, countryCode, null, null, type, calendar);
+
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -40,6 +41,7 @@ namespace ID3iHoliday.Engine
         /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
             => All(year, countryCode, stateCode, null, type, calendar);
+
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
         /// </summary>
@@ -70,6 +72,7 @@ namespace ID3iHoliday.Engine
         /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, RuleType type = RuleType.All)
             => Between(startDate, endDate, countryCode, null, null, type);
+
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
         /// </summary>
@@ -81,6 +84,7 @@ namespace ID3iHoliday.Engine
         /// <returns>Une liste des jours.</returns>
         public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, string stateCode, RuleType type = RuleType.All)
             => Between(startDate, endDate, countryCode, stateCode, null, type);
+
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
         /// </summary>
@@ -95,22 +99,31 @@ namespace ID3iHoliday.Engine
         {
             if (startDate.IsAfter(endDate))
                 throw new ArgumentException("startDate is after endDate.");
-            var currentYear = startDate.Year;
-            var endYear = endDate.Year;
-
-            while (currentYear <= endYear)
+            return BetweenIterator();
+            IEnumerable<SpecificDay> BetweenIterator()
             {
-                IEnumerable<SpecificDay> items = null;
-                if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
-                    items = All(currentYear, countryCode, stateCode, regionCode, type);
-                else if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty())
-                    items = All(currentYear, countryCode, stateCode, type);
-                else
-                    items = All(currentYear, countryCode, type);
-                foreach (var item in items)
-                    if (item.Date >= startDate && item.Date <= endDate)
-                        yield return item;
-                currentYear++;
+                var currentYear = startDate.Year;
+                var endYear = endDate.Year;
+
+                while (currentYear <= endYear)
+                {
+                    IEnumerable<SpecificDay> items = null;
+                    if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
+                        items = All(currentYear, countryCode, stateCode, regionCode, type);
+                    else if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty())
+                        items = All(currentYear, countryCode, stateCode, type);
+                    else
+                        items = All(currentYear, countryCode, type);
+                    foreach (var item in items)
+                    {
+                        if (item.Date >= startDate && item.Date <= endDate)
+                        {
+                            yield return item;
+                        }
+                    }
+
+                    currentYear++;
+                }
             }
         }
 
@@ -123,6 +136,7 @@ namespace ID3iHoliday.Engine
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
         public SpecificDay Single(DateTime date, string countryCode, RuleType type = RuleType.Public)
             => Single(date, countryCode, null, null, type);
+
         /// <summary>
         /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
         /// </summary>
@@ -133,6 +147,7 @@ namespace ID3iHoliday.Engine
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
         public SpecificDay Single(DateTime date, string countryCode, string stateCode, RuleType type = RuleType.Public)
             => Single(date, countryCode, stateCode, null, type);
+
         /// <summary>
         /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
         /// </summary>
@@ -156,6 +171,7 @@ namespace ID3iHoliday.Engine
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
         public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode)
             => LongWeekEnds(year, countryCode, null, null);
+
         /// <summary>
         /// Méthode qui permet de trouver tous les longs week-ends pour une année.
         /// </summary>
@@ -165,6 +181,7 @@ namespace ID3iHoliday.Engine
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
         public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode, string stateCode)
             => LongWeekEnds(year, countryCode, stateCode, null);
+
         /// <summary>
         /// Méthode qui permet de trouver tous les longs week-ends pour une année.
         /// </summary>
@@ -181,13 +198,18 @@ namespace ID3iHoliday.Engine
             {
                 var longWeekEnd = DoSomeThing(specificDays, item, null, SearchType.All);
                 if (longWeekEnd != null)
+                {
                     if (!lst.Any(x => x.StartDate <= longWeekEnd.StartDate && x.EndDate >= longWeekEnd.EndDate))
+                    {
                         lst.Add(longWeekEnd);
+                    }
+                }
             }
             return lst;
         }
 
         internal enum SearchType { All, StartDate, EndDate }
+
         private LongWeekEnd DoSomeThing(IEnumerable<SpecificDay> specificDays, SpecificDay specificDay, LongWeekEnd longWeekEnd, SearchType searchType = SearchType.All)
         {
             switch (specificDay.Date.DayOfWeek)

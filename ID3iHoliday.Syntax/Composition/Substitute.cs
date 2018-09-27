@@ -18,14 +18,17 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => "SUBSTITUTE";
+
         /// <summary>
         /// <see cref="ParserSubstitute"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserSubstitute();
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Substitute"/>.
         /// </summary>
         public Substitute() : base(null) { }
+
         /// <summary>
         /// Elément de syntax pour mettre en place une date fixe dans n'importe qu'elle année.
         /// </summary>

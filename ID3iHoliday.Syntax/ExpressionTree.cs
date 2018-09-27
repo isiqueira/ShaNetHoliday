@@ -16,14 +16,17 @@ namespace ID3iHoliday.Syntax
         /// Racine pour les expressions de date.
         /// </summary>
         public static Date Date => new Date();
+
         /// <summary>
         /// Racine pour les expressions de déplacement.
         /// </summary>
         public static Move Move => new Move();
+
         /// <summary>
         /// Racine pour les expressions d'observation.
         /// </summary>
         public static Observe Observe => new Observe();
+
         /// <summary>
         /// Racine pour les expressions de substitution.
         /// </summary>

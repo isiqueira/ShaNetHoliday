@@ -59,7 +59,7 @@ namespace ID3iHoliday.Syntax.Parsers
                     year = calendar.GetYear(DateTime.Today.Of(year));
 
                 var observedDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);
-                var newDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);                
+                var newDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value), calendar);
                 for (int i = 0; i < match.Groups["Or"].Captures.Count; i++)
                 {
                     if (observedDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)
@@ -72,8 +72,12 @@ namespace ID3iHoliday.Syntax.Parsers
                 }
 
                 if (match.Groups["RepeatEndYear"].Value.IsNotNullOrEmpty())
+                {
                     if (newDate.Year > Int32.Parse(match.Groups["RepeatEndYear"].Value))
+                    {
                         return result;
+                    }
+                }
 
                 bool isYearRecursOk = false;
                 if (match.Groups["RepeatYear"].Value.IsNotNullOrEmpty() && match.Groups["RepeatStartYear"].Value.IsNotNullOrEmpty())
@@ -84,14 +88,16 @@ namespace ID3iHoliday.Syntax.Parsers
                         isYearRecursOk = true;
                 }
                 else
+                {
                     isYearRecursOk = true;
+                }
 
                 if (isYearRecursOk)
                 {
                     result.DatesToAdd.Add(observedDate);
                     if (observedDate != newDate)
                         result.DatesToAdd.Add(newDate);
-                }                    
+                }
             }
             return result;
         }

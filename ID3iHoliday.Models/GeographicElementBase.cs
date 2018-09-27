@@ -15,18 +15,22 @@ namespace ID3iHoliday.Models
         /// Code.
         /// </summary>
         public string Code { get; set; }
+
         /// <summary>
         /// Nom par défaut.
         /// </summary>
         public string DefaultName => Names.FirstOrDefault().Value;
+
         /// <summary>
         /// Liste des noms de l'élément.
         /// </summary>
         public Dictionary<Langue, string> Names { get; set; } = new Dictionary<Langue, string>();
+
         /// <summary>
         /// Liste des langues de l'élément.
         /// </summary>
         public List<Langue> Langues { get; set; } = new List<Langue>();
+
         /// <summary>
         /// Liste des règles de l'élément.
         /// </summary>
@@ -36,5 +40,5 @@ namespace ID3iHoliday.Models
         /// Elément parent.
         /// </summary>
         public GeographicElementBase Parent { get; set; }
-    }   
+    }
 }

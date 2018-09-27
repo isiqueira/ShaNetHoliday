@@ -15,14 +15,17 @@ namespace ID3iHoliday.Models
         /// Date du jour.
         /// </summary>
         public DateTime Date { get; set; }
+
         /// <summary>
         /// Nom du jour.
         /// </summary>
         public Dictionary<Langue, string> Names { get; set; }
+
         /// <summary>
         /// Type de règle.
         /// </summary>
         public RuleType Type { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="SpecificDay"/>.
         /// </summary>
@@ -35,10 +38,11 @@ namespace ID3iHoliday.Models
             Date = date;
             Names = names;
         }
+
         /// <summary>
         /// Retourne une chaîne qui représente l'objet actuel.
         /// </summary>
         /// <returns>Chaîne qui représente l'objet actuel.</returns>
         public override string ToString() => $"{Date.ToShortDateString()} {Names.FirstOrDefault().Value}";
-    }   
+    }
 }

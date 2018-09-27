@@ -17,24 +17,28 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         protected override string Token => $"BEFORE {Value}";
         internal string Value { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Before"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="value">Date.</param>
         public Before(ExpressionElement parent, string value) : base(parent) => Value = value;
+
         /// <summary>
         /// Elément de syntax pour changer l'heure.
         /// </summary>
         /// <param name="value">Nouvelle heure.</param>
         /// <returns>L'élément de syntax <see cref="ThenStart"/> pour ajouter d'autres comportements.</returns>
         public ThenStart ThenStartAt(string value) => new ThenStart(this, value);
+
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de période.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Every"/> pour ajouter d'autres comportements.</returns>
         public Every Every(int number) => new Every(this, number);
+
         /// <summary>
         /// Elément de syntax pour gérer le type d'année pris en charge.
         /// </summary>

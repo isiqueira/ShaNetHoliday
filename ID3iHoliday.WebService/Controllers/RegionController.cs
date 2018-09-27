@@ -24,7 +24,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
 
         [HttpGet, Route("{code}/Days")]
@@ -40,7 +40,7 @@ namespace ID3iHoliday.WebService.Controllers
             catch (Exception)
             {
                 return InternalServerError();
-            }            
+            }
         }
     }
 }

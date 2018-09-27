@@ -16,6 +16,7 @@ namespace ID3iHoliday.Models
         /// </summary>
         public GregorianRule() : base() => Calendar = Calendar.Gregorian;
     }
+
     /// <summary>
     /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.JulianCalendar"/>.
     /// </summary>
@@ -26,6 +27,7 @@ namespace ID3iHoliday.Models
         /// </summary>
         public JulianRule() : base() => Calendar = Calendar.Julian;
     }
+
     /// <summary>
     /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.HijriCalendar"/>.
     /// </summary>
@@ -36,6 +38,7 @@ namespace ID3iHoliday.Models
         /// </summary>
         public HijriRule() : base() => Calendar = Calendar.Hijri;
     }
+
     /// <summary>
     /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.HebrewCalendar"/>.
     /// </summary>
@@ -47,7 +50,6 @@ namespace ID3iHoliday.Models
         public HebrewRule() : base() => Calendar = Calendar.Hijri;
     }
 
-
     /// <summary>
     /// Représentation d'une règle.
     /// </summary>
@@ -57,34 +59,42 @@ namespace ID3iHoliday.Models
         /// Eléments à surcharger.
         /// </summary>
         public Overrides Overrides { get; set; } = Overrides.None;
+
         /// <summary>
         /// Clef de la règle.
         /// </summary>
         public string Key { get; set; }
+
         /// <summary>
         /// Expression de la règle.
         /// </summary>
         public ExpressionElement Expression { get; set; }
+
         /// <summary>
         /// Nom du jour particulier.
         /// </summary>
         public Dictionary<Langue, string> Names { get; set; } = new Dictionary<Langue, string>();
+
         /// <summary>
         /// Type de la règle.
         /// </summary>
         public RuleType Type { get; set; } = Public;
+
         /// <summary>
         /// Note de la règle.
         /// </summary>
         public string Note { get; set; }
+
         /// <summary>
         /// Indication si la règle est une règle de substitution.
         /// </summary>
         public bool Substitute { get; set; }
+
         /// <summary>
         /// Indication sur l'état de la règle.
         /// </summary>
         public bool IsEnable { get; set; } = true;
+
         /// <summary>
         /// Retourne une chaîne qui représente l'objet actuel.
         /// </summary>
@@ -114,5 +124,5 @@ namespace ID3iHoliday.Models
         /// </summary>
         /// <returns>Copie superficielle du <see cref="Rule"/> actuel.</returns>
         public object Clone() => MemberwiseClone() as Rule;
-    }    
+    }
 }

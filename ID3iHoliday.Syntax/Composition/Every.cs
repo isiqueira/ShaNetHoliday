@@ -17,12 +17,14 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         protected override string Token => $"EVERY {Number}";
         internal int Number { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Every"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="number">Nombre de périodes.</param>
         public Every(ExpressionElement parent, int number) : base(parent) => Number = number;
+
         /// <summary>
         /// Elément de syntax pour le récurrence par nombre d'années.
         /// </summary>

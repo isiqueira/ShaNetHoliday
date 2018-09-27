@@ -18,17 +18,20 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => DateTime.ToString("MM-dd");
+
         /// <summary>
         /// <see cref="ParserDate"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserDate();
         internal DateTime DateTime { get; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Day"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dateTime">Date.</param>
         public Day(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
+
         /// <summary>
         /// Elément de syntax pour indiquer l'heure de début.
         /// </summary>
@@ -41,21 +44,25 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
         public Start StartAtNoon => new Start(this, "12:00");
+
         /// <summary>
         /// Elément de syntax pour indiquer que l'heure de début est 13h.
         /// </summary>
         /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
         public Start StartAt1PM => new Start(this, "13:00");
+
         /// <summary>
         /// Elément de syntax pour indiquer que l'heure de début est 14h.
         /// </summary>
         /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
         public Start StartAt2PM => new Start(this, "14:00");
+
         /// <summary>
         /// Elément de syntax pour indiquer que l'heure de début est minuit.
         /// </summary>
         /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
         public Start StartAtMidnight => new Start(this, "00:00");
+
         /// <summary>
         /// Elément de syntax pour gérer le début d'application de l'expression.
         /// </summary>

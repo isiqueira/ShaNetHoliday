@@ -17,12 +17,14 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         protected override string Token => $"IF {DayOfWeek.ToString().ToUpper()}";
         internal DayOfWeek DayOfWeek { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="IfDay"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
         public IfDay(ExpressionElement parent, DayOfWeek dayOfWeek) : base(parent) => DayOfWeek = dayOfWeek;
+
         /// <summary>
         /// Elément de syntax <see cref="ThenAction"/> pour choisir l'action à réaliser.
         /// </summary>

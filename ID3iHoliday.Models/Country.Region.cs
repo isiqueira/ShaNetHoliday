@@ -9,5 +9,5 @@ namespace ID3iHoliday.Models
     /// <summary>
     /// Réprésentation d'une région.
     /// </summary>
-    public class Region : GeographicElementBase { }    
+    public class Region : GeographicElementBase { }
 }

@@ -17,12 +17,14 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         protected override string Token => $"IN {Year.ToString().ToUpper()} YEARS";
         internal YearType Year { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="InYear"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="year">Type de l'année.</param>
         public InYear(ExpressionElement parent, YearType year) : base(parent) => Year = year;
+
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>

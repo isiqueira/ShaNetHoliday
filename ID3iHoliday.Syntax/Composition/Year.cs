@@ -16,11 +16,13 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => "YEAR";
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Year"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         public Year(ExpressionElement parent) : base(parent) { }
+
         /// <summary>
         /// Elément de syntax pour gérer le début d'application de l'expression.
         /// </summary>

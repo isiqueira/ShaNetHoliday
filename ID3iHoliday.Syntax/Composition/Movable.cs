@@ -20,12 +20,14 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => $"MOVABLE {Count.ToString().ToUpper()} {Day.ToString().ToUpper()}";
+
         /// <summary>
         /// <see cref="ParserMovable"/> associé à l'élément.
         /// </summary>
         protected override ParserBase Parser => new ParserMovable();
         internal Count Count { get; set; }
         internal DayOfWeek Day { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Movable"/>.
         /// </summary>
@@ -37,12 +39,14 @@ namespace ID3iHoliday.Syntax.Composition
             Count = count;
             Day = dayOfWeek;
         }
+
         /// <summary>
         /// Elément de syntax pour indiquer que c'est avant une date précise.
         /// </summary>
         /// <param name="value">Date avant laquelle le jour doit se trouver.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Before"/> pour ajouter d'autres comportements.</returns>
         public Before Before(string value) => new Before(this, value);
+
         /// <summary>
         /// Elément de syntax pour indiquer que c'est avant le début du mois.
         /// </summary>
@@ -80,12 +84,14 @@ namespace ID3iHoliday.Syntax.Composition
                     return new Before(this, "01-01");
             }
         }
+
         /// <summary>
         /// Elément de syntax pour indiquer que c'est après une date précise.
         /// </summary>
         /// <param name="value">Date après laquelle le jour doit se trouver.</param>
         /// <returns>L'élément de syntax <see cref="Composition.After"/> pour ajouter d'autres comportements.</returns>
         public After After(string value) => new After(this, value);
+
         /// <summary>
         /// Elément de syntax pour indiquer que c'est ap^rès le début du mois.
         /// </summary>

@@ -47,6 +47,7 @@ namespace ID3iHoliday.Syntax.Parsers
                 .AtomicGroup(
                     Pattern.With.Literal("P")
                     .NamedGroup("DurationDays", Pattern.With.Digit.Repeat.OneOrMore).Literal("D")).Repeat.Optional;
+
         /// <summary>
         /// Pattern pour l'heure de début.
         /// </summary>
@@ -58,6 +59,7 @@ namespace ID3iHoliday.Syntax.Parsers
                         Pattern.With.Literal("1").Set(Pattern.With.Literal("0-9")),
                         Pattern.With.Literal("2").Set(Pattern.With.Literal("0-3")))).Literal(":")
                 .NamedGroup("StartMinutes", Pattern.With.Set(Pattern.With.Literal("0-5")).Set(Pattern.With.Literal("0-9")));
+
         /// <summary>
         /// Pattern Si jour particulier alors autre heure de début.
         /// </summary>
@@ -70,6 +72,7 @@ namespace ID3iHoliday.Syntax.Parsers
                     .Literal("THEN").Whitespace
                     .Include(PatternNewHours)
                 ).Repeat.Optional;
+
         /// <summary>
         /// Pattern pour la nouvelle heure de début.
         /// </summary>
@@ -119,6 +122,7 @@ namespace ID3iHoliday.Syntax.Parsers
                     .AtomicGroup(Pattern.With.Whitespace.Literal("SINCE").Whitespace.NamedGroup("RepeatStartYear", Pattern.With.Set(Pattern.With.Literal("0-9")).Repeat.Exactly(4))).Repeat.Optional
                     .AtomicGroup(Pattern.With.Whitespace.Literal("TO").Whitespace.NamedGroup("RepeatEndYear", Pattern.With.Set(Pattern.With.Literal("0-9")).Repeat.Exactly(4))).Repeat.Optional
                 ).Repeat.Optional;
+
         /// <summary>
         /// Pattern pour une date dans un mois.
         /// </summary>
@@ -153,6 +157,7 @@ namespace ID3iHoliday.Syntax.Parsers
                                     Pattern.With.Set(Pattern.With.Literal("1-2")).Set(Pattern.With.Literal("0-9")),
                                     Pattern.With.Literal("30")))
                         ));
+
         /// <summary>
         /// Pattern pour l'adjectif numéral.
         /// </summary>
@@ -160,6 +165,7 @@ namespace ID3iHoliday.Syntax.Parsers
             Pattern.With.Choice(
                 Pattern.With.Literal("FIRST"), Pattern.With.Literal("SECOND"), Pattern.With.Literal("THIRD"),
                 Pattern.With.Literal("FOURTH"), Pattern.With.Literal("FIFTH"), Pattern.With.Literal("SIXTH"));
+
         /// <summary>
         /// Pattern pour le jour particulier.
         /// </summary>
@@ -167,11 +173,13 @@ namespace ID3iHoliday.Syntax.Parsers
             Pattern.With.Choice(
                 Pattern.With.Literal("MONDAY"), Pattern.With.Literal("TUESDAY"), Pattern.With.Literal("WEDNESDAY"),
                  Pattern.With.Literal("THURSDAY"), Pattern.With.Literal("FRIDAY"), Pattern.With.Literal("SATURDAY"), Pattern.With.Literal("SUNDAY"));
+
         /// <summary>
         /// Pattern pour le type d'action Before/After.
         /// </summary>
         public static Pattern PatternActionBeforeAfter =>
             Pattern.With.Choice(Pattern.With.Literal("BEFORE"), Pattern.With.Literal("AFTER"));
+
         /// <summary>
         /// Pattern pour le type d'action Previous/Next.
         /// </summary>

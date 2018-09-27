@@ -17,18 +17,21 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         protected override string Token => Value;
         internal string Value { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle classe de <see cref="EasterDay"/>.
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="value"></param>
         public EasterDay(ExpressionElement parent, string value) : base(parent) => Value = value;
+
         /// <summary>
         /// Elément de syntax pour indiquer l'heure de début.
         /// </summary>
         /// <param name="value">L'heure de début au format HH:mm</param>
         /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
         public Start StartAt(string value) => new Start(this, value);
+
         /// <summary>
         /// Elément de syntax pour indiquer que l'heure de début est à minuit.
         /// </summary>

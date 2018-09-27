@@ -16,17 +16,20 @@ namespace ID3iHoliday.Syntax.Composition
         /// Token de l'élément.
         /// </summary>
         protected override string Token => "THEN";
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="ThenAction"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         public ThenAction(ExpressionElement parent) : base(parent) { }
+
         /// <summary>
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste avant.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier à retourner.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Previous"/> pour ajouter d'autres comportements.</returns>
         public Previous Previous(DayOfWeek dayOfWeek) => new Previous(this, dayOfWeek);
+
         /// <summary>
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste après.
         /// </summary>

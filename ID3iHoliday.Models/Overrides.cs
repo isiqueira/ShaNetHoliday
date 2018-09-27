@@ -15,23 +15,28 @@ namespace ID3iHoliday.Models
         /// <summary>
         /// Rien.
         /// </summary>
-        None = 1,
+        None = 0,
+
         /// <summary>
         /// L'expression.
         /// </summary>
-        Expression = 2,
+        Expression = 1,
+
         /// <summary>
         /// Le type.
         /// </summary>
         Type = Expression << 1,
+
         /// <summary>
         /// La note.
         /// </summary>
         Note = Type << 1,
+
         /// <summary>
         /// L'état.
         /// </summary>
         IsEnable = Note << 1,
+
         /// <summary>
         /// Les noms.
         /// </summary>

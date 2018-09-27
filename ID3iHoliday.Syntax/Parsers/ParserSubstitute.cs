@@ -66,8 +66,12 @@ namespace ID3iHoliday.Syntax.Parsers
                 }
 
                 if (match.Groups["RepeatEndYear"].Value.IsNotNullOrEmpty())
+                {
                     if (newDate.Year > Int32.Parse(match.Groups["RepeatEndYear"].Value))
+                    {
                         return result;
+                    }
+                }
 
                 bool isYearRecursOk = false;
                 if (match.Groups["RepeatYear"].Value.IsNotNullOrEmpty() && match.Groups["RepeatStartYear"].Value.IsNotNullOrEmpty())
@@ -78,14 +82,16 @@ namespace ID3iHoliday.Syntax.Parsers
                         isYearRecursOk = true;
                 }
                 else
+                {
                     isYearRecursOk = true;
+                }
 
                 if (isYearRecursOk)
                 {
                     if(substituteDate != newDate)
                         result.DateToRemove = substituteDate;
                     result.DatesToAdd.Add(newDate);
-                }                    
+                }
             }
             return result;
         }

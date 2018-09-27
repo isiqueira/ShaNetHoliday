@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ID3iHoliday.Models
-{ 
+{
     /// <summary>
     /// Enumération des type de règles.
     /// </summary>
@@ -15,22 +15,27 @@ namespace ID3iHoliday.Models
         /// Tout type.
         /// </summary>
         All,
+
         /// <summary>
         /// Jour férié pour tout le monde.
         /// </summary>
         Public,
+
         /// <summary>
         /// Jour férié applicable aux banques.
         /// </summary>
         Bank,
+
         /// <summary>
         /// Jour férié applicable aux écoles.
         /// </summary>
         School,
+
         /// <summary>
         /// Jour férié non imposé.
         /// </summary>
         Optional,
+
         /// <summary>
         /// Jour non férié.
         /// </summary>
