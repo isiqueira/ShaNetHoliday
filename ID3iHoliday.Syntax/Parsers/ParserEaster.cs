@@ -13,40 +13,40 @@ namespace ID3iHoliday.Syntax.Parsers
     /// </summary>
     public class ParserEaster : ParserBase
     {
-        internal static DateTime CatholicEasterSunday(int year)
+        internal static DateTime CatholicEasterSunday( int year )
         {
             var g = year % 19;
             var c = year / 100;
-            var h = (c - (c / 4) - (((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
-            var i = h - ((h / 28) * (1 - ((h / 28) * (29 / (h + 1)) * ((21 - g) / 11))));
+            var h = ( c - ( c / 4 ) - ( ( ( 8 * c ) + 13 ) / 25 ) + ( 19 * g ) + 15 ) % 30;
+            var i = h - ( ( h / 28 ) * ( 1 - ( ( h / 28 ) * ( 29 / ( h + 1 ) ) * ( ( 21 - g ) / 11 ) ) ) );
 
-            var day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
+            var day = i - ( ( year + (int)( year / 4 ) + i + 2 - c + (int)( c / 4 ) ) % 7 ) + 28;
             var month = 3;
 
-            if (day > 31)
+            if ( day > 31 )
             {
                 month++;
                 day -= 31;
             }
 
-            return new DateTime(year, month, day);
+            return new DateTime( year, month, day );
         }
 
-        internal static DateTime OrthodoxEasterSunday(int year)
+        internal static DateTime OrthodoxEasterSunday( int year )
         {
             var a = year % 19;
             var b = year % 7;
             var c = year % 4;
 
-            var d = ((19 * a) + 16) % 30;
-            var e = ((2 * c) + (4 * b) + (6 * d)) % 7;
-            var f = ((19 * a) + 16) % 30;
+            var d = ( ( 19 * a ) + 16 ) % 30;
+            var e = ( ( 2 * c ) + ( 4 * b ) + ( 6 * d ) ) % 7;
+            var f = ( ( 19 * a ) + 16 ) % 30;
             var key = f + e + 3;
 
-            var month = (key > 30) ? 5 : 4;
-            var day = (key > 30) ? key - 30 : key;
+            var month = ( key > 30 ) ? 5 : 4;
+            var day = ( key > 30 ) ? key - 30 : key;
 
-            return new DateTime(year, month, day);
+            return new DateTime( year, month, day );
         }
 
         /// <summary>
@@ -55,16 +55,16 @@ namespace ID3iHoliday.Syntax.Parsers
         public Pattern Pattern =>
             Pattern.With
                 .StartOfLine
-                .Literal("DATE").Whitespace
-                .NamedGroup("Religion",
-                    Pattern.With.Choice(Pattern.With.Literal("CATHOLIC"), Pattern.With.Literal("ORTHODOX")))
-                .Whitespace.Literal("EASTER")
-                .AtomicGroup(Pattern.With.Whitespace.NamedGroup("Symbol", Pattern.With.Choice(Pattern.With.Literal("+"), Pattern.With.Literal("-")))).Repeat.Optional
-                .NamedGroup("Number", Pattern.With.Digit.Repeat.Between(0, 2)).Repeat.Optional
-                .Include(Parser.PatternStartAndDuration)
-                .Include(Parser.PatternIfDayThenStartAt)
-                .Include(Parser.PatternYearType)
-                .Include(Parser.PatternYearRecurs)
+                .Literal( "DATE" ).Whitespace
+                .NamedGroup( "Religion",
+                    Pattern.With.Choice( Pattern.With.Literal( "CATHOLIC" ), Pattern.With.Literal( "ORTHODOX" ) ) )
+                .Whitespace.Literal( "EASTER" )
+                .AtomicGroup( Pattern.With.Whitespace.NamedGroup( "Symbol", Pattern.With.Choice( Pattern.With.Literal( "+" ), Pattern.With.Literal( "-" ) ) ) ).Repeat.Optional
+                .NamedGroup( "Number", Pattern.With.Digit.Repeat.Between( 0, 2 ) ).Repeat.Optional
+                .Include( Parser.PatternStartAndDuration )
+                .Include( Parser.PatternIfDayThenStartAt )
+                .Include( Parser.PatternYearType )
+                .Include( Parser.PatternYearRecurs )
                 .EndOfLine;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace ID3iHoliday.Syntax.Parsers
         /// <returns>
         /// <see langword="true"/> si l'expression match le pattern, <see langword="false"/> sinon.
         /// </returns>
-        public override bool IsMatch(string expression) => new Regex(Pattern.ToString()).IsMatch(expression);
+        public override bool IsMatch( string expression ) => new Regex( Pattern.ToString() ).IsMatch( expression );
 
         /// <summary>
         /// Méthode de parsing d'une expression.
@@ -82,68 +82,93 @@ namespace ID3iHoliday.Syntax.Parsers
         /// <param name="expression">Expression à parser.</param>
         /// <param name="year">Année.</param>
         /// <returns>Un <see cref="ParserResult"/> correspondant.</returns>
-        public override ParserResult Parse(string expression, int year)
+        public override ParserResult Parse( string expression, int year )
         {
-            ParserResult result = new ParserResult();
-            var regex = new Regex(Pattern.ToString());
-            var match = regex.Match(expression);
-            if (match.Success)
+            var result = new ParserResult();
+            var regex = new Regex( Pattern.ToString() );
+            var match = regex.Match( expression );
+            if ( match.Success )
             {
-                DateTime date = DateTime.MinValue;
-                if (match.Groups["Religion"].Value == "CATHOLIC")
-                    date = CatholicEasterSunday(year);
-                else if (match.Groups["Religion"].Value == "ORTHODOX")
-                    date = OrthodoxEasterSunday(year);
-                var symbol = match.Groups["Symbol"].Value;
-                if (symbol.IsNotNullOrEmpty() && match.Groups["Number"].Value.IsNotNullOrEmpty())
+                var date = DateTime.MinValue;
+                if ( match.Groups[ "Religion" ].Value == "CATHOLIC" )
                 {
-                    int number = Int32.Parse(match.Groups["Number"].Value);
-                    if (symbol == "+")
-                        date = number.Days().After(date);
-                    else if (symbol == "-")
-                        date = number.Days().Before(date);
+                    date = CatholicEasterSunday( year );
+                }
+                else if ( match.Groups[ "Religion" ].Value == "ORTHODOX" )
+                {
+                    date = OrthodoxEasterSunday( year );
                 }
 
-                if (match.Groups["StartHours"].Value.IsNotNullOrEmpty() && match.Groups["StartMinutes"].Value.IsNotNullOrEmpty())
-                    date = date.SetTime(Int32.Parse(match.Groups["StartHours"].Value), Int32.Parse(match.Groups["StartMinutes"].Value));
-
-                if (match.Groups["Expected"].Value.IsNotNullOrEmpty())
+                var symbol = match.Groups[ "Symbol" ].Value;
+                if ( symbol.IsNotNullOrEmpty() && match.Groups[ "Number" ].Value.IsNotNullOrEmpty() )
                 {
-                    if (date.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Value)
+                    var number = int.Parse( match.Groups[ "Number" ].Value );
+                    if ( symbol == "+" )
                     {
-                        if (match.Groups["NewHours"].Value.IsNotNullOrEmpty() && match.Groups["NewMinutes"].Value.IsNotNullOrEmpty())
-                            date = date.SetTime(Int32.Parse(match.Groups["NewHours"].Value), Int32.Parse(match.Groups["NewMinutes"].Value));
+                        date = number.Days().After( date );
+                    }
+                    else if ( symbol == "-" )
+                    {
+                        date = number.Days().Before( date );
                     }
                 }
 
-                if (match.Groups["RepeatEndYear"].Value.IsNotNullOrEmpty())
+                if ( match.Groups[ "StartHours" ].Value.IsNotNullOrEmpty() && match.Groups[ "StartMinutes" ].Value.IsNotNullOrEmpty() )
                 {
-                    if (date.Year > Int32.Parse(match.Groups["RepeatEndYear"].Value))
+                    date = date.SetTime( int.Parse( match.Groups[ "StartHours" ].Value ), int.Parse( match.Groups[ "StartMinutes" ].Value ) );
+                }
+
+                if ( match.Groups[ "Expected" ].Value.IsNotNullOrEmpty() )
+                {
+                    if ( date.DayOfWeek.ToString().ToUpper() == match.Groups[ "Expected" ].Value )
+                    {
+                        if ( match.Groups[ "NewHours" ].Value.IsNotNullOrEmpty() && match.Groups[ "NewMinutes" ].Value.IsNotNullOrEmpty() )
+                        {
+                            date = date.SetTime( int.Parse( match.Groups[ "NewHours" ].Value ), int.Parse( match.Groups[ "NewMinutes" ].Value ) );
+                        }
+                    }
+                }
+
+                if ( match.Groups[ "RepeatEndYear" ].Value.IsNotNullOrEmpty() )
+                {
+                    if ( date.Year > int.Parse( match.Groups[ "RepeatEndYear" ].Value ) )
                     {
                         return result;
                     }
                 }
 
-                bool isYearTypeOk = false;
-                if (match.Groups["YearType"].Value.IsNotNullOrEmpty())
+                var isYearTypeOk = false;
+                if ( match.Groups[ "YearType" ].Value.IsNotNullOrEmpty() )
                 {
-                    switch ((YearType)Enum.Parse(typeof(YearType), match.Groups["YearType"].Value, true))
+                    switch ( (YearType)Enum.Parse( typeof( YearType ), match.Groups[ "YearType" ].Value, true ) )
                     {
                         case Even:
-                            if (date.Year % 2 == 0)
+                            if ( date.Year % 2 == 0 )
+                            {
                                 isYearTypeOk = true;
+                            }
+
                             break;
                         case Odd:
-                            if (date.Year % 2 != 0)
+                            if ( date.Year % 2 != 0 )
+                            {
                                 isYearTypeOk = true;
+                            }
+
                             break;
                         case Leap:
-                            if (DateTime.IsLeapYear(date.Year))
+                            if ( DateTime.IsLeapYear( date.Year ) )
+                            {
                                 isYearTypeOk = true;
+                            }
+
                             break;
                         case NonLeap:
-                            if (!DateTime.IsLeapYear(date.Year))
+                            if ( !DateTime.IsLeapYear( date.Year ) )
+                            {
                                 isYearTypeOk = true;
+                            }
+
                             break;
                         default:
                             isYearTypeOk = false;
@@ -155,27 +180,31 @@ namespace ID3iHoliday.Syntax.Parsers
                     isYearTypeOk = true;
                 }
 
-                bool isYearRecursOk = false;
-                if (match.Groups["RepeatYear"].Value.IsNotNullOrEmpty() && match.Groups["RepeatStartYear"].Value.IsNotNullOrEmpty())
+                var isYearRecursOk = false;
+                if ( match.Groups[ "RepeatYear" ].Value.IsNotNullOrEmpty() && match.Groups[ "RepeatStartYear" ].Value.IsNotNullOrEmpty() )
                 {
-                    var numberYear = Int32.Parse(match.Groups["RepeatYear"].Value);
-                    var startYear = Int32.Parse(match.Groups["RepeatStartYear"].Value);
-                    if (date.Year >= startYear && ((date.Year - startYear) % numberYear) == 0)
+                    var numberYear = int.Parse( match.Groups[ "RepeatYear" ].Value );
+                    var startYear = int.Parse( match.Groups[ "RepeatStartYear" ].Value );
+                    if ( date.Year >= startYear && ( ( date.Year - startYear ) % numberYear ) == 0 )
+                    {
                         isYearRecursOk = true;
+                    }
                 }
                 else
                 {
                     isYearRecursOk = true;
                 }
 
-                if (isYearTypeOk && isYearRecursOk)
+                if ( isYearTypeOk && isYearRecursOk )
                 {
-                    result.DatesToAdd.Add(date);
-                    if (match.Groups["DurationDays"].Value.IsNotNullOrEmpty())
+                    result.DatesToAdd.Add( date );
+                    if ( match.Groups[ "DurationDays" ].Value.IsNotNullOrEmpty() )
                     {
-                        int number = Int32.Parse(match.Groups["DurationDays"].Value);
-                        for (int i = 1; i < number; i++)
-                            result.DatesToAdd.Add(i.Days().After(date.Midnight()));
+                        var number = int.Parse( match.Groups[ "DurationDays" ].Value );
+                        for ( var i = 1; i < number; i++ )
+                        {
+                            result.DatesToAdd.Add( i.Days().After( date.Midnight() ) );
+                        }
                     }
                 }
             }

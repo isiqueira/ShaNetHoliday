@@ -24,7 +24,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <returns>L'expression.</returns>
         public ExpressionElement Gregorian()
         {
-            Calendar = nameof(Gregorian);
+            Calendar = nameof( Gregorian );
             return this;
         }
 
@@ -34,7 +34,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <returns>L'expression.</returns>
         public ExpressionElement Julian()
         {
-            Calendar = nameof(Julian);
+            Calendar = nameof( Julian );
             return this;
         }
 
@@ -44,7 +44,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <returns>L'expression.</returns>
         public ExpressionElement Hijri()
         {
-            Calendar = nameof(Hijri);
+            Calendar = nameof( Hijri );
             return this;
         }
 
@@ -54,7 +54,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <returns>L'expression.</returns>
         public ExpressionElement Hebrew()
         {
-            Calendar = nameof(Hebrew);
+            Calendar = nameof( Hebrew );
             return this;
         }
 
@@ -62,6 +62,6 @@ namespace ID3iHoliday.Syntax.Composition
         /// Initialise une nouvelle instance pour la classe <see cref="Over"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
-        public Over(ExpressionElement parent) : base(parent) { }
+        public Over( ExpressionElement parent ) : base( parent ) { }
     }
 }

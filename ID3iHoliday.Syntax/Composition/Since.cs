@@ -23,13 +23,13 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="year">Année de départ.</param>
-        public Since(ExpressionElement parent, int year) : base(parent) => Year = year;
+        public Since( ExpressionElement parent, int year ) : base( parent ) => Year = year;
 
         /// <summary>
         /// Elément de syntax pour gérer la fin d'application de l'expression.
         /// </summary>
         /// <param name="year">Année de fin.</param>
         /// <returns>L'élément de syntax <see cref="Composition.To"/> pour ajouter d'autres comportements.</returns>
-        public To To(int year) => new To(this, year);
+        public To To( int year ) => new To( this, year );
     }
 }

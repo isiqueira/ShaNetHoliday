@@ -23,9 +23,6 @@ namespace ID3iHoliday.Engine.Modularity
         /// <summary>
         /// Initialise le module.
         /// </summary>
-        public void Initialize()
-        {
-            Container.RegisterInstance<IHolidaySystem>(Container.Resolve<HolidaySystem>(), new ContainerControlledLifetimeManager());
-        }
+        public void Initialize() => Container.RegisterInstance<IHolidaySystem>( Container.Resolve<HolidaySystem>(), new ContainerControlledLifetimeManager() );
     }
 }

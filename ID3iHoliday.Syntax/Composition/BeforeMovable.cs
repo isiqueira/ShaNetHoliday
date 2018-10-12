@@ -30,6 +30,6 @@ namespace ID3iHoliday.Syntax.Composition
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="count">Adjectif numéral pour la position du jour.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public BeforeMovable(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent, count, dayOfWeek) { }
+        public BeforeMovable( ExpressionElement parent, Count count, DayOfWeek dayOfWeek ) : base( parent, count, dayOfWeek ) { }
     }
 }

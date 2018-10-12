@@ -23,11 +23,11 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="number">Nombre de périodes.</param>
-        public Every(ExpressionElement parent, int number) : base(parent) => Number = number;
+        public Every( ExpressionElement parent, int number ) : base( parent ) => Number = number;
 
         /// <summary>
         /// Elément de syntax pour le récurrence par nombre d'années.
         /// </summary>
-        public Year Year => new Year(this);
+        public Year Year => new Year( this );
     }
 }

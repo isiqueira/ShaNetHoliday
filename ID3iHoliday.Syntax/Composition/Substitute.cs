@@ -27,13 +27,13 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Initialise une nouvelle instance de la classe <see cref="Substitute"/>.
         /// </summary>
-        public Substitute() : base(null) { }
+        public Substitute() : base( null ) { }
 
         /// <summary>
         /// Elément de syntax pour mettre en place une date fixe dans n'importe qu'elle année.
         /// </summary>
         /// <param name="dateTime">Date.</param>
         /// <returns>L'élément de syntax <see cref="SimpleDay"/> pour ajouter d'autres comportements.</returns>
-        public SimpleDay Fix(DateTime dateTime) => new SimpleDay(this, dateTime);
+        public SimpleDay Fix( DateTime dateTime ) => new SimpleDay( this, dateTime );
     }
 }

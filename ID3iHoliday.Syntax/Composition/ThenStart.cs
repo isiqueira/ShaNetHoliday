@@ -23,20 +23,20 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="value">Heure de début.</param>
-        public ThenStart(ExpressionElement parent, string value) : base(parent) => Value = value;
+        public ThenStart( ExpressionElement parent, string value ) : base( parent ) => Value = value;
 
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de période.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Every"/> pour ajouter d'autres comportements.</returns>
-        public Every Every(int number) => new Every(this, number);
+        public Every Every( int number ) => new Every( this, number );
 
         /// <summary>
         /// Elément de syntax pour gérer le type d'année pris en charge.
         /// </summary>
         /// <param name="year">Type de l'année.</param>
         /// <returns>L'élément de syntax <see cref="InYear"/> pour ajouter d'autres comportements.</returns>
-        public InYear In(YearType year) => new InYear(this, year);
+        public InYear In( YearType year ) => new InYear( this, year );
     }
 }

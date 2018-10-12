@@ -7,18 +7,18 @@ using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
 {
-    [RoutePrefix("Api/LongWeekEnds")]
+    [RoutePrefix( "Api/LongWeekEnds" )]
     public class LongWeekEndController : ApiController
     {
         [HttpGet]
-        [Route("{year:int}")]
-        public IHttpActionResult Get(int year, string ccode, string scode = null, string rcode = null)
+        [Route( "{year:int}" )]
+        public IHttpActionResult Get( int year, string ccode, string scode = null, string rcode = null )
         {
             try
             {
-                return Ok(HolidaySystem.Instance.LongWeekEnds(year, ccode, scode, rcode).Transform());
+                return Ok( HolidaySystem.Instance.LongWeekEnds( year, ccode, scode, rcode ).Transform() );
             }
-            catch (Exception)
+            catch ( Exception )
             {
                 return InternalServerError();
             }

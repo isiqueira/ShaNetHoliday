@@ -18,16 +18,16 @@ namespace ID3iHoliday.Syntax.Parsers
         public Pattern Pattern =>
             Pattern.With
                 .StartOfLine
-                .Literal("SUBSTITUTE").Whitespace
-                .Include(Parser.PatternMonths)
-                .NamedGroup("Or",
-                    Pattern.With.Whitespace.Literal("IF").Whitespace
-                    .NamedGroup("Expected", Parser.PatternDay)
-                    .Whitespace.Literal("THEN").Whitespace
-                    .NamedGroup("Action", Parser.PatternActionNextPrevious)
+                .Literal( "SUBSTITUTE" ).Whitespace
+                .Include( Parser.PatternMonths )
+                .NamedGroup( "Or",
+                    Pattern.With.Whitespace.Literal( "IF" ).Whitespace
+                    .NamedGroup( "Expected", Parser.PatternDay )
+                    .Whitespace.Literal( "THEN" ).Whitespace
+                    .NamedGroup( "Action", Parser.PatternActionNextPrevious )
                     .Whitespace
-                    .NamedGroup("NewValue", Parser.PatternDay)).Repeat.OneOrMore
-                .Include(Parser.PatternYearRecurs)
+                    .NamedGroup( "NewValue", Parser.PatternDay ) ).Repeat.OneOrMore
+                .Include( Parser.PatternYearRecurs )
                 .EndOfLine;
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace ID3iHoliday.Syntax.Parsers
         /// <returns>
         /// <see langword="true"/> si l'expression match le pattern, <see langword="false"/> sinon.
         /// </returns>
-        public override bool IsMatch(string expression) => new Regex(Pattern.ToString()).IsMatch(expression);
+        public override bool IsMatch( string expression ) => new Regex( Pattern.ToString() ).IsMatch( expression );
 
         /// <summary>
         /// Méthode de parsing d'une expression.
@@ -45,52 +45,61 @@ namespace ID3iHoliday.Syntax.Parsers
         /// <param name="expression">Expression à parser.</param>
         /// <param name="year">Année.</param>
         /// <returns>Un <see cref="ParserResult"/> correspondant.</returns>
-        public override ParserResult Parse(string expression, int year)
+        public override ParserResult Parse( string expression, int year )
         {
-            ParserResult result = new ParserResult();
-            var regex = new Regex(Pattern.ToString());
-            var match = regex.Match(expression);
-            if (match.Success)
+            var result = new ParserResult();
+            var regex = new Regex( Pattern.ToString() );
+            var match = regex.Match( expression );
+            if ( match.Success )
             {
-                var substituteDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
-                var newDate = new DateTime(year, Int32.Parse(match.Groups["month"].Value), Int32.Parse(match.Groups["day"].Value));
-                for (int i = 0; i < match.Groups["Or"].Captures.Count; i++)
+                var substituteDate = new DateTime( year, int.Parse( match.Groups[ "month" ].Value ), int.Parse( match.Groups[ "day" ].Value ) );
+                var newDate = new DateTime( year, int.Parse( match.Groups[ "month" ].Value ), int.Parse( match.Groups[ "day" ].Value ) );
+                for ( var i = 0; i < match.Groups[ "Or" ].Captures.Count; i++ )
                 {
-                    if (substituteDate.DayOfWeek.ToString().ToUpper() == match.Groups["Expected"].Captures[i].Value)
+                    if ( substituteDate.DayOfWeek.ToString().ToUpper() == match.Groups[ "Expected" ].Captures[ i ].Value )
                     {
-                        if (match.Groups["Action"].Value == "NEXT")
-                            newDate = substituteDate.Next((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true));
-                        else if (match.Groups["Action"].Value == "PREVIOUS")
-                            newDate = substituteDate.Previous((DayOfWeek)Enum.Parse(typeof(DayOfWeek), match.Groups["NewValue"].Captures[i].Value, true));
+                        if ( match.Groups[ "Action" ].Value == "NEXT" )
+                        {
+                            newDate = substituteDate.Next( (DayOfWeek)Enum.Parse( typeof( DayOfWeek ), match.Groups[ "NewValue" ].Captures[ i ].Value, true ) );
+                        }
+                        else if ( match.Groups[ "Action" ].Value == "PREVIOUS" )
+                        {
+                            newDate = substituteDate.Previous( (DayOfWeek)Enum.Parse( typeof( DayOfWeek ), match.Groups[ "NewValue" ].Captures[ i ].Value, true ) );
+                        }
                     }
                 }
 
-                if (match.Groups["RepeatEndYear"].Value.IsNotNullOrEmpty())
+                if ( match.Groups[ "RepeatEndYear" ].Value.IsNotNullOrEmpty() )
                 {
-                    if (newDate.Year > Int32.Parse(match.Groups["RepeatEndYear"].Value))
+                    if ( newDate.Year > int.Parse( match.Groups[ "RepeatEndYear" ].Value ) )
                     {
                         return result;
                     }
                 }
 
-                bool isYearRecursOk = false;
-                if (match.Groups["RepeatYear"].Value.IsNotNullOrEmpty() && match.Groups["RepeatStartYear"].Value.IsNotNullOrEmpty())
+                var isYearRecursOk = false;
+                if ( match.Groups[ "RepeatYear" ].Value.IsNotNullOrEmpty() && match.Groups[ "RepeatStartYear" ].Value.IsNotNullOrEmpty() )
                 {
-                    var numberYear = Int32.Parse(match.Groups["RepeatYear"].Value);
-                    var startYear = Int32.Parse(match.Groups["RepeatStartYear"].Value);
-                    if (newDate.Year >= startYear && ((newDate.Year - startYear) % numberYear) == 0)
+                    var numberYear = int.Parse( match.Groups[ "RepeatYear" ].Value );
+                    var startYear = int.Parse( match.Groups[ "RepeatStartYear" ].Value );
+                    if ( newDate.Year >= startYear && ( ( newDate.Year - startYear ) % numberYear ) == 0 )
+                    {
                         isYearRecursOk = true;
+                    }
                 }
                 else
                 {
                     isYearRecursOk = true;
                 }
 
-                if (isYearRecursOk)
+                if ( isYearRecursOk )
                 {
-                    if(substituteDate != newDate)
+                    if ( substituteDate != newDate )
+                    {
                         result.DateToRemove = substituteDate;
-                    result.DatesToAdd.Add(newDate);
+                    }
+
+                    result.DatesToAdd.Add( newDate );
                 }
             }
             return result;

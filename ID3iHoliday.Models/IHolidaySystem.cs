@@ -24,7 +24,7 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All);
+        IEnumerable<SpecificDay> All( int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
@@ -35,7 +35,7 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All);
+        IEnumerable<SpecificDay> All( int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
@@ -47,7 +47,7 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All);
+        IEnumerable<SpecificDay> All( int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
@@ -57,7 +57,7 @@ namespace ID3iHoliday.Models
         /// <param name="countryCode">Pays.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, RuleType type = RuleType.All);
+        IEnumerable<SpecificDay> Between( DateTime startDate, DateTime endDate, string countryCode, RuleType type = RuleType.All );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
@@ -68,7 +68,7 @@ namespace ID3iHoliday.Models
         /// <param name="stateCode">Etat.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, string stateCode, RuleType type = RuleType.All);
+        IEnumerable<SpecificDay> Between( DateTime startDate, DateTime endDate, string countryCode, string stateCode, RuleType type = RuleType.All );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
@@ -80,7 +80,7 @@ namespace ID3iHoliday.Models
         /// <param name="regionCode">Région.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Une liste des jours.</returns>
-        IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All);
+        IEnumerable<SpecificDay> Between( DateTime startDate, DateTime endDate, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All );
 
         /// <summary>
         /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
@@ -89,7 +89,7 @@ namespace ID3iHoliday.Models
         /// <param name="countryCode">Pays.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
-        SpecificDay Single(DateTime date, string countryCode, RuleType type = RuleType.Public);
+        SpecificDay Single( DateTime date, string countryCode, RuleType type = RuleType.Public );
 
         /// <summary>
         /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
@@ -99,7 +99,7 @@ namespace ID3iHoliday.Models
         /// <param name="stateCode">Etat.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
-        SpecificDay Single(DateTime date, string countryCode, string stateCode, RuleType type = RuleType.Public);
+        SpecificDay Single( DateTime date, string countryCode, string stateCode, RuleType type = RuleType.Public );
 
         /// <summary>
         /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
@@ -110,7 +110,7 @@ namespace ID3iHoliday.Models
         /// <param name="regionCode">Région.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
-        SpecificDay Single(DateTime date, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.Public);
+        SpecificDay Single( DateTime date, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.Public );
 
         /// <summary>
         /// Méthode qui permet de trouver tous les longs week-ends pour une année.
@@ -118,7 +118,7 @@ namespace ID3iHoliday.Models
         /// <param name="year">Année souhaitée.</param>
         /// <param name="countryCode">Pays.</param>
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
-        IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode);
+        IEnumerable<LongWeekEnd> LongWeekEnds( int year, string countryCode );
 
         /// <summary>
         /// Méthode qui permet de trouver tous les longs week-ends pour une année.
@@ -127,7 +127,7 @@ namespace ID3iHoliday.Models
         /// <param name="countryCode">Pays.</param>
         /// <param name="stateCode">Etat.</param>
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
-        IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode, string stateCode);
+        IEnumerable<LongWeekEnd> LongWeekEnds( int year, string countryCode, string stateCode );
 
         /// <summary>
         /// Méthode qui permet de trouver tous les longs week-ends pour une année.
@@ -137,6 +137,6 @@ namespace ID3iHoliday.Models
         /// <param name="stateCode">Etat.</param>
         /// <param name="regionCode">Région.</param>
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
-        IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode, string stateCode, string regionCode);
+        IEnumerable<LongWeekEnd> LongWeekEnds( int year, string countryCode, string stateCode, string regionCode );
     }
 }

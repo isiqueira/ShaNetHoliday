@@ -23,11 +23,11 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public IfDay(ExpressionElement parent, DayOfWeek dayOfWeek) : base(parent) => DayOfWeek = dayOfWeek;
+        public IfDay( ExpressionElement parent, DayOfWeek dayOfWeek ) : base( parent ) => DayOfWeek = dayOfWeek;
 
         /// <summary>
         /// Elément de syntax <see cref="ThenAction"/> pour choisir l'action à réaliser.
         /// </summary>
-        public ThenAction Then => new ThenAction(this);
+        public ThenAction Then => new ThenAction( this );
     }
 }

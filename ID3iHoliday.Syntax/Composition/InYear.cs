@@ -23,13 +23,13 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="year">Type de l'année.</param>
-        public InYear(ExpressionElement parent, YearType year) : base(parent) => Year = year;
+        public InYear( ExpressionElement parent, YearType year ) : base( parent ) => Year = year;
 
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de périodes.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Every"/> pour ajouter d'autres comportements.</returns>
-        public Every Every(int number) => new Every(this, number);
+        public Every Every( int number ) => new Every( this, number );
     }
 }

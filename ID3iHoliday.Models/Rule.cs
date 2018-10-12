@@ -111,12 +111,14 @@ namespace ID3iHoliday.Models
         /// </summary>
         /// <param name="year">Année.</param>
         /// <param name="specificDays">Liste des jours déjà trouvés.</param>
-        public void Parse(int year, List<SpecificDay> specificDays)
+        public void Parse( int year, List<SpecificDay> specificDays )
         {
-            var result = Expression.Parse(year);
-            result.DatesToAdd.ForEach(x => specificDays.Add(new SpecificDay(Type, x, Names)));
-            if (result.DateToRemove != null)
-                specificDays.RemoveAll(x => x.Date == result.DateToRemove);
+            var result = Expression.Parse( year );
+            result.DatesToAdd.ForEach( x => specificDays.Add( new SpecificDay( Type, x, Names ) ) );
+            if ( result.DateToRemove != null )
+            {
+                specificDays.RemoveAll( x => x.Date == result.DateToRemove );
+            }
         }
 
         /// <summary>

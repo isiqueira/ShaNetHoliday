@@ -17,7 +17,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Token de l'élément.
         /// </summary>
-        protected override string Token => DateTime.ToString("yyyy-MM-dd");
+        protected override string Token => DateTime.ToString( "yyyy-MM-dd" );
 
         /// <summary>
         /// <see cref="ParserDate"/> associé à l'élément.
@@ -30,13 +30,13 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dateTime">Date.</param>
-        public SpecificDay(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
+        public SpecificDay( ExpressionElement parent, DateTime dateTime ) : base( parent ) => DateTime = dateTime;
 
         /// <summary>
         /// Elément de syntax pour indiquer l'heure de début.
         /// </summary>
         /// <param name="value">L'heure de début au format HH:mm</param>
         /// <returns>L'élément de syntax <see cref="Start"/> pour ajouter d'autres comportements.</returns>
-        public Start StartAt(string value) => new Start(this, value);
+        public Start StartAt( string value ) => new Start( this, value );
     }
 }

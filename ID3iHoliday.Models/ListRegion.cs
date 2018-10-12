@@ -20,22 +20,20 @@ namespace ID3iHoliday.Models
         /// Se produit à l'ajout d'une région.
         /// </summary>
         /// <param name="item">Région ajoutée.</param>
-        protected override void OnAddedItem(Region item)
+        protected override void OnAddedItem( Region item )
         {
             item.Langues = Langues;
-            base.OnAddedItem(item);
+            base.OnAddedItem( item );
         }
 
         /// <summary>
         /// Initialisation de la liste.
         /// </summary>
         public void Init()
-        {
-            ForEach(x =>
-            {
-                x.Parent = Parent;
-                x.Rules.Langues = Langues;
-            });
-        }
+            => ForEach( x =>
+                     {
+                         x.Parent = Parent;
+                         x.Rules.Langues = Langues;
+                     } );
     }
 }

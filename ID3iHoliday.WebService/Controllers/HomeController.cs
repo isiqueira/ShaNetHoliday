@@ -7,13 +7,10 @@ using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
 {
-    [RoutePrefix("")]
+    [RoutePrefix( "" )]
     public class HomeController : ApiController
     {
-        [HttpGet, Route("")]
-        public IHttpActionResult Index()
-        {
-            return Ok();
-        }
+        [HttpGet, Route( "" )]
+        public IHttpActionResult Index() => Ok();
     }
 }

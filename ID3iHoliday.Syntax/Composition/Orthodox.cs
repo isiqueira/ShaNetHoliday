@@ -21,6 +21,6 @@ namespace ID3iHoliday.Syntax.Composition
         /// Initilialise une nouvelle instance de la classe <see cref="Orthodox"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
-        public Orthodox(ExpressionElement parent) : base(parent) { }
+        public Orthodox( ExpressionElement parent ) : base( parent ) { }
     }
 }

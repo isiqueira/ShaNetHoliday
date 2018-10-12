@@ -27,8 +27,8 @@ namespace ID3iHoliday.Engine
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
-            => All(year, countryCode, null, null, type, calendar);
+        public IEnumerable<SpecificDay> All( int year, string countryCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All )
+            => All( year, countryCode, null, null, type, calendar );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
@@ -39,8 +39,8 @@ namespace ID3iHoliday.Engine
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
-            => All(year, countryCode, stateCode, null, type, calendar);
+        public IEnumerable<SpecificDay> All( int year, string countryCode, string stateCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All )
+            => All( year, countryCode, stateCode, null, type, calendar );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées pour une année en particulier.
@@ -52,15 +52,12 @@ namespace ID3iHoliday.Engine
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> All(int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All)
-        {
-            if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode)?.Get(year, stateCode, regionCode, type, calendar);
-            else if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty())
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode)?.Get(year, stateCode, type, calendar);
-            else
-                return CountriesAvailable.FirstOrDefault(x => x.Code == countryCode)?.Get(year, type, calendar);
-        }
+        public IEnumerable<SpecificDay> All( int year, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All, Calendar calendar = Calendar.All )
+            => countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty()
+                ? CountriesAvailable.FirstOrDefault( x => x.Code == countryCode )?.Get( year, stateCode, regionCode, type, calendar )
+                : countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty()
+                    ? CountriesAvailable.FirstOrDefault( x => x.Code == countryCode )?.Get( year, stateCode, type, calendar )
+                    : CountriesAvailable.FirstOrDefault( x => x.Code == countryCode )?.Get( year, type, calendar );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
@@ -70,8 +67,8 @@ namespace ID3iHoliday.Engine
         /// <param name="countryCode">Pays.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, RuleType type = RuleType.All)
-            => Between(startDate, endDate, countryCode, null, null, type);
+        public IEnumerable<SpecificDay> Between( DateTime startDate, DateTime endDate, string countryCode, RuleType type = RuleType.All )
+            => Between( startDate, endDate, countryCode, null, null, type );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
@@ -82,8 +79,8 @@ namespace ID3iHoliday.Engine
         /// <param name="stateCode">Etat.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, string stateCode, RuleType type = RuleType.All)
-            => Between(startDate, endDate, countryCode, stateCode, null, type);
+        public IEnumerable<SpecificDay> Between( DateTime startDate, DateTime endDate, string countryCode, string stateCode, RuleType type = RuleType.All )
+            => Between( startDate, endDate, countryCode, stateCode, null, type );
 
         /// <summary>
         /// Méthode qui permet d'éxécuter toutes les règles souhaitées entre une date de début et une date de fin.
@@ -95,28 +92,30 @@ namespace ID3iHoliday.Engine
         /// <param name="regionCode">Région.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Une liste des jours.</returns>
-        public IEnumerable<SpecificDay> Between(DateTime startDate, DateTime endDate, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All)
+        public IEnumerable<SpecificDay> Between( DateTime startDate, DateTime endDate, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.All )
         {
-            if (startDate.IsAfter(endDate))
-                throw new ArgumentException("startDate is after endDate.");
+            if ( startDate.IsAfter( endDate ) )
+            {
+                throw new ArgumentException( "startDate is after endDate." );
+            }
+
             return BetweenIterator();
             IEnumerable<SpecificDay> BetweenIterator()
             {
                 var currentYear = startDate.Year;
                 var endYear = endDate.Year;
 
-                while (currentYear <= endYear)
+                while ( currentYear <= endYear )
                 {
-                    IEnumerable<SpecificDay> items = null;
-                    if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty())
-                        items = All(currentYear, countryCode, stateCode, regionCode, type);
-                    else if (countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty())
-                        items = All(currentYear, countryCode, stateCode, type);
-                    else
-                        items = All(currentYear, countryCode, type);
-                    foreach (var item in items)
+                    var items = countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNotNullOrEmpty()
+                        ? All( currentYear, countryCode, stateCode, regionCode, type )
+                        : countryCode.IsNotNullOrEmpty() && stateCode.IsNotNullOrEmpty() && regionCode.IsNullOrEmpty()
+                            ? All( currentYear, countryCode, stateCode, type )
+                            : All( currentYear, countryCode, type );
+
+                    foreach ( var item in items )
                     {
-                        if (item.Date >= startDate && item.Date <= endDate)
+                        if ( item.Date >= startDate && item.Date <= endDate )
                         {
                             yield return item;
                         }
@@ -134,8 +133,8 @@ namespace ID3iHoliday.Engine
         /// <param name="countryCode">Pays.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
-        public SpecificDay Single(DateTime date, string countryCode, RuleType type = RuleType.Public)
-            => Single(date, countryCode, null, null, type);
+        public SpecificDay Single( DateTime date, string countryCode, RuleType type = RuleType.Public )
+            => Single( date, countryCode, null, null, type );
 
         /// <summary>
         /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
@@ -145,8 +144,8 @@ namespace ID3iHoliday.Engine
         /// <param name="stateCode">Etat.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
-        public SpecificDay Single(DateTime date, string countryCode, string stateCode, RuleType type = RuleType.Public)
-            => Single(date, countryCode, stateCode, null, type);
+        public SpecificDay Single( DateTime date, string countryCode, string stateCode, RuleType type = RuleType.Public )
+            => Single( date, countryCode, stateCode, null, type );
 
         /// <summary>
         /// Méthode qui permet pour une date donnée de vérifier si un jour particulier est trouvé à l'éxécution des règles. 
@@ -157,10 +156,10 @@ namespace ID3iHoliday.Engine
         /// <param name="regionCode">Région.</param>
         /// <param name="type">Type de règle.</param>
         /// <returns>Le jour particulier à la date donnée si il est trouvé, sinon <see langword="null"/>.</returns>
-        public SpecificDay Single(DateTime date, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.Public)
+        public SpecificDay Single( DateTime date, string countryCode, string stateCode, string regionCode, RuleType type = RuleType.Public )
         {
-            var items = All(date.Year, countryCode, stateCode, regionCode, type);
-            return items?.Where(x => x.Type == type)?.FirstOrDefault(x => x.Date.Date == date.Date);
+            var items = All( date.Year, countryCode, stateCode, regionCode, type );
+            return items?.Where( x => x.Type == type )?.FirstOrDefault( x => x.Date.Date == date.Date );
         }
 
         /// <summary>
@@ -169,8 +168,8 @@ namespace ID3iHoliday.Engine
         /// <param name="year">Année souhaitée.</param>
         /// <param name="countryCode">Pays.</param>
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
-        public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode)
-            => LongWeekEnds(year, countryCode, null, null);
+        public IEnumerable<LongWeekEnd> LongWeekEnds( int year, string countryCode )
+            => LongWeekEnds( year, countryCode, null, null );
 
         /// <summary>
         /// Méthode qui permet de trouver tous les longs week-ends pour une année.
@@ -179,8 +178,8 @@ namespace ID3iHoliday.Engine
         /// <param name="countryCode">Pays.</param>
         /// <param name="stateCode">Etat.</param>
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
-        public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode, string stateCode)
-            => LongWeekEnds(year, countryCode, stateCode, null);
+        public IEnumerable<LongWeekEnd> LongWeekEnds( int year, string countryCode, string stateCode )
+            => LongWeekEnds( year, countryCode, stateCode, null );
 
         /// <summary>
         /// Méthode qui permet de trouver tous les longs week-ends pour une année.
@@ -190,18 +189,18 @@ namespace ID3iHoliday.Engine
         /// <param name="stateCode">Etat.</param>
         /// <param name="regionCode">Région.</param>
         /// <returns>La liste des longs week-ends, un long week-end est un période d'au moins 3 jours, avec potentiellement un jour ouvrés entre 2 jours non ouvrés.</returns>
-        public IEnumerable<LongWeekEnd> LongWeekEnds(int year, string countryCode, string stateCode, string regionCode)
+        public IEnumerable<LongWeekEnd> LongWeekEnds( int year, string countryCode, string stateCode, string regionCode )
         {
-            var specificDays = All(year, countryCode, stateCode, regionCode, RuleType.Public);
-            List<LongWeekEnd> lst = new List<LongWeekEnd>();
-            foreach (var item in specificDays)
+            var specificDays = All( year, countryCode, stateCode, regionCode, RuleType.Public );
+            var lst = new List<LongWeekEnd>();
+            foreach ( var item in specificDays )
             {
-                var longWeekEnd = DoSomeThing(specificDays, item, null, SearchType.All);
-                if (longWeekEnd != null)
+                var longWeekEnd = DoSomeThing( specificDays, item, null, SearchType.All );
+                if ( longWeekEnd != null )
                 {
-                    if (!lst.Any(x => x.StartDate <= longWeekEnd.StartDate && x.EndDate >= longWeekEnd.EndDate))
+                    if ( !lst.Any( x => x.StartDate <= longWeekEnd.StartDate && x.EndDate >= longWeekEnd.EndDate ) )
                     {
-                        lst.Add(longWeekEnd);
+                        lst.Add( longWeekEnd );
                     }
                 }
             }
@@ -210,152 +209,213 @@ namespace ID3iHoliday.Engine
 
         internal enum SearchType { All, StartDate, EndDate }
 
-        private LongWeekEnd DoSomeThing(IEnumerable<SpecificDay> specificDays, SpecificDay specificDay, LongWeekEnd longWeekEnd, SearchType searchType = SearchType.All)
+        private LongWeekEnd DoSomeThing( IEnumerable<SpecificDay> specificDays, SpecificDay specificDay, LongWeekEnd longWeekEnd, SearchType searchType = SearchType.All )
         {
-            switch (specificDay.Date.DayOfWeek)
+            switch ( specificDay.Date.DayOfWeek )
             {
                 case DayOfWeek.Sunday:
                     return longWeekEnd;
                 case DayOfWeek.Monday:
-                    if (longWeekEnd == null)
-                        longWeekEnd = new LongWeekEnd() { StartDate = 2.Days().Before(specificDay.Date), EndDate = specificDay.Date };
-                    if (searchType == SearchType.StartDate || searchType == SearchType.All)
+                    if ( longWeekEnd == null )
                     {
-                        longWeekEnd.StartDate = 2.Days().Before(specificDay.Date);
-
-                        var specFriday = specificDays.FirstOrDefault(x => x.Date == 4.Days().Before(specificDay.Date));
-                        var specThursday = specificDays.FirstOrDefault(x => x.Date == 5.Days().Before(specificDay.Date));
-
-                        if (specFriday != null)
-                            DoSomeThing(specificDays, specFriday, longWeekEnd, SearchType.StartDate);
-                        if (specThursday != null)
-                            DoSomeThing(specificDays, specThursday, longWeekEnd, SearchType.StartDate);
+                        longWeekEnd = new LongWeekEnd() { StartDate = 2.Days().Before( specificDay.Date ), EndDate = specificDay.Date };
                     }
-                    if (searchType == SearchType.EndDate || searchType == SearchType.All)
+
+                    if ( searchType == SearchType.StartDate || searchType == SearchType.All )
+                    {
+                        longWeekEnd.StartDate = 2.Days().Before( specificDay.Date );
+
+                        var specFriday = specificDays.FirstOrDefault( x => x.Date == 4.Days().Before( specificDay.Date ) );
+                        var specThursday = specificDays.FirstOrDefault( x => x.Date == 5.Days().Before( specificDay.Date ) );
+
+                        if ( specFriday != null )
+                        {
+                            DoSomeThing( specificDays, specFriday, longWeekEnd, SearchType.StartDate );
+                        }
+
+                        if ( specThursday != null )
+                        {
+                            DoSomeThing( specificDays, specThursday, longWeekEnd, SearchType.StartDate );
+                        }
+                    }
+                    if ( searchType == SearchType.EndDate || searchType == SearchType.All )
                     {
                         longWeekEnd.EndDate = specificDay.Date;
 
-                        var specTuesday = specificDays.FirstOrDefault(x => x.Date == 1.Days().After(specificDay.Date));
-                        var specWednesday = specificDays.FirstOrDefault(x => x.Date == 2.Days().After(specificDay.Date));
+                        var specTuesday = specificDays.FirstOrDefault( x => x.Date == 1.Days().After( specificDay.Date ) );
+                        var specWednesday = specificDays.FirstOrDefault( x => x.Date == 2.Days().After( specificDay.Date ) );
 
-                        if (specTuesday != null)
-                            DoSomeThing(specificDays, specTuesday, longWeekEnd, SearchType.EndDate);
-                        if (specWednesday != null)
-                            DoSomeThing(specificDays, specWednesday, longWeekEnd, SearchType.EndDate);
+                        if ( specTuesday != null )
+                        {
+                            DoSomeThing( specificDays, specTuesday, longWeekEnd, SearchType.EndDate );
+                        }
+
+                        if ( specWednesday != null )
+                        {
+                            DoSomeThing( specificDays, specWednesday, longWeekEnd, SearchType.EndDate );
+                        }
                     }
                     return longWeekEnd;
                 case DayOfWeek.Tuesday:
-                    if (longWeekEnd == null)
-                        longWeekEnd = new LongWeekEnd() { StartDate = 3.Days().Before(specificDay.Date), EndDate = specificDay.Date };
-                    if (searchType == SearchType.StartDate || searchType == SearchType.All)
+                    if ( longWeekEnd == null )
                     {
-                        longWeekEnd.StartDate = 3.Days().Before(specificDay.Date);
+                        longWeekEnd = new LongWeekEnd() { StartDate = 3.Days().Before( specificDay.Date ), EndDate = specificDay.Date };
+                    }
+
+                    if ( searchType == SearchType.StartDate || searchType == SearchType.All )
+                    {
+                        longWeekEnd.StartDate = 3.Days().Before( specificDay.Date );
                         longWeekEnd.HasBridge = true;
 
-                        var specFriday = specificDays.FirstOrDefault(x => x.Date == 4.Days().Before(specificDay.Date));
-                        var specThursday = specificDays.FirstOrDefault(x => x.Date == 5.Days().Before(specificDay.Date));
+                        var specFriday = specificDays.FirstOrDefault( x => x.Date == 4.Days().Before( specificDay.Date ) );
+                        var specThursday = specificDays.FirstOrDefault( x => x.Date == 5.Days().Before( specificDay.Date ) );
 
-                        if (specFriday != null)
-                            DoSomeThing(specificDays, specFriday, longWeekEnd, SearchType.StartDate);
-                        if (specThursday != null)
-                            DoSomeThing(specificDays, specThursday, longWeekEnd, SearchType.StartDate);
+                        if ( specFriday != null )
+                        {
+                            DoSomeThing( specificDays, specFriday, longWeekEnd, SearchType.StartDate );
+                        }
+
+                        if ( specThursday != null )
+                        {
+                            DoSomeThing( specificDays, specThursday, longWeekEnd, SearchType.StartDate );
+                        }
                     }
-                    if (searchType == SearchType.EndDate || searchType == SearchType.All)
+                    if ( searchType == SearchType.EndDate || searchType == SearchType.All )
                     {
                         longWeekEnd.EndDate = specificDay.Date;
 
-                        var specWednesday = specificDays.FirstOrDefault(x => x.Date == 1.Days().After(specificDay.Date));
-                        var specThursday = specificDays.FirstOrDefault(x => x.Date == 2.Days().After(specificDay.Date));
+                        var specWednesday = specificDays.FirstOrDefault( x => x.Date == 1.Days().After( specificDay.Date ) );
+                        var specThursday = specificDays.FirstOrDefault( x => x.Date == 2.Days().After( specificDay.Date ) );
 
-                        if (specWednesday != null)
-                            DoSomeThing(specificDays, specWednesday, longWeekEnd, SearchType.EndDate);
-                        if (specThursday != null)
-                            DoSomeThing(specificDays, specThursday, longWeekEnd, SearchType.EndDate);
+                        if ( specWednesday != null )
+                        {
+                            DoSomeThing( specificDays, specWednesday, longWeekEnd, SearchType.EndDate );
+                        }
+
+                        if ( specThursday != null )
+                        {
+                            DoSomeThing( specificDays, specThursday, longWeekEnd, SearchType.EndDate );
+                        }
                     }
                     return longWeekEnd;
                 case DayOfWeek.Wednesday:
-                    if (longWeekEnd != null && (searchType == SearchType.StartDate || searchType == SearchType.All))
+                    if ( longWeekEnd != null && ( searchType == SearchType.StartDate || searchType == SearchType.All ) )
                     {
                         longWeekEnd.StartDate = specificDay.Date;
 
-                        var specTuesday = specificDays.FirstOrDefault(x => x.Date == 1.Days().Before(specificDay.Date));
-                        var specMonday = specificDays.FirstOrDefault(x => x.Date == 2.Days().Before(specificDay.Date));
+                        var specTuesday = specificDays.FirstOrDefault( x => x.Date == 1.Days().Before( specificDay.Date ) );
+                        var specMonday = specificDays.FirstOrDefault( x => x.Date == 2.Days().Before( specificDay.Date ) );
 
-                        if (specTuesday != null)
-                            DoSomeThing(specificDays, specTuesday, longWeekEnd, SearchType.StartDate);
-                        if (specMonday != null)
-                            DoSomeThing(specificDays, specMonday, longWeekEnd, SearchType.StartDate);
+                        if ( specTuesday != null )
+                        {
+                            DoSomeThing( specificDays, specTuesday, longWeekEnd, SearchType.StartDate );
+                        }
+
+                        if ( specMonday != null )
+                        {
+                            DoSomeThing( specificDays, specMonday, longWeekEnd, SearchType.StartDate );
+                        }
                     }
-                    if (longWeekEnd != null && (searchType == SearchType.EndDate || searchType == SearchType.All))
+                    if ( longWeekEnd != null && ( searchType == SearchType.EndDate || searchType == SearchType.All ) )
                     {
                         longWeekEnd.EndDate = specificDay.Date;
 
-                        var specThursday = specificDays.FirstOrDefault(x => x.Date == 1.Days().After(specificDay.Date));
-                        var specFriday = specificDays.FirstOrDefault(x => x.Date == 2.Days().After(specificDay.Date));
+                        var specThursday = specificDays.FirstOrDefault( x => x.Date == 1.Days().After( specificDay.Date ) );
+                        var specFriday = specificDays.FirstOrDefault( x => x.Date == 2.Days().After( specificDay.Date ) );
 
-                        if (specThursday != null)
-                            DoSomeThing(specificDays, specThursday, longWeekEnd, SearchType.EndDate);
-                        if (specFriday != null)
-                            DoSomeThing(specificDays, specFriday, longWeekEnd, SearchType.EndDate);
+                        if ( specThursday != null )
+                        {
+                            DoSomeThing( specificDays, specThursday, longWeekEnd, SearchType.EndDate );
+                        }
+
+                        if ( specFriday != null )
+                        {
+                            DoSomeThing( specificDays, specFriday, longWeekEnd, SearchType.EndDate );
+                        }
                     }
                     return longWeekEnd;
                 case DayOfWeek.Thursday:
                     {
-                        if (longWeekEnd == null)
-                            longWeekEnd = new LongWeekEnd() { StartDate = specificDay.Date, EndDate = 3.Days().After(specificDay.Date) };
+                        if ( longWeekEnd == null )
+                        {
+                            longWeekEnd = new LongWeekEnd() { StartDate = specificDay.Date, EndDate = 3.Days().After( specificDay.Date ) };
+                        }
 
-                        if (searchType == SearchType.StartDate || searchType == SearchType.All)
+                        if ( searchType == SearchType.StartDate || searchType == SearchType.All )
                         {
                             longWeekEnd.StartDate = specificDay.Date;
                             longWeekEnd.HasBridge = true;
 
-                            var specWednesday = specificDays.FirstOrDefault(x => x.Date == 1.Days().Before(specificDay.Date));
-                            var specTuesday = specificDays.FirstOrDefault(x => x.Date == 2.Days().Before(specificDay.Date));
+                            var specWednesday = specificDays.FirstOrDefault( x => x.Date == 1.Days().Before( specificDay.Date ) );
+                            var specTuesday = specificDays.FirstOrDefault( x => x.Date == 2.Days().Before( specificDay.Date ) );
 
-                            if (specWednesday != null)
-                                DoSomeThing(specificDays, specWednesday, longWeekEnd, SearchType.StartDate);
-                            if (specTuesday != null)
-                                DoSomeThing(specificDays, specTuesday, longWeekEnd, SearchType.StartDate);
+                            if ( specWednesday != null )
+                            {
+                                DoSomeThing( specificDays, specWednesday, longWeekEnd, SearchType.StartDate );
+                            }
+
+                            if ( specTuesday != null )
+                            {
+                                DoSomeThing( specificDays, specTuesday, longWeekEnd, SearchType.StartDate );
+                            }
                         }
-                        if (searchType == SearchType.EndDate || searchType == SearchType.All)
+                        if ( searchType == SearchType.EndDate || searchType == SearchType.All )
                         {
-                            longWeekEnd.EndDate = 3.Days().After(specificDay.Date);
+                            longWeekEnd.EndDate = 3.Days().After( specificDay.Date );
 
-                            var specMonday = specificDays.FirstOrDefault(x => x.Date == 4.Days().After(specificDay.Date));
-                            var specTuesday = specificDays.FirstOrDefault(x => x.Date == 5.Days().After(specificDay.Date));
+                            var specMonday = specificDays.FirstOrDefault( x => x.Date == 4.Days().After( specificDay.Date ) );
+                            var specTuesday = specificDays.FirstOrDefault( x => x.Date == 5.Days().After( specificDay.Date ) );
 
-                            if (specMonday != null)
-                                DoSomeThing(specificDays, specMonday, longWeekEnd, SearchType.EndDate);
-                            if (specTuesday != null)
-                                DoSomeThing(specificDays, specTuesday, longWeekEnd, SearchType.EndDate);
+                            if ( specMonday != null )
+                            {
+                                DoSomeThing( specificDays, specMonday, longWeekEnd, SearchType.EndDate );
+                            }
+
+                            if ( specTuesday != null )
+                            {
+                                DoSomeThing( specificDays, specTuesday, longWeekEnd, SearchType.EndDate );
+                            }
                         }
                         return longWeekEnd;
                     }
                 case DayOfWeek.Friday:
                     {
-                        if (longWeekEnd == null)
-                            longWeekEnd = new LongWeekEnd() { StartDate = specificDay.Date, EndDate = 2.Days().After(specificDay.Date) };
-                        if (searchType == SearchType.StartDate || searchType == SearchType.All)
+                        if ( longWeekEnd == null )
+                        {
+                            longWeekEnd = new LongWeekEnd() { StartDate = specificDay.Date, EndDate = 2.Days().After( specificDay.Date ) };
+                        }
+
+                        if ( searchType == SearchType.StartDate || searchType == SearchType.All )
                         {
                             longWeekEnd.StartDate = specificDay.Date;
 
-                            var specThursday = specificDays.FirstOrDefault(x => x.Date == 1.Days().Before(specificDay.Date));
-                            var specWednesday = specificDays.FirstOrDefault(x => x.Date == 2.Days().Before(specificDay.Date));
+                            var specThursday = specificDays.FirstOrDefault( x => x.Date == 1.Days().Before( specificDay.Date ) );
+                            var specWednesday = specificDays.FirstOrDefault( x => x.Date == 2.Days().Before( specificDay.Date ) );
 
-                            if (specThursday != null)
-                                DoSomeThing(specificDays, specThursday, longWeekEnd);
-                            if (specWednesday != null)
-                                DoSomeThing(specificDays, specWednesday, longWeekEnd);
+                            if ( specThursday != null )
+                            {
+                                DoSomeThing( specificDays, specThursday, longWeekEnd );
+                            }
+
+                            if ( specWednesday != null )
+                            {
+                                DoSomeThing( specificDays, specWednesday, longWeekEnd );
+                            }
                         }
-                        if (searchType == SearchType.EndDate || searchType == SearchType.All)
+                        if ( searchType == SearchType.EndDate || searchType == SearchType.All )
                         {
-                            var specMonday = specificDays.FirstOrDefault(x => x.Date == 3.Days().After(specificDay.Date));
-                            var specTuesday = specificDays.FirstOrDefault(x => x.Date == 4.Days().After(specificDay.Date));
+                            var specMonday = specificDays.FirstOrDefault( x => x.Date == 3.Days().After( specificDay.Date ) );
+                            var specTuesday = specificDays.FirstOrDefault( x => x.Date == 4.Days().After( specificDay.Date ) );
 
-                            if (specMonday != null)
-                                DoSomeThing(specificDays, specMonday, longWeekEnd);
-                            if (specTuesday != null)
-                                DoSomeThing(specificDays, specTuesday, longWeekEnd);
+                            if ( specMonday != null )
+                            {
+                                DoSomeThing( specificDays, specMonday, longWeekEnd );
+                            }
+
+                            if ( specTuesday != null )
+                            {
+                                DoSomeThing( specificDays, specTuesday, longWeekEnd );
+                            }
                         }
                         return longWeekEnd;
                     }

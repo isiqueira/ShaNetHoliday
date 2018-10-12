@@ -9,9 +9,6 @@ namespace ID3iHoliday.WebService.Controllers
     public class ErrorController : ApiController
     {
         [HttpGet]
-        public IHttpActionResult Handle400()
-        {
-            return BadRequest("The requested url is not found");
-        }
+        public IHttpActionResult Handle400() => BadRequest( "The requested url is not found" );
     }
 }

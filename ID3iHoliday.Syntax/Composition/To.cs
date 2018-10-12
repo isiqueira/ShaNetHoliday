@@ -23,6 +23,6 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="year">Année de fin.</param>
-        public To(ExpressionElement parent, int year) : base(parent) => Year = year;
+        public To( ExpressionElement parent, int year ) : base( parent ) => Year = year;
     }
 }

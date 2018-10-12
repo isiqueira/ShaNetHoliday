@@ -17,6 +17,7 @@
     <Description>Hold the parsers and the differents elements for building holiday syntax.</Description>
     <Version>1.0.13</Version>
     <PackageId>ID3iHoliday.Syntax</PackageId>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -42,8 +42,8 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste de tous les jours particulier.</returns>
-        public IEnumerable<SpecificDay> Get(int year, RuleType type, Calendar calendar)
-            => Get(year, null, null, type, calendar);
+        public IEnumerable<SpecificDay> Get( int year, RuleType type, Calendar calendar )
+            => Get( year, null, null, type, calendar );
 
         /// <summary>
         /// Méthode qui permet de récupérer les jours pour une année en particulier par rapport à un type de règle.
@@ -53,8 +53,8 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste de tous les jours particulier.</returns>
-        public IEnumerable<SpecificDay> Get(int year, string state, RuleType type, Calendar calendar)
-            => Get(year, state, null, type, calendar);
+        public IEnumerable<SpecificDay> Get( int year, string state, RuleType type, Calendar calendar )
+            => Get( year, state, null, type, calendar );
 
         /// <summary>
         /// Méthode qui permet de récupérer les jours pour une année en particulier par rapport à un type de règle.
@@ -65,47 +65,58 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle.</param>
         /// <param name="calendar">Type de calendrier des règles.</param>
         /// <returns>Une liste de tous les jours particulier.</returns>
-        public IEnumerable<SpecificDay> Get(int year, string stateCode, string regionCode, RuleType type, Calendar calendar)
+        public IEnumerable<SpecificDay> Get( int year, string stateCode, string regionCode, RuleType type, Calendar calendar )
         {
-            List<Rule> rules = new List<Rule>(Rules.Select(x => x.Clone() as Rule));
+            var rules = new List<Rule>( Rules.Select( x => x.Clone() as Rule ) );
 
-            void CheckRule(Rule rule)
+            void CheckRule( Rule rule )
             {
-                if (rule.Key.IsNotNullOrEmpty() && !rule.IsEnable)
+                if ( rule.Key.IsNotNullOrEmpty() && !rule.IsEnable )
                 {
-                    rules.RemoveAll(x => x.Key == rule.Key);
+                    rules.RemoveAll( x => x.Key == rule.Key );
                 }
-                else if (rule.Key.IsNotNullOrEmpty() && (rule.Overrides & Overrides.None) == 0)
+                else if ( rule.Key.IsNotNullOrEmpty() && ( rule.Overrides & Overrides.None ) == 0 )
                 {
-                    var baseRule = rules.FirstOrDefault(x => x.Key == rule.Key);
-                    if ((rule.Overrides & Overrides.Expression) != 0)
+                    var baseRule = rules.FirstOrDefault( x => x.Key == rule.Key );
+                    if ( ( rule.Overrides & Overrides.Expression ) != 0 )
+                    {
                         baseRule.Expression = rule.Expression;
-                    if ((rule.Overrides & Overrides.Type) != 0)
+                    }
+
+                    if ( ( rule.Overrides & Overrides.Type ) != 0 )
+                    {
                         baseRule.Type = rule.Type;
-                    if ((rule.Overrides & Overrides.Note) != 0)
+                    }
+
+                    if ( ( rule.Overrides & Overrides.Note ) != 0 )
+                    {
                         baseRule.Note = rule.Note;
-                    if ((rule.Overrides & Overrides.Name) != 0)
+                    }
+
+                    if ( ( rule.Overrides & Overrides.Name ) != 0 )
+                    {
                         baseRule.Names = rule.Names;
+                    }
                 }
                 else
                 {
-                    rules.Add(rule);
+                    rules.Add( rule );
                 }
             }
 
-            States.FirstOrDefault(x => x.Code == stateCode)?.IfNotNull(x =>
-            {
-                x.Rules.ForEach(y => CheckRule(y));
-                x.Regions.FirstOrDefault(y => y.Code == regionCode)?.Rules.ForEach(y => CheckRule(y));
-            });
+            States.FirstOrDefault( x => x.Code == stateCode )?.IfNotNull( x =>
+               {
+                   x.Rules.ForEach( y => CheckRule( y ) );
+                   x.Regions.FirstOrDefault( y => y.Code == regionCode )?.Rules.ForEach( y => CheckRule( y ) );
+               } );
 
-            List<SpecificDay> lst = new List<SpecificDay>();
+            var lst = new List<SpecificDay>();
             rules
-                .ConditionnalWhere(() => type == All, _ => true, x => x.Type == type)
-                .ConditionnalWhere(() => calendar == Calendar.All, _ => true, x => x.Calendar == calendar)
-                .ForEach(x => x.Parse(year, lst));
+                .ConditionnalWhere( () => type == All, _ => true, x => x.Type == type )
+                .ConditionnalWhere( () => calendar == Calendar.All, _ => true, x => x.Calendar == calendar )
+                .ForEach( x => x.Parse( year, lst ) );
 
-            return lst.OrderBy(x => x.Date);
+            return lst.OrderBy( x => x.Date );
         }
     }
 }

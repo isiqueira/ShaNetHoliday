@@ -32,7 +32,7 @@ namespace ID3iHoliday.Models
         /// <param name="type">Type de règle dont est issue ce jour.</param>
         /// <param name="date">Date du jour.</param>
         /// <param name="names">Noms du jour.</param>
-        public SpecificDay(RuleType type, DateTime date, Dictionary<Langue, string> names)
+        public SpecificDay( RuleType type, DateTime date, Dictionary<Langue, string> names )
         {
             Type = type;
             Date = date;

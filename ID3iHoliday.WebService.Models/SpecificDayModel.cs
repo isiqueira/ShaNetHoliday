@@ -11,7 +11,7 @@ namespace ID3iHoliday.WebService.Models
         public DateTime Date { get; set; }
         public Dictionary<string, string> Names { get; set; }
 
-        public SpecificDayModel(DateTime date, Dictionary<string, string> names)
+        public SpecificDayModel( DateTime date, Dictionary<string, string> names )
         {
             Date = date;
             Names = names;

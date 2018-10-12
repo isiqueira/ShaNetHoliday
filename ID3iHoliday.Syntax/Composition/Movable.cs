@@ -34,7 +34,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="count">Adjectif numéral pour la position du jour.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public Movable(ExpressionElement parent, Count count, DayOfWeek dayOfWeek) : base(parent)
+        public Movable( ExpressionElement parent, Count count, DayOfWeek dayOfWeek ) : base( parent )
         {
             Count = count;
             Day = dayOfWeek;
@@ -45,43 +45,43 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="value">Date avant laquelle le jour doit se trouver.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Before"/> pour ajouter d'autres comportements.</returns>
-        public Before Before(string value) => new Before(this, value);
+        public Before Before( string value ) => new Before( this, value );
 
         /// <summary>
         /// Elément de syntax pour indiquer que c'est avant le début du mois.
         /// </summary>
         /// <param name="month">Mois avant lequel le jour doit se trouver.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Before"/> pour ajouter d'autres comportements.</returns>
-        public Before Before(Month month)
+        public Before Before( Month month )
         {
-            switch (month)
+            switch ( month )
             {
                 case January:
-                    return new Before(this, "01-01");
+                    return new Before( this, "01-01" );
                 case February:
-                    return new Before(this, "02-01");
+                    return new Before( this, "02-01" );
                 case March:
-                    return new Before(this, "03-01");
+                    return new Before( this, "03-01" );
                 case April:
-                    return new Before(this, "04-01");
+                    return new Before( this, "04-01" );
                 case May:
-                    return new Before(this, "05-01");
+                    return new Before( this, "05-01" );
                 case June:
-                    return new Before(this, "06-01");
+                    return new Before( this, "06-01" );
                 case July:
-                    return new Before(this, "07-01");
+                    return new Before( this, "07-01" );
                 case August:
-                    return new Before(this, "08-01");
+                    return new Before( this, "08-01" );
                 case September:
-                    return new Before(this, "09-01");
+                    return new Before( this, "09-01" );
                 case October:
-                    return new Before(this, "10-01");
+                    return new Before( this, "10-01" );
                 case November:
-                    return new Before(this, "11-01");
+                    return new Before( this, "11-01" );
                 case December:
-                    return new Before(this, "12-01");
+                    return new Before( this, "12-01" );
                 default:
-                    return new Before(this, "01-01");
+                    return new Before( this, "01-01" );
             }
         }
 
@@ -90,43 +90,43 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="value">Date après laquelle le jour doit se trouver.</param>
         /// <returns>L'élément de syntax <see cref="Composition.After"/> pour ajouter d'autres comportements.</returns>
-        public After After(string value) => new After(this, value);
+        public After After( string value ) => new After( this, value );
 
         /// <summary>
         /// Elément de syntax pour indiquer que c'est ap^rès le début du mois.
         /// </summary>
         /// <param name="month">Mois à partir duquel le jour doit se trouver.</param>
         /// <returns>L'élément de syntax <see cref="Composition.After"/> pour ajouter d'autres comportements.</returns>
-        public After In(Month month)
+        public After In( Month month )
         {
-            switch (month)
+            switch ( month )
             {
                 case January:
-                    return new After(this, "01-01");
+                    return new After( this, "01-01" );
                 case February:
-                    return new After(this, "02-01");
+                    return new After( this, "02-01" );
                 case March:
-                    return new After(this, "03-01");
+                    return new After( this, "03-01" );
                 case April:
-                    return new After(this, "04-01");
+                    return new After( this, "04-01" );
                 case May:
-                    return new After(this, "05-01");
+                    return new After( this, "05-01" );
                 case June:
-                    return new After(this, "06-01");
+                    return new After( this, "06-01" );
                 case July:
-                    return new After(this, "07-01");
+                    return new After( this, "07-01" );
                 case August:
-                    return new After(this, "08-01");
+                    return new After( this, "08-01" );
                 case September:
-                    return new After(this, "09-01");
+                    return new After( this, "09-01" );
                 case October:
-                    return new After(this, "10-01");
+                    return new After( this, "10-01" );
                 case November:
-                    return new After(this, "11-01");
+                    return new After( this, "11-01" );
                 case December:
-                    return new After(this, "12-01");
+                    return new After( this, "12-01" );
                 default:
-                    return new After(this, "01-01");
+                    return new After( this, "01-01" );
             }
         }
     }

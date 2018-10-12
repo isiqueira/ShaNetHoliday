@@ -31,6 +31,6 @@ namespace ID3iHoliday.Models
         /// Retourne une chaîne qui représente l'objet actuel.
         /// </summary>
         /// <returns>Chaîne qui représente l'objet actuel.</returns>
-        public override string ToString() => $"{CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(StartDate.DayOfWeek)} {StartDate.ToShortDateString()} -> {CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(EndDate.DayOfWeek)} {EndDate.ToShortDateString()} : {EndDate.Subtract(StartDate).TotalDays + 1} jour(s).";
+        public override string ToString() => $"{CultureInfo.CurrentCulture.DateTimeFormat.GetDayName( StartDate.DayOfWeek )} {StartDate.ToShortDateString()} -> {CultureInfo.CurrentCulture.DateTimeFormat.GetDayName( EndDate.DayOfWeek )} {EndDate.ToShortDateString()} : {EndDate.Subtract( StartDate ).TotalDays + 1} jour(s).";
     }
 }

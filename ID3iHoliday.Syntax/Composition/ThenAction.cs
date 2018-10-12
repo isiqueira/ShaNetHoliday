@@ -21,20 +21,20 @@ namespace ID3iHoliday.Syntax.Composition
         /// Initialise une nouvelle instance de la classe <see cref="ThenAction"/>.
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
-        public ThenAction(ExpressionElement parent) : base(parent) { }
+        public ThenAction( ExpressionElement parent ) : base( parent ) { }
 
         /// <summary>
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste avant.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier à retourner.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Previous"/> pour ajouter d'autres comportements.</returns>
-        public Previous Previous(DayOfWeek dayOfWeek) => new Previous(this, dayOfWeek);
+        public Previous Previous( DayOfWeek dayOfWeek ) => new Previous( this, dayOfWeek );
 
         /// <summary>
         /// Elément de syntax qui permet de déplacer la date au jour particulier juste après.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier à retourner.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Next"/> pour ajouter d'autres comportements.</returns>
-        public Next Next(DayOfWeek dayOfWeek) => new Next(this, dayOfWeek);
+        public Next Next( DayOfWeek dayOfWeek ) => new Next( this, dayOfWeek );
     }
 }

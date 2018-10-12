@@ -23,25 +23,25 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public Previous(ExpressionElement parent, DayOfWeek dayOfWeek) : base(parent) => Day = dayOfWeek;
+        public Previous( ExpressionElement parent, DayOfWeek dayOfWeek ) : base( parent ) => Day = dayOfWeek;
 
         /// <summary>
         /// Elément de syntax <see cref="Composition.Or"/> qui permet de chaîner les tests de jours.
         /// </summary>
-        public Or Or => new Or(this);
+        public Or Or => new Or( this );
 
         /// <summary>
         /// Elément de syntax pour gérer la récurrence selon un nombre de période.
         /// </summary>
         /// <param name="number">Nombre de période.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Every"/> pour ajouter d'autres comportements.</returns>
-        public Every Every(int number) => new Every(this, number);
+        public Every Every( int number ) => new Every( this, number );
 
         /// <summary>
         /// Elément de syntax pour gérer le début d'application de l'expression.
         /// </summary>
         /// <param name="year">Année de départ.</param>
         /// <returns>L'élément de syntax <see cref="Composition.Since"/> pour ajouter d'autres comportements.</returns>
-        public Since Since(int year) => Every(1).Year.Since(year);
+        public Since Since( int year ) => Every( 1 ).Year.Since( year );
     }
 }

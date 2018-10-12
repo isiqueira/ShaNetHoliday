@@ -20,11 +20,11 @@ namespace ID3iHoliday.Core.Models
         /// <summary>
         /// Expression de l'élément.
         /// </summary>
-        public virtual string Expression => $@"{(Parent != null ?
-                                                (string.IsNullOrEmpty(Token) ?
+        public virtual string Expression => $@"{( Parent != null ?
+                                                ( string.IsNullOrEmpty( Token ) ?
                                                         Parent.Expression
-                                                        : $"{Parent.Expression} ")
-                                                : "")}{Token}";
+                                                        : $"{Parent.Expression} " )
+                                                : "" )}{Token}";
 
         /// <summary>
         /// Elément parent.
@@ -40,14 +40,14 @@ namespace ID3iHoliday.Core.Models
         /// Initialise une nouvelle instance de la classe <see cref="ExpressionElement"/>.
         /// </summary>
         /// <param name="parent">Elément parent.</param>
-        protected ExpressionElement(ExpressionElement parent) => Parent = parent;
+        protected ExpressionElement( ExpressionElement parent ) => Parent = parent;
 
         /// <summary>
         /// Méthode qui permet de parser l'élément.
         /// </summary>
         /// <param name="year">Année souhaitée.</param>
         /// <returns>Le <see cref="ParserResult"/> correspondant.</returns>
-        public ParserResult Parse(int year) => Parser.Parse(Expression, year);
+        public ParserResult Parse( int year ) => Parser.Parse( Expression, year );
 
         /// <summary>
         /// Méthode qui permet de déterminer si l'expression peut être interpréter par le parser.
@@ -55,6 +55,6 @@ namespace ID3iHoliday.Core.Models
         /// <returns>
         /// <see langword="true"/> si l'expression match le pattern, <see langword="false"/> sinon.
         /// </returns>
-        public bool IsMatch => Parser.IsMatch(Expression);
+        public bool IsMatch => Parser.IsMatch( Expression );
     }
 }

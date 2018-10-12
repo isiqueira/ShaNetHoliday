@@ -23,19 +23,19 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dayOfWeek">Jour particulier.</param>
-        public If(ExpressionElement parent, DayOfWeek dayOfWeek) : base(parent) => DayOfWeek = dayOfWeek;
+        public If( ExpressionElement parent, DayOfWeek dayOfWeek ) : base( parent ) => DayOfWeek = dayOfWeek;
 
         /// <summary>
         /// Elément de syntax pour changer l'heure.
         /// </summary>
         /// <param name="value">Nouvelle heure.</param>
         /// <returns>L'élément de syntax <see cref="ThenStart"/> pour ajouter d'autres comportements.</returns>
-        public ThenStart ThenStartAt(string value) => new ThenStart(this, value);
+        public ThenStart ThenStartAt( string value ) => new ThenStart( this, value );
 
         /// <summary>
         /// Elément de syntax pour changer l'heure à minuit.
         /// </summary>
         /// <returns>L'élément de syntax <see cref="ThenStart"/> pour ajouter d'autres comportements.</returns>
-        public ThenStart ThenStartAtMidnight => new ThenStart(this, "00:00");
+        public ThenStart ThenStartAtMidnight => new ThenStart( this, "00:00" );
     }
 }

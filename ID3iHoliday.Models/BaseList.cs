@@ -26,12 +26,12 @@ namespace ID3iHoliday.Models
         /// Se produit à l'ajout d'un élément.
         /// </summary>
         /// <param name="item">Elément ajouté.</param>
-        protected virtual void OnAddedItem(T item) => base.Add(item);
+        protected virtual void OnAddedItem( T item ) => base.Add( item );
 
         /// <summary>
         /// Méthode d'ajout d'un élément.
         /// </summary>
         /// <param name="item">Elément à ajouter.</param>
-        public new void Add(T item) => OnAddedItem(item);
+        public new void Add( T item ) => OnAddedItem( item );
     }
 }

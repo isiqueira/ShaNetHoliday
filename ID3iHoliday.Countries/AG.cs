@@ -12,7 +12,6 @@ using static System.DayOfWeek;
 using static ID3iHoliday.Models.RuleType;
 using static ID3iHoliday.Models.Calendar;
 
-
 namespace ID3iHoliday.Countries
 {
     /// <summary>
@@ -111,6 +110,7 @@ namespace ID3iHoliday.Countries
                 Container = { new AG_10() }
             }.Initialize(x => x.Init());
         }
+
         internal class AG_10 : State
         {
             public AG_10()

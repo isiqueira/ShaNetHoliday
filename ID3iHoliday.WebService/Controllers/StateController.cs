@@ -8,52 +8,46 @@ using ID3iHoliday.WebService.Divers;
 
 namespace ID3iHoliday.WebService.Controllers
 {
-    [RoutePrefix("Api/States")]
+    [RoutePrefix( "Api/States" )]
     public class StateController : ApiController
     {
-        [HttpGet, Route("{code}")]
-        public IHttpActionResult Get(string code)
+        [HttpGet, Route( "{code}" )]
+        public IHttpActionResult Get( string code )
         {
             try
             {
-                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany(x => x.States).FirstOrDefault(x => x.Code == code);
-                if (result == null)
-                    return NotFound();
-                return Ok(result.Transform());
+                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany( x => x.States ).FirstOrDefault( x => x.Code == code );
+                return result == null ? NotFound() : (IHttpActionResult)Ok( result.Transform() );
             }
-            catch (Exception)
+            catch ( Exception )
             {
                 return InternalServerError();
             }
         }
 
-        [HttpGet, Route("{code}/Regions")]
-        public IHttpActionResult Get1(string code)
+        [HttpGet, Route( "{code}/Regions" )]
+        public IHttpActionResult Get1( string code )
         {
             try
             {
-                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany(x => x.States).FirstOrDefault(x => x.Code == code);
-                if (result == null)
-                    return NotFound();
-                return Ok(result.Regions.Select(x => x.Transform()).ToList());
+                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany( x => x.States ).FirstOrDefault( x => x.Code == code );
+                return result == null ? NotFound() : (IHttpActionResult)Ok( result.Regions.Select( x => x.Transform() ).ToList() );
             }
-            catch (Exception)
+            catch ( Exception )
             {
                 return InternalServerError();
             }
         }
 
-        [HttpGet, Route("{code}/Days")]
-        public IHttpActionResult Get2(string code, int year, RuleType rule = RuleType.All, Calendar calendar = Calendar.All)
+        [HttpGet, Route( "{code}/Days" )]
+        public IHttpActionResult Get2( string code, int year, RuleType rule = RuleType.All, Calendar calendar = Calendar.All )
         {
             try
             {
-                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany(x => x.States).FirstOrDefault(x => x.Code == code);
-                if (result == null)
-                    return NotFound();
-                return Ok(HolidaySystem.Instance.All(year, result.Parent.Code, code, rule, calendar).Transform());
+                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany( x => x.States ).FirstOrDefault( x => x.Code == code );
+                return result == null ? NotFound() : (IHttpActionResult)Ok( HolidaySystem.Instance.All( year, result.Parent.Code, code, rule, calendar ).Transform() );
             }
-            catch (Exception)
+            catch ( Exception )
             {
                 return InternalServerError();
             }

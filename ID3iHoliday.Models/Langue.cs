@@ -16,176 +16,176 @@ namespace ID3iHoliday.Models
         /// <summary>
         /// French.
         /// </summary>
-        [Description("French")] FR,
+        [Description( "French" )] FR,
 
         /// <summary>
         /// English.
         /// </summary>
-        [Description("English")] EN,
+        [Description( "English" )] EN,
 
         /// <summary>
         /// Belarusian.
         /// </summary>
-        [Description("Belarusian")] BE,
+        [Description( "Belarusian" )] BE,
 
         /// <summary>
         /// Bulgarian.
         /// </summary>
-        [Description("Bulgarian")] BG,
+        [Description( "Bulgarian" )] BG,
 
         /// <summary>
         /// Bosnian.
         /// </summary>
-        [Description("Bosnian")] BS,
+        [Description( "Bosnian" )] BS,
 
         /// <summary>
         /// Catalan.
         /// </summary>
-        [Description("Catalan")] CA,
+        [Description( "Catalan" )] CA,
 
         /// <summary>
         /// Czech.
         /// </summary>
-        [Description("Czech")] CZ,
+        [Description( "Czech" )] CZ,
 
         /// <summary>
         /// Greek.
         /// </summary>
-        [Description("Greek")] EL,
+        [Description( "Greek" )] EL,
 
         /// <summary>
         /// Spanish.
         /// </summary>
-        [Description("Spanish")] ES,
+        [Description( "Spanish" )] ES,
 
         /// <summary>
         /// Estonian.
         /// </summary>
-        [Description("Estonian")] ET,
+        [Description( "Estonian" )] ET,
 
         /// <summary>
         /// Danish.
         /// </summary>
-        [Description("Danish")] DA,
+        [Description( "Danish" )] DA,
 
         /// <summary>
         /// German.
         /// </summary>
-        [Description("German")] DE,
+        [Description( "German" )] DE,
 
         /// <summary>
         /// German - Austria.
         /// </summary>
-        [Description("German - Austria")] DE_AT,
+        [Description( "German - Austria" )] DE_AT,
 
         /// <summary>
         /// Finnish.
         /// </summary>
-        [Description("Finnish")] FI,
+        [Description( "Finnish" )] FI,
 
         /// <summary>
         /// Croatian.
         /// </summary>
-        [Description("Croatian")] HR,
+        [Description( "Croatian" )] HR,
 
         /// <summary>
         /// Hungarian.
         /// </summary>
-        [Description("Hungarian")] HU,
+        [Description( "Hungarian" )] HU,
 
         /// <summary>
         /// Icelandic.
         /// </summary>
-        [Description("Icelandic")] IS,
+        [Description( "Icelandic" )] IS,
 
         /// <summary>
         /// Italian.
         /// </summary>
-        [Description("Italian")] IT,
+        [Description( "Italian" )] IT,
 
         /// <summary>
         /// Kalaallisut
         /// </summary>
-        [Description("Kalaallisut")] KL,
+        [Description( "Kalaallisut" )] KL,
 
         /// <summary>
         /// Lithuanian.
         /// </summary>
-        [Description("Lithuanian")] LT,
+        [Description( "Lithuanian" )] LT,
 
         /// <summary>
         /// Latvian.
         /// </summary>
-        [Description("Latvian")] LV,
+        [Description( "Latvian" )] LV,
 
         /// <summary>
         /// Macedonian.
         /// </summary>
-        [Description("Macedonian")] MK,
+        [Description( "Macedonian" )] MK,
 
         /// <summary>
         /// Maltese.
         /// </summary>
-        [Description("Maltese")] MT,
+        [Description( "Maltese" )] MT,
 
         /// <summary>
         /// Dutch.
         /// </summary>
-        [Description("Dutch")] NL,
+        [Description( "Dutch" )] NL,
 
         /// <summary>
         /// Norwegian.
         /// </summary>
-        [Description("Norwegian")] NO,
+        [Description( "Norwegian" )] NO,
 
         /// <summary>
         /// Polish.
         /// </summary>
-        [Description("Polish")] PL,
+        [Description( "Polish" )] PL,
 
         /// <summary>
         /// Portuguese.
         /// </summary>
-        [Description("Portuguese")] PT,
+        [Description( "Portuguese" )] PT,
 
         /// <summary>
         /// Romanian.
         /// </summary>
-        [Description("Romanian")] RO,
+        [Description( "Romanian" )] RO,
 
         /// <summary>
         /// Russian.
         /// </summary>
-        [Description("Russian")] RU,
+        [Description( "Russian" )] RU,
 
         /// <summary>
         /// Slovak.
         /// </summary>
-        [Description("Slovak")] SK,
+        [Description( "Slovak" )] SK,
 
         /// <summary>
         /// Slovenian.
         /// </summary>
-        [Description("Slovenian")] SL,
+        [Description( "Slovenian" )] SL,
 
         /// <summary>
         /// Albanian.
         /// </summary>
-        [Description("Albanian")] SQ,
+        [Description( "Albanian" )] SQ,
 
         /// <summary>
         /// Serbian.
         /// </summary>
-        [Description("Serbian")] SR,
+        [Description( "Serbian" )] SR,
 
         /// <summary>
         /// Swedish.
         /// </summary>
-        [Description("Swedish")] SV,
+        [Description( "Swedish" )] SV,
 
         /// <summary>
         /// Ukrainian.
         /// </summary>
-        [Description("Ukrainian")] UK
+        [Description( "Ukrainian" )] UK
     }
 }

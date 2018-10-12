@@ -21,6 +21,6 @@ namespace ID3iHoliday.Syntax.Composition
         /// Initialise une nouvelle instance de la classe <see cref="Catholic"/>.
         /// </summary>
         /// <param name="parent">Elément parent.</param>
-        public Catholic(ExpressionElement parent) : base(parent) { }
+        public Catholic( ExpressionElement parent ) : base( parent ) { }
     }
 }

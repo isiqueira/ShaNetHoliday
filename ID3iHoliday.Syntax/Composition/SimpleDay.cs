@@ -15,7 +15,7 @@ namespace ID3iHoliday.Syntax.Composition
         /// <summary>
         /// Token de l'élément.
         /// </summary>
-        protected override string Token => DateTime.ToString("MM-dd");
+        protected override string Token => DateTime.ToString( "MM-dd" );
         internal DateTime DateTime { get; }
 
         /// <summary>
@@ -23,13 +23,13 @@ namespace ID3iHoliday.Syntax.Composition
         /// </summary>
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="dateTime">Date.</param>
-        public SimpleDay(ExpressionElement parent, DateTime dateTime) : base(parent) => DateTime = dateTime;
+        public SimpleDay( ExpressionElement parent, DateTime dateTime ) : base( parent ) => DateTime = dateTime;
 
         /// <summary>
         /// Elément de syntax pour déplacer le jour à un autre si il tombe un certain jour.
         /// </summary>
         /// <param name="dayOfWeek">Jour particulier.</param>
         /// <returns>L'élément de syntax <see cref="IfDay"/> pour ajouter d'autres comportements.</returns>
-        public IfDay If(DayOfWeek dayOfWeek) => new IfDay(this, dayOfWeek);
+        public IfDay If( DayOfWeek dayOfWeek ) => new IfDay( this, dayOfWeek );
     }
 }
