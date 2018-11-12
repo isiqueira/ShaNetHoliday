@@ -13,9 +13,9 @@ namespace ID3iHoliday.WebService
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "BadRequest",
+                name: "NotFound",
                 routeTemplate: "{*url}",
-                defaults: new { controller = "Error", action = "Handle400" } );
+                defaults: new { controller = "Error", action = "Handle404" } );
         }
     }
 }

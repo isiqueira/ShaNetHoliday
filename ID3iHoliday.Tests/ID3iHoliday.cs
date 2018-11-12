@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using ID3iCore;
 using ID3iHoliday.Core.Models;
+using ID3iHoliday.Core.Parsers;
 using ID3iHoliday.Models;
+using ID3iHoliday.Syntax.Parsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ID3iHoliday.Tests
@@ -222,6 +224,63 @@ namespace ID3iHoliday.Tests
                     } );
                 } );
             } );
+        }
+
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        public void ParserDate()
+        {
+            string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
+            ParserBase parser = new ParserDate();
+            Assert.AreEqual( false, parser.IsMatch( str ) );
+        }
+
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        public void ParserEaster()
+        {
+            string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
+            ParserBase parser = new ParserEaster();
+            Assert.AreEqual( false, parser.IsMatch( str ) );
+        }
+
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        public void ParserMovable()
+        {
+            string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
+            ParserBase parser = new ParserMovable();
+            Assert.AreEqual( false, parser.IsMatch( str ) );
+        }
+
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        public void ParserMovableFromMovable()
+        {
+            string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
+            ParserBase parser = new ParserMovableFromMovable();
+            Assert.AreEqual( true, parser.IsMatch( str ) );
+            var result = parser.Parse( str, 2018 );
+        }
+
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        public void ParserMove()
+        {
+            string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
+            ParserBase parser = new ParserMove();
+            Assert.AreEqual( false, parser.IsMatch( str ) );
+        }
+
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        public void ParserObserve()
+        {
+            string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
+            ParserBase parser = new ParserObserve();
+            Assert.AreEqual( false, parser.IsMatch( str ) );
+        }
+
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        public void ParserSubstitute()
+        {
+            string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
+            ParserBase parser = new ParserSubstitute();
+            Assert.AreEqual( false, parser.IsMatch( str ) );
         }
     }
 }

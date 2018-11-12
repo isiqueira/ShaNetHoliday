@@ -8,37 +8,23 @@ using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
 {
-    [RoutePrefix( "Api/Regions" )]
+    [RoutePrefix( "Regions" )]
     public class RegionController : ApiController
     {
         [HttpGet, Route( "{code}" )]
         public IHttpActionResult Get( string code )
         {
-            try
-            {
-                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany( x => x.States.SelectMany( y => y.Regions ) ).FirstOrDefault( x => x.Code == code );
-                return result == null ? NotFound() : (IHttpActionResult)Ok( result.Transform() );
-            }
-            catch ( Exception )
-            {
-                return InternalServerError();
-            }
+            var result = HolidaySystem.Instance.CountriesAvailable.SelectMany( x => x.States.SelectMany( y => y.Regions ) ).FirstOrDefault( x => x.Code == code );
+            return result == null ? NotFound() : (IHttpActionResult)Ok( result.Transform() );
         }
 
         [HttpGet, Route( "{code}/Days" )]
         public IHttpActionResult Get1( string code, int year, RuleType rule = RuleType.All, Calendar calendar = Calendar.All )
         {
-            try
-            {
-                var result = HolidaySystem.Instance.CountriesAvailable.SelectMany( x => x.States.SelectMany( y => y.Regions ) ).FirstOrDefault( x => x.Code == code );
-                return result == null
-                    ? NotFound()
-                    : (IHttpActionResult)Ok( HolidaySystem.Instance.All( year, result.Parent.Parent.Code, result.Parent.Code, code, rule, calendar ).Transform() );
-            }
-            catch ( Exception )
-            {
-                return InternalServerError();
-            }
+            var result = HolidaySystem.Instance.CountriesAvailable.SelectMany( x => x.States.SelectMany( y => y.Regions ) ).FirstOrDefault( x => x.Code == code );
+            return result == null
+                ? NotFound()
+                : (IHttpActionResult)Ok( HolidaySystem.Instance.All( year, result.Parent.Parent.Code, result.Parent.Code, code, rule, calendar ).Transform() );
         }
     }
 }

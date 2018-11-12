@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
 {
-    [RoutePrefix( "Api/Rules" )]
+    [RoutePrefix( "Rules" )]
     public class RuleController : ApiController
     {
         private RuleModelLight GetRule( ExpressionElement expression, Dictionary<Langue, string> names, RuleType type, bool isEnable )
@@ -116,30 +116,16 @@ namespace ID3iHoliday.WebService.Controllers
         [HttpGet, Route( "" )]
         public IHttpActionResult Get()
         {
-            try
-            {
-                var lst = new List<CountryModelLight>();
-                HolidaySystem.Instance.CountriesAvailable.Where( x => x.Code != null ).ToList().ForEach( x => lst.Add( Get( x ) ) );
-                return Ok( lst );
-            }
-            catch ( Exception )
-            {
-                return InternalServerError();
-            }
+            var lst = new List<CountryModelLight>();
+            HolidaySystem.Instance.CountriesAvailable.Where( x => x.Code != null ).ToList().ForEach( x => lst.Add( Get( x ) ) );
+            return Ok( lst );
         }
 
         [HttpGet, Route( "{code}" )]
         public IHttpActionResult Get( string code )
         {
-            try
-            {
-                var result = HolidaySystem.Instance.CountriesAvailable.FirstOrDefault( x => x.Code == code );
-                return result == null ? NotFound() : (IHttpActionResult)Ok( Get( result ) );
-            }
-            catch ( Exception )
-            {
-                return InternalServerError();
-            }
+            var result = HolidaySystem.Instance.CountriesAvailable.FirstOrDefault( x => x.Code == code );
+            return result == null ? NotFound() : (IHttpActionResult)Ok( Get( result ) );
         }
     }
 }

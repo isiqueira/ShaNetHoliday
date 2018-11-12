@@ -6,9 +6,10 @@ using System.Web.Http;
 
 namespace ID3iHoliday.WebService.Controllers
 {
+    [RoutePrefix( "" )]
     public class ErrorController : ApiController
     {
-        [HttpGet]
-        public IHttpActionResult Handle400() => BadRequest( "The requested url is not found" );
+        [HttpGet, HttpPost, HttpPut, HttpDelete, HttpHead, HttpOptions, AcceptVerbs( "PATCH" )]
+        public IHttpActionResult Handle404() => NotFound();
     }
 }
