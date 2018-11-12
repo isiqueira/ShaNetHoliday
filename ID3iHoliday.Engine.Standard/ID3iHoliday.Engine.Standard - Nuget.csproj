@@ -8,7 +8,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>ID3iHoliday.Engine.Standard</PackageId>
-    <Version>1.0.13</Version>
+    <Version>1.0.14</Version>
     <Authors>Shaenn</Authors>
     <Company>Shaenn</Company>
     <Description>Calculate Public Holidays for a given year, translation native. Country States and Regions support. Supports 55 countries.</Description>
@@ -22,6 +22,8 @@
 Countries of Europa done.
 Countries of North America done.</PackageReleaseNotes>
     <LangVersion>latest</LangVersion>
+    <AssemblyName>ID3iHoliday.Engine.Standard</AssemblyName>
+    <RootNamespace>ID3iHoliday.Engine.Standard</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

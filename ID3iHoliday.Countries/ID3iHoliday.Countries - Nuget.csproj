@@ -15,9 +15,11 @@
     <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
     <Description>Hold the definition of all countries in the world.</Description>
-    <Version>1.0.13</Version>
+    <Version>1.0.14</Version>
     <PackageId>ID3iHoliday.Countries</PackageId>
     <LangVersion>latest</LangVersion>
+    <AssemblyName>ID3iHoliday.Countries</AssemblyName>
+    <RootNamespace>ID3iHoliday.Countries</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
