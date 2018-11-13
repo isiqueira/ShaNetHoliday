@@ -3,6 +3,7 @@
 | ID3iCore | [![Build status](https://ci.appveyor.com/api/projects/status/dsd0hvd632my2y8e?svg=true)](https://ci.appveyor.com/project/Shaenn/id3icore-8qh9v) |
 | ID3iDate | [![Build status](https://ci.appveyor.com/api/projects/status/08am5ww7xiy1cm5a?svg=true)](https://ci.appveyor.com/project/Shaenn/id3idate-k8k5t) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/id3idate-k8k5t.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/id3idate-k8k5t/build/tests) |
 | ID3iRegex | [![Build status](https://ci.appveyor.com/api/projects/status/m1bdir11jmhd29yc?svg=true)](https://ci.appveyor.com/project/Shaenn/id3iregex-7x0ek) |
+| ID3iDiagnostics | [![Build status](https://ci.appveyor.com/api/projects/status/2yva3ae4bdk1662k?svg=true)](https://ci.appveyor.com/project/Shaenn/id3idiagnostics) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/id3idiagnostics.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/id3idiagnostics/build/tests)|
 | ID3iHoliday | [![Build status](https://ci.appveyor.com/api/projects/status/n4vrppmsghwxvbg7?svg=true)](https://ci.appveyor.com/project/Shaenn/id3iholiday-d4l66) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/id3iholiday-d4l66.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/id3iholiday-d4l66/build/tests) |
 
 ### Version
