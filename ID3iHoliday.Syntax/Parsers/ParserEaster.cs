@@ -1,12 +1,12 @@
-﻿using ID3iCore;
-using ID3iDate;
-using ID3iHoliday.Core.Parsers;
-using ID3iRegex;
+﻿using iD3iCore;
+using iD3iDate;
+using iD3iHoliday.Core.Parsers;
+using iD3iRegex;
 using System;
 using System.Text.RegularExpressions;
-using static ID3iHoliday.Syntax.YearType;
+using static iD3iHoliday.Syntax.YearType;
 
-namespace ID3iHoliday.Syntax.Parsers
+namespace iD3iHoliday.Syntax.Parsers
 {
     /// <summary>
     /// Parser pour une expression de type religieuse.

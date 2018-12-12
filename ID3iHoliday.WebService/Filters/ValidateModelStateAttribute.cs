@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace ID3iHoliday.WebService.Filters
+namespace iD3iHoliday.WebService.Filters
 {
     public class ValidateModelStateAttribute : ActionFilterAttribute
     {

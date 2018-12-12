@@ -5,9 +5,9 @@ using System.Net;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
-using ID3iHoliday.WebService.Controllers;
+using iD3iHoliday.WebService.Controllers;
 
-namespace ID3iHoliday.WebService.Services
+namespace iD3iHoliday.WebService.Services
 {
     public class HttpNotFoundAwareControllerActionSelector : ApiControllerActionSelector
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Models
+namespace iD3iHoliday.Models
 {
     /// <summary>
     /// Liste des règles.

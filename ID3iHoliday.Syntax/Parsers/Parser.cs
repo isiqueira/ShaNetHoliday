@@ -1,4 +1,4 @@
-﻿using ID3iRegex;
+﻿using iD3iRegex;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax.Parsers
+namespace iD3iHoliday.Syntax.Parsers
 {
     /// <summary>
     /// Classe de définition des patterns.

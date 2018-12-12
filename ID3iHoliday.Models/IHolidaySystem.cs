@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Models
+namespace iD3iHoliday.Models
 {
     /// <summary>
     /// Interface pour la définition d'un wrapper de récupération de données particulières dans l'environnement des jours particuliers.

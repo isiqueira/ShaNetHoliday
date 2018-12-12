@@ -7,8 +7,8 @@
     <ProjectGuid>{94F49A44-3898-44D7-8B69-DB78FF39DAE7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ID3iHoliday.Tests</RootNamespace>
-    <AssemblyName>ID3iHoliday.Tests</AssemblyName>
+    <RootNamespace>iD3iHoliday.Tests</RootNamespace>
+    <AssemblyName>iD3iHoliday.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -42,7 +42,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ID3iHoliday.cs" />
+    <Compile Include="iD3iHoliday.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,45 +54,45 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ID3iCore\ID3iCore.Either\ID3iCore.Either.csproj">
+    <ProjectReference Include="..\..\iD3iCore\iD3iCore.Either\iD3iCore.Either.csproj">
       <Project>{70c64e05-abb5-4e7c-8190-53ec10d3abc4}</Project>
-      <Name>ID3iCore.Either</Name>
+      <Name>iD3iCore.Either</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore.csproj">
+    <ProjectReference Include="..\..\iD3iCore\iD3iCore\iD3iCore.csproj">
       <Project>{ba32aabf-4d61-4ad3-a50f-715758867194}</Project>
-      <Name>ID3iCore</Name>
+      <Name>iD3iCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Core\ID3iHoliday.Core.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Core\iD3iHoliday.Core.csproj">
       <Project>{2da2895e-ca5c-440f-93b1-e8a8c50cf738}</Project>
-      <Name>ID3iHoliday.Core</Name>
+      <Name>iD3iHoliday.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Countries\ID3iHoliday.Countries.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Countries\iD3iHoliday.Countries.csproj">
       <Project>{6f2f409b-cff5-4b37-b75f-2dcee39f3299}</Project>
-      <Name>ID3iHoliday.Countries</Name>
+      <Name>iD3iHoliday.Countries</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Engine.Standard\ID3iHoliday.Engine.Standard.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Engine.Standard\iD3iHoliday.Engine.Standard.csproj">
       <Project>{b79ac695-e873-4637-9d52-52bece6d493d}</Project>
-      <Name>ID3iHoliday.Engine.Standard</Name>
+      <Name>iD3iHoliday.Engine.Standard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Engine\ID3iHoliday.Engine.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Engine\iD3iHoliday.Engine.csproj">
       <Project>{1ae7bed4-722e-4695-a5e7-ffcbb004c55e}</Project>
-      <Name>ID3iHoliday.Engine</Name>
+      <Name>iD3iHoliday.Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Models\iD3iHoliday.Models.csproj">
       <Project>{c7c2d758-46d9-4840-9af9-dfdd85c94178}</Project>
-      <Name>ID3iHoliday.Models</Name>
+      <Name>iD3iHoliday.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Syntax\ID3iHoliday.Syntax.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Syntax\iD3iHoliday.Syntax.csproj">
       <Project>{a515221b-59bf-4471-82e8-3bdb5db1e4ae}</Project>
-      <Name>ID3iHoliday.Syntax</Name>
+      <Name>iD3iHoliday.Syntax</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.WebService.Client\ID3iHoliday.WebService.Client.csproj">
+    <ProjectReference Include="..\iD3iHoliday.WebService.Client\iD3iHoliday.WebService.Client.csproj">
       <Project>{30a60f51-62cb-405f-981b-32f48248d4df}</Project>
-      <Name>ID3iHoliday.WebService.Client</Name>
+      <Name>iD3iHoliday.WebService.Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.WebService.Models\ID3iHoliday.WebService.Models.csproj">
+    <ProjectReference Include="..\iD3iHoliday.WebService.Models\iD3iHoliday.WebService.Models.csproj">
       <Project>{8f94bea2-886e-4d48-9ee8-ceb648f74661}</Project>
-      <Name>ID3iHoliday.WebService.Models</Name>
+      <Name>iD3iHoliday.WebService.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,12 +1,12 @@
-﻿using ID3iCore.Either;
-using ID3iHoliday.WebService.Models;
-using ID3iHoliday.WebService.Models.Light;
+﻿using iD3iCore.Either;
+using iD3iHoliday.WebService.Models;
+using iD3iHoliday.WebService.Models.Light;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using static ID3iHttpClient.Dynamic.Conv;
+using static iD3iHttpClient.Dynamic.Conv;
 
-namespace ID3iHoliday.WebService.Client
+namespace iD3iHoliday.WebService.Client
 {
     public partial class HolidayWrapper
     {
@@ -16,7 +16,7 @@ namespace ID3iHoliday.WebService.Client
         {
             Configuration.HolidayConfig.CheckConsistency();
 
-            DynamicClient = new ID3iHttpClient.Dynamic.Client( Configuration.HolidayConfig.Conf.BaseApiUrl );
+            DynamicClient = new iD3iHttpClient.Dynamic.Client( Configuration.HolidayConfig.Conf.BaseApiUrl );
         }
 
         public Either<HttpStatusCode, List<CountryModel>> Countries()

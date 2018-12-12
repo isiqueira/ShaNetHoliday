@@ -1,11 +1,11 @@
-﻿using ID3iHoliday.Core.Parsers;
+﻿using iD3iHoliday.Core.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Core.Models
+namespace iD3iHoliday.Core.Models
 {
     /// <summary>
     /// Classe de base pour un élément.

@@ -1,11 +1,11 @@
-﻿using ID3iHoliday.Models;
-using ID3iHoliday.WebService.Models;
+﻿using iD3iHoliday.Models;
+using iD3iHoliday.WebService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ID3iHoliday.WebService.Divers
+namespace iD3iHoliday.WebService.Divers
 {
     public static class Extensions
     {

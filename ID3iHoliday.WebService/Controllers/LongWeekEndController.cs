@@ -1,11 +1,11 @@
-﻿using ID3iHoliday.Engine.Standard;
-using ID3iHoliday.WebService.Divers;
+﻿using iD3iHoliday.Engine.Standard;
+using iD3iHoliday.WebService.Divers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace ID3iHoliday.WebService.Controllers
+namespace iD3iHoliday.WebService.Controllers
 {
     [RoutePrefix( "LongWeekEnds" )]
     public class LongWeekEndController : ApiController

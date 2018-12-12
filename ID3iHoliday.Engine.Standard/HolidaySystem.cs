@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ID3iHoliday.Engine;
-using ID3iHoliday.Countries;
+using iD3iHoliday.Engine;
+using iD3iHoliday.Countries;
 
-namespace ID3iHoliday.Engine.Standard
+namespace iD3iHoliday.Engine.Standard
 {
     /// <summary>
     /// Wrapper pour la récupération de données particulières dans l'environnement des jours particuliers.

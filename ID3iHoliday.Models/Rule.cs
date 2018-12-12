@@ -1,10 +1,10 @@
-﻿using ID3iHoliday.Core.Models;
+﻿using iD3iHoliday.Core.Models;
 using System;
 using System.Collections.Generic;
 
-using static ID3iHoliday.Models.RuleType;
+using static iD3iHoliday.Models.RuleType;
 
-namespace ID3iHoliday.Models
+namespace iD3iHoliday.Models
 {
     /// <summary>
     /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.GregorianCalendar"/>.

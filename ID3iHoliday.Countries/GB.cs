@@ -1,6 +1,6 @@
-﻿using ID3iHoliday.Syntax;
-using ID3iDate;
-using ID3iHoliday.Models;
+﻿using iD3iHoliday.Syntax;
+using iD3iDate;
+using iD3iHoliday.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 using static System.DayOfWeek;
-using static ID3iHoliday.Syntax.Count;
-using static ID3iHoliday.Syntax.Month;
-using static ID3iHoliday.Models.RuleType;
-using static ID3iHoliday.Models.Calendar;
-using ID3iCore;
+using static iD3iHoliday.Syntax.Count;
+using static iD3iHoliday.Syntax.Month;
+using static iD3iHoliday.Models.RuleType;
+using static iD3iHoliday.Models.Calendar;
+using iD3iCore;
 
-namespace ID3iHoliday.Countries
+namespace iD3iHoliday.Countries
 {
     /// <summary>
     /// Définition pour United Kingdom.

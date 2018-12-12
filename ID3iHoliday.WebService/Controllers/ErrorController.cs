@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 
-namespace ID3iHoliday.WebService.Controllers
+namespace iD3iHoliday.WebService.Controllers
 {
     [RoutePrefix( "" )]
     public class ErrorController : ApiController

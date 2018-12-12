@@ -1,13 +1,13 @@
-﻿using ID3iHoliday.Core.Models;
-using ID3iHoliday.Core.Parsers;
-using ID3iHoliday.Syntax.Parsers;
+﻿using iD3iHoliday.Core.Models;
+using iD3iHoliday.Core.Parsers;
+using iD3iHoliday.Syntax.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax.Composition
+namespace iD3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément de syntax pour changer au jour de la semaine spécifié à partir d'une date fixe déjà changée.

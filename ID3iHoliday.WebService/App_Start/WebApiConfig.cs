@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace ID3iHoliday.WebService
+namespace iD3iHoliday.WebService
 {
     public static class WebApiConfig
     {

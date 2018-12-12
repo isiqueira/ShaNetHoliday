@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ID3iHoliday.Models;
+using iD3iHoliday.Models;
 
-namespace ID3iHoliday.Engine.Modularity
+namespace iD3iHoliday.Engine.Modularity
 {
     /// <summary>
     /// Module Prism pour l'enregistrement du wrapper de récupération des données.

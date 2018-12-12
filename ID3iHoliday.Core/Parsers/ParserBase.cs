@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Core.Parsers
+namespace iD3iHoliday.Core.Parsers
 {
     /// <summary>
     /// Classe de base pour un parser d'expression.

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using ID3iCore;
-using ID3iHoliday.Core.Models;
-using ID3iHoliday.Core.Parsers;
-using ID3iHoliday.Models;
-using ID3iHoliday.Syntax.Parsers;
+using iD3iCore;
+using iD3iHoliday.Core.Models;
+using iD3iHoliday.Core.Parsers;
+using iD3iHoliday.Models;
+using iD3iHoliday.Syntax.Parsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ID3iHoliday.Tests
+namespace iD3iHoliday.Tests
 {
     [TestClass]
-    public class ID3iHoliday
+    public class iD3iHoliday
     {
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void Countries()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -22,7 +22,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void Country()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -30,7 +30,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void CountryDays()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -38,7 +38,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void States()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -46,7 +46,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void State()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -54,7 +54,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void Regions()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -62,7 +62,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void StateDays()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -70,7 +70,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void Region()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -78,7 +78,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void RegionDays()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -86,7 +86,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void Days()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -94,7 +94,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void LongWeekEnds()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -102,7 +102,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void Rules()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -110,7 +110,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.WebService.Client" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.WebService.Client" )]
         public void CountryRule()
         {
             var client = new WebService.Client.HolidayWrapper();
@@ -118,7 +118,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( true, result.IsRight );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void CheckAllRulesForAll()
         {
             var year = DateTime.Today.Year;
@@ -159,7 +159,7 @@ namespace ID3iHoliday.Tests
             } );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void GetAllRulesForAll()
         {
             void ShowRule( ExpressionElement expression, Dictionary<Langue, string> names, RuleType type, string tab = "\t" )
@@ -226,7 +226,7 @@ namespace ID3iHoliday.Tests
             } );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void ParserDate()
         {
             string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
@@ -234,7 +234,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( false, parser.IsMatch( str ) );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void ParserEaster()
         {
             string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
@@ -242,7 +242,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( false, parser.IsMatch( str ) );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void ParserMovable()
         {
             string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
@@ -250,7 +250,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( false, parser.IsMatch( str ) );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void ParserMovableFromMovable()
         {
             string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
@@ -259,7 +259,7 @@ namespace ID3iHoliday.Tests
             var result = parser.Parse( str, 2018 );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void ParserMove()
         {
             string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
@@ -267,7 +267,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( false, parser.IsMatch( str ) );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void ParserObserve()
         {
             string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";
@@ -275,7 +275,7 @@ namespace ID3iHoliday.Tests
             Assert.AreEqual( false, parser.IsMatch( str ) );
         }
 
-        [TestMethod, TestCategory( "Ok" ), TestCategory( "ID3iHoliday.Engine.Standard" )]
+        [TestMethod, TestCategory( "Ok" ), TestCategory( "iD3iHoliday.Engine.Standard" )]
         public void ParserSubstitute()
         {
             string str = "DATE MOVABLE² FIRST MONDAY AFTER FIRST SATURDAY AFTER 08-01";

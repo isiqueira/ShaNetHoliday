@@ -1,4 +1,4 @@
-﻿using ID3iHoliday.Models;
+﻿using iD3iHoliday.Models;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Countries.Modularity
+namespace iD3iHoliday.Countries.Modularity
 {
     /// <summary>
     /// Module Prism pour <see cref="IS"/>.

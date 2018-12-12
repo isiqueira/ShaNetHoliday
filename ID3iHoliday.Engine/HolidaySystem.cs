@@ -1,13 +1,13 @@
-﻿using ID3iCore;
-using ID3iDate;
-using ID3iHoliday.Models;
+﻿using iD3iCore;
+using iD3iDate;
+using iD3iHoliday.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Engine
+namespace iD3iHoliday.Engine
 {
     /// <summary>
     /// Wrapper de base pour la récupération de données particulières dans l'environnement des jours particuliers.

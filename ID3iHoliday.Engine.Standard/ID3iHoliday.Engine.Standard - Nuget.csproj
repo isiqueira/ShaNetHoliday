@@ -7,23 +7,23 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>ID3iHoliday.Engine.Standard</PackageId>
+    <PackageId>iD3iHoliday.Engine.Standard</PackageId>
     <Version>1.0.14</Version>
     <Authors>Shaenn</Authors>
     <Company>Shaenn</Company>
     <Description>Calculate Public Holidays for a given year, translation native. Country States and Regions support. Supports 55 countries.</Description>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Shaenn/iD3iHoliday/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Shaenn/iD3iHoliday</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Shaenn/iD3iHoliday</RepositoryUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>Public-Holiday PublicHoliday Bank-Holiday BanHoliday Andorra Antigua &amp; Barbuda Anguilla Albania Austria Åland Islands Bosnia and Herzegovina Belgique Bulgaria Belarus Cyprus Czech Republic Germany Denmark Estonia Finland France Greece Croatia Hungary Ireland Isle of Man Iceland Italia Jersey Lichtenstein Lithuania Luxembourg Latvia Monaco Moldova Montenegro Macedonia Malta Netherlands Norway Poland Portugal Romania Serbia Russia San Marino Kosovo Slovakia Slovenia Spain Sweden Switzerland Ukraine VaticanCity UnitedKingdom Europa Canada Greenland Mexico UnitedStatesOfAmerica</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/iD3iHoliday/master/Images/logo.png</PackageIconUrl>
     <PackageReleaseNotes>Add Canada, Greenland, Mexico, United States of America.
 Countries of Europa done.
 Countries of North America done.</PackageReleaseNotes>
     <LangVersion>latest</LangVersion>
-    <AssemblyName>ID3iHoliday.Engine.Standard</AssemblyName>
-    <RootNamespace>ID3iHoliday.Engine.Standard</RootNamespace>
+    <AssemblyName>iD3iHoliday.Engine.Standard</AssemblyName>
+    <RootNamespace>iD3iHoliday.Engine.Standard</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,7 +33,7 @@ Countries of North America done.</PackageReleaseNotes>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\ID3iHoliday.Engine.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\iD3iHoliday.Engine.Standard.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,11 +42,11 @@ Countries of North America done.</PackageReleaseNotes>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\ID3iHoliday.Engine.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\iD3iHoliday.Engine.Standard.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ID3iHoliday.Countries\ID3iHoliday.Countries - Nuget.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Engine\ID3iHoliday.Engine - Nuget.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models - Nuget.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Countries\iD3iHoliday.Countries - Nuget.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Engine\iD3iHoliday.Engine - Nuget.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Models\iD3iHoliday.Models - Nuget.csproj" />
   </ItemGroup>
 </Project>

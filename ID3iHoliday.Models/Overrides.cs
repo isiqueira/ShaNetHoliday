@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Models
+namespace iD3iHoliday.Models
 {
     /// <summary>
     /// Enumération pour indiquer quelle partie d'une règle est à surcharger.

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.WebService.Client.Configuration
+namespace iD3iHoliday.WebService.Client.Configuration
 {
     public class HolidayConfig : ConfigurationSection
     {

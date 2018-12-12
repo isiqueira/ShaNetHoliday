@@ -3,60 +3,60 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Core", "ID3iHoliday.Core\ID3iHoliday.Core.csproj", "{2DA2895E-CA5C-440F-93B1-E8A8C50CF738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Core", "iD3iHoliday.Core\iD3iHoliday.Core.csproj", "{2DA2895E-CA5C-440F-93B1-E8A8C50CF738}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".includes", ".includes", "{79ADEB82-62FC-43C0-A74C-8180A05A24F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iRegex", "..\ID3iRegex\ID3iRegex\ID3iRegex.csproj", "{59684D18-ED50-4A68-87F7-0BF011B0D9C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iRegex", "..\iD3iRegex\iD3iRegex\iD3iRegex.csproj", "{59684D18-ED50-4A68-87F7-0BF011B0D9C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iDate", "..\ID3iDate\ID3iDate\ID3iDate.csproj", "{4620F291-CCC3-4120-A0D7-FD3A37B2952B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iDate", "..\iD3iDate\iD3iDate\iD3iDate.csproj", "{4620F291-CCC3-4120-A0D7-FD3A37B2952B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Syntax", "ID3iHoliday.Syntax\ID3iHoliday.Syntax.csproj", "{A515221B-59BF-4471-82E8-3BDB5DB1E4AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Syntax", "iD3iHoliday.Syntax\iD3iHoliday.Syntax.csproj", "{A515221B-59BF-4471-82E8-3BDB5DB1E4AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Models", "ID3iHoliday.Models\ID3iHoliday.Models.csproj", "{C7C2D758-46D9-4840-9AF9-DFDD85C94178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Models", "iD3iHoliday.Models\iD3iHoliday.Models.csproj", "{C7C2D758-46D9-4840-9AF9-DFDD85C94178}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iCore", "..\ID3iCore\ID3iCore\ID3iCore.csproj", "{BA32AABF-4D61-4AD3-A50F-715758867194}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iCore", "..\iD3iCore\iD3iCore\iD3iCore.csproj", "{BA32AABF-4D61-4AD3-A50F-715758867194}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Engine", "ID3iHoliday.Engine\ID3iHoliday.Engine.csproj", "{1AE7BED4-722E-4695-A5E7-FFCBB004C55E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Engine", "iD3iHoliday.Engine\iD3iHoliday.Engine.csproj", "{1AE7BED4-722E-4695-A5E7-FFCBB004C55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iHoliday.Engine.Modularity", "ID3iHoliday.Engine.Modularity\ID3iHoliday.Engine.Modularity.csproj", "{36C93161-3966-477E-B3FD-7CFA7E5FA809}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iHoliday.Engine.Modularity", "iD3iHoliday.Engine.Modularity\iD3iHoliday.Engine.Modularity.csproj", "{36C93161-3966-477E-B3FD-7CFA7E5FA809}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modularity", "Modularity", "{12FDB5C8-4BA7-4E13-B6C0-53993C5A2588}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standard", "Standard", "{2981ABF5-9E6F-41DB-A496-C10C5C95B1E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Engine.Standard", "ID3iHoliday.Engine.Standard\ID3iHoliday.Engine.Standard.csproj", "{B79AC695-E873-4637-9D52-52BECE6D493D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Engine.Standard", "iD3iHoliday.Engine.Standard\iD3iHoliday.Engine.Standard.csproj", "{B79AC695-E873-4637-9D52-52BECE6D493D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "..informations", "..informations", "{726AEBE3-6A0A-4B2D-A693-5F18E6693350}"
 	ProjectSection(SolutionItems) = preProject
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Countries", "ID3iHoliday.Countries\ID3iHoliday.Countries.csproj", "{6F2F409B-CFF5-4B37-B75F-2DCEE39F3299}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Countries", "iD3iHoliday.Countries\iD3iHoliday.Countries.csproj", "{6F2F409B-CFF5-4B37-B75F-2DCEE39F3299}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iHoliday.Countries.Modularity", "ID3iHoliday.Countries.Modularity\ID3iHoliday.Countries.Modularity.csproj", "{9774607F-13AA-4D06-8B4E-E0F64F467EDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iHoliday.Countries.Modularity", "iD3iHoliday.Countries.Modularity\iD3iHoliday.Countries.Modularity.csproj", "{9774607F-13AA-4D06-8B4E-E0F64F467EDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iHoliday.WebService", "ID3iHoliday.WebService\ID3iHoliday.WebService.csproj", "{1A92415A-B6FA-4D34-8C3C-C1540432DB57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iHoliday.WebService", "iD3iHoliday.WebService\iD3iHoliday.WebService.csproj", "{1A92415A-B6FA-4D34-8C3C-C1540432DB57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iHoliday.WebService.Models", "ID3iHoliday.WebService.Models\ID3iHoliday.WebService.Models.csproj", "{8F94BEA2-886E-4D48-9EE8-CEB648F74661}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iHoliday.WebService.Models", "iD3iHoliday.WebService.Models\iD3iHoliday.WebService.Models.csproj", "{8F94BEA2-886E-4D48-9EE8-CEB648F74661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iHoliday.WebService.Client", "ID3iHoliday.WebService.Client\ID3iHoliday.WebService.Client.csproj", "{30A60F51-62CB-405F-981B-32F48248D4DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iHoliday.WebService.Client", "iD3iHoliday.WebService.Client\iD3iHoliday.WebService.Client.csproj", "{30A60F51-62CB-405F-981B-32F48248D4DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHttpClient.Dynamic", "..\ID3iHttpClient\ID3iHttpClient.Dynamic\ID3iHttpClient.Dynamic.csproj", "{A1070447-8DC4-4F30-B9FB-C80E86FD2743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHttpClient.Dynamic", "..\iD3iHttpClient\iD3iHttpClient.Dynamic\iD3iHttpClient.Dynamic.csproj", "{A1070447-8DC4-4F30-B9FB-C80E86FD2743}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iCore.Either", "..\ID3iCore\ID3iCore.Either\ID3iCore.Either.csproj", "{70C64E05-ABB5-4E7C-8190-53EC10D3ABC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iCore.Either", "..\iD3iCore\iD3iCore.Either\iD3iCore.Either.csproj", "{70C64E05-ABB5-4E7C-8190-53EC10D3ABC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iHoliday.Tests", "ID3iHoliday.Tests\ID3iHoliday.Tests.csproj", "{94F49A44-3898-44D7-8B69-DB78FF39DAE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iHoliday.Tests", "iD3iHoliday.Tests\iD3iHoliday.Tests.csproj", "{94F49A44-3898-44D7-8B69-DB78FF39DAE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iDiagnostics", "..\ID3iDiagnostics\ID3iDiagnostics\ID3iDiagnostics.csproj", "{C007DBD5-0FB2-4A88-B22A-6B0615AD52AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iDiagnostics", "..\iD3iDiagnostics\iD3iDiagnostics\iD3iDiagnostics.csproj", "{C007DBD5-0FB2-4A88-B22A-6B0615AD52AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iDiagnostics.Core", "..\ID3iDiagnostics\ID3iDiagnostics.Core\ID3iDiagnostics.Core.csproj", "{84C84451-D381-4EB4-8B16-F53C14F38A3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iDiagnostics.Core", "..\iD3iDiagnostics\iD3iDiagnostics.Core\iD3iDiagnostics.Core.csproj", "{84C84451-D381-4EB4-8B16-F53C14F38A3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iDiagnostics.Log4NetWriter", "..\ID3iDiagnostics\ID3iDiagnostics.Log4Net\ID3iDiagnostics.Log4NetWriter.csproj", "{EF2FE903-9509-4971-BE6A-94646C54C979}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iDiagnostics.Log4NetWriter", "..\iD3iDiagnostics\iD3iDiagnostics.Log4Net\iD3iDiagnostics.Log4NetWriter.csproj", "{EF2FE903-9509-4971-BE6A-94646C54C979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iDiagnostics.RaygunWriter", "..\ID3iDiagnostics\ID3iDiagnostics.Raygun\ID3iDiagnostics.RaygunWriter.csproj", "{E904F019-DB8E-47F0-A81C-26B42B866DFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iDiagnostics.RaygunWriter", "..\iD3iDiagnostics\iD3iDiagnostics.Raygun\iD3iDiagnostics.RaygunWriter.csproj", "{E904F019-DB8E-47F0-A81C-26B42B866DFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID3iDiagnostics.TraceWriter", "..\ID3iDiagnostics\ID3iDiagnostics.Trace\ID3iDiagnostics.TraceWriter.csproj", "{84AEE912-1865-479F-AEB2-9E38CB60BBDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iD3iDiagnostics.TraceWriter", "..\iD3iDiagnostics\iD3iDiagnostics.Trace\iD3iDiagnostics.TraceWriter.csproj", "{84AEE912-1865-479F-AEB2-9E38CB60BBDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,16 +1,16 @@
-﻿using ID3iDate;
+﻿using iD3iDate;
 using System;
 using System.Collections.Generic;
-using ID3iHoliday.Models;
-using ID3iHoliday.Syntax;
+using iD3iHoliday.Models;
+using iD3iHoliday.Syntax;
 
 using static System.DayOfWeek;
-using static ID3iHoliday.Syntax.Count;
-using static ID3iHoliday.Syntax.Month;
-using static ID3iHoliday.Models.RuleType;
-using static ID3iHoliday.Models.Calendar;
+using static iD3iHoliday.Syntax.Count;
+using static iD3iHoliday.Syntax.Month;
+using static iD3iHoliday.Models.RuleType;
+using static iD3iHoliday.Models.Calendar;
 
-namespace ID3iHoliday.Countries
+namespace iD3iHoliday.Countries
 {
     /// <summary>
     /// Définition pour Anguilla.

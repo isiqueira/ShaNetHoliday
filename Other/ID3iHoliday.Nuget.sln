@@ -5,25 +5,25 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".includes", ".includes", "{D69E6983-19B0-4375-AE2D-6086EE281864}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iCore - Nuget", "..\..\ID3iCore\ID3iCore\ID3iCore - Nuget.csproj", "{177E69BF-E4A6-4641-BF7B-C2954AF46E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iCore - Nuget", "..\..\iD3iCore\iD3iCore\iD3iCore - Nuget.csproj", "{177E69BF-E4A6-4641-BF7B-C2954AF46E78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iDate - Nuget", "..\..\ID3iDate\ID3iDate\ID3iDate - Nuget.csproj", "{F24D269F-AC84-4F01-88E4-07C17701C295}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iDate - Nuget", "..\..\iD3iDate\iD3iDate\iD3iDate - Nuget.csproj", "{F24D269F-AC84-4F01-88E4-07C17701C295}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iRegex - Nuget", "..\..\ID3iRegex\ID3iRegex\ID3iRegex - Nuget.csproj", "{3877BAB7-418D-49A1-ADD9-BB6847317B19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iRegex - Nuget", "..\..\iD3iRegex\iD3iRegex\iD3iRegex - Nuget.csproj", "{3877BAB7-418D-49A1-ADD9-BB6847317B19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standard", "Standard", "{4E3925D1-47B2-4E71-94DD-9E1EC69D3334}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Countries - Nuget", "..\ID3iHoliday.Countries\ID3iHoliday.Countries - Nuget.csproj", "{542C6A3B-4CA0-4E46-B88B-134F615E19C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Countries - Nuget", "..\iD3iHoliday.Countries\iD3iHoliday.Countries - Nuget.csproj", "{542C6A3B-4CA0-4E46-B88B-134F615E19C9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Engine.Standard - Nuget", "..\ID3iHoliday.Engine.Standard\ID3iHoliday.Engine.Standard - Nuget.csproj", "{07A55977-E60A-45B0-8999-B83D4F433DA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Engine.Standard - Nuget", "..\iD3iHoliday.Engine.Standard\iD3iHoliday.Engine.Standard - Nuget.csproj", "{07A55977-E60A-45B0-8999-B83D4F433DA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Core - Nuget", "..\ID3iHoliday.Core\ID3iHoliday.Core - Nuget.csproj", "{E0FFC2C6-12AC-406B-96AF-9DB9914D2ABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Core - Nuget", "..\iD3iHoliday.Core\iD3iHoliday.Core - Nuget.csproj", "{E0FFC2C6-12AC-406B-96AF-9DB9914D2ABE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Engine - Nuget", "..\ID3iHoliday.Engine\ID3iHoliday.Engine - Nuget.csproj", "{101AA2B9-E908-4559-A323-972915D03490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Engine - Nuget", "..\iD3iHoliday.Engine\iD3iHoliday.Engine - Nuget.csproj", "{101AA2B9-E908-4559-A323-972915D03490}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Models - Nuget", "..\ID3iHoliday.Models\ID3iHoliday.Models - Nuget.csproj", "{A37B7EEA-9C77-47D0-AC33-CB2338A60BE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Models - Nuget", "..\iD3iHoliday.Models\iD3iHoliday.Models - Nuget.csproj", "{A37B7EEA-9C77-47D0-AC33-CB2338A60BE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID3iHoliday.Syntax - Nuget", "..\ID3iHoliday.Syntax\ID3iHoliday.Syntax - Nuget.csproj", "{D720FA3B-1FB9-4EA8-A332-8A21C64FC249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iD3iHoliday.Syntax - Nuget", "..\iD3iHoliday.Syntax\iD3iHoliday.Syntax - Nuget.csproj", "{D720FA3B-1FB9-4EA8-A332-8A21C64FC249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

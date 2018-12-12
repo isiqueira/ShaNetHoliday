@@ -1,11 +1,11 @@
-﻿using ID3iHoliday.Core.Models;
+﻿using iD3iHoliday.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax.Composition
+namespace iD3iHoliday.Syntax.Composition
 {
     /// <summary>
     /// Elément d'expression <see cref="Catholic"/>.

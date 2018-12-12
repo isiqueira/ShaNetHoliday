@@ -10,16 +10,16 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Shaenn</Authors>
     <Company>Shaenn</Company>
-    <PackageLicenseUrl>https://github.com/Shaenn/ID3iHoliday/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/Shaenn/iD3iHoliday/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Shaenn/iD3iHoliday</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Shaenn/iD3iHoliday</RepositoryUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/iD3iHoliday/master/Images/logo.png</PackageIconUrl>
     <Description>Hold the definition of all countries in the world.</Description>
     <Version>1.0.14</Version>
-    <PackageId>ID3iHoliday.Countries</PackageId>
+    <PackageId>iD3iHoliday.Countries</PackageId>
     <LangVersion>latest</LangVersion>
-    <AssemblyName>ID3iHoliday.Countries</AssemblyName>
-    <RootNamespace>ID3iHoliday.Countries</RootNamespace>
+    <AssemblyName>iD3iHoliday.Countries</AssemblyName>
+    <RootNamespace>iD3iHoliday.Countries</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,7 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\ID3iHoliday.Countries.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\iD3iHoliday.Countries.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,13 +38,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\ID3iHoliday.Countries.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\iD3iHoliday.Countries.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore - Nuget.csproj" />
-    <ProjectReference Include="..\..\ID3iDate\ID3iDate\ID3iDate - Nuget.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Core\ID3iHoliday.Core - Nuget.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models - Nuget.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Syntax\ID3iHoliday.Syntax - Nuget.csproj" />
+    <ProjectReference Include="..\..\iD3iCore\iD3iCore\iD3iCore - Nuget.csproj" />
+    <ProjectReference Include="..\..\iD3iDate\iD3iDate\iD3iDate - Nuget.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Core\iD3iHoliday.Core - Nuget.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Models\iD3iHoliday.Models - Nuget.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Syntax\iD3iHoliday.Syntax - Nuget.csproj" />
   </ItemGroup>
 </Project>

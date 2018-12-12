@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace iD3iHoliday.Syntax
 {
     /// <summary>
     /// Enumération pour les mois.

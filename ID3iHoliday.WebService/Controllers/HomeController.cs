@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ID3iHoliday.WebService.Controllers
+namespace iD3iHoliday.WebService.Controllers
 {
     [RoutePrefix( "" )]
     public class HomeController : ApiController

@@ -1,12 +1,12 @@
-﻿using ID3iCore;
-using ID3iHoliday.Models;
+﻿using iD3iCore;
+using iD3iHoliday.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Countries
+namespace iD3iHoliday.Countries
 {
     internal class NamesBuilder
     {

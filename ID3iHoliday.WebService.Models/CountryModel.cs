@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.WebService.Models
+namespace iD3iHoliday.WebService.Models
 {
     public class CountryModel : GeographicElementModel
     {

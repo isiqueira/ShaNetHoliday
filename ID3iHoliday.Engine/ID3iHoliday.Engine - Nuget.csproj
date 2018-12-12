@@ -11,15 +11,15 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Hold the logic of retrieve specific days.</Description>
-    <PackageLicenseUrl>https://github.com/Shaenn/ID3iHoliday/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Shaenn/ID3iHoliday</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Shaenn/ID3iHoliday</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ID3iHoliday/master/Images/logo.png</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/Shaenn/iD3iHoliday/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Shaenn/iD3iHoliday</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Shaenn/iD3iHoliday</RepositoryUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/iD3iHoliday/master/Images/logo.png</PackageIconUrl>
     <Version>1.0.14</Version>
-    <PackageId>ID3iHoliday.Engine</PackageId>
+    <PackageId>iD3iHoliday.Engine</PackageId>
     <LangVersion>latest</LangVersion>
-    <AssemblyName>ID3iHoliday.Engine</AssemblyName>
-    <RootNamespace>ID3iHoliday.Engine</RootNamespace>
+    <AssemblyName>iD3iHoliday.Engine</AssemblyName>
+    <RootNamespace>iD3iHoliday.Engine</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,7 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\ID3iHoliday.Engine.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\iD3iHoliday.Engine.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,11 +38,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\ID3iHoliday.Engine.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\iD3iHoliday.Engine.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore - Nuget.csproj" />
-    <ProjectReference Include="..\..\ID3iDate\ID3iDate\ID3iDate - Nuget.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models - Nuget.csproj" />
+    <ProjectReference Include="..\..\iD3iCore\iD3iCore\iD3iCore - Nuget.csproj" />
+    <ProjectReference Include="..\..\iD3iDate\iD3iDate\iD3iDate - Nuget.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Models\iD3iHoliday.Models - Nuget.csproj" />
   </ItemGroup>
 </Project>

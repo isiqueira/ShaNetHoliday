@@ -8,7 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 
-namespace ID3iHoliday.WebService.Services
+namespace iD3iHoliday.WebService.Services
 {
     public class HttpNotFoundAwareDefaultHttpControllerSelector : DefaultHttpControllerSelector
     {

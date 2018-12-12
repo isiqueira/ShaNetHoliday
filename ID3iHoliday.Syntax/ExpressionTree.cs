@@ -1,11 +1,11 @@
-﻿using ID3iHoliday.Syntax.Composition;
+﻿using iD3iHoliday.Syntax.Composition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.Syntax
+namespace iD3iHoliday.Syntax
 {
     /// <summary>
     /// Racine de la syntax pour les expressions.

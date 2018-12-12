@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ID3iHoliday.WebService.Models.Light
+namespace iD3iHoliday.WebService.Models.Light
 {
     public class RegionModelLight
     {

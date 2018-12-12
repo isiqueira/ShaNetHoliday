@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using ID3iHoliday.Engine.Standard;
-using ID3iHoliday.Models;
-using ID3iHoliday.WebService.Divers;
+using iD3iHoliday.Engine.Standard;
+using iD3iHoliday.Models;
+using iD3iHoliday.WebService.Divers;
 
-namespace ID3iHoliday.WebService.Controllers
+namespace iD3iHoliday.WebService.Controllers
 {
     [RoutePrefix( "States" )]
     public class StateController : ApiController

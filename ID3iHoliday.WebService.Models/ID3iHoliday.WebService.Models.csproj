@@ -7,8 +7,8 @@
     <ProjectGuid>{8F94BEA2-886E-4D48-9EE8-CEB648F74661}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ID3iHoliday.WebService.Models</RootNamespace>
-    <AssemblyName>ID3iHoliday.WebService.Models</AssemblyName>
+    <RootNamespace>iD3iHoliday.WebService.Models</RootNamespace>
+    <AssemblyName>iD3iHoliday.WebService.Models</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <LangVersion>latest</LangVersion>

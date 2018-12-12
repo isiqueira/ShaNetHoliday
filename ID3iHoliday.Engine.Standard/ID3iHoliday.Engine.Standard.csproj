@@ -19,7 +19,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\ID3iHoliday.Engine.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\iD3iHoliday.Engine.Standard.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,11 +28,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\ID3iHoliday.Engine.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\iD3iHoliday.Engine.Standard.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ID3iHoliday.Countries\ID3iHoliday.Countries.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Engine\ID3iHoliday.Engine.csproj" />
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Countries\iD3iHoliday.Countries.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Engine\iD3iHoliday.Engine.csproj" />
+    <ProjectReference Include="..\iD3iHoliday.Models\iD3iHoliday.Models.csproj" />
   </ItemGroup>
 </Project>

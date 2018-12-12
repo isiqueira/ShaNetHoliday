@@ -5,9 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http.Filters;
-using ID3iDiagnostics;
+using iD3iDiagnostics;
 
-namespace ID3iHoliday.WebService.Filters
+namespace iD3iHoliday.WebService.Filters
 {
     public class ExceptionsFilterAttribute : ExceptionFilterAttribute
     {

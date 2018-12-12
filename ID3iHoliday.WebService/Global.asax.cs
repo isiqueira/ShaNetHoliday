@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
-using ID3iDiagnostics;
-using ID3iDiagnostics.Log4NetWriter;
-using ID3iDiagnostics.RaygunWriter;
-using ID3iHoliday.WebService.Filters;
-using ID3iHoliday.WebService.Services;
+using iD3iDiagnostics;
+using iD3iDiagnostics.Log4NetWriter;
+using iD3iDiagnostics.RaygunWriter;
+using iD3iHoliday.WebService.Filters;
+using iD3iHoliday.WebService.Services;
 
-namespace ID3iHoliday.WebService
+namespace iD3iHoliday.WebService
 {
     public class WebApiApplication : HttpApplication
     {

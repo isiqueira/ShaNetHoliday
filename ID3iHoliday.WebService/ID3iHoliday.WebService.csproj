@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ID3iHoliday.WebService</RootNamespace>
-    <AssemblyName>ID3iHoliday.WebService</AssemblyName>
+    <RootNamespace>iD3iHoliday.WebService</RootNamespace>
+    <AssemblyName>iD3iHoliday.WebService</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <LangVersion>latest</LangVersion>
@@ -85,7 +85,7 @@
     <Compile Include="Services\HttpNotFoundAwareDefaultHttpControllerSelector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\IIS - ID3i - Package.pubxml" />
+    <None Include="Properties\PublishProfiles\IIS - iD3i - Package.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,45 +131,45 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ID3iCore\ID3iCore\ID3iCore.csproj">
+    <ProjectReference Include="..\..\iD3iCore\iD3iCore\iD3iCore.csproj">
       <Project>{BA32AABF-4D61-4AD3-A50F-715758867194}</Project>
-      <Name>ID3iCore</Name>
+      <Name>iD3iCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ID3iDiagnostics\ID3iDiagnostics.Core\ID3iDiagnostics.Core.csproj">
+    <ProjectReference Include="..\..\iD3iDiagnostics\iD3iDiagnostics.Core\iD3iDiagnostics.Core.csproj">
       <Project>{84c84451-d381-4eb4-8b16-f53c14f38a3f}</Project>
-      <Name>ID3iDiagnostics.Core</Name>
+      <Name>iD3iDiagnostics.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ID3iDiagnostics\ID3iDiagnostics.Log4Net\ID3iDiagnostics.Log4NetWriter.csproj">
+    <ProjectReference Include="..\..\iD3iDiagnostics\iD3iDiagnostics.Log4Net\iD3iDiagnostics.Log4NetWriter.csproj">
       <Project>{ef2fe903-9509-4971-be6a-94646c54c979}</Project>
-      <Name>ID3iDiagnostics.Log4NetWriter</Name>
+      <Name>iD3iDiagnostics.Log4NetWriter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ID3iDiagnostics\ID3iDiagnostics.Raygun\ID3iDiagnostics.RaygunWriter.csproj">
+    <ProjectReference Include="..\..\iD3iDiagnostics\iD3iDiagnostics.Raygun\iD3iDiagnostics.RaygunWriter.csproj">
       <Project>{e904f019-db8e-47f0-a81c-26b42b866dff}</Project>
-      <Name>ID3iDiagnostics.RaygunWriter</Name>
+      <Name>iD3iDiagnostics.RaygunWriter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ID3iDiagnostics\ID3iDiagnostics\ID3iDiagnostics.csproj">
+    <ProjectReference Include="..\..\iD3iDiagnostics\iD3iDiagnostics\iD3iDiagnostics.csproj">
       <Project>{c007dbd5-0fb2-4a88-b22a-6b0615ad52ad}</Project>
-      <Name>ID3iDiagnostics</Name>
+      <Name>iD3iDiagnostics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Core\ID3iHoliday.Core.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Core\iD3iHoliday.Core.csproj">
       <Project>{2DA2895E-CA5C-440F-93B1-E8A8C50CF738}</Project>
-      <Name>ID3iHoliday.Core</Name>
+      <Name>iD3iHoliday.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Engine.Standard\ID3iHoliday.Engine.Standard.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Engine.Standard\iD3iHoliday.Engine.Standard.csproj">
       <Project>{b79ac695-e873-4637-9d52-52bece6d493d}</Project>
-      <Name>ID3iHoliday.Engine.Standard</Name>
+      <Name>iD3iHoliday.Engine.Standard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Engine\ID3iHoliday.Engine.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Engine\iD3iHoliday.Engine.csproj">
       <Project>{1ae7bed4-722e-4695-a5e7-ffcbb004c55e}</Project>
-      <Name>ID3iHoliday.Engine</Name>
+      <Name>iD3iHoliday.Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Models\iD3iHoliday.Models.csproj">
       <Project>{c7c2d758-46d9-4840-9af9-dfdd85c94178}</Project>
-      <Name>ID3iHoliday.Models</Name>
+      <Name>iD3iHoliday.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.WebService.Models\ID3iHoliday.WebService.Models.csproj">
+    <ProjectReference Include="..\iD3iHoliday.WebService.Models\iD3iHoliday.WebService.Models.csproj">
       <Project>{8f94bea2-886e-4d48-9ee8-ceb648f74661}</Project>
-      <Name>ID3iHoliday.WebService.Models</Name>
+      <Name>iD3iHoliday.WebService.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

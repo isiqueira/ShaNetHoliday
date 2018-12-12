@@ -7,8 +7,8 @@
     <ProjectGuid>{36C93161-3966-477E-B3FD-7CFA7E5FA809}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ID3iHoliday.Engine.Modularity</RootNamespace>
-    <AssemblyName>ID3iHoliday.Engine.Modularity</AssemblyName>
+    <RootNamespace>iD3iHoliday.Engine.Modularity</RootNamespace>
+    <AssemblyName>iD3iHoliday.Engine.Modularity</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\ID3iHoliday.Engine.Modularity.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\iD3iHoliday.Engine.Modularity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,7 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\ID3iHoliday.Engine.Modularity.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\iD3iHoliday.Engine.Modularity.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,13 +53,13 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ID3iHoliday.Engine\ID3iHoliday.Engine.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Engine\iD3iHoliday.Engine.csproj">
       <Project>{1ae7bed4-722e-4695-a5e7-ffcbb004c55e}</Project>
-      <Name>ID3iHoliday.Engine</Name>
+      <Name>iD3iHoliday.Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ID3iHoliday.Models\ID3iHoliday.Models.csproj">
+    <ProjectReference Include="..\iD3iHoliday.Models\iD3iHoliday.Models.csproj">
       <Project>{c7c2d758-46d9-4840-9af9-dfdd85c94178}</Project>
-      <Name>ID3iHoliday.Models</Name>
+      <Name>iD3iHoliday.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
