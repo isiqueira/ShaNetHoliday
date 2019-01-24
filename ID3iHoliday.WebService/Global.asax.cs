@@ -17,9 +17,8 @@ namespace iD3iHoliday.WebService
     {
         protected void Application_Start()
         {
-            AppHealth.Current.AddWriter( Log4NetHealthWriter.Current );
-
-            AppHealth.Current.AddWriter( RaygunHealthWriter.Current.ForKey( "NO_API_KEY" ) );
+            AppHealth.Current.AddWriter( new Log4NetHealthWriter() );
+            AppHealth.Current.AddWriter( new RaygunHealthWriter( "NO_API_KEY" ) );
 
             AppHealth.Current.Info.Track( "Démarrage de l'application." );
 
