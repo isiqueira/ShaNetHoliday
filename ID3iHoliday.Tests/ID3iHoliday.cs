@@ -351,11 +351,11 @@ namespace iD3iHoliday.Tests
         {
             for ( var i = 285; i < 360; i += 15 )
             {
-                Debug.WriteLine( i.SolarLongitude( 2018 ).ToString( "dd MM yyyy - HH:00:00" ) );
+                Debug.WriteLine( OnSolarTerm.The( i ).ToDateTime( 2018 ).ToString( "dd MM yyyy - HH:00:00" ) );
             }
             for ( var i = 0; i < 285; i += 15 )
             {
-                Debug.WriteLine( i.SolarLongitude( 2019 ).ToString( "dd MM yyyy - HH:00:00" ) );
+                Debug.WriteLine( OnSolarTerm.The( i ).ToDateTime( 2018 ).ToString( "dd MM yyyy - HH:00:00" ) );
             }            
         }
 
@@ -412,9 +412,7 @@ namespace iD3iHoliday.Tests
         [DataTestMethod, TestCategory( "Ok" ), TestCategory( "TESTS SUR iD3iHoliday" )]
         public void ChineseQingMing( int year, int day )
         {
-            var result = 15.SolarLongitude( year );
-
-            Assert.AreEqual( day, result.Day );
+            Assert.AreEqual( day, OnSolarTerm.The5th.ToDateTime(year).Day );
         }
     }
 }
