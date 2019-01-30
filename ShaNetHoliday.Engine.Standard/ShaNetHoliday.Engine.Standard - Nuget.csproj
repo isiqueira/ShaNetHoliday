@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ShaNetHoliday.Engine.Standard</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Shaenn</Authors>
+    <Company>Shaenn</Company>
+    <Description>Calculate Public Holidays for a given year, translation native. Country States and Regions support. Supports 55 countries.</Description>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Shaenn/ShaNetHoliday</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Shaenn/ShaNetHoliday</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>Public-Holiday PublicHoliday Bank-Holiday BanHoliday Andorra Antigua &amp; Barbuda Anguilla Albania Austria Åland Islands Bosnia and Herzegovina Belgique Bulgaria Belarus Cyprus Czech Republic Germany Denmark Estonia Finland France Greece Croatia Hungary Ireland Isle of Man Iceland Italia Jersey Lichtenstein Lithuania Luxembourg Latvia Monaco Moldova Montenegro Macedonia Malta Netherlands Norway Poland Portugal Romania Serbia Russia San Marino Kosovo Slovakia Slovenia Spain Sweden Switzerland Ukraine VaticanCity UnitedKingdom Europa Canada Greenland Mexico UnitedStatesOfAmerica</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/Images/logo.png</PackageIconUrl>
+    <PackageReleaseNotes>Add Canada, Greenland, Mexico, United States of America.
+Countries of Europa done.
+Countries of North America done.</PackageReleaseNotes>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>ShaNetHoliday.Engine.Standard</AssemblyName>
+    <RootNamespace>ShaNetHoliday.Engine.Standard</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ShaNetHoliday.Engine.Standard.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ShaNetHoliday.Engine.Standard.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShaNetHoliday.Countries\ShaNetHoliday.Countries - Nuget.csproj" />
+    <ProjectReference Include="..\ShaNetHoliday.Engine\ShaNetHoliday.Engine - Nuget.csproj" />
+    <ProjectReference Include="..\ShaNetHoliday.Models\ShaNetHoliday.Models - Nuget.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,1 +1,1 @@
-GET http://holiday.id3i.dom/regions/DE-BY-A/Days?year=2018&rule=All&calendar=All
+GET http://holiday.ShaNet.dom/regions/DE-BY-A/Days?year=2018&rule=All&calendar=All
