@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAModule.cs" />
+    <Compile Include="CNModule.cs" />
     <Compile Include="CHModule.cs" />
     <Compile Include="ESModule.cs" />
     <Compile Include="GLModule.cs" />

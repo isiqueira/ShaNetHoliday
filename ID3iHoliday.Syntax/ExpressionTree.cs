@@ -1,4 +1,7 @@
-﻿using iD3iHoliday.Syntax.Composition;
+﻿using iD3iHoliday.Core.Models;
+using iD3iHoliday.Core.Parsers;
+using iD3iHoliday.Syntax.Composition;
+using iD3iHoliday.Syntax.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,5 +34,10 @@ namespace iD3iHoliday.Syntax
         /// Racine pour les expressions de substitution.
         /// </summary>
         public static Substitute Substitute => new Substitute();
+
+        /// <summary>
+        /// Racine pour les expressions chinoises.
+        /// </summary>
+        public static Chinese Chinese => new Chinese();
     }
 }

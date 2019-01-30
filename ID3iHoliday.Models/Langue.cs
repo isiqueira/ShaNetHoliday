@@ -186,6 +186,11 @@ namespace iD3iHoliday.Models
         /// <summary>
         /// Ukrainian.
         /// </summary>
-        [Description( "Ukrainian" )] UK
+        [Description( "Ukrainian" )] UK,
+
+        /// <summary>
+        /// Chinese.
+        /// </summary>
+        [Description( "Chinese" )] ZH
     }
 }

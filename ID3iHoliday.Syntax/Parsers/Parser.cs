@@ -185,5 +185,67 @@ namespace iD3iHoliday.Syntax.Parsers
         /// </summary>
         public static Pattern PatternActionNextPrevious =>
             Pattern.With.Choice( Pattern.With.Literal( "NEXT" ), Pattern.With.Literal( "PREVIOUS" ) );
+
+        /// <summary>
+        /// Pattern pour la définition d'une date lunaire dans le calendrier Chinois.
+        /// </summary>
+        public static Pattern PatternCHL =>
+            Pattern.With.Literal("LUNAR").Whitespace
+            .AtomicGroup(
+                Pattern.With.NamedGroup( "Day", Pattern.With.Set( Pattern.With.Literal( "0-9" ) ).Repeat.Exactly( 2 ) )
+                .Literal( "-" )
+                .NamedGroup( "Leap",
+                    Pattern.With.Choice(
+                        Pattern.With.Literal( "0" ),
+                        Pattern.With.Literal( "1" ) ) )
+                .Literal( "-" )
+                .NamedGroup( "Month",
+                    Pattern.With.Choice(
+                        Pattern.With.Literal( "0" ).Set( Pattern.With.Literal( "1-9" ) ),
+                        Pattern.With.Literal( "1" ).Set( Pattern.With.Literal( "0-2" ) ) ) )
+            );
+
+        /// <summary>
+        /// Pattern pour la définition d'une date solaire dans le calendrier Chinois.
+        /// </summary>
+        public static Pattern PatternCHS =>
+            Pattern.With.Literal( "SOLAR" ).Whitespace
+                .AtomicGroup(
+                    Pattern.With.NamedGroup( "Degrees", Pattern.With.Digit.Repeat.OneOrMore )
+                    .Literal( "°" ) )
+                .AtomicGroup(
+                    Pattern.With.Whitespace.Literal("THE").Whitespace
+                    .NamedGroup("Day", Pattern.With.Digit.Repeat.OneOrMore)).Repeat.Optional;
+                    
+
+        /// <summary>
+        /// Pattern pour la définition des éléments du calendrier Chinois.
+        /// </summary>
+        public static Pattern PatternElement =>
+            Pattern.With.Choice(
+                Pattern.With.Literal( "WOOD" ), Pattern.With.Literal( "FIRE" ), Pattern.With.Literal( "EARTH" ),
+                Pattern.With.Literal( "METAL" ), Pattern.With.Literal( "WATER" ) );
+
+        /// <summary>
+        /// Pattern pour la définition des animaux du calendrier Chinois.
+        /// </summary>
+        public static Pattern PatternAnimal =>
+            Pattern.With.Choice(
+                Pattern.With.Literal( "RAT" ), Pattern.With.Literal( "OX" ), Pattern.With.Literal( "TIGER" ),
+                Pattern.With.Literal( "RABBIT" ), Pattern.With.Literal( "DRAGON" ), Pattern.With.Literal( "SNAKE" ),
+                Pattern.With.Literal( "HORSE" ), Pattern.With.Literal( "SHEEP" ), Pattern.With.Literal( "MONKEY" ),
+                Pattern.With.Literal( "ROOSTER" ), Pattern.With.Literal( "DOG" ), Pattern.With.Literal( "PIG" ) );
+
+        /// <summary>
+        /// Pattern pour la définition d'un cycle, d'un élément et d'un animal pour le calendrier Chinois.
+        /// </summary>
+        public static Pattern PatternCycleElementAnimal =>
+            Pattern.With.AtomicGroup(
+                Pattern.With.Whitespace.Literal( "CYCLE" ).Whitespace
+                .NamedGroup( "Cycle", Pattern.With.Digit.Repeat.OneOrMore )
+                .Whitespace.Literal( "ELEMENT" ).Whitespace
+                .NamedGroup( "Element", PatternElement )
+                .Whitespace.Literal( "ANIMAL" ).Whitespace
+                .NamedGroup( "Animal", PatternAnimal ) );
     }
 }

@@ -7,50 +7,6 @@ using static iD3iHoliday.Models.RuleType;
 namespace iD3iHoliday.Models
 {
     /// <summary>
-    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.GregorianCalendar"/>.
-    /// </summary>
-    public class GregorianRule : Rule
-    {
-        /// <summary>
-        /// Initialise une nouvelle instance pour la classe <see cref="GregorianRule"/>.
-        /// </summary>
-        public GregorianRule() : base() => Calendar = Calendar.Gregorian;
-    }
-
-    /// <summary>
-    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.JulianCalendar"/>.
-    /// </summary>
-    public class JulianRule : Rule
-    {
-        /// <summary>
-        /// Initialise une nouvelle instance pour la classe <see cref="JulianRule"/>.
-        /// </summary>
-        public JulianRule() : base() => Calendar = Calendar.Julian;
-    }
-
-    /// <summary>
-    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.HijriCalendar"/>.
-    /// </summary>
-    public class HijriRule : Rule
-    {
-        /// <summary>
-        /// Initialise une nouvelle instance pour la classe <see cref="HijriRule"/>.
-        /// </summary>
-        public HijriRule() : base() => Calendar = Calendar.Hijri;
-    }
-
-    /// <summary>
-    /// Représentation d'une règle dans le calendrier <see cref="System.Globalization.HebrewCalendar"/>.
-    /// </summary>
-    public class HebrewRule : Rule
-    {
-        /// <summary>
-        /// Initialise une nouvelle instance pour la classe <see cref="HebrewRule"/>.
-        /// </summary>
-        public HebrewRule() : base() => Calendar = Calendar.Hijri;
-    }
-
-    /// <summary>
     /// Représentation d'une règle.
     /// </summary>
     public abstract class Rule : ICloneable

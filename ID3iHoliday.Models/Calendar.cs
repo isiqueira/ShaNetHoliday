@@ -34,6 +34,11 @@ namespace iD3iHoliday.Models
         /// <summary>
         /// <see cref="System.Globalization.HebrewCalendar"/>.
         /// </summary>
-        Hebrew = 3
+        Hebrew = 3,
+
+        /// <summary>
+        /// <see cref="System.Globalization.ChineseLunisolarCalendar"/>.
+        /// </summary>
+        Chinese = 4
     }
 }

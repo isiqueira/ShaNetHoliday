@@ -33,6 +33,7 @@ namespace iD3iHoliday.Engine.Standard
             CountriesAvailable.Add( new BY() );
             CountriesAvailable.Add( new CA() );
             CountriesAvailable.Add( new CH() );
+            CountriesAvailable.Add( new CN() );
             CountriesAvailable.Add( new CY() );
             CountriesAvailable.Add( new CZ() );
             CountriesAvailable.Add( new DE() );
