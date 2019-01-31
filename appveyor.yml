@@ -1,0 +1,46 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+configuration: Release
+platform: Any CPU
+clone_folder: c:\project\ShaNet\ShaNetHoliday
+install:
+- cmd: >-
+    git clone https://github.com/Shaenn/shanetcore.git c:/project/ShaNet/ShaNetCore
+
+    git clone https://github.com/Shaenn/shanetdate.git c:/project/ShaNet/ShaNetDate
+
+    git clone https://github.com/Shaenn/shanetregex.git c:/project/ShaNet/ShaNetRegex
+
+    git clone https://github.com/Shaenn/shanethttpclient.git c:/project/ShaNet/ShaNetHttpClient
+
+    git clone https://github.com/Shaenn/shanetdiagnostics.git c:/project/ShaNet/ShaNetDiagnostics
+before_build:
+- cmd: msbuild /t:restore
+build:
+  project: c:\project\ShaNet\ShaNetHoliday\ShaNetHoliday.sln
+  verbosity: minimal
+test:
+  categories:
+    only:
+    - ShaNetHoliday.Engine.Standard
+    - ShaNetHoliday.Try
+artifacts:
+- path: ShaNetHoliday.Engine.Standard\bin\Release\net462
+  name: Standard.Net462
+- path: ShaNetHoliday.Engine.Modularity\bin\Release
+  name: Modularity
+- path: ShaNetHoliday.Countries.Modularity\bin\Release
+  name: Countries.Modularity
+- path: ShaNetHoliday.Engine.Standard\bin\Release\netstandard2.0
+  name: Standard.NetStd2
+deploy:
+- provider: GitHub
+  tag: $(appveyor_repo_tag_name)
+  release: $(appveyor_repo_tag_name)
+  description: $(appveyor_repo_tag_name)
+  auth_token:
+    secure: 0G20sFbbqX125pv1/JdBlXLHSD+SCYbY9GfppMSBkc7LOm4vrXz/xcp7fsUJ8KXs
+  repository: Shaenn/ShaNetHoliday
+  draft: true
+  on:
+    appveyor_repo_tag: true

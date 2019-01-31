@@ -1,10 +1,10 @@
 | Projet | Statut |
 | --- | --- |
-| ShaNetCore | [![Build status](https://ci.appveyor.com/api/projects/status/dsd0hvd632my2y8e?svg=true)](https://ci.appveyor.com/project/Shaenn/ShaNetcore-8qh9v) |
-| ShaNetDate | [![Build status](https://ci.appveyor.com/api/projects/status/08am5ww7xiy1cm5a?svg=true)](https://ci.appveyor.com/project/Shaenn/ShaNetdate-k8k5t) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/ShaNetdate-k8k5t.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/ShaNetdate-k8k5t/build/tests) |
-| ShaNetRegex | [![Build status](https://ci.appveyor.com/api/projects/status/m1bdir11jmhd29yc?svg=true)](https://ci.appveyor.com/project/Shaenn/ShaNetregex-7x0ek) |
-| ShaNetDiagnostics | [![Build status](https://ci.appveyor.com/api/projects/status/2yva3ae4bdk1662k?svg=true)](https://ci.appveyor.com/project/Shaenn/ShaNetdiagnostics) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/ShaNetdiagnostics.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/ShaNetdiagnostics/build/tests)|
-| ShaNetHoliday | [![Build status](https://ci.appveyor.com/api/projects/status/n4vrppmsghwxvbg7?svg=true)](https://ci.appveyor.com/project/Shaenn/ShaNetholiday-d4l66) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/ShaNetholiday-d4l66.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/ShaNetholiday-d4l66/build/tests) |
+| ShaNetCore | [![Build status](https://ci.appveyor.com/api/projects/status/4no2w45carvhi436?svg=true)](https://ci.appveyor.com/project/Shaenn/shanetcore) |
+| ShaNetDate | [![Build status](https://ci.appveyor.com/api/projects/status/ux2vrytglctf1de8?svg=true)](https://ci.appveyor.com/project/Shaenn/shanetdate) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/shanetdate.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/shanetdate/build/tests) |
+| ShaNetRegex | [![Build status](https://ci.appveyor.com/api/projects/status/rlfeb9694fp2jdpm?svg=true)](https://ci.appveyor.com/project/Shaenn/shanetregex) |
+| ShaNetDiagnostics | [![Build status](https://ci.appveyor.com/api/projects/status/3ybckfrgspx2li4g?svg=true)](https://ci.appveyor.com/project/Shaenn/shanetdiagnostics) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/shanetdiagnostics.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/shanetdiagnostics/build/tests)|
+| ShaNetHoliday | [![Build status](https://ci.appveyor.com/api/projects/status/mmlonfnqakshn7s2?svg=true)](https://ci.appveyor.com/project/Shaenn/shanetholiday) [![Tests Status](https://img.shields.io/appveyor/tests/Shaenn/shanetholiday.svg?logo=appveyor)](https://ci.appveyor.com/project/Shaenn/shanetholiday/build/tests) |
 
 ### Version
 ---
