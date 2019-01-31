@@ -17,7 +17,7 @@
     <RepositoryUrl>https://github.com/Shaenn/ShaNetHoliday</RepositoryUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>Public-Holiday PublicHoliday Bank-Holiday BanHoliday Andorra Antigua &amp; Barbuda Anguilla Albania Austria Åland Islands Bosnia and Herzegovina Belgique Bulgaria Belarus Cyprus Czech Republic Germany Denmark Estonia Finland France Greece Croatia Hungary Ireland Isle of Man Iceland Italia Jersey Lichtenstein Lithuania Luxembourg Latvia Monaco Moldova Montenegro Macedonia Malta Netherlands Norway Poland Portugal Romania Serbia Russia San Marino Kosovo Slovakia Slovenia Spain Sweden Switzerland Ukraine VaticanCity UnitedKingdom Europa Canada Greenland Mexico UnitedStatesOfAmerica</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/Images/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/Images/logo.jpg</PackageIconUrl>
     <PackageReleaseNotes>Add Canada, Greenland, Mexico, United States of America.
 Countries of Europa done.
 Countries of North America done.</PackageReleaseNotes>

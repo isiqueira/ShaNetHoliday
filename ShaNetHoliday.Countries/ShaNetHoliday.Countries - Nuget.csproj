@@ -13,7 +13,7 @@
     <PackageLicenseUrl>https://github.com/Shaenn/ShaNetHoliday/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Shaenn/ShaNetHoliday</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Shaenn/ShaNetHoliday</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/Images/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/Images/logo.jpg</PackageIconUrl>
     <Description>Hold the definition of all countries in the world.</Description>
     <Version>1.0.0</Version>
     <PackageId>ShaNetHoliday.Countries</PackageId>

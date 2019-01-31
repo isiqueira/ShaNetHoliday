@@ -15,7 +15,7 @@
     <PackageProjectUrl>https://github.com/Shaenn/ShaNetHoliday</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Shaenn/ShaNetHoliday/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/Shaenn/ShaNetHoliday</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/Images/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Shaenn/ShaNetHoliday/master/Images/logo.jpg</PackageIconUrl>
     <PackageId>ShaNetHoliday.Core</PackageId>
     <LangVersion>latest</LangVersion>
     <AssemblyName>ShaNetHoliday.Core</AssemblyName>
