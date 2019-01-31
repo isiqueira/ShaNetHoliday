@@ -54,6 +54,13 @@ In order to construct specific day a grammar is available.
 ### Full diagram
 https://shaenn.github.io/ShaNetHoliday/Grammar/Grammar.xhtml 
 
+### Wiki 
+You can find all rules on this page of wiki :
+* https://github.com/Shaenn/ShaNetHolidayResult/wiki/Rules
+
+And the result for year 2019 on this other page :
+* https://github.com/Shaenn/ShaNetHolidayResult/wiki/2019
+
 ---
 ### Example :
 #### Get All supported countries
