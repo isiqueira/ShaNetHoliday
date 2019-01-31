@@ -131,32 +131,32 @@ namespace ShaNetHoliday.Tests
             var year = DateTime.Today.Year;
             Engine.Standard.HolidaySystem.Instance.CountriesAvailable.Where( x => x.Code != null ).ForEach( x =>
             {
-                Debug.WriteLine( x.DefaultName );
+                Debug.WriteLine( $"* # {x.DefaultName}" );
                 x.Rules.ForEach( y =>
                 {
-                    Debug.WriteLine( $"\t{y.Expression.IsMatch}\t{y.Expression.Expression}\t{string.Join( ", ", y.Expression.Parse( year ).DatesToAdd.Select( ab => ab.ToString() ) )}" );
+                    Debug.WriteLine( $"\t * (*{y.Expression.IsMatch}*)\t{y.Expression.Expression} ![logo] **{string.Join( ", ", y.Expression.Parse( year ).DatesToAdd.Select( ab => ab.ToString() ) )}**" );
                     Assert.AreEqual( true, y.Expression.IsMatch, y.Expression.Expression );
                 } );
                 x.States?.ForEach( y =>
                 {
-                    Debug.WriteLine( $"\t\t{y.DefaultName}" );
+                    Debug.WriteLine( $"\t\t * ## {y.DefaultName}" ); 
                     y.Rules.ForEach( z =>
                     {
                         if ( z.Expression != null && !string.IsNullOrEmpty( z.Expression.Expression ) )
                         {
-                            Debug.WriteLine( $"\t\t\t{z.Expression.IsMatch}\t{z.Expression.Expression}\t{string.Join( ", ", z.Expression.Parse( year ).DatesToAdd.Select( ab => ab.ToString() ) )}" );
+                            Debug.WriteLine( $"\t\t\t * (*{z.Expression.IsMatch}*)\t{z.Expression.Expression} ![logo] **{string.Join( ", ", z.Expression.Parse( year ).DatesToAdd.Select( ab => ab.ToString() ) )}**" );
                             Assert.AreEqual( true, z.Expression.IsMatch, z.Expression.Expression );
                             Assert.IsTrue( y.Langues != null );
                         }
                     } );
                     y.Regions?.ForEach( z =>
                     {
-                        Debug.WriteLine( $"\t\t\t{z.DefaultName}" );
+                        Debug.WriteLine( $"\t\t\t * ### {z.DefaultName}" );
                         z.Rules.ForEach( aa =>
                         {
                             if ( aa.Expression != null && !string.IsNullOrEmpty( aa.Expression.Expression ) )
                             {
-                                Debug.WriteLine( $"\t\t\t\t{aa.Expression.IsMatch}\t{aa.Expression.Expression}\t{string.Join( ", ", aa.Expression.Parse( year ).DatesToAdd.Select( ab => ab.ToString() ) )}" );
+                                Debug.WriteLine( $"\t\t\t\t * (*{aa.Expression.IsMatch}*)\t{aa.Expression.Expression} ![logo] **{string.Join( ", ", aa.Expression.Parse( year ).DatesToAdd.Select( ab => ab.ToString() ) )}**" );
                                 Assert.AreEqual( true, aa.Expression.IsMatch, aa.Expression.Expression );
                                 Assert.IsTrue( z.Langues != null );
                             }
@@ -169,11 +169,11 @@ namespace ShaNetHoliday.Tests
         [TestMethod, TestCategory( "Ok" ), TestCategory( "ShaNetHoliday.Engine.Standard" )]
         public void GetAllRulesForAll()
         {
-            void ShowRule( ExpressionElement expression, Dictionary<Langue, string> names, RuleType type, string tab = "\t" )
+            void ShowRule( ExpressionElement expression, Dictionary<Langue, string> names, RuleType type, string tab = "\t", bool isEnable = true )
             {
-                Debug.WriteLine( $"{tab}{expression.Expression}\t({type.ToString()})\t{string.Join( " | ", names.Select( x => $"{x.Key.Description()} : {x.Value}" ) )}" );
+                Debug.WriteLine( $"{tab}* {( isEnable ? "" : "~~" )}{expression.Expression}\t({type.ToString()})\t{string.Join( " | ", names.Select( x => $"{x.Key.Description()} : {x.Value}" ) )}{( isEnable ? "" : "~~" )}" );
             }
-            void ShowStateRule( Country country, Rule rule, RuleType ruleType, string tab = "\t\t\t" )
+            void ShowStateRule( Country country, Rule rule, RuleType ruleType, string tab = "\t\t\t", bool isEnable = true )
             {
                 ExpressionElement expression = null;
                 Dictionary<Langue, string> names = null;
@@ -193,11 +193,11 @@ namespace ShaNetHoliday.Tests
 
                 if ( rule.Overrides == Overrides.None )
                 {
-                    ShowRule( rule.Expression, rule.Names, type, tab );
+                    ShowRule( rule.Expression, rule.Names, type, tab, isEnable );
                 }
                 else
                 {
-                    ShowRule( expression, names, type, tab );
+                    ShowRule( expression, names, type, tab, rule.IsEnable );
                 }
             }
             void ShowRegionRule( Country country, State state, Rule rule, string tab = "\t\t\t\t" )
@@ -212,24 +212,25 @@ namespace ShaNetHoliday.Tests
                 }
                 else
                 {
-                    ShowStateRule( country, state.Rules.FirstOrDefault( x => x.Key == rule.Key ), rule.Type, tab );
+                    ShowStateRule( country, state.Rules.FirstOrDefault( x => x.Key == rule.Key ), rule.Type, tab, rule.IsEnable );
                 }
             }
 
             Engine.Standard.HolidaySystem.Instance.CountriesAvailable.Where( x => x.Code != null ).ForEach( x =>
             {
-                Debug.WriteLine( x.DefaultName );
+                Debug.WriteLine( $"* # {x.DefaultName}" );
                 x.Rules.ForEach( y => ShowRule( y.Expression, y.Names, y.Type ) );
                 x.States?.ForEach( y =>
                 {
-                    Debug.WriteLine( $"\t\t{y.DefaultName}" );
+                    Debug.WriteLine( $"\t\t* ## {y.DefaultName}" );
                     y.Rules.ForEach( z => ShowStateRule( x, z, z.Type ) );
                     y.Regions?.ForEach( z =>
                     {
-                        Debug.WriteLine( $"\t\t\t{z.DefaultName}" );
+                        Debug.WriteLine( $"\t\t\t* ### {z.DefaultName}" );
                         z.Rules.ForEach( aa => ShowRegionRule( x, y, aa ) );
                     } );
                 } );
+                Debug.WriteLine( "" );
             } );
         }
 
