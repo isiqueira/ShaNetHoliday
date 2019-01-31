@@ -7,7 +7,7 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Authors>Shaenn</Authors>
     <Company>Shaenn</Company>
     <PackageLicenseUrl>https://github.com/Shaenn/ShaNetHoliday/blob/master/LICENSE</PackageLicenseUrl>

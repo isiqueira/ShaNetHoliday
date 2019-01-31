@@ -8,7 +8,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <Authors>Shaenn</Authors>
     <Company>Shaenn</Company>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Hold the logic of retrieve specific days.</Description>
     <PackageLicenseUrl>https://github.com/Shaenn/ShaNetHoliday/blob/master/LICENSE</PackageLicenseUrl>
