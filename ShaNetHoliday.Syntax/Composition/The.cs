@@ -23,5 +23,12 @@ namespace ShaNetHoliday.Syntax.Composition
         /// <param name="parent">Elément de syntax parent.</param>
         /// <param name="value">Numéro du jour dans le mois solaire.</param>
         public The( ExpressionElement parent, int value ) : base( parent ) => Value = value;
+
+        /// <summary>
+        /// Elément de syntax pour déplacer le jour à un autre si il tombe un certain jour.
+        /// </summary>
+        /// <param name="dayOfWeek">Jour particulier.</param>
+        /// <returns>L'élément de syntax <see cref="IfDay"/> pour ajouter d'autres comportements.</returns>
+        public IfDay If( DayOfWeek dayOfWeek ) => new IfDay( this, dayOfWeek );
     }
 }
