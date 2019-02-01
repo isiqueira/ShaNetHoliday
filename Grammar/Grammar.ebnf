@@ -1,0 +1,109 @@
+/* extracted from http://www.bottlecaps.de/rr/ui on Mon Jan 8, 2018, 11:40 (UTC+01)
+ */
+ExpressionTreeGrammar ::= ExpressionTree'.'
+(
+|Substitute'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+|Move'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+|Observe'.'Fix'(''DateTimeValue'')''.'If'('Days')''.'Then'.'(Previous|Next)'('Days')'('.'Or'.'If'('Days')''.'Then'.'(Previous|Next)'('Days')')*('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+|Date'.'
+  (
+  |Specific'(''DateTimeValue'')'
+   (
+   '.'StartAt'(''StringValue'')'
+    (
+    '.'Duration'(''StringValue'')'
+     (
+     If'('Days')''.'ThenStartAt'(''StringValue'')'
+      (
+      |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+      |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+      )?
+     |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+     |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+     )?
+    |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   )?
+  |Fix'(''DateTimeValue'')''.'
+   (
+   '.'StartAt'(''StringValue'')'
+    (
+    '.'Duration'(''StringValue'')'
+     (
+     If'('Days')''.'ThenStartAt'(''StringValue'')'
+      (
+      |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+      |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+      )?
+     |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+     |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+     )?
+    |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   )?
+  |Catholic'.'(Christianism|CustomDay'(''StringValue'')')
+   (
+   '.'StartAt'(''StringValue'')'
+    (
+    '.'Duration'(''StringValue'')'
+     (
+     If'('Days')''.'ThenStartAt'(''StringValue'')'
+      (
+      |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+      |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+      )?
+     |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+     |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+     )?
+    |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   )?
+  |Orthodox'.'(Christianism|CustomDay'(''StringValue'')')
+   (
+   '.'StartAt'(''StringValue'')'
+    (
+    '.'Duration'(''StringValue'')'
+     (
+     If'('Days')''.'ThenStartAt'(''StringValue'')'
+      (
+      |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+      |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+      )?
+     |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+     |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+     )?
+    |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   )?
+  |Movable'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')
+   (
+   '.'ThenStartAt'(''StringValue'')'
+    (
+    |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+   |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+   )?
+  |MovableFromMovable'('Count',' Days')''.'(Before|After)'('Count',' Days')''.'(Before'('('StringValue'|Month)')'|After'(''StringValue'')'|In'('Month')')
+   (
+   '.'ThenStartAt'(''StringValue'')'
+    (
+    |'.'In'('YearType')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+    |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+    )?
+   |'.'In'(''YearType'')'('.'Every'(''Number'')''.'Year'.'Since'(''Year'')')?
+   |'.'Every'(''Number'')''.'Year'.'Since'(''Year'')'
+   )?
+  )
+)
+
+Days ::= ('Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|'Saturday'|'Sunday')
+YearType ::= ('Even'|'Odd'|'Leap'|'NonLeap')
+Count ::= ('First'|'Second'|'Third'|'Fourth'|'Fifth'|'Sixth')
+Month ::= ('January'|'February'|'March'|'April'|'May'|'June'|'July'|'August'|'September'|'October'|'November'|'December')
+Christianism ::=('CarnivalMonday'|'CarnivalTuesday'|'AshWednesday'|'PalmSunday'|'MaundyThursday'|'GoodFriday'|'HolySaturday'|'Easter'|'EasterMonday'|'AscensionDay'|'Pentecost'|'WhitMonday'|'CorpusChristi')
