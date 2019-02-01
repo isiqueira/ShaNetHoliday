@@ -12,7 +12,7 @@ namespace ShaNetHoliday.WebService.Client.Configuration
         /// <summary>
         /// Url de base de l'Api.
         /// </summary>
-        [ConfigurationProperty( nameof( BaseApiUrl ), IsRequired = true, DefaultValue = "http://holiday.ShaNet.dom/api/" )]
+        [ConfigurationProperty( nameof( BaseApiUrl ), IsRequired = true, DefaultValue = "https://shanetholiday.azurewebsites.net//api/" )]
         public string BaseApiUrl => (string)this[ nameof( BaseApiUrl ) ];
 
         public static HolidayConfig Conf { get; }

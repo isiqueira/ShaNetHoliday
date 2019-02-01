@@ -85,7 +85,11 @@
     <Compile Include="Services\HttpNotFoundAwareDefaultHttpControllerSelector.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\b52eb3bf-0ee0-4-231-b9ee - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\b52eb3bf-0ee0-4-231-b9ee - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\IIS - ID3i - Package.pubxml" />
     <None Include="Properties\PublishProfiles\IIS - ShaNet - Package.pubxml" />
+    <None Include="Properties\PublishProfiles\ShaNetHoliday - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

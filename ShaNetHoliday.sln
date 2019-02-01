@@ -58,6 +58,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaNetDiagnostics.RaygunWri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaNetDiagnostics.TraceWriter", "..\ShaNetDiagnostics\ShaNetDiagnostics.Trace\ShaNetDiagnostics.TraceWriter.csproj", "{84AEE912-1865-479F-AEB2-9E38CB60BBDB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QueryExample", "QueryExample", "{BF8280A6-7EFC-4244-9EA0-86DA3780929A}"
+	ProjectSection(SolutionItems) = preProject
+		Requests\Countries.http = Requests\Countries.http
+		Requests\Country-Days.http = Requests\Country-Days.http
+		Requests\Country-States.http = Requests\Country-States.http
+		Requests\Country.http = Requests\Country.http
+		Requests\Days-Country-State-Region.http = Requests\Days-Country-State-Region.http
+		Requests\LongWeekEnds.http = Requests\LongWeekEnds.http
+		Requests\Region-Days.http = Requests\Region-Days.http
+		Requests\Region.http = Requests\Region.http
+		Requests\Rules-Country.http = Requests\Rules-Country.http
+		Requests\Rules.http = Requests\Rules.http
+		Requests\State-Days.http = Requests\State-Days.http
+		Requests\State-Regions.http = Requests\State-Regions.http
+		Requests\State.http = Requests\State.http
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
