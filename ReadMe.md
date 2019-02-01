@@ -19,6 +19,38 @@
 
 ShaNetHoliday is a Holiday Framework calculation for .Net.
 
+# ShaNetHoliday - Api
+
+For testing, I have deploy the Api to AzureWebSites.
+
+You can try all methods with the links :
+#### All supported countries
+* https://shanetholiday.azurewebsites.net/countries
+#### Information of one country
+* https://shanetholiday.azurewebsites.net/countries/DE
+#### All days for year 2019 for a country
+* https://shanetholiday.azurewebsites.net/countries/DE/Days?year=2019&rule=All&calendar=All
+#### All supported states for a country
+* https://shanetholiday.azurewebsites.net/countries/DE/States
+#### Information of one state
+* https://shanetholiday.azurewebsites.net/states/DE-BY
+#### All days for year 2019 for a state
+* https://shanetholiday.azurewebsites.net/states/DE-BY/days?year=2019&rule=All&calendar=All
+#### All supported regions for a state
+* https://shanetholiday.azurewebsites.net/states/DE-BY/regions
+#### Information of one region
+* https://shanetholiday.azurewebsites.net/regions/DE-BY-A
+#### All days for year 2019 for a region
+* https://shanetholiday.azurewebsites.net/regions/DE-BY-A/Days?year=2019&rule=All&calendar=All
+#### All days for year 2019 for a country, state(optional) and region(optional)
+* https://shanetholiday.azurewebsites.net/days/2019?ccode=DE&scode=BY&rcode=A&rule=All&calendar=All
+#### All long weekends for a year and country.
+* https://shanetholiday.azurewebsites.net/longweekends/2019?ccode=FR
+#### All rules for all countries, states and regions
+* https://shanetholiday.azurewebsites.net/rules
+#### All rules for one country
+* https://shanetholiday.azurewebsites.net/rules/DE
+
 ### Assemblies
 * ShaNetHoliday.Core contains base class for building expression and parsing. 
 * ShaNetHoliday.Syntax contains expressions blocs, expressions composer and parsers for theses expressions composer.
@@ -80,7 +112,7 @@ foreach (Country country in countriesAvailable)
 using ShaNetHoliday.Engine.Standard;
 using ShaNetHoliday.Models;
 
-var specificDays = HolidaySystem.Instance.All(2018, "FR", RuleType.All);
+var specificDays = HolidaySystem.Instance.All(2019, "FR", RuleType.All);
 foreach (SpecificDay day in specificDays)
 {
 	//Do something...
@@ -114,7 +146,7 @@ if (specificDay != null)
 using ShaNetHoliday.Engine.Standard;
 using ShaNetHoliday.Models;
 
-var longWeekEnds = HolidaySystem.Instance.LongWeekEnds(2018,"FR");
+var longWeekEnds = HolidaySystem.Instance.LongWeekEnds(2019,"FR");
 foreach (LongWeekEnd longWeekEnd in longWeekEnds)
 {
     //Do something...
@@ -126,7 +158,7 @@ foreach (LongWeekEnd longWeekEnd in longWeekEnds)
 using ShaNetHoliday.Engine.Standard;
 using ShaNetHoliday.Models;
 
-var specificDays = HolidaySystem.Instance.All(2018, "FR", "MQ", RuleType.All);
+var specificDays = HolidaySystem.Instance.All(2019, "FR", "MQ", RuleType.All);
 foreach (SpecificDay day in specificDays)
 {
 	//Do something...
@@ -160,7 +192,7 @@ if (specificDay != null)
 using ShaNetHoliday.Engine.Standard;
 using ShaNetHoliday.Models;
 
-var longWeekEnds = HolidaySystem.Instance.LongWeekEnds(2018, "FR", "MQ");
+var longWeekEnds = HolidaySystem.Instance.LongWeekEnds(2019, "FR", "MQ");
 foreach (LongWeekEnd longWeekEnd in longWeekEnds)
 {
     //Do something...

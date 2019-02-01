@@ -1,1 +1,1 @@
-GET https://shanetholiday.azurewebsites.net//states/DE-BY/days?year=2018&rule=All&calendar=All
+GET https://shanetholiday.azurewebsites.net/states/DE-BY/days?year=2018&rule=All&calendar=All

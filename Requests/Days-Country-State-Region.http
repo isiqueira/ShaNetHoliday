@@ -1,1 +1,1 @@
-GET https://shanetholiday.azurewebsites.net//days/2018?ccode=DE&scode=BY&rcode=A&rule=All&calendar=All
+GET https://shanetholiday.azurewebsites.net/days/2018?ccode=DE&scode=BY&rcode=A&rule=All&calendar=All
