@@ -143,6 +143,10 @@
       <Project>{84c84451-d381-4eb4-8b16-f53c14f38a3f}</Project>
       <Name>ShaNetDiagnostics.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ShaNetDiagnostics\ShaNetDiagnostics.HealthWriter\ShaNetDiagnostics.HealthWriter.csproj">
+      <Project>{05F4CC8C-EB7D-4F65-8FF2-EB530E5C0519}</Project>
+      <Name>ShaNetDiagnostics.HealthWriter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ShaNetDiagnostics\ShaNetDiagnostics.Log4Net\ShaNetDiagnostics.Log4NetWriter.csproj">
       <Project>{ef2fe903-9509-4971-be6a-94646c54c979}</Project>
       <Name>ShaNetDiagnostics.Log4NetWriter</Name>
@@ -150,6 +154,10 @@
     <ProjectReference Include="..\..\ShaNetDiagnostics\ShaNetDiagnostics.Raygun\ShaNetDiagnostics.RaygunWriter.csproj">
       <Project>{e904f019-db8e-47f0-a81c-26b42b866dff}</Project>
       <Name>ShaNetDiagnostics.RaygunWriter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ShaNetDiagnostics\ShaNetDiagnostics.Tracker\ShaNetDiagnostics.Tracker.csproj">
+      <Project>{1C577FCF-8C4B-4B02-B550-0515E25C965E}</Project>
+      <Name>ShaNetDiagnostics.Tracker</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ShaNetDiagnostics\ShaNetDiagnostics\ShaNetDiagnostics.csproj">
       <Project>{c007dbd5-0fb2-4a88-b22a-6b0615ad52ad}</Project>
