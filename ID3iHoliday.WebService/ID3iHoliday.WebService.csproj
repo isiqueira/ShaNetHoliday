@@ -139,6 +139,10 @@
       <Project>{84c84451-d381-4eb4-8b16-f53c14f38a3f}</Project>
       <Name>iD3iDiagnostics.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ID3iDiagnostics\iD3iDiagnostics.HealthWriter\iD3iDiagnostics.HealthWriter.csproj">
+      <Project>{2CF23E75-989D-4374-826D-FBB78CA3E163}</Project>
+      <Name>iD3iDiagnostics.HealthWriter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\iD3iDiagnostics\iD3iDiagnostics.Log4Net\iD3iDiagnostics.Log4NetWriter.csproj">
       <Project>{ef2fe903-9509-4971-be6a-94646c54c979}</Project>
       <Name>iD3iDiagnostics.Log4NetWriter</Name>
@@ -146,6 +150,10 @@
     <ProjectReference Include="..\..\iD3iDiagnostics\iD3iDiagnostics.Raygun\iD3iDiagnostics.RaygunWriter.csproj">
       <Project>{e904f019-db8e-47f0-a81c-26b42b866dff}</Project>
       <Name>iD3iDiagnostics.RaygunWriter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ID3iDiagnostics\iD3iDiagnostics.Tracker\iD3iDiagnostics.Tracker.csproj">
+      <Project>{20ACCD07-F398-4662-A262-26DFF748598C}</Project>
+      <Name>iD3iDiagnostics.Tracker</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\iD3iDiagnostics\iD3iDiagnostics\iD3iDiagnostics.csproj">
       <Project>{c007dbd5-0fb2-4a88-b22a-6b0615ad52ad}</Project>
