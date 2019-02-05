@@ -3,6 +3,9 @@ image: Visual Studio 2017
 configuration: Release
 platform: Any CPU
 clone_folder: c:\project\ShaNet\ShaNetHoliday
+branches:
+  only:
+  - master
 install:
 - cmd: >-
     git clone https://github.com/Shaenn/shanetcore.git c:/project/ShaNet/ShaNetCore
