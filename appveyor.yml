@@ -8,15 +8,15 @@ branches:
   - master
 install:
 - cmd: >-
-    git clone https://github.com/Shaenn/shanetcore.git c:/project/ShaNet/ShaNetCore
+    git clone -q --branch=master https://github.com/Shaenn/shanetcore.git c:/project/ShaNet/ShaNetCore
 
-    git clone https://github.com/Shaenn/shanetdate.git c:/project/ShaNet/ShaNetDate
+    git clone -q --branch=master https://github.com/Shaenn/shanetdate.git c:/project/ShaNet/ShaNetDate
 
-    git clone https://github.com/Shaenn/shanetregex.git c:/project/ShaNet/ShaNetRegex
+    git clone -q --branch=master https://github.com/Shaenn/shanetregex.git c:/project/ShaNet/ShaNetRegex
 
-    git clone https://github.com/Shaenn/shanethttpclient.git c:/project/ShaNet/ShaNetHttpClient
+    git clone -q --branch=master https://github.com/Shaenn/shanethttpclient.git c:/project/ShaNet/ShaNetHttpClient
 
-    git clone https://github.com/Shaenn/shanetdiagnostics.git c:/project/ShaNet/ShaNetDiagnostics
+    git clone -q --branch=master https://github.com/Shaenn/shanetdiagnostics.git c:/project/ShaNet/ShaNetDiagnostics
 before_build:
 - cmd: msbuild /t:restore
 build:
