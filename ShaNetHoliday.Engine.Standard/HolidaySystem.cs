@@ -22,11 +22,19 @@ namespace ShaNetHoliday.Engine.Standard
         private HolidaySystem()
         {
             CountriesAvailable.Add( new AD() );
+            CountriesAvailable.Add( new AE() );
             CountriesAvailable.Add( new AG() );
             CountriesAvailable.Add( new AI() );
             CountriesAvailable.Add( new AL() );
+            CountriesAvailable.Add( new AM() );
+            CountriesAvailable.Add( new AO() );
+            CountriesAvailable.Add( new AR() );
+            CountriesAvailable.Add( new AS() );
             CountriesAvailable.Add( new AT() );
+            CountriesAvailable.Add( new AU() );
+            CountriesAvailable.Add( new AW() );
             CountriesAvailable.Add( new AX() );
+            CountriesAvailable.Add( new AZ() );
             CountriesAvailable.Add( new BA() );
             CountriesAvailable.Add( new BE() );
             CountriesAvailable.Add( new BG() );

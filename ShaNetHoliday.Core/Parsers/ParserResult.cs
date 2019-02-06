@@ -17,7 +17,7 @@ namespace ShaNetHoliday.Core.Parsers
         public List<DateTime> DatesToAdd { get; set; } = new List<DateTime>();
 
         /// <summary>
-        /// Date à supprimée.
+        /// Date à supprimer.
         /// </summary>
         public DateTime? DateToRemove { get; set; }
     }
