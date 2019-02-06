@@ -61,17 +61,17 @@ namespace iD3iHoliday.Countries
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(OnM.Rajab.The27th),
+                    Expression = ExpressionTree.Date.Fix(OnM.Rajab.The27th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.AR, "الإسراء والمعراج").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(OnM.Ramadan.The1st),
+                    Expression = ExpressionTree.Date.Fix(OnM.Ramadan.The1st).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.AR, "اليوم الأول من رمضان").AsDictionary()
                 },
                 new HijriRule()
                 {
-                    Expression = ExpressionTree.Date.Fix(OnM.RabiAlAwwal.The12th),
+                    Expression = ExpressionTree.Date.Fix(OnM.RabiAlAwwal.The12th).Over.Hijri(),
                     Names = NamesBuilder.Make.Add(Langue.AR, "المولد النبويّ").AsDictionary()
                 }
             };
