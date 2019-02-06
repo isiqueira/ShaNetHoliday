@@ -191,6 +191,26 @@ namespace iD3iHoliday.Models
         /// <summary>
         /// Chinese.
         /// </summary>
-        [Description( "Chinese" )] ZH
+        [Description( "Chinese" )] ZH,
+
+        /// <summary>
+        /// Armenian.
+        /// </summary>
+        [Description( "Armenian" )] HY,
+
+        /// <summary>
+        /// Papiamento.
+        /// </summary>
+        [Description( "Papiamento" )] PAP,
+
+        /// <summary>
+        /// Azerbaijani.
+        /// </summary>
+        [Description( "Azerbaijani" )] AZ,
+
+        /// <summary>
+        /// Arabic.
+        /// </summary>
+        [Description( "Arabic" )] AR
     }
 }

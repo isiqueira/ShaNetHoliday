@@ -67,6 +67,11 @@ namespace iD3iHoliday.Countries
                     Names = NamesBuilder.Make.Add(Langue.HU, "A holokauszt áldozatainak emléknapja").AsDictionary(),
                     Type = Observance
                 },
+                new GregorianRule() 
+                {
+                    Expression = ExpressionTree.Date.Catholic.GoodFriday.StartAtMidnight.UntilMidnight.Every(1).Year.Since(2017),
+                    Names = NamesBuilder.Make.Add(Langue.HU, "Nagypéntek").AsDictionary(),
+                },
                 new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Catholic.Easter,

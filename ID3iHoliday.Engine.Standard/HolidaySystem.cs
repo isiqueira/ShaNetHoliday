@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iD3iHoliday.Engine;
 using iD3iHoliday.Countries;
 
 namespace iD3iHoliday.Engine.Standard
@@ -22,11 +21,19 @@ namespace iD3iHoliday.Engine.Standard
         private HolidaySystem()
         {
             CountriesAvailable.Add( new AD() );
+            CountriesAvailable.Add( new AE() );
             CountriesAvailable.Add( new AG() );
             CountriesAvailable.Add( new AI() );
             CountriesAvailable.Add( new AL() );
+            CountriesAvailable.Add( new AM() );
+            CountriesAvailable.Add( new AO() );
+            CountriesAvailable.Add( new AR() );
+            CountriesAvailable.Add( new AS() );
             CountriesAvailable.Add( new AT() );
+            CountriesAvailable.Add( new AU() );
+            CountriesAvailable.Add( new AW() );
             CountriesAvailable.Add( new AX() );
+            CountriesAvailable.Add( new AZ() );
             CountriesAvailable.Add( new BA() );
             CountriesAvailable.Add( new BE() );
             CountriesAvailable.Add( new BG() );
