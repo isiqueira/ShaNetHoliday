@@ -16,8 +16,14 @@ using static iD3iHoliday.Models.Calendar;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Aruba.
+    /// </summary>
     public class AW : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AW"/>.
+        /// </summary>
         public AW()
         {
             Code = "AW";

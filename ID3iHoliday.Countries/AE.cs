@@ -16,8 +16,14 @@ using static iD3iHoliday.Models.Calendar;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour United Arab Emirates.
+    /// </summary>
     public class AE : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AE"/>.
+        /// </summary>
         public AE()
         {
             Code = "AE";

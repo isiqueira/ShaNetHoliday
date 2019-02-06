@@ -16,8 +16,14 @@ using static iD3iHoliday.Models.Calendar;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Argentina.
+    /// </summary>
     public class AR : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AR"/>.
+        /// </summary>
         public AR()
         {
             Code = "AR";

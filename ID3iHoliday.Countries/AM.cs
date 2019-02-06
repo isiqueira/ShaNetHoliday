@@ -16,13 +16,19 @@ using static iD3iHoliday.Models.Calendar;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Armenia.
+    /// </summary>
     public class AM : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AM"/>.
+        /// </summary>
         public AM()
         {
             Code = "AM";
             Alpha3Code = "ARM";
-            Names = NamesBuilder.Make.Add( Langue.EN, "Austria" ).Add( Langue.HY, "Հայաստան" ).AsDictionary();
+            Names = NamesBuilder.Make.Add( Langue.EN, "Armenia").Add( Langue.HY, "Հայաստան" ).AsDictionary();
             DaysOff.Add( Sunday );
             Langues = new List<Langue>() { Langue.HY };
             SupportedCalendar.Add( Gregorian );

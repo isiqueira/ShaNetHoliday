@@ -17,8 +17,14 @@ using iD3iHoliday.Syntax.Composition;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour American Samoa.
+    /// </summary>
     public class AS : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AS"/>.
+        /// </summary>
         public AS()
         {
             Code = "AS";

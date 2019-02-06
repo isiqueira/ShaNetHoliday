@@ -16,8 +16,14 @@ using static iD3iHoliday.Models.Calendar;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Azerbaijan.
+    /// </summary>
     public class AZ : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AZ"/>.
+        /// </summary>
         public AZ()
         {
             Code = "AZ";

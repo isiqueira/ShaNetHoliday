@@ -17,8 +17,14 @@ using iD3iHoliday.Syntax.Composition;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Australia.
+    /// </summary>
     public class AU : Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AU"/>.
+        /// </summary>
         public AU()
         {
             Code = "AU";
@@ -31,13 +37,13 @@ namespace iD3iHoliday.Countries
             {
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Observe.Fix(On.January.The1st),
+                    Expression = ExpressionTree.Observe.Fix(On.January.The1st).If(Saturday).Then.Next(Monday).Or.If(Sunday).Then.Next(Monday),
                     Names = NamesBuilder.Make.Add(Langue.EN, "New Year's Day").AsDictionary(),
                     Substitute = true
                 },
                 new GregorianRule()
                 {
-                    Expression = ExpressionTree.Observe.Fix(On.January.The26th),
+                    Expression = ExpressionTree.Observe.Fix(On.January.The26th).If(Saturday).Then.Next(Monday).Or.If(Sunday).Then.Next(Monday),
                     Names = NamesBuilder.Make.Add(Langue.EN, "Australia Day").AsDictionary(),
                     Substitute = true
                 },

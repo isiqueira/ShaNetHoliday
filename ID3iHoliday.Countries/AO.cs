@@ -16,8 +16,14 @@ using static iD3iHoliday.Models.Calendar;
 
 namespace iD3iHoliday.Countries
 {
+    /// <summary>
+    /// Définition pour Angola.
+    /// </summary>
     public class AO: Country
     {
+        /// <summary>
+        /// Initialise une nouvelle instance pour la classe <see cref="AO"/>.
+        /// </summary>
         public AO()
         {
             Code = "AO";
