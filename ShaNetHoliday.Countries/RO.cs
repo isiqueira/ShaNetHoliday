@@ -52,7 +52,7 @@ namespace ShaNetHoliday.Countries
                 new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Orthodox.EasterMonday,
-                    Names = NamesBuilder.Make.Add(Langue.RO, "Două zi de Pasti").AsDictionary()
+                    Names = NamesBuilder.Make.Add(Langue.RO, "A doua zi de Pasti").AsDictionary()
                 },
                 new GregorianRule()
                 {
@@ -73,7 +73,7 @@ namespace ShaNetHoliday.Countries
                 new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Orthodox.WhitMonday,
-                    Names = NamesBuilder.Make.Add(Langue.RO, "Două zi de Rusalii").AsDictionary()
+                    Names = NamesBuilder.Make.Add(Langue.RO, "A doua zi de Rusalii").AsDictionary()
                 },
                 new GregorianRule()
                 {
@@ -113,7 +113,7 @@ namespace ShaNetHoliday.Countries
                 new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.December.The1st),
-                    Names = NamesBuilder.Make.Add(Langue.RO, "Ziua națională, Ziua Marii Uniri").AsDictionary()
+                    Names = NamesBuilder.Make.Add(Langue.RO, "Ziua Națională a României").AsDictionary()
                 },
                 new GregorianRule()
                 {
@@ -128,7 +128,7 @@ namespace ShaNetHoliday.Countries
                 new GregorianRule()
                 {
                     Expression = ExpressionTree.Date.Fix(On.December.The26th),
-                    Names = NamesBuilder.Make.Add(Langue.RO, "Două zi de Crăciun").AsDictionary()
+                    Names = NamesBuilder.Make.Add(Langue.RO, "A doua zi de Crăciun").AsDictionary()
                 }
             };
         }
